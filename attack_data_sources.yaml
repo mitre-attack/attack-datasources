@@ -1,0 +1,362 @@
+- name: Service
+  definition: Information about software programs that run in the background and typically start with the operating system.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: service creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: service
+  references:
+    - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
+    - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
+- name: Module
+  definition: Information about portable executable files, such as a dll or an executable, consisting of one or more classes and interfaces.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: module load
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: loaded
+          target_data_element: dll
+        - source_data_element: process
+          relationship: loaded
+          target_data_element: executable
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+    - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
+- name: WMI object
+  definition: Information about objects from the system classes, such as filters and consumers, that support Windows Management Instrumentation activitites.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: wmi object context
+      type: information
+      relationships:
+        - source_data_element: wmi subscription
+          relationship: created
+          target_data_element:
+    - name: wmi object creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: wmi filter
+        - source_data_element: user
+          relationship: created
+          target_data_element: wmi consumer
+        - source_data_element: user
+          relationship: created
+          target_data_element: wmi subscription
+    - name: wmi object deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: wmi filter
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: wmi consumer
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: wmi subscription
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
+- name: File
+  definition: Information about file objects that represent computer resources that can be managed by the I/O system.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: file creation
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: created
+          target_data_element: file
+    - name: file deletion
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: file
+    - name: file access
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: file
+        - source_data_element: process
+          relationship: accessed
+          target_data_element: file
+        - source_data_element: user
+          relationship: requested access
+          target_data_element: file
+        - source_data_element: process
+          relationship: requested access
+          target_data_element: file
+    - name: file share access
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: file share
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
+- name: Named pipe
+  definition: Information about mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: named pipe creation
+      relationships:
+        - source_data_element: process
+          relationship: created
+          target_data_element: pipe
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
+- name: Powershell log
+  definition: Information about PowerShell operations related to PowerShell engine, providers, and cmdlets.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: powershell context
+      type: information
+      relationships:
+        - source_data_element: application host
+          relationship: started
+          target_data_element:
+        - source_data_element: application domain
+          relationship: started
+          target_data_element:
+    - name: powershell execution
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: started
+          target_data_element: application host
+        - source_data_element: process
+          relationship: executed
+          target_data_element: command
+  references:
+    - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
+- name: Windows active directory
+  definition: Information about objects on a domain network such as a user, a group, or a workstation.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: active directory service access
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: ad object
+        - source_data_element: user
+          relationship: requested access
+          target_data_element: ad object
+        - source_data_element: process
+          relationship: requested access
+          target_data_element: ad object
+    - name: active directory service modification
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: modified
+          target_data_element: ad object
+  references:
+    - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
+- name: Windows registry
+  definition: Information about configuration data used by applications and system components.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: windows registry key creation
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: creted
+          target_data_element: windows registry key
+        - source_data_element: process
+          relationship: creted
+          target_data_element: windows registry key value
+    - name: windows registry key deletion
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: windows registry key
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: windows registry key value
+    - name: windows registry key modification
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: windows registry key
+        - source_data_element: process
+          relationship: modified
+          target_data_element: windows registry key value
+        - source_data_element: user
+          relationship: modified
+          target_data_element: windows registry key value
+    - name: Windows registry key access
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: accessed
+          target_data_element: windows registry key
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: windows registry key
+        - source_data_element: process
+          relationship: requested access
+          target_data_element: windows registry key
+        - source_data_element: user
+          relationship: requested access
+          target_data_element: windows registry key
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
+- name: Authentication log
+  definition: Information about accounts' (Local or Domain) attempts to access network resources interactively or over the network. 
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: authentication success
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: authenticated
+          target_data_element: host
+  references:
+    - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
+- name: Process
+  definition: Information about instances of computer programs that are being executed by at least one thread.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: process creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: process
+        - source_data_element: process
+          relationship: created
+          target_data_element: process
+    - name: process modification
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: wrote to
+          target_data_element: process
+    - name: process access
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: accessed
+          target_data_element: process
+        - source_data_element: process
+          relationship: requested access
+          target_data_element: process
+    - name: process network connection
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: connected to
+          target_data_element: port
+        - source_data_element: process
+          relationship: connected to
+          target_data_element: ip
+        - source_data_element: process
+          relationship: connected to
+          target_data_element: host
+        - source_data_element: process
+          relationship: connected from
+          target_data_element: port
+        - source_data_element: process
+          relationship: connected from
+          target_data_element: ip
+        - source_data_element: process
+          relationship: connected from
+          target_data_element: host
+        - source_data_element: user
+          relationship: connected to
+          target_data_element: port
+        - source_data_element: user
+          relationship: connected to
+          target_data_element: ip
+        - source_data_element: user
+          relationship: connected to
+          target_data_element: host
+        - source_data_element: user
+          relationship: connected from
+          target_data_element: port
+        - source_data_element: user
+          relationship: connected from
+          target_data_element: ip
+        - source_data_element: user
+          relationship: connected from
+          target_data_element: host
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
+- name: User Account
+  definition: Security principal or entity that represents a person or machine and can be authenticated by an operating system or platform.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - Jose Rodriguez @Cyb3rPandaH
+  data_components:
+    - name: user account creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: user
+  references:
+    - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
