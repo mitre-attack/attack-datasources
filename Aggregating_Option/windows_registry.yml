@@ -1,5 +1,5 @@
 collection_layers: [host]
-contributors: [Jose Rodriguez @Cyb3rPandaH]
+contributors: [ATT&CK]
 data_components:
 - name: windows registry key creation
   relationships:
