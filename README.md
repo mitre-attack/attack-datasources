@@ -44,7 +44,7 @@ We are storing this new metadata using YAML files, so you can access this conten
 
 In the image above, you can see the structure of the **Service** data source as an example of the content you will find within each YAML file.
 
-Based on our initial research. we have identified relationships such as: A **user** has **created** a **Service**
+Based on our initial research, we have identified relationships such as: A **user** has **created** a **Service**
 
 We are grouping these type of relationships within the data component: **Service Creation**.
 
