@@ -3,7 +3,7 @@ As part of the revamping process of **ATT&CK data sources**, we have defined an 
 
 <img src="images/Methodology_Data_Sources.jpg" width=500>
 
-You can find a more detailed explanation of this methodoly here:
+You can find a more detailed explanation of this methodology here:
 
 * [Defining ATT&CK Data Sources, Part I: Enhancing the Current State](https://medium.com/mitre-attack/defining-attack-data-sources-part-i-4c39e581454f)
 * [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
@@ -42,9 +42,9 @@ We are storing this new metadata using YAML files, so you can access this conten
     - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
 ```
 
-In thee image above, you can seee the structure of the **Service** data source as an example of the content you will find within each YAML file.
+In the image above, you can see the structure of the **Service** data source as an example of the content you will find within each YAML file.
 
-Based on our initial reasearch. we have identified relationships such as: A **user** has **created** a **Service**
+Based on our initial research. we have identified relationships such as: A **user** has **created** a **Service**
 
 We are grouping these type of relationships within the data component: **Service Creation**.
 
