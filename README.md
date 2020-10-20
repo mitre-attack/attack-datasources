@@ -1,12 +1,12 @@
 # Defining ATT&CK Data Sources
-As part of the revamping process of **ATT&CK data sources**, we have defined an initial methodology that will help us to improve the definition of current data sources. The idea behind this methodology is to ensure same quality of information among data sources, and provide additional information or metadata related to data sources in order to get a better understanding of them. 
+As part of the revamping process of **ATT&CK data sources**, we have defined an initial methodology that will help us improve the definition of current data sources. The idea behind this methodology is to ensure same quality of information among data sources, and provide additional information or metadata related to data sources in order to get a better understanding of them. 
 
 <img src="images/Methodology_Data_Sources.jpg" width=500>
 
 You can find a more detailed explanation of this methodoly here:
 
 * [Defining ATT&CK Data Sources, Part I: Enhancing the Current State](https://medium.com/mitre-attack/defining-attack-data-sources-part-i-4c39e581454f)
-* [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](BlogLink)
+* [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
 
 ## Data Source Object
 Currently, data sources are metadata provided for each (sub)technique. However, in order to be able to add metadata to each data source, we have proposed the definition of a data source object as part of the ATTCK model.
@@ -14,7 +14,7 @@ Currently, data sources are metadata provided for each (sub)technique. However, 
 <img src="images/Data_Source_Object.png" width=500>
 
 ## Relationships & Sub Data Sources
-As part of the new metadata provided by ATT&CK data sources, we proposed the following concepts: relationships amd data components. These concepts will help us to represent adversary behavior from a data perspective. In addition, they might be good reference to start mapping telemetry collected in your environment to specific sub(techniques) and/or tactics.
+As part of the new metadata provided by ATT&CK data sources, we proposed the following concepts: **relationships** and **data components**. These concepts will help us to represent adversary behavior from a data perspective. In addition, they might be good reference to start mapping telemetry collected in your environment to specific sub(techniques) and/or tactics.
 
 <img src="images/Sub_Technique_Data_Components.jpg" width=500>
 
