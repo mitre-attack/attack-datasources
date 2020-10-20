@@ -2,29 +2,29 @@
   definition: Information about software programs that run in the background and typically start with the operating system.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: service creation
       type: activity
       relationships:
         - source_data_element: user
           relationship: created
           target_data_element: service
-          references:
+  references:
     - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
     - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
 - name: Module
   definition: Information about portable executable files, such as a dll or an executable, consisting of one or more classes and interfaces.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: module load
       type: activity
       relationships:
@@ -34,18 +34,18 @@
         - source_data_element: process
           relationship: loaded
           target_data_element: executable
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
     - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
 - name: WMI object
   definition: Information about objects from the system classes, such as filters and consumers, that support Windows Management Instrumentation activitites.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: wmi object context
       type: information
       relationships:
@@ -76,17 +76,17 @@
         - source_data_element: user
           relationship: deleted
           target_data_element: wmi subscription
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
 - name: File
   definition: Information about file objects that represent computer resources that can be managed by the I/O system.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: file creation
       type: activity
       relationships:
@@ -111,33 +111,33 @@
         - source_data_element: process
           relationship: requested access
           target_data_element: file
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
 - name: Named pipe
   definition: Information about mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: named pipe creation
       relationships:
         - source_data_element: process
           relationship: created
           target_data_element: pipe
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
 - name: Powershell log
   definition: Information about PowerShell operations related to PowerShell engine, providers, and cmdlets.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: powershell context
       type: information
       relationships:
@@ -156,17 +156,17 @@
         - source_data_element: process
           relationship: executed
           target_data_element: command
-          references:
+  references:
     - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
 - name: Windows active directory
   definition: Information about objects on a domain network such as a user, a group, or a workstation.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: active directory service access
       type: activity
       relationships:
@@ -185,17 +185,17 @@
         - source_data_element: user
           relationship: modified
           target_data_element: ad object
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
 - name: Windows registry
   definition: Information about configuration data used by applications and system components.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: windows registry key creation
       type: activity
       relationships:
@@ -241,34 +241,34 @@
         - source_data_element: user
           relationship: requested access
           target_data_element: windows registry key
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
 - name: Authentication log
   definition: Information about accounts' (Local or Domain) attempts to access network resources interactively or over the network. 
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: authentication success
       type: activity
       relationships:
         - source_data_element: user
           relationship: authenticated
           target_data_element: host
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
 - name: Process
   definition: Information about instances of computer programs that are being executed by at least one thread.
   collection_layers:
     - host
-      platforms:
+  platforms:
     - Windows
-      contributors: 
+  contributors: 
     - ATT&CK
-      data_components:
+  data_components:
     - name: process creation
       type: activity
       relationships:
@@ -332,5 +332,5 @@
         - source_data_element: user
           relationship: connected from
           target_data_element: host
-          references:
+  references:
     - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
