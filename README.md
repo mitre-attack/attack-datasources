@@ -29,7 +29,7 @@ We are storing this new metadata using YAML files, so you can access this conten
   platforms:
     - Windows
   contributors: 
-    - Jose Rodriguez @Cyb3rPandaH
+    - ATT&CK
   data_components:
     - name: service creation
       type: activity
