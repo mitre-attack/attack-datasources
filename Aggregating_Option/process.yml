@@ -1,0 +1,37 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: process creation
+  relationships:
+  - {relationship: created, source_data_element: user, target_data_element: process}
+  - {relationship: created, source_data_element: process, target_data_element: process}
+  type: activity
+- name: process modification
+  relationships:
+  - {relationship: wrote to, source_data_element: process, target_data_element: process}
+  type: activity
+- name: process access
+  relationships:
+  - {relationship: accessed, source_data_element: process, target_data_element: process}
+  - {relationship: requested access, source_data_element: process, target_data_element: process}
+  type: activity
+- name: process network connection
+  relationships:
+  - {relationship: connected to, source_data_element: process, target_data_element: port}
+  - {relationship: connected to, source_data_element: process, target_data_element: ip}
+  - {relationship: connected to, source_data_element: process, target_data_element: host}
+  - {relationship: connected from, source_data_element: process, target_data_element: port}
+  - {relationship: connected from, source_data_element: process, target_data_element: ip}
+  - {relationship: connected from, source_data_element: process, target_data_element: host}
+  - {relationship: connected to, source_data_element: user, target_data_element: port}
+  - {relationship: connected to, source_data_element: user, target_data_element: ip}
+  - {relationship: connected to, source_data_element: user, target_data_element: host}
+  - {relationship: connected from, source_data_element: user, target_data_element: port}
+  - {relationship: connected from, source_data_element: user, target_data_element: ip}
+  - {relationship: connected from, source_data_element: user, target_data_element: host}
+  type: activity
+definition: Information about instances of computer programs that are being executed
+  by at least one thread.
+name: Process
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads']

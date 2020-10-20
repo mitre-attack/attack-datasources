@@ -1,0 +1,22 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: file creation
+  relationships:
+  - {relationship: created, source_data_element: process, target_data_element: file}
+  type: activity
+- name: file deletion
+  relationships:
+  - {relationship: deleted, source_data_element: process, target_data_element: file}
+  type: activity
+- name: file access
+  relationships:
+  - {relationship: accessed, source_data_element: user, target_data_element: file}
+  - {relationship: requested access, source_data_element: user, target_data_element: file}
+  - {relationship: requested access, source_data_element: process, target_data_element: file}
+  type: activity
+definition: Information about file objects that represent computer resources that
+  can be managed by the I/O system.
+name: File
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/windows/win32/fileio/file-management']

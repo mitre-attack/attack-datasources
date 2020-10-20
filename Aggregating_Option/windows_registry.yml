@@ -1,0 +1,41 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: windows registry key creation
+  relationships:
+  - {relationship: creted, source_data_element: process, target_data_element: windows
+      registry key}
+  - {relationship: creted, source_data_element: process, target_data_element: windows
+      registry key value}
+  type: activity
+- name: windows registry key deletion
+  relationships:
+  - {relationship: deleted, source_data_element: process, target_data_element: windows
+      registry key}
+  - {relationship: deleted, source_data_element: process, target_data_element: windows
+      registry key value}
+  type: activity
+- name: windows registry key modification
+  relationships:
+  - {relationship: modified, source_data_element: process, target_data_element: windows
+      registry key}
+  - {relationship: modified, source_data_element: process, target_data_element: windows
+      registry key value}
+  - {relationship: modified, source_data_element: user, target_data_element: windows
+      registry key value}
+  type: activity
+- name: Windows registry key access
+  relationships:
+  - {relationship: accessed, source_data_element: process, target_data_element: windows
+      registry key}
+  - {relationship: accessed, source_data_element: user, target_data_element: windows
+      registry key}
+  - {relationship: requested access, source_data_element: process, target_data_element: windows
+      registry key}
+  - {relationship: requested access, source_data_element: user, target_data_element: windows
+      registry key}
+  type: activity
+definition: Information about configuration data used by applications and system components.
+name: Windows registry
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry']

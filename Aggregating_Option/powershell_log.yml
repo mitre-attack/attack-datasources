@@ -1,0 +1,19 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: powershell context
+  relationships:
+  - {relationship: started, source_data_element: application host, target_data_element: null}
+  - {relationship: started, source_data_element: application domain, target_data_element: null}
+  type: information
+- name: powershell execution
+  relationships:
+  - {relationship: started, source_data_element: user, target_data_element: application
+      host}
+  - {relationship: executed, source_data_element: process, target_data_element: command}
+  type: activity
+definition: Information about PowerShell operations related to PowerShell engine,
+  providers, and cmdlets.
+name: Powershell log
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7']

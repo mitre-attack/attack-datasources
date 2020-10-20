@@ -1,0 +1,20 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: active directory service access
+  relationships:
+  - {relationship: accessed, source_data_element: user, target_data_element: ad object}
+  - {relationship: requested access, source_data_element: user, target_data_element: ad
+      object}
+  - {relationship: requested access, source_data_element: process, target_data_element: ad
+      object}
+  type: activity
+- name: active directory service modification
+  relationships:
+  - {relationship: modified, source_data_element: user, target_data_element: ad object}
+  type: activity
+definition: Information about objects on a domain network such as a user, a group,
+  or a workstation.
+name: Windows active directory
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started']

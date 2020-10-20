@@ -1,0 +1,12 @@
+collection_layers: [host]
+contributors: [Jose Rodriguez @Cyb3rPandaH]
+data_components:
+- name: authentication success
+  relationships:
+  - {relationship: authenticated, source_data_element: user, target_data_element: host}
+  type: activity
+definition: Information about accounts' (Local or Domain) attempts to access network
+  resources interactively or over the network.
+name: Authentication log
+platforms: [Windows]
+references: ['https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events']
