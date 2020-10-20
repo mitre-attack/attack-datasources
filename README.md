@@ -9,7 +9,7 @@ You can find a more detailed explanation of this methodoly here:
 * [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
 
 ## Data Source Object
-Currently, data sources are metadata provided for each (sub)technique. However, in order to be able to add metadata to each data source, we have proposed the definition of a data source object as part of the ATTCK model.
+Currently, data sources are metadata provided for each (sub)technique. However, in order to be able to add metadata to each data source, we have proposed the definition of a data source object as part of the ATT&CK model.
 
 <img src="images/Data_Source_Object.png" width=500>
 
