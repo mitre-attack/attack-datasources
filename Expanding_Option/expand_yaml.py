@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# Author: Jose Rodriguez (@Cyb3rPandaH)
-# License: GNU General Public License v3 (GPLv3)
-
 import yaml
 
 yamlFile = yaml.safe_load(open('attack_data_sources.yaml').read())
