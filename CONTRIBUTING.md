@@ -1,6 +1,6 @@
 # How to contribute
 
-Thanks for contributing to `attack-arsenal`!
+Thanks for contributing to `attack-datasources`!
 
 You are welcome to comment on issues, open new issues, and open pull requests.
 
