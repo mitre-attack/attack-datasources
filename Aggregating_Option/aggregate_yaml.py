@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# Author: Jose Rodriguez (@Cyb3rPandaH)
-# License: GNU General Public License v3 (GPLv3)
-
 import yaml
 import glob
 from os import path
