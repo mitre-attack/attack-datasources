@@ -3,9 +3,9 @@ contributors: [ATT&CK]
 data_components:
 - name: windows registry key creation
   relationships:
-  - {relationship: creted, source_data_element: process, target_data_element: windows
+  - {relationship: created, source_data_element: process, target_data_element: windows
       registry key}
-  - {relationship: creted, source_data_element: process, target_data_element: windows
+  - {relationship: created, source_data_element: process, target_data_element: windows
       registry key value}
   type: activity
 - name: windows registry key deletion

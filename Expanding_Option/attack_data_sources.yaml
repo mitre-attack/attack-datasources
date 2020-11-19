@@ -200,10 +200,10 @@
       type: activity
       relationships:
         - source_data_element: process
-          relationship: creted
+          relationship: created
           target_data_element: windows registry key
         - source_data_element: process
-          relationship: creted
+          relationship: created
           target_data_element: windows registry key value
     - name: windows registry key deletion
       type: activity
@@ -278,6 +278,9 @@
         - source_data_element: process
           relationship: created
           target_data_element: process
+        - source_data_element: process
+          relationship: created
+          target_data_element: thread
     - name: process modification
       type: activity
       relationships:
