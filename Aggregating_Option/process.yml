@@ -5,6 +5,7 @@ data_components:
   relationships:
   - {relationship: created, source_data_element: user, target_data_element: process}
   - {relationship: created, source_data_element: process, target_data_element: process}
+  - {relationship: created, source_data_element: process, target_data_element: thread}
   type: activity
 - name: process modification
   relationships:
