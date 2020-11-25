@@ -1,20 +1,45 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
+- name: active directory service creation
+  relationships:
+  - relationship: created
+    source_data_element: user
+    target_data_element: ad object
+  type: activity
+- name: active directory service deletion
+  relationships:
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: ad object
+  - relationship: undeleted
+    source_data_element: user
+    target_data_element: ad object
+  type: activity
 - name: active directory service access
   relationships:
-  - {relationship: accessed, source_data_element: user, target_data_element: ad object}
-  - {relationship: requested access, source_data_element: user, target_data_element: ad
-      object}
-  - {relationship: requested access, source_data_element: process, target_data_element: ad
-      object}
+  - relationship: accessed
+    source_data_element: user
+    target_data_element: ad object
+  - relationship: requested access
+    source_data_element: user
+    target_data_element: ad object
+  - relationship: requested access
+    source_data_element: process
+    target_data_element: ad object
   type: activity
 - name: active directory service modification
   relationships:
-  - {relationship: modified, source_data_element: user, target_data_element: ad object}
+  - relationship: modified
+    source_data_element: user
+    target_data_element: ad object
   type: activity
 definition: Information about objects on a domain network such as a user, a group,
   or a workstation.
 name: Windows active directory
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started

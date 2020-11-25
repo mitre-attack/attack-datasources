@@ -1,0 +1,41 @@
+collection_layers:
+- host
+contributors:
+- ATT&CK
+data_components:
+- name: schedule task creation
+  relationships:
+  - relationship: created
+    source_data_element: user
+    target_data_element: schedule task
+  type: activity
+- name: schedule task deletion
+  relationships:
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: schedule task
+  type: activity
+- name: schedule task enable
+  relationships:
+  - relationship: enabled
+    source_data_element: user
+    target_data_element: schedule task
+  type: activity
+- name: schedule task disable
+  relationships:
+  - relationship: disabled
+    source_data_element: user
+    target_data_element: schedule task
+  type: activity
+- name: schedule task modification
+  relationships:
+  - relationship: modified
+    source_data_element: user
+    target_data_element: schedule task
+  type: activity
+definition: Information about scheduled work that the Task Scheduler service performs.
+name: Schedule Task
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
