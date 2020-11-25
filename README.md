@@ -62,7 +62,7 @@ PowerShell logs: Powershell log
 API monitoring: API
 Application logs: Application log
 File monitoring: File
-Authentication logs: Authentication log
+Authentication logs: Logon session
 Named Pipes: Named pipe
 Process monitoring: Process
 Process use of network: Process
@@ -70,7 +70,7 @@ Process command-line parameters: Process
 DLL monitoring: Module
 Loaded DLLs: Module
 Windows Registry: Windows registry
-DNS records: DNS record
+DNS records: DNS
 Digital certificate logs: Digital certificate log
 WMI Objects: WMI object
 Services: Service

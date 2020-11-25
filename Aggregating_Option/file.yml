@@ -1,22 +1,81 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
+- name: file context
+  relationships:
+  - relationship: loaded
+    source_data_element: driver
+    target_data_element: null
+  type: information
 - name: file creation
   relationships:
-  - {relationship: created, source_data_element: process, target_data_element: file}
+  - relationship: created
+    source_data_element: process
+    target_data_element: file
   type: activity
 - name: file deletion
   relationships:
-  - {relationship: deleted, source_data_element: process, target_data_element: file}
+  - relationship: deleted
+    source_data_element: process
+    target_data_element: file
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: file
   type: activity
 - name: file access
   relationships:
-  - {relationship: accessed, source_data_element: user, target_data_element: file}
-  - {relationship: requested access, source_data_element: user, target_data_element: file}
-  - {relationship: requested access, source_data_element: process, target_data_element: file}
+  - relationship: accessed
+    source_data_element: user
+    target_data_element: file
+  - relationship: accessed
+    source_data_element: process
+    target_data_element: file
+  - relationship: requested access
+    source_data_element: user
+    target_data_element: file
+  - relationship: requested access
+    source_data_element: process
+    target_data_element: file
+  type: activity
+- name: file modification
+  relationships:
+  - relationship: modified
+    source_data_element: process
+    target_data_element: file
+  - relationship: modified
+    source_data_element: user
+    target_data_element: file
+  type: activity
+- name: file share creation
+  relationships:
+  - relationship: created
+    source_data_element: user
+    target_data_element: file share
+  type: activity
+- name: file share deletion
+  relationships:
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: file share
+  type: activity
+- name: file share access
+  relationships:
+  - relationship: accessed
+    source_data_element: user
+    target_data_element: file share
+  type: activity
+- name: file share modification
+  relationships:
+  - relationship: modified
+    source_data_element: user
+    target_data_element: file share
   type: activity
 definition: Information about file objects that represent computer resources that
   can be managed by the I/O system.
 name: File
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows/win32/fileio/file-management']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/fileio/file-management

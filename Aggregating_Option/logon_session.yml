@@ -1,0 +1,58 @@
+collection_layers:
+- host
+contributors:
+- ATT&CK
+data_components:
+- name: logon session context
+  relationships:
+  - relationship: modified
+    source_data_element: logon session
+    target_data_element: null
+  type: information
+- name: logon session creation
+  relationships:
+  - relationship: requested creation
+    source_data_element: user
+    target_data_element: logon session
+  - relationship: requested logon session creation from
+    source_data_element: user
+    target_data_element: ip
+  - relationship: requested logon session creation from
+    source_data_element: user
+    target_data_element: port
+  - relationship: created
+    source_data_element: user
+    target_data_element: logon session
+  - relationship: created logon session from
+    source_data_element: user
+    target_data_element: ip
+  - relationship: created logon session from
+    source_data_element: user
+    target_data_element: port
+  - relationship: failed creation
+    source_data_element: user
+    target_data_element: logon session
+  - relationship: failed logon session creation from
+    source_data_element: user
+    target_data_element: ip
+  - relationship: failed logon session creation from
+    source_data_element: user
+    target_data_element: port
+  type: activity
+- name: logon session termination
+  relationships:
+  - relationship: requested termination
+    source_data_element: user
+    target_data_element: logon session
+  - relationship: terminated
+    source_data_element: user
+    target_data_element: logon session
+  type: activity
+definition: Information about logon sessions being created or terminated by accounts
+  (Local or Domain), interactively or over the network, in order to interact with
+  network resources, applications, or services.
+name: Logon session
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events

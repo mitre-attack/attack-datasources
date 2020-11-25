@@ -1,24 +1,42 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
 - name: wmi object context
   relationships:
-  - {relationship: created, source_data_element: wmi subscription, target_data_element: null}
+  - relationship: created
+    source_data_element: wmi subscription
+    target_data_element: null
   type: information
 - name: wmi object creation
   relationships:
-  - {relationship: created, source_data_element: user, target_data_element: wmi filter}
-  - {relationship: created, source_data_element: user, target_data_element: wmi consumer}
-  - {relationship: created, source_data_element: user, target_data_element: wmi subscription}
+  - relationship: created
+    source_data_element: user
+    target_data_element: wmi filter
+  - relationship: created
+    source_data_element: user
+    target_data_element: wmi consumer
+  - relationship: created
+    source_data_element: user
+    target_data_element: wmi subscription
   type: activity
 - name: wmi object deletion
   relationships:
-  - {relationship: deleted, source_data_element: user, target_data_element: wmi filter}
-  - {relationship: deleted, source_data_element: user, target_data_element: wmi consumer}
-  - {relationship: deleted, source_data_element: user, target_data_element: wmi subscription}
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: wmi filter
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: wmi consumer
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: wmi subscription
   type: activity
 definition: Information about objects from the system classes, such as filters and
   consumers, that support Windows Management Instrumentation activitites.
 name: WMI object
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
