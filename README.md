@@ -70,11 +70,10 @@ Process command-line parameters: Process
 DLL monitoring: Module
 Loaded DLLs: Module
 Windows Registry: Windows registry
-DNS records: DNS record
+DNS records: DNS
 Digital certificate logs: Digital certificate log
 WMI Objects: WMI object
 Services: Service
-DNS records: DNS
 ```
 
 ## Have we defined each data source within ATT&CK?
