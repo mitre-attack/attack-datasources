@@ -1,12 +1,23 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
 - name: named pipe creation
   relationships:
-  - {relationship: created, source_data_element: process, target_data_element: pipe}
+  - relationship: created
+    source_data_element: process
+    target_data_element: pipe
+- name: named pipe connection
+  relationships:
+  - relationship: connected to
+    source_data_element: process
+    target_data_element: pipe
 definition: Information about mechanisms that allow inter-process communication locally
   or over the network. A named pipe is usually found as a file and processes attach
   to it.
 name: Named pipe
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes

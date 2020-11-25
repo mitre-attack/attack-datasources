@@ -7,11 +7,26 @@
   contributors: 
     - ATT&CK
   data_components:
+    - name: service context
+      type: information
+      relationships:
+        - source_data_element: service
+          relationship: started
+          target_data_element: 
+        - source_data_element: service
+          relationship: stopped
+          target_data_element: 
     - name: service creation
       type: activity
       relationships:
         - source_data_element: user
           relationship: created
+          target_data_element: service
+    - name: service access
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: requested access
           target_data_element: service
   references:
     - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
@@ -87,6 +102,12 @@
   contributors: 
     - ATT&CK
   data_components:
+    - name: file context
+      type: information
+      relationships:
+        - source_data_element: driver
+          relationship: loaded
+          target_data_element: 
     - name: file creation
       type: activity
       relationships:
@@ -97,6 +118,9 @@
       type: activity
       relationships:
         - source_data_element: process
+          relationship: deleted
+          target_data_element: file
+        - source_data_element: user
           relationship: deleted
           target_data_element: file
     - name: file access
@@ -114,11 +138,38 @@
         - source_data_element: process
           relationship: requested access
           target_data_element: file
+    - name: file modification
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: file
+        - source_data_element: user
+          relationship: modified
+          target_data_element: file
+    - name: file share creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: file share
+    - name: file share deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: file share
     - name: file share access
       type: activity
       relationships:
         - source_data_element: user
           relationship: accessed
+          target_data_element: file share
+    - name: file share modification
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: modified
           target_data_element: file share
   references:
     - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
@@ -135,6 +186,11 @@
       relationships:
         - source_data_element: process
           relationship: created
+          target_data_element: pipe
+    - name: named pipe connection
+      relationships:
+        - source_data_element: process
+          relationship: connected to
           target_data_element: pipe
   references:
     - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
@@ -176,6 +232,21 @@
   contributors: 
     - ATT&CK
   data_components:
+    - name: active directory service creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: ad object
+    - name: active directory service deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: ad object
+        - source_data_element: user
+          relationship: undeleted
+          target_data_element: ad object
     - name: active directory service access
       type: activity
       relationships:
@@ -217,6 +288,9 @@
     - name: windows registry key deletion
       type: activity
       relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: windows registry key
         - source_data_element: process
           relationship: deleted
           target_data_element: windows registry key
@@ -232,6 +306,9 @@
         - source_data_element: process
           relationship: modified
           target_data_element: windows registry key value
+        - source_data_element: user
+          relationship: modified
+          target_data_element: windows registry key
         - source_data_element: user
           relationship: modified
           target_data_element: windows registry key value
@@ -252,8 +329,8 @@
           target_data_element: windows registry key
   references:
     - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
-- name: Authentication log
-  definition: Information about accounts' (Local or Domain) attempts to access network resources interactively or over the network. 
+- name: Logon session
+  definition: Information about logon sessions being created or terminated by accounts (Local or Domain), interactively or over the network, in order to interact with network resources, applications, or services. 
   collection_layers:
     - host
   platforms:
@@ -261,12 +338,51 @@
   contributors: 
     - ATT&CK
   data_components:
-    - name: authentication success
+    - name: logon session context
+      type: information
+      relationships:
+        - source_data_element: logon session
+          relationship: modified
+          target_data_element:
+    - name: logon session creation
       type: activity
       relationships:
         - source_data_element: user
-          relationship: authenticated
-          target_data_element: host
+          relationship: requested creation
+          target_data_element: logon session
+        - source_data_element: user
+          relationship: requested logon session creation from
+          target_data_element: ip
+        - source_data_element: user
+          relationship: requested logon session creation from
+          target_data_element: port
+        - source_data_element: user
+          relationship: created
+          target_data_element: logon session
+        - source_data_element: user
+          relationship: created logon session from
+          target_data_element: ip
+        - source_data_element: user
+          relationship: created logon session from
+          target_data_element: port
+        - source_data_element: user
+          relationship: failed creation
+          target_data_element: logon session
+        - source_data_element: user
+          relationship: failed logon session creation from
+          target_data_element: ip
+        - source_data_element: user
+          relationship: failed logon session creation from
+          target_data_element: port
+    - name: logon session termination
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: requested termination
+          target_data_element: logon session
+        - source_data_element: user
+          relationship: terminated
+          target_data_element: logon session
   references:
     - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
 - name: Process
@@ -278,6 +394,12 @@
   contributors: 
     - ATT&CK
   data_components:
+    - name: process context
+      type: information
+      relationships:
+        - source_data_element: process
+          relationship: terminated
+          target_data_element: 
     - name: process creation
       type: activity
       relationships:
@@ -290,6 +412,12 @@
         - source_data_element: process
           relationship: created
           target_data_element: thread
+    - name: process termination
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: terminated
+          target_data_element: process
     - name: process modification
       type: activity
       relationships:
@@ -344,6 +472,87 @@
         - source_data_element: user
           relationship: connected from
           target_data_element: host
+        - source_data_element: host
+          relationship: blocked connection on
+          target_data_element: process
+        - source_data_element: host
+          relationship: blocked connection to
+          target_data_element: process
+        - source_data_element: host
+          relationship: blocked connection to
+          target_data_element: ip
+        - source_data_element: host
+          relationship: blocked connection to
+          target_data_element: port
+        - source_data_element: host
+          relationship: blocked connection from
+          target_data_element: process
+        - source_data_element: host
+          relationship: blocked connection from
+          target_data_element: ip
+        - source_data_element: host
+          relationship: blocked connection from
+          target_data_element: port
+        - source_data_element: process
+          relationship: attempted connection to
+          target_data_element: ip
+        - source_data_element: process
+          relationship: attempted connection to
+          target_data_element: port
+        - source_data_element: process
+          relationship: attempted connection from
+          target_data_element: ip
+        - source_data_element: process
+          relationship: attempted connection from
+          target_data_element: port
+        - source_data_element: host
+          relationship: permitted listener on
+          target_data_element: process
+        - source_data_element: host
+          relationship: permitted listener on
+          target_data_element: ip
+        - source_data_element: host
+          relationship: permitted listener on
+          target_data_element: port
+        - source_data_element: process
+          relationship: listened on
+          target_data_element: port
+        - source_data_element: host
+          relationship: blocked listener on
+          target_data_element: process
+        - source_data_element: host
+          relationship: blocked listener on
+          target_data_element: ip
+        - source_data_element: host
+          relationship: blocked listener on
+          target_data_element: port
+        - source_data_element: process
+          relationship: attempted to listen on
+          target_data_element: port
+        - source_data_element: host
+          relationship: permitted local port bind on
+          target_data_element: process
+        - source_data_element: host
+          relationship: permitted local port bind on
+          target_data_element: ip
+        - source_data_element: host
+          relationship: permitted local port bind on
+          target_data_element: port
+        - source_data_element: process
+          relationship: bound to
+          target_data_element: port
+        - source_data_element: host
+          relationship: blocked local port bind on
+          target_data_element: process
+        - source_data_element: host
+          relationship: blocked local port bind on
+          target_data_element: ip
+        - source_data_element: host
+          relationship: blocked local port bind on
+          target_data_element: port
+        - source_data_element: process
+          relationship: attempted to bind on
+          target_data_element: port
   references:
     - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
 - name: User Account
@@ -361,5 +570,108 @@
         - source_data_element: user
           relationship: created
           target_data_element: user
+    - name: user account deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: user
+    - name: user account enable
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: enabled
+          target_data_element: user
+    - name: user account disable
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: disabled
+          target_data_element: user
+    - name: user account lock
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: locked
+          target_data_element: user
+    - name: user account unlock
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: unlocked
+          target_data_element: user
+    - name: user account modification
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: requested modification
+          target_data_element: user
+        - source_data_element: user
+          relationship: modified
+          target_data_element: user
+        - source_data_element: user
+          relationship: granted access
+          target_data_element: user
+        - source_data_element: user
+          relationship: removed access
+          target_data_element: user
   references:
     - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
+- name: Schedule Task
+  definition: Information about scheduled work that the Task Scheduler service performs.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - ATT&CK
+  data_components:
+    - name: schedule task creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: schedule task
+    - name: schedule task deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: schedule task
+    - name: schedule task enable
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: enabled
+          target_data_element: schedule task
+    - name: schedule task disable
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: disabled
+          target_data_element: schedule task
+    - name: schedule task modification
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: modified
+          target_data_element: schedule task
+  references:
+    - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
+- name: DNS
+  definition: Information about the Domain Name System (DNS) protocol that provides resources (Such as computers or services) names-to- IP address mapping name resolution services.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+  contributors: 
+    - ATT&CK
+  data_components:
+    - name: dns query execution
+      type: activity
+      relationships:
+        - source_data_element: process
+          relationship: executed
+          target_data_element: dns query
+  references:
+    - https://docs.microsoft.com/en-us/windows-server/networking/dns/dns-top

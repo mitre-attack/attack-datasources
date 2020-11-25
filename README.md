@@ -62,7 +62,7 @@ PowerShell logs: Powershell log
 API monitoring: API
 Application logs: Application log
 File monitoring: File
-Authentication logs: Authentication log
+Authentication logs: Logon session
 Named Pipes: Named pipe
 Process monitoring: Process
 Process use of network: Process
@@ -74,6 +74,7 @@ DNS records: DNS record
 Digital certificate logs: Digital certificate log
 WMI Objects: WMI object
 Services: Service
+DNS records: DNS
 ```
 
 ## Have we defined each data source within ATT&CK?

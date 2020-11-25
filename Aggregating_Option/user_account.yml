@@ -1,0 +1,63 @@
+collection_layers:
+- host
+contributors:
+- ATT&CK
+data_components:
+- name: user account creation
+  relationships:
+  - relationship: created
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account deletion
+  relationships:
+  - relationship: deleted
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account enable
+  relationships:
+  - relationship: enabled
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account disable
+  relationships:
+  - relationship: disabled
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account lock
+  relationships:
+  - relationship: locked
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account unlock
+  relationships:
+  - relationship: unlocked
+    source_data_element: user
+    target_data_element: user
+  type: activity
+- name: user account modification
+  relationships:
+  - relationship: requested modification
+    source_data_element: user
+    target_data_element: user
+  - relationship: modified
+    source_data_element: user
+    target_data_element: user
+  - relationship: granted access
+    source_data_element: user
+    target_data_element: user
+  - relationship: removed access
+    source_data_element: user
+    target_data_element: user
+  type: activity
+definition: Security principal or entity that represents a person or machine and can
+  be authenticated by an operating system or platform.
+name: User Account
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals

@@ -1,13 +1,34 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
+- name: service context
+  relationships:
+  - relationship: started
+    source_data_element: service
+    target_data_element: null
+  - relationship: stopped
+    source_data_element: service
+    target_data_element: null
+  type: information
 - name: service creation
   relationships:
-  - {relationship: created, source_data_element: user, target_data_element: service}
+  - relationship: created
+    source_data_element: user
+    target_data_element: service
+  type: activity
+- name: service access
+  relationships:
+  - relationship: requested access
+    source_data_element: user
+    target_data_element: service
   type: activity
 definition: Information about software programs that run in the background and typically
   start with the operating system.
 name: Service
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications',
-  'https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
+- https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/

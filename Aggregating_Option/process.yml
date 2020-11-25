@@ -1,38 +1,171 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
+- name: process context
+  relationships:
+  - relationship: terminated
+    source_data_element: process
+    target_data_element: null
+  type: information
 - name: process creation
   relationships:
-  - {relationship: created, source_data_element: user, target_data_element: process}
-  - {relationship: created, source_data_element: process, target_data_element: process}
-  - {relationship: created, source_data_element: process, target_data_element: thread}
+  - relationship: created
+    source_data_element: user
+    target_data_element: process
+  - relationship: created
+    source_data_element: process
+    target_data_element: process
+  - relationship: created
+    source_data_element: process
+    target_data_element: thread
+  type: activity
+- name: process termination
+  relationships:
+  - relationship: terminated
+    source_data_element: user
+    target_data_element: process
   type: activity
 - name: process modification
   relationships:
-  - {relationship: wrote to, source_data_element: process, target_data_element: process}
+  - relationship: wrote to
+    source_data_element: process
+    target_data_element: process
   type: activity
 - name: process access
   relationships:
-  - {relationship: accessed, source_data_element: process, target_data_element: process}
-  - {relationship: requested access, source_data_element: process, target_data_element: process}
+  - relationship: accessed
+    source_data_element: process
+    target_data_element: process
+  - relationship: requested access
+    source_data_element: process
+    target_data_element: process
   type: activity
 - name: process network connection
   relationships:
-  - {relationship: connected to, source_data_element: process, target_data_element: port}
-  - {relationship: connected to, source_data_element: process, target_data_element: ip}
-  - {relationship: connected to, source_data_element: process, target_data_element: host}
-  - {relationship: connected from, source_data_element: process, target_data_element: port}
-  - {relationship: connected from, source_data_element: process, target_data_element: ip}
-  - {relationship: connected from, source_data_element: process, target_data_element: host}
-  - {relationship: connected to, source_data_element: user, target_data_element: port}
-  - {relationship: connected to, source_data_element: user, target_data_element: ip}
-  - {relationship: connected to, source_data_element: user, target_data_element: host}
-  - {relationship: connected from, source_data_element: user, target_data_element: port}
-  - {relationship: connected from, source_data_element: user, target_data_element: ip}
-  - {relationship: connected from, source_data_element: user, target_data_element: host}
+  - relationship: connected to
+    source_data_element: process
+    target_data_element: port
+  - relationship: connected to
+    source_data_element: process
+    target_data_element: ip
+  - relationship: connected to
+    source_data_element: process
+    target_data_element: host
+  - relationship: connected from
+    source_data_element: process
+    target_data_element: port
+  - relationship: connected from
+    source_data_element: process
+    target_data_element: ip
+  - relationship: connected from
+    source_data_element: process
+    target_data_element: host
+  - relationship: connected to
+    source_data_element: user
+    target_data_element: port
+  - relationship: connected to
+    source_data_element: user
+    target_data_element: ip
+  - relationship: connected to
+    source_data_element: user
+    target_data_element: host
+  - relationship: connected from
+    source_data_element: user
+    target_data_element: port
+  - relationship: connected from
+    source_data_element: user
+    target_data_element: ip
+  - relationship: connected from
+    source_data_element: user
+    target_data_element: host
+  - relationship: blocked connection on
+    source_data_element: host
+    target_data_element: process
+  - relationship: blocked connection to
+    source_data_element: host
+    target_data_element: process
+  - relationship: blocked connection to
+    source_data_element: host
+    target_data_element: ip
+  - relationship: blocked connection to
+    source_data_element: host
+    target_data_element: port
+  - relationship: blocked connection from
+    source_data_element: host
+    target_data_element: process
+  - relationship: blocked connection from
+    source_data_element: host
+    target_data_element: ip
+  - relationship: blocked connection from
+    source_data_element: host
+    target_data_element: port
+  - relationship: attempted connection to
+    source_data_element: process
+    target_data_element: ip
+  - relationship: attempted connection to
+    source_data_element: process
+    target_data_element: port
+  - relationship: attempted connection from
+    source_data_element: process
+    target_data_element: ip
+  - relationship: attempted connection from
+    source_data_element: process
+    target_data_element: port
+  - relationship: permitted listener on
+    source_data_element: host
+    target_data_element: process
+  - relationship: permitted listener on
+    source_data_element: host
+    target_data_element: ip
+  - relationship: permitted listener on
+    source_data_element: host
+    target_data_element: port
+  - relationship: listened on
+    source_data_element: process
+    target_data_element: port
+  - relationship: blocked listener on
+    source_data_element: host
+    target_data_element: process
+  - relationship: blocked listener on
+    source_data_element: host
+    target_data_element: ip
+  - relationship: blocked listener on
+    source_data_element: host
+    target_data_element: port
+  - relationship: attempted to listen on
+    source_data_element: process
+    target_data_element: port
+  - relationship: permitted local port bind on
+    source_data_element: host
+    target_data_element: process
+  - relationship: permitted local port bind on
+    source_data_element: host
+    target_data_element: ip
+  - relationship: permitted local port bind on
+    source_data_element: host
+    target_data_element: port
+  - relationship: bound to
+    source_data_element: process
+    target_data_element: port
+  - relationship: blocked local port bind on
+    source_data_element: host
+    target_data_element: process
+  - relationship: blocked local port bind on
+    source_data_element: host
+    target_data_element: ip
+  - relationship: blocked local port bind on
+    source_data_element: host
+    target_data_element: port
+  - relationship: attempted to bind on
+    source_data_element: process
+    target_data_element: port
   type: activity
 definition: Information about instances of computer programs that are being executed
   by at least one thread.
 name: Process
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads

@@ -1,14 +1,22 @@
-collection_layers: [host]
-contributors: [ATT&CK]
+collection_layers:
+- host
+contributors:
+- ATT&CK
 data_components:
 - name: module load
   relationships:
-  - {relationship: loaded, source_data_element: process, target_data_element: dll}
-  - {relationship: loaded, source_data_element: process, target_data_element: executable}
+  - relationship: loaded
+    source_data_element: process
+    target_data_element: dll
+  - relationship: loaded
+    source_data_element: process
+    target_data_element: executable
   type: activity
 definition: Information about portable executable files, such as a dll or an executable,
   consisting of one or more classes and interfaces.
 name: Module
-platforms: [Windows]
-references: ['https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya',
-  'https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1']
+platforms:
+- Windows
+references:
+- https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+- https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
