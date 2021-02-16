@@ -1071,3 +1071,24 @@
         - source_data_element: process
           relationship: unloaded
           target_data_element: kernel-mode driver
+- name: log_file
+  definition: Information associated with system log files, such as Windows application logs.
+  collection_layers:
+    - cloud
+    - host
+  platforms:
+    - Windows
+  data_components:
+    - name: erasure
+      type: activity
+      description: Erasure/clearing of a log file.
+      relationships:
+        - source_data_element: process
+          relationship: erased  #TBD - how to specify platform-specific (windows) relationships?
+          target_data_element: application log 
+        - source_data_element: process
+          relationship: erased #TBD - how to specify platform-specific (windows) relationships?
+          target_data_element: system log
+        - source_data_element: process
+          relationship: erased #TBD - how to specify platform-specific (windows) relationships?
+          target_data_element: audit log
