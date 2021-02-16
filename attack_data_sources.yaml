@@ -934,3 +934,30 @@
         - source_data_element: process
           relationship: accessed
           target_data_element: network share
+- name: firmware
+  definition: Information associated with computer software that provides the low-level control for a device's specific hardware.
+  collection_layers:
+    - host
+  platforms:
+    - Windows
+    - Linux
+    - MacOS
+  data_components:
+    - name: modification
+      type: activity
+      description: The firmware of a system component was modified.
+        - source_data_element: user
+          relationship: modified
+          target_data_element: firmware
+        - source_data_element: process
+          relationship: modified
+          target_data_element: network share
+    - name: acpi tables
+      type: information
+      description: Firmware ACPI metadata and content. 
+    - name: bios
+      type: information
+      description: Information (e.g., key/value pairs) extracted from the BIOS on an endpoint.
+    - name: smbios
+      type: information
+      description: Information about the System Management BIOS (SMBIOS) on an endpoint.
