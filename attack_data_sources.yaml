@@ -12,12 +12,14 @@
   data_components:
     - name: service attributes
       type: information
+      description: Service-specific attributes, such as start type.
       relationships:
         - source_data_element: process
           relationship: modified
           target_data_element: service attributes
     - name: service context
       type: information
+      description: General information around services.
       relationships:
         - source_data_element: service
           relationship: started
@@ -27,18 +29,21 @@
           target_data_element: 
     - name: service creation
       type: activity
+      description: A new service/daemon is created.
       relationships:
         - source_data_element: user
           relationship: created
           target_data_element: service
     - name: service access
       type: activity
+      description: A service/daemon was opened or accessed.
       relationships:
         - source_data_element: user
           relationship: requested access
           target_data_element: service
     - name: service modification
       type: activity
+      description: A service/daemon was modified.
       relationships:
         - source_data_element: process
           relationship: modified
@@ -59,12 +64,16 @@
   data_components:
     - name: module sections #TBD - can't include platform specific variants (elf/mach-o) here
       type: information
+      description: Module file section information.
     - name: module headers
       type: information
+      description: Module file header information.
     - name: module signing
       type: information
+      description: Information about the signing of module files. 
     - name: module load
       type: activity
+      description: A module was loaded into a process.
       relationships:
         - source_data_element: process
           relationship: loaded
@@ -93,14 +102,17 @@
   data_components:
     - name: wmi provider
       type: information
+      description: The name of the provider executable/DLL used to carry out EventConsumer actions.
     - name: wmi object context 
       type: information
+      description: General information around WMI.
       relationships:
         - source_data_element: wmi subscription #TBD - delete this or move it to its own component?
           relationship: created
           target_data_element:
     - name: wmi object creation
       type: activity
+      description: The creation of new WMI objects on an endpoint.
       relationships:
         - source_data_element: user
           relationship: created
@@ -116,6 +128,7 @@
           target_data_element: wmi binding
     - name: wmi object deletion
       type: activity
+      description: The deletion of existing WMI objects on an endpoint.
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -145,12 +158,14 @@
   data_components:
     - name: file attributes
       type: information
+      description: Generic file system attributes of a file (e.g., creation time).
       relationships:
         - source_data_element: process 
           relationship: modified
           target_data_element: file attributes
     - name: ntfs file attributes #TBD - how to specify platform-specific components?
       type: information
+      description: Attributes specific to files stored on NTFS file systems.
       relationships:
         - source_data_element: process 
           relationship: created
@@ -160,18 +175,21 @@
           target_data_element: ntfs extended attribute
     - name: file context
       type: information
+      description: General information around files.
       relationships:
         - source_data_element: driver #TBD - delete this or move it to its own component?
           relationship: loaded
           target_data_element: 
     - name: file creation
       type: activity
+      description: A new file was created.
       relationships:
         - source_data_element: process
           relationship: created
           target_data_element: file
     - name: file deletion
       type: activity
+      description: An existing file was deleted.
       relationships:
         - source_data_element: process
           relationship: deleted
@@ -181,6 +199,7 @@
           target_data_element: file
     - name: file access
       type: activity
+      description: An existing file was opened or accessed.
       relationships:
         - source_data_element: user
           relationship: accessed
@@ -199,6 +218,7 @@
           target_data_element: file
     - name: file modification
       type: activity
+      description: An existing file was modified.
       relationships:
         - source_data_element: process
           relationship: modified
@@ -224,16 +244,22 @@
     - CTID
   data_components:
     - name: named pipe creation
+      type: activity
+      description: A named pipe is created on a system.
       relationships:
         - source_data_element: process
           relationship: created
           target_data_element: pipe
     - name: named pipe connection
+      type: activity
+      description: Named pipe connection between a client and a server.
       relationships:
         - source_data_element: process
           relationship: connected to
           target_data_element: pipe
     - name: named pipe access
+      type: activity
+      description: A named pipe is accessed.
       relationships:
         - source_data_element: process
           relationship: accessed
@@ -256,6 +282,7 @@
   data_components:
     - name: powershell context
       type: information
+      description: General information around powershell.
       relationships:
         - source_data_element: application host
           relationship: started
@@ -264,6 +291,7 @@
           relationship: started
           target_data_element:
     - name: powershell execution
+      description: Execution of powershell commands, either locally or remotely.
       type: activity
       relationships:
         - source_data_element: user
@@ -290,11 +318,15 @@
   data_components:
     - name: active directory kerberos authentication request #TBD - how to specify collection-layer (network) centric components?
       type: activity
+      description: A Kerberos authentication ticket was requested.
     - name: active directory kerberos authentication service request #TBD - how to specify collection-layer (network)  centric components?
       type: activity
+      description: A Kerberos service ticket was requested.
     - name: active directory ntlm authentication request #TBD - how to specify collection-layer (network) centric components?
       type: activity
+      description: An NTLM authentication request was made.
     - name: active directory service creation
+      description: An active directory service was created.
       type: activity
       relationships:
         - source_data_element: user
@@ -302,6 +334,7 @@
           target_data_element: ad object
     - name: active directory service deletion
       type: activity
+      description: An active directory service was deleted
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -311,6 +344,7 @@
           target_data_element: ad object
     - name: active directory service access
       type: activity
+      description: An active directory service was accessed.
       relationships:
         - source_data_element: user
           relationship: accessed
@@ -323,6 +357,7 @@
           target_data_element: ad object
     - name: active directory service modification
       type: activity
+      description: An active directory service was modified.
       relationships:
         - source_data_element: user
           relationship: modified
@@ -341,6 +376,7 @@
   data_components:
     - name: windows registry key creation
       type: activity
+      description: A registry key/value was created locally on an endpoint or remotely using the remote registry service (implemented over DCE/RPC).
       relationships:
         - source_data_element: process
           relationship: created
@@ -356,6 +392,7 @@
           target_data_element: windows registry key value 
     - name: windows registry key deletion
       type: activity
+      description: A registry key/value was deleted from an endpoint or remotely using the remote registry service (implemented over DCE/RPC). 
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -393,8 +430,9 @@
         - source_data_element: user
           relationship: modified
           target_data_element: windows registry key value
-    - name: Windows registry key access
+    - name: windows registry key access
       type: activity
+      description: A registry key/value was accessed. 
       relationships:
         - source_data_element: process
           relationship: accessed
@@ -426,12 +464,14 @@
   data_components:
     - name: logon session context
       type: information
+      description: General information about logon sessions.
       relationships:
         - source_data_element: logon session
           relationship: modified
           target_data_element:
     - name: logon session creation
       type: activity
+      description: A logon session for a user was created.
       relationships:
         - source_data_element: user
           relationship: requested creation
@@ -471,6 +511,7 @@
           target_data_element: port
     - name: logon session termination
       type: activity
+      description: A logon session for a user was terminated.
       relationships:
         - source_data_element: user
           relationship: requested termination
@@ -494,12 +535,16 @@
   data_components:
     - name: process open files
       type: information
+      description: The list of files opened by a process.
     - name: process open pipes
       type: information
+      description: The list of pipes opened by a process.
     - name: process environment variables
       type: information
+      description: The set of environment variables defined for a process.
     - name: process execution
       type: information
+      description: Information about the execution of a process, such as the API calls that it makes.
       relationships:
         - source_data_element: process
           relationship: executes
@@ -509,11 +554,13 @@
           target_data_element: system call
     - name: process context #TBD - delete this or move it to its own component?
       type: information
+      description: General information about a process.
       relationships:
         - source_data_element: process
           relationship: terminated 
           target_data_element: 
     - name: process creation
+      description: The creation of a new process.
       type: activity
       relationships:
         - source_data_element: user
@@ -529,18 +576,21 @@
           relationship: created
           target_data_element: remote thread
     - name: process termination
+      description: The termination of an existing process.
       type: activity
       relationships:
         - source_data_element: user
           relationship: terminated
           target_data_element: process
     - name: process modification
+      description: The modification of an existing process.
       type: activity
       relationships:
         - source_data_element: process
           relationship: wrote to
           target_data_element: process
     - name: process access
+      description: A process opens or accesses another process.
       type: activity
       relationships:
         - source_data_element: process
@@ -554,6 +604,7 @@
           target_data_element: process
     - name: process network connection
       type: activity
+      description: Information about network connections initiated by processes.
       relationships:
         - source_data_element: process
           relationship: connected to
@@ -690,6 +741,7 @@
   data_components:
     - name: user account creation
       type: activity
+      description: A new user account was created.
       relationships:
         - source_data_element: user
           relationship: created
@@ -705,6 +757,7 @@
           target_data_element: cloud user
     - name: user account deletion
       type: activity
+      description: An existing user account was deleted.
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -719,6 +772,7 @@
           relationship: deleted
           target_data_element: cloud user
     - name: user account enable
+      description: An existing user account was enabled.
       type: activity
       relationships:
         - source_data_element: user
@@ -726,24 +780,28 @@
           target_data_element: user
     - name: user account disable
       type: activity
+      description: An existing user account was disabled.
       relationships:
         - source_data_element: user
           relationship: disabled
           target_data_element: user
     - name: user account lock
       type: activity
+      description: A user account was locked.
       relationships:
         - source_data_element: user
           relationship: locked
           target_data_element: user
     - name: user account unlock
       type: activity
+      description: A user account was unlocked.
       relationships:
         - source_data_element: user
           relationship: unlocked
           target_data_element: user
     - name: user account modification
       type: activity
+      description: An existing user account was modified.
       relationships:
         - source_data_element: user
           relationship: requested modification
@@ -759,6 +817,7 @@
           target_data_element: user
     - name: user account logon
       type: activity
+      description: A user account logged onto a system. 
       relationships:
         - source_data_element: user
           relationship: logged into
@@ -777,6 +836,7 @@
           target_data_element: cloud environment
     - name: user account logoff
       type: activity
+      description: A user account logged off a system. 
       relationships:
         - source_data_element: user
           relationship: logged off from
@@ -805,6 +865,7 @@
   data_components:
     - name: scheduled task creation
       type: activity
+      description: A new scheduled task was created.
       relationships:
         - source_data_element: user
           relationship: created
@@ -814,6 +875,7 @@
           target_data_element: scheduled task
     - name: scheduled task deletion
       type: activity
+      description: An existing scheduled task was deleted.
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -823,6 +885,7 @@
           target_data_element: scheduled task
     - name: scheduled task enable
       type: activity
+      description: An existing task was enabled.
       relationships:
         - source_data_element: user
           relationship: enabled
@@ -832,6 +895,7 @@
           target_data_element: scheduled task
     - name: scheduled task disable
       type: activity
+      description: An existing task was disabled.
       relationships:
         - source_data_element: user
           relationship: disabled
@@ -841,6 +905,7 @@
           target_data_element: scheduled task
     - name: schedule task modification
       type: activity
+      description: An existing scheduled task was modified (e.g., the executable launched by the task was changed).
       relationships:
         - source_data_element: user
           relationship: modified
@@ -880,8 +945,10 @@
   data_components:
     - name: exported network shares #TBD - how to specify collection-layer (linux, macos) centric components?
       type: information
+      description: A list of the NFS shares exported on the system.
     - name: network share creation
       type: activity
+      description: A new network share was created.
       relationships:
         - source_data_element: user
           relationship: created
@@ -897,6 +964,7 @@
           target_data_element: nfs network share
     - name: network share deletion
       type: activity
+      description: An existing network share was deleted.
       relationships:
         - source_data_element: user
           relationship: deleted
@@ -912,6 +980,7 @@
           target_data_element: nfs network share
     - name: network share modification
       type: activity
+      description: An existing network share was modified.
       relationships:
         - source_data_element: user
           relationship: modified
@@ -952,7 +1021,7 @@
         - source_data_element: process
           relationship: modified
           target_data_element: network share
-    - name: acpi tables
+    - name: acpi tables #TBD - how to specify platform-specific (linux, macos) components?
       type: information
       description: Firmware ACPI metadata and content. 
     - name: bios
