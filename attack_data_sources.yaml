@@ -1071,7 +1071,7 @@
         - source_data_element: process
           relationship: unloaded
           target_data_element: kernel-mode driver
-- name: log_file
+- name: log file
   definition: Information associated with system log files, such as Windows application logs.
   collection_layers:
     - cloud
@@ -1132,3 +1132,21 @@
         - source_data_element: process
           relationship: modified
           target_data_element: audit policy
+- name: cron
+  definition: Information associated with the cron job scheduler.
+  collection_layers:
+    - host
+  platforms:
+    - Linux
+    - MacOS
+  data_components:
+    - name: crontab
+      type: information
+      description: The textual contents of a crontab as retreived from an endpoint.
+    - name: modification
+      type: activity
+      description: The modification of a crontab on an endpoint.
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: crontab
