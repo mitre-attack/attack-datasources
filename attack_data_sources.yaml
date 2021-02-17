@@ -1242,3 +1242,25 @@
     - name: firewall rule list
       type: information
       description: The list of rules currently running on a firewall.
+- name: Snapshot
+  definition: Information associated with the state of a system at a particular point in time.
+  collection_layers:
+    - cloud
+  platforms:
+    - AWS
+  data_components:
+    - name: vm snapshot creation
+      type: activity
+      description: A snapshot of a Virtual Machine (VM) was created.
+    - name: volume snapshot creation
+      type: activity
+      description: A snapshot of a storage volume was created.
+    - name: vm snapshot deletion
+      type: activity
+      description: A snapshot of a Virtual Machine (VM) was deleted.
+    - name: volume snapshot deletion
+      type: activity
+      description: A snapshot of a storage volume was deleted.
+    - name: snapshot permissions modification
+      type: activity
+      description: Permission settings for a snapshot were modified. 
