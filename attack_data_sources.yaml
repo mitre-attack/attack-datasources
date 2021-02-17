@@ -1264,3 +1264,24 @@
     - name: snapshot permissions modification
       type: activity
       description: Permission settings for a snapshot were modified. 
+- name: browser
+  definition: Information associated with web browsers and browser extensions.
+  collection_layers:
+    - host
+  platforms:
+    - Linux
+    - MacOS
+    - Windows
+  data_components:
+    - name: chrome browser extensions
+      type: information
+      description: Installed Chrome browser extensions.
+    - name: firefox browser extensions
+      type: information
+      description: Installed Firefox browser extensions and addons.
+    - name: ie browser extensions #TBD - how to specify platform-specific (windows) components?
+      type: information
+      description: Installed Internet Explorer browser extensions and addons.
+    - name: safari browser extensions
+      type: information
+      description: Installed Safari browser extensions and addons.
