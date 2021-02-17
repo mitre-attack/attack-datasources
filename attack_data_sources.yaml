@@ -1322,3 +1322,38 @@
         - source_data_element: process
           relationship: modified
           target_data_element: anti-malware configuration
+- name: Volume
+  definition: Information associated with accessible storage areas with a single file system, typically (though not necessarily) resident on a single partition of a hard disk.
+  collection_layers:
+    - cloud
+    - host
+  platforms:
+    - AWS
+    - Linux
+    - MacOS
+    - Windows
+  data_components:
+    - name: volume creation
+      type: activity
+      description: A new storage volume was created.
+      relationships:
+        - source_data_element: process
+          relationship: created
+          target_data_element: volume
+    - name: volume deletion
+      type: activity
+      description: An existing storage volume was deleted.
+      relationships:
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: volume
+    - name: volume modification
+      type: activity
+      description: An existing storage volume was modified.
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: volume
+    - name: volume detachment
+      type: activity #TBD - how to specify platform-specific (aws) components?
+      description: A volume was detached from a system.
