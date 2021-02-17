@@ -1285,3 +1285,40 @@
     - name: safari browser extensions
       type: information
       description: Installed Safari browser extensions and addons.
+- name: Anti-malware
+  definition: Information associated with anti-malware security software.
+  collection_layers:
+    - host
+  platforms:
+    - Linux
+    - MacOS
+    - Windows
+  data_components:
+    - name: anti-malware enable
+      type: activity
+      description: Anti-malware software was enabled.
+      relationships:
+        - source_data_element: process
+          relationship: enabled
+          target_data_element: anti-malware
+    - name: anti-malware disable
+      type: activity
+      description: Anti-malware software was disabled.
+      relationships:
+        - source_data_element: process
+          relationship: disabled
+          target_data_element: anti-malware
+    - name: anti-malware engine modification
+      type: activity
+      description: Anti-malware security software engine configuration modification.
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: anti-malware engine configuration
+    - name: anti-malware configuration modification
+      type: activity
+      description: Anti-malware security software configuration modification (e.g., disabling real-time protection).
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: anti-malware configuration
