@@ -853,7 +853,7 @@
   references:
     - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
 - name: Scheduled Task
-  definition: Information about scheduled work that the Task Scheduler service performs.
+  definition: Information about scheduled work that the Windows Task Scheduler service performs.
   collection_layers:
     - host
     - network
@@ -1003,7 +1003,7 @@
         - source_data_element: process
           relationship: accessed
           target_data_element: network share
-- name: firmware
+- name: Firmware
   definition: Information associated with computer software that provides the low-level control for a device's specific hardware.
   collection_layers:
     - host
@@ -1030,7 +1030,7 @@
     - name: smbios
       type: information
       description: Information about the System Management BIOS (SMBIOS) on an endpoint.
-- name: driver
+- name: Driver
   definition: Information associated with device drivers, or computer programs that operate or control a particular type of device that is attached to a computer.
   collection_layers:
     - host
@@ -1071,7 +1071,7 @@
         - source_data_element: process
           relationship: unloaded
           target_data_element: kernel-mode driver
-- name: log file
+- name: Log file
   definition: Information associated with system log files, such as Windows application logs.
   collection_layers:
     - cloud
@@ -1092,7 +1092,7 @@
         - source_data_element: process
           relationship: erased #TBD - how to specify platform-specific (windows) relationships?
           target_data_element: audit log
-- name: config
+- name: Config
   definition: Information associated with system configuration items.
   collection_layers:
     - host
@@ -1132,7 +1132,7 @@
         - source_data_element: process
           relationship: modified
           target_data_element: audit policy
-- name: cron
+- name: Cron
   definition: Information associated with the cron job scheduler.
   collection_layers:
     - host
@@ -1150,7 +1150,7 @@
         - source_data_element: process
           relationship: modified
           target_data_element: crontab
-- name: bits
+- name: Bits
   definition: Information associated with the Windows Background Intelligent Transfer Service (BITS).
   collection_layers:
     - host
@@ -1165,3 +1165,35 @@
         - source_data_element: process
           relationship: created
           target_data_element: bits job
+- name: At Task
+  definition: Information about scheduled tasks created using the 'at' utility. 
+  collection_layers:
+    - host
+    - network
+  platforms:
+    - Windows
+    - Linux
+  contributors: 
+    - ATT&CK
+    - CTID
+  data_components:
+    - name: at task creation
+      type: activity
+      description: A new at task was created.
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: at task
+        - source_data_element: process
+          relationship: created
+          target_data_element: at task
+    - name: at task deletion
+      type: activity
+      description: An existing at task was deleted.
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: at task
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: at task
