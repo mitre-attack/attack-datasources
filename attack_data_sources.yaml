@@ -1197,3 +1197,48 @@
         - source_data_element: process
           relationship: deleted
           target_data_element: at task
+- name: Firewall
+  definition: Information associated with the network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
+  collection_layers:
+    - cloud
+    - host
+  platforms:
+    - AWS
+    - Linux
+    - MacOS
+    - Windows
+  data_components:
+    - name: setting modification
+      type: activity
+      description: A setting was changed in a firewall running locally on an endpoint or remotely in a cloud environment.
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: firewall setting
+    - name: group policy modification #TBD - how to specify platform-specific (windows) components?
+      type: activity
+      description: A modification to the Windows Firewall group policy was made.
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: firewall group policy
+    - name: rule creation
+      type: activity
+      description: A new firewall rule was created on an endpoint or in a cloud environment.
+      relationships:
+        - source_data_element: process
+          relationship: created
+          target_data_element: firewall rule
+    - name: rule deletion
+      type: activity
+      description: An existing firewall rule was deleted from an endpoint or a cloud environment.
+      relationships:
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: firewall rule
+    - name: blocked connection
+      type: information
+      description: The firewall blocked an incoming or outgoing connection on an endpoint.
+    - name: rule list
+      type: information
+      description: The list of rules currently running on a firewall.
