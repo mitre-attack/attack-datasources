@@ -1012,7 +1012,7 @@
     - Linux
     - MacOS
   data_components:
-    - name: modification
+    - name: firmware modification
       type: activity
       description: The firmware of a system component was modified.
         - source_data_element: user
@@ -1039,19 +1039,19 @@
     - MacOS
     - Windows
   data_components:
-    - name: iokit registry #TBD - how to specify platform-specific (macos) components?
+    - name: driver iokit registry #TBD - how to specify platform-specific (macos) components?
       type: information
       description: The I/O Registry is a dynamic database that describes a collection of “live” objects (nubs or drivers) and tracks the provider-client relationships between them.
-    - name: issue #TBD - how to specify platform-specific (windows) components?
+    - name: driver issue #TBD - how to specify platform-specific (windows) components?
       type: information
       description: The system reported an issue with a device driver.
-    - name: integrity page hash invalid #TBD - how to specify platform-specific (windows) components?
+    - name: driver integrity page hash invalid #TBD - how to specify platform-specific (windows) components?
       type: information
       description: Information about device driver integrity checks.
-    - name: integrity check failure #TBD - how to specify platform-specific (windows) components?
+    - name: driver integrity check failure #TBD - how to specify platform-specific (windows) components?
       type: information
       description: A code integrity check failed for a signed device driver.
-    - name: load
+    - name: driver load
       type: activity
       description: A driver was loaded.
       relationships:
@@ -1061,7 +1061,7 @@
         - source_data_element: process
           relationship: loaded
           target_data_element: kernel-mode driver
-    - name: unload
+    - name: driver unload
       type: activity
       description: A driver was unloaded.
       relationships:
@@ -1079,7 +1079,7 @@
   platforms:
     - Windows
   data_components:
-    - name: erasure
+    - name: log file erasure
       type: activity
       description: Erasure/clearing of a log file.
       relationships:
@@ -1143,7 +1143,7 @@
     - name: crontab
       type: information
       description: The textual contents of a crontab as retreived from an endpoint.
-    - name: modification
+    - name: crontab modification
       type: activity
       description: The modification of a crontab on an endpoint.
       relationships:
@@ -1158,7 +1158,7 @@
   platforms:
     - Windows
   data_components:
-    - name: creation
+    - name: bits job creation
       type: activity
       description: A new Windows Background Intelligent Transfer Service (BITS) job was created on an endpoint or remotely using the WinRM protocol.
       relationships:
@@ -1208,37 +1208,37 @@
     - MacOS
     - Windows
   data_components:
-    - name: setting modification
+    - name: firewall setting modification
       type: activity
       description: A setting was changed in a firewall running locally on an endpoint or remotely in a cloud environment.
       relationships:
         - source_data_element: process
           relationship: modified
           target_data_element: firewall setting
-    - name: group policy modification #TBD - how to specify platform-specific (windows) components?
+    - name: firewall group policy modification #TBD - how to specify platform-specific (windows) components?
       type: activity
       description: A modification to the Windows Firewall group policy was made.
       relationships:
         - source_data_element: process
           relationship: modified
           target_data_element: firewall group policy
-    - name: rule creation
+    - name: firewall rule creation
       type: activity
       description: A new firewall rule was created on an endpoint or in a cloud environment.
       relationships:
         - source_data_element: process
           relationship: created
           target_data_element: firewall rule
-    - name: rule deletion
+    - name: firewall rule deletion
       type: activity
       description: An existing firewall rule was deleted from an endpoint or a cloud environment.
       relationships:
         - source_data_element: process
           relationship: deleted
           target_data_element: firewall rule
-    - name: blocked connection
+    - name: firewall blocked connection
       type: information
       description: The firewall blocked an incoming or outgoing connection on an endpoint.
-    - name: rule list
+    - name: firewall rule list
       type: information
       description: The list of rules currently running on a firewall.
