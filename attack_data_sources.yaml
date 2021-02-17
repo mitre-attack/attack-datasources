@@ -1357,3 +1357,25 @@
     - name: volume detachment
       type: activity #TBD - how to specify platform-specific (aws) components?
       description: A volume was detached from a system.
+- name: Hardware
+  definition: Information associated with physical system hardware, such as external devices.
+  collection_layers:
+    - host
+  platforms:
+    - Linux
+    - MacOS
+    - Windows
+  data_components:
+    - name: usb device list
+      type: information
+      description: The list of USB devices currently plugged into an endpoint.
+    - name: usb device installation
+      type: activity
+      description:  A new external USB device was installed on the endpoint.
+    - name: hardware configuration modification
+      type: activity
+      description: The configuration of a hardware device was modified (e.g., a NIC was placed into promiscuous mode).
+      relationships:
+        - source_data_element: process
+          relationship: modified
+          target_data_element: hardware configuration
