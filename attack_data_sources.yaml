@@ -1390,18 +1390,45 @@
     - Windows
     - AWS
   data_components:
-    - name: authorities
+    - name: certificate authorities
       type: information
-      description: Information regarding certificate authorities on a system
+      description: Information regarding certificate authorities on a system.
     - name: certificate addition
       type: activity
       description: A new certificate was added (e.g., to a certificate store).
-    - name: seerver certificate addition
+      relationships:
+        - source_data_element: process
+          relationship: added
+          target_data_element: certificate
+    - name: server certificate addition
       type: activity #TBD - how to specify platform-specific (aws) components?
       description: A new server certificate was added/uploaded
     - name: certificate deletion
       type: activity
       description: An existing certificate was deleted.
+      relationships:
+        - source_data_element: process
+          relationship: deleted
+          target_data_element: certificate
     - name: server certificate deletion
       type: activity #TBD - how to specify platform-specific (aws) components?
       description: An existing server certificate was deleted.
+- name: Virtual appliance
+  definition: Information associated with cloud virtual appliances.
+  collection_layers:
+    - cloud
+  platforms: 
+    - AWS
+  data_components:
+    - name: virtual appliance creation
+      type: activity
+      description: The creation of a new virtual appliance in a cloud environment.
+    - name: ami virtual appliance creation #TBD - how to specify platform-specific (aws) components?
+      type: activity 
+      description: A new Amazon EBS-backed Amazon Machine Image (AMI) was created.
+    - name: virtual appliance modification
+      type: activity
+      description: The modification of an existing virtual appliance in a cloud environment.
+    - name: ami virtual appliance modification #TBD - how to specify platform-specific (aws) components?
+      type: activity
+      description: The modification of an existing virtual appliance in a cloud environment.
