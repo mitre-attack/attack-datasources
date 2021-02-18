@@ -942,6 +942,9 @@
     - Windows
     - Linux
     - MacOS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: exported network shares #TBD - how to specify collection-layer (linux, macos) centric components?
       type: information
@@ -1011,6 +1014,9 @@
     - Windows
     - Linux
     - MacOS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: firmware modification
       type: activity
@@ -1038,6 +1044,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: driver iokit registry #TBD - how to specify platform-specific (macos) components?
       type: information
@@ -1078,6 +1087,9 @@
     - host
   platforms:
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: log file erasure
       type: activity
@@ -1100,6 +1112,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: arp cache
       type: information
@@ -1139,6 +1154,9 @@
   platforms:
     - Linux
     - MacOS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: crontab
       type: information
@@ -1157,6 +1175,9 @@
     - network
   platforms:
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: bits job creation
       type: activity
@@ -1207,6 +1228,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: firewall setting modification
       type: activity
@@ -1248,6 +1272,9 @@
     - cloud
   platforms:
     - AWS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: vm snapshot creation
       type: activity
@@ -1272,6 +1299,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: chrome browser extensions
       type: information
@@ -1293,6 +1323,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: anti-malware enable
       type: activity
@@ -1332,6 +1365,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: volume creation
       type: activity
@@ -1365,6 +1401,9 @@
     - Linux
     - MacOS
     - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: usb device list
       type: information
@@ -1389,6 +1428,9 @@
     - MacOS
     - Windows
     - AWS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: certificate authorities
       type: information
@@ -1419,6 +1461,9 @@
     - cloud
   platforms: 
     - AWS
+  contributors: 
+    - ATT&CK
+    - CTID
   data_components:
     - name: virtual appliance creation
       type: activity
@@ -1432,3 +1477,31 @@
     - name: ami virtual appliance modification #TBD - how to specify platform-specific (aws) components?
       type: activity
       description: The modification of an existing virtual appliance in a cloud environment.
+- name: RDP session
+  definition: Information associated with Remote Desktop Protocol (RDP) sessions.
+  collection_layers:
+    - host
+    - network
+  platforms:
+    - Windows
+  contributors: 
+    - ATT&CK
+    - CTID
+  data_components:
+    - name: rdp session creation failure
+      type: information
+      description: An attempted RDP logon and session instantiation which failed (e.g., due to invalid credentials).
+    - name: rdp session creation
+      type: activity
+      description: Creation/establishiment of an RDP session.
+      relationships:
+        - source_data_element: process
+          relationship: created
+          target_data_element: rdp session
+    - name: rdp session termination
+      type: activity
+      description: Termination of an existing RDP session.
+      relationships:
+        - source_data_element: process
+          relationship: terminated
+          target_data_element: rdp session
