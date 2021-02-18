@@ -1544,3 +1544,29 @@
     - name: processor info
       type: information
       description: Information about the processor (CPU) running on the current system.
+- name: File system
+  definition: Information associated with how files are stored and organized.
+  collection_layers:
+    - cloud
+    - host
+  platforms:
+    - Windows
+    - Linux
+    - MacOS
+    - AWS
+  contributors: 
+    - ATT&CK
+    - CTID
+  data_components:
+    - name: file system creation
+      type: activity
+      description: The creation of a new, empty file system.
+    - name: file system deletion
+      type: activity
+      description: The deletion of an existing file system.
+    - name: mount point creation
+      type: activity
+      description: The creation of a new mount point/target for a file system on an endpoint or in a cloud environment.
+    - name: mount point deletion
+      type: activity
+      description: The deletion of an existing mount point/target for a file system on an endpoint or in a cloud environment.
