@@ -1379,3 +1379,29 @@
         - source_data_element: process
           relationship: modified
           target_data_element: hardware configuration
+- name: Certificate
+  description: Information associated with PKI certificates and certificate authorities.
+  collection_layers:
+    - cloud
+    - host
+  platforms:
+    - Linux
+    - MacOS
+    - Windows
+    - AWS
+  data_components:
+    - name: authorities
+      type: information
+      description: Information regarding certificate authorities on a system
+    - name: certificate addition
+      type: activity
+      description: A new certificate was added (e.g., to a certificate store).
+    - name: seerver certificate addition
+      type: activity #TBD - how to specify platform-specific (aws) components?
+      description: A new server certificate was added/uploaded
+    - name: certificate deletion
+      type: activity
+      description: An existing certificate was deleted.
+    - name: server certificate deletion
+      type: activity #TBD - how to specify platform-specific (aws) components?
+      description: An existing server certificate was deleted.
