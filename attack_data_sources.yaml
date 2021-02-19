@@ -61,13 +61,26 @@
     - MacOS
   contributors: 
     - ATT&CK
+    - CTID
   data_components:
-    - name: module sections #TBD - can't include platform specific variants (elf/mach-o) here
+    - name: dll module sections #TBD - how to specify platform-specific (windows) components?
       type: information
-      description: Module file section information.
-    - name: module headers
+      description: DLL module file section information.
+    - name: dll module headers #TBD - how to specify platform-specific (windows) components?
       type: information
-      description: Module file header information.
+      description: DLL module file header information.
+    - name: elf module sections #TBD - how to specify platform-specific (linux) components?
+      type: information
+      description: ELF module file section information.
+    - name: elf module headers #TBD - how to specify platform-specific (linux) components?
+      type: information
+      description: ELF module file header information.
+    - name: mach-o module sections #TBD - how to specify platform-specific (macos) components?
+      type: information
+      description: Mach-o module file section information.
+    - name: mach-o module headers #TBD - how to specify platform-specific (macos) components?
+      type: information
+      description: Mach-o module file header information.
     - name: module signing
       type: information
       description: Information about the signing of module files. 
