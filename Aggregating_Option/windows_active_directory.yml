@@ -1,45 +1,57 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: active directory service creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: ad object
-  type: activity
-- name: active directory service deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: ad object
-  - relationship: undeleted
-    source_data_element: user
-    target_data_element: ad object
-  type: activity
-- name: active directory service access
-  relationships:
-  - relationship: accessed
-    source_data_element: user
-    target_data_element: ad object
-  - relationship: requested access
-    source_data_element: user
-    target_data_element: ad object
-  - relationship: requested access
-    source_data_element: process
-    target_data_element: ad object
-  type: activity
-- name: active directory service modification
-  relationships:
-  - relationship: modified
-    source_data_element: user
-    target_data_element: ad object
-  type: activity
-definition: Information about objects on a domain network such as a user, a group,
-  or a workstation.
-name: Windows active directory
+  - host
+  - network
 platforms:
-- Windows
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: active directory kerberos authentication request #TBD - how to specify collection-layer (network) centric components?
+    type: activity
+    description: A Kerberos authentication ticket was requested.
+  - name: active directory kerberos authentication service request #TBD - how to specify collection-layer (network)  centric components?
+    type: activity
+    description: A Kerberos service ticket was requested.
+  - name: active directory ntlm authentication request #TBD - how to specify collection-layer (network) centric components?
+    type: activity
+    description: An NTLM authentication request was made.
+  - name: active directory service creation
+    description: An active directory service was created.
+    type: activity
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: ad object
+  - name: active directory service deletion
+    type: activity
+    description: An active directory service was deleted
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: ad object
+      - source_data_element: user
+        relationship: undeleted
+        target_data_element: ad object
+  - name: active directory service access
+    type: activity
+    description: An active directory service was accessed.
+    relationships:
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: ad object
+      - source_data_element: user
+        relationship: requested access
+        target_data_element: ad object
+      - source_data_element: process
+        relationship: requested access
+        target_data_element: ad object
+  - name: active directory service modification
+    type: activity
+    description: An active directory service was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: ad object
 references:
-- https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
+  - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
