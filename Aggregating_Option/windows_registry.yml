@@ -1,3 +1,5 @@
+name: Windows registry
+definition: Information about configuration data used by applications and system components.
 collection_layers:
   - host
   - network
