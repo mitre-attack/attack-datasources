@@ -1,0 +1,40 @@
+name: Partition
+definition: Information associated with disk storage regions.
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: partition creation
+    type: activity
+    description: The creation of a new partition.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: partition
+  - name: partition deletion
+    type: activity
+    description: The deletion of an existing partition.
+    relationships:
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: partition
+  - name: partition mbr modification
+    type: activity
+    description: The modification of the Master Boot Record (MBR) on a partition.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: partition mbr
+  - name: partition vbr modification
+    type: activity
+    description: The modification of the Volume Boot Record (VBR) on a partition.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: partition vbr
