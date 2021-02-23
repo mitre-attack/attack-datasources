@@ -1,81 +1,85 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: file context
-  relationships:
-  - relationship: loaded
-    source_data_element: driver
-    target_data_element: null
-  type: information
-- name: file creation
-  relationships:
-  - relationship: created
-    source_data_element: process
-    target_data_element: file
-  type: activity
-- name: file deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: process
-    target_data_element: file
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: file
-  type: activity
-- name: file access
-  relationships:
-  - relationship: accessed
-    source_data_element: user
-    target_data_element: file
-  - relationship: accessed
-    source_data_element: process
-    target_data_element: file
-  - relationship: requested access
-    source_data_element: user
-    target_data_element: file
-  - relationship: requested access
-    source_data_element: process
-    target_data_element: file
-  type: activity
-- name: file modification
-  relationships:
-  - relationship: modified
-    source_data_element: process
-    target_data_element: file
-  - relationship: modified
-    source_data_element: user
-    target_data_element: file
-  type: activity
-- name: file share creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: file share
-  type: activity
-- name: file share deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: file share
-  type: activity
-- name: file share access
-  relationships:
-  - relationship: accessed
-    source_data_element: user
-    target_data_element: file share
-  type: activity
-- name: file share modification
-  relationships:
-  - relationship: modified
-    source_data_element: user
-    target_data_element: file share
-  type: activity
-definition: Information about file objects that represent computer resources that
-  can be managed by the I/O system.
-name: File
+  - host
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: file attributes
+    type: information
+    description: Generic file system attributes of a file (e.g., creation time).
+    relationships:
+      - source_data_element: process 
+        relationship: modified
+        target_data_element: file attributes
+  - name: ntfs file attributes #TBD - how to specify platform-specific components?
+    type: information
+    description: Attributes specific to files stored on NTFS file systems.
+    relationships:
+      - source_data_element: process 
+        relationship: created
+        target_data_element: ntfs alternate data stream
+      - source_data_element: process 
+        relationship: set
+        target_data_element: ntfs extended attribute
+  - name: file context
+    type: information
+    description: General information around files.
+    relationships:
+      - source_data_element: driver #TBD - delete this or move it to its own component?
+        relationship: loaded
+        target_data_element: 
+  - name: file creation
+    type: activity
+    description: A new file was created.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: file
+  - name: file deletion
+    type: activity
+    description: An existing file was deleted.
+    relationships:
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: file
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: file
+  - name: file access
+    type: activity
+    description: An existing file was opened or accessed.
+    relationships:
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: file
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: file
+      - source_data_element: user
+        relationship: requested access
+        target_data_element: file
+      - source_data_element: process
+        relationship: requested access
+        target_data_element: file
+      - source_data_element: process
+        relationship: raw access read #TBD - how to specify platform-specific relationships?
+        target_data_element: file
+  - name: file modification
+    type: activity
+    description: An existing file was modified.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: file
+      - source_data_element: process
+        relationship: renamed
+        target_data_element: file
+      - source_data_element: user
+        relationship: modified
+        target_data_element: file
 references:
-- https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
+  - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
