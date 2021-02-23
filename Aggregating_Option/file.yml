@@ -1,3 +1,5 @@
+name: File
+definition: Information about file objects that represent computer resources that can be managed by the I/O system.
 collection_layers:
   - host
 platforms:
