@@ -1,0 +1,32 @@
+name: At Task
+definition: Information about scheduled tasks created using the 'at' utility. 
+collection_layers:
+  - host
+  - network
+platforms:
+  - Windows
+  - Linux
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: at task creation
+    type: activity
+    description: A new at task was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: at task
+      - source_data_element: process
+        relationship: created
+        target_data_element: at task
+  - name: at task deletion
+    type: activity
+    description: An existing at task was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: at task
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: at task
