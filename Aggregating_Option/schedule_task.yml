@@ -1,3 +1,5 @@
+name: Scheduled Task
+definition: Information about scheduled work that the Windows Task Scheduler service performs.
 collection_layers:
   - host
   - network
