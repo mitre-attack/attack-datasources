@@ -1,3 +1,5 @@
+name: Logon session
+definition: Information about logon sessions being created or terminated by accounts (Local or Domain), interactively or over the network, in order to interact with network resources, applications, or services.
 collection_layers:
   - host
   - network
