@@ -1,3 +1,5 @@
+name: User Account
+definition: Security principal or entity that represents a person or machine and can be authenticated by an operating system or platform.
 collection_layers:
   - host
   - cloud
