@@ -330,7 +330,7 @@
   references:
     - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
 - name: Logon session
-  definition: Information about logon sessions being created or terminated by accounts (Local or Domain), interactively or over the network, in order to interact with network resources, applications, or services. 
+  definition: Information about logon sessions being created or terminated by accounts (Local, Domain, or Cloud), interactively or over the network, in order to interact with network resources, applications, or services. 
   collection_layers:
     - host
   platforms:
@@ -710,6 +710,9 @@
     - cloud
   platforms:
     - IaaS
+    - SaaS
+    - Office 365
+    - Azure AD
   contributors: 
     - ATT&CK
   data_components:
@@ -745,6 +748,9 @@
     - cloud
   platforms:
     - IaaS
+    - SaaS
+    - Office 365
+    - Azure AD
   contributors: 
     - ATT&CK
   data_components:
@@ -892,6 +898,9 @@
     - cloud
   platforms:
     - IaaS
+    - SaaS
+    - Office 365
+    - Azure AD
   contributors: 
     - ATT&CK
   data_components:
