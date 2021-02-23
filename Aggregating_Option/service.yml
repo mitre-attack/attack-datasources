@@ -1,3 +1,5 @@
+name: Service
+definition: Information about software programs that run in the background and typically start with the operating system.
 collection_layers:
   - host
 platforms:
