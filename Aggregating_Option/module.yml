@@ -1,3 +1,5 @@
+name: Module
+definition: Information about portable executable files, such as a dll or an executable, consisting of one or more classes and interfaces.
 collection_layers:
   - host
 platforms:
