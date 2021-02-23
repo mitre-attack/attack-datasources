@@ -1,0 +1,21 @@
+name: Cron
+definition: Information associated with the cron job scheduler.
+collection_layers:
+  - host
+platforms:
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: crontab
+    type: information
+    description: The textual contents of a crontab as retreived from an endpoint.
+  - name: crontab modification
+    type: activity
+    description: The modification of a crontab on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: crontab
