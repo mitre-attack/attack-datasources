@@ -1,0 +1,44 @@
+name: Driver
+definition: Information associated with device drivers, or computer programs that operate or control a particular type of device that is attached to a computer.
+collection_layers:
+  - host
+platforms:
+  - Linux
+  - MacOS
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: driver iokit registry #TBD - how to specify platform-specific (macos) components?
+    type: information
+    description: The I/O Registry is a dynamic database that describes a collection of “live” objects (nubs or drivers) and tracks the provider-client relationships between them.
+  - name: driver issue #TBD - how to specify platform-specific (windows) components?
+    type: information
+    description: The system reported an issue with a device driver.
+  - name: driver integrity page hash invalid #TBD - how to specify platform-specific (windows) components?
+    type: information
+    description: Information about device driver integrity checks.
+  - name: driver integrity check failure #TBD - how to specify platform-specific (windows) components?
+    type: information
+    description: A code integrity check failed for a signed device driver.
+  - name: driver load
+    type: activity
+    description: A driver was loaded.
+    relationships:
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: user-mode driver
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: kernel-mode driver
+  - name: driver unload
+    type: activity
+    description: A driver was unloaded.
+    relationships:
+      - source_data_element: process
+        relationship: unloaded
+        target_data_element: user-mode driver
+      - source_data_element: process
+        relationship: unloaded
+        target_data_element: kernel-mode driver
