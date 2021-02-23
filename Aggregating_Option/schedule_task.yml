@@ -1,41 +1,61 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: schedule task creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task enable
-  relationships:
-  - relationship: enabled
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task disable
-  relationships:
-  - relationship: disabled
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task modification
-  relationships:
-  - relationship: modified
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-definition: Information about scheduled work that the Task Scheduler service performs.
-name: Schedule Task
+  - host
+  - network
 platforms:
-- Windows
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: scheduled task creation
+    type: activity
+    description: A new scheduled task was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: scheduled task
+      - source_data_element: process
+        relationship: remotely created #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: scheduled task
+  - name: scheduled task deletion
+    type: activity
+    description: An existing scheduled task was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: scheduled task
+      - source_data_element: process
+        relationship: remotely deleted #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: scheduled task
+  - name: scheduled task enable
+    type: activity
+    description: An existing task was enabled.
+    relationships:
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: scheduled task
+      - source_data_element: process
+        relationship: remotely enabled #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: scheduled task
+  - name: scheduled task disable
+    type: activity
+    description: An existing task was disabled.
+    relationships:
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: scheduled task
+      - source_data_element: process
+        relationship: remotely disabled #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: scheduled task
+  - name: schedule task modification
+    type: activity
+    description: An existing scheduled task was modified (e.g., the executable launched by the task was changed).
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: scheduled task
+      - source_data_element: process
+        relationship: remotely modified #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: scheduled task
 references:
-- https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
+  - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
