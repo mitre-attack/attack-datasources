@@ -1,22 +1,50 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: module load
-  relationships:
-  - relationship: loaded
-    source_data_element: process
-    target_data_element: dll
-  - relationship: loaded
-    source_data_element: process
-    target_data_element: executable
-  type: activity
-definition: Information about portable executable files, such as a dll or an executable,
-  consisting of one or more classes and interfaces.
-name: Module
+  - host
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: dll module sections #TBD - how to specify platform-specific (windows) components?
+    type: information
+    description: DLL module file section information.
+  - name: dll module headers #TBD - how to specify platform-specific (windows) components?
+    type: information
+    description: DLL module file header information.
+  - name: elf module sections #TBD - how to specify platform-specific (linux) components?
+    type: information
+    description: ELF module file section information.
+  - name: elf module headers #TBD - how to specify platform-specific (linux) components?
+    type: information
+    description: ELF module file header information.
+  - name: mach-o module sections #TBD - how to specify platform-specific (macos) components?
+    type: information
+    description: Mach-o module file section information.
+  - name: mach-o module headers #TBD - how to specify platform-specific (macos) components?
+    type: information
+    description: Mach-o module file header information.
+  - name: module signing
+    type: information
+    description: Information about the signing of module files. 
+  - name: module load
+    type: activity
+    description: A module was loaded into a process.
+    relationships:
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: dll
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: elf
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: mach-o #TBD - how to specify platform-specific relationships?
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: executable
 references:
-- https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
-- https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
+  - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+  - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
