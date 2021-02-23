@@ -1,3 +1,5 @@
+name: Powershell log
+definition: Information about PowerShell operations related to PowerShell engine, providers, and cmdlets.
 collection_layers:
   - host
   - network
