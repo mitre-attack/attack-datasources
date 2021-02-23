@@ -1,30 +1,34 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: powershell context
-  relationships:
-  - relationship: started
-    source_data_element: application host
-    target_data_element: null
-  - relationship: started
-    source_data_element: application domain
-    target_data_element: null
-  type: information
-- name: powershell execution
-  relationships:
-  - relationship: started
-    source_data_element: user
-    target_data_element: application host
-  - relationship: executed
-    source_data_element: process
-    target_data_element: command
-  type: activity
-definition: Information about PowerShell operations related to PowerShell engine,
-  providers, and cmdlets.
-name: Powershell log
+  - host
+  - network
 platforms:
-- Windows
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: powershell context
+    type: information
+    description: General information around powershell.
+    relationships:
+      - source_data_element: application host
+        relationship: started
+        target_data_element:
+      - source_data_element: application domain
+        relationship: started
+        target_data_element:
+  - name: powershell execution
+    description: Execution of powershell commands, either locally or remotely.
+    type: activity
+    relationships:
+      - source_data_element: user
+        relationship: started
+        target_data_element: application host
+      - source_data_element: process
+        relationship: executed
+        target_data_element: command
+      - source_data_element: process
+        relationship: executed
+        target_data_element: remote command #TBD - how to specify collection-layer (network) centric relationships?
 references:
-- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
+  - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
