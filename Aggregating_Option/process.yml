@@ -1,3 +1,5 @@
+name: Process
+definition: Information about instances of computer programs that are being executed by at least one thread.
 collection_layers:
   - host
 platforms:
