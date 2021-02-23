@@ -1,0 +1,28 @@
+name: RDP session
+definition: Information associated with Remote Desktop Protocol (RDP) sessions.
+collection_layers:
+  - host
+  - network
+platforms:
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: rdp session creation failure
+    type: information
+    description: An attempted RDP logon and session instantiation which failed (e.g., due to invalid credentials).
+  - name: rdp session creation
+    type: activity
+    description: Creation/establishiment of an RDP session.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: rdp session
+  - name: rdp session termination
+    type: activity
+    description: Termination of an existing RDP session.
+    relationships:
+      - source_data_element: process
+        relationship: terminated
+        target_data_element: rdp session
