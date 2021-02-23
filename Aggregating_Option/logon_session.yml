@@ -1,58 +1,71 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: logon session context
-  relationships:
-  - relationship: modified
-    source_data_element: logon session
-    target_data_element: null
-  type: information
-- name: logon session creation
-  relationships:
-  - relationship: requested creation
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: requested logon session creation from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: requested logon session creation from
-    source_data_element: user
-    target_data_element: port
-  - relationship: created
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: created logon session from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: created logon session from
-    source_data_element: user
-    target_data_element: port
-  - relationship: failed creation
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: failed logon session creation from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: failed logon session creation from
-    source_data_element: user
-    target_data_element: port
-  type: activity
-- name: logon session termination
-  relationships:
-  - relationship: requested termination
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: terminated
-    source_data_element: user
-    target_data_element: logon session
-  type: activity
-definition: Information about logon sessions being created or terminated by accounts
-  (Local or Domain), interactively or over the network, in order to interact with
-  network resources, applications, or services.
-name: Logon session
+  - host
+  - network
+  - cloud
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+  - AWS
+contributors: 
+  - ATT&CK
+data_components:
+  - name: logon session context
+    type: information
+    description: General information about logon sessions.
+    relationships:
+      - source_data_element: logon session
+        relationship: modified
+        target_data_element:
+  - name: logon session creation
+    type: activity
+    description: A logon session for a user was created.
+    relationships:
+      - source_data_element: user
+        relationship: requested creation
+        target_data_element: logon session
+      - source_data_element: user
+        relationship: requested logon session creation from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: requested logon session creation from
+        target_data_element: port
+      - source_data_element: user
+        relationship: created
+        target_data_element: logon session #TBD - deprecate in favor of more specific variants below?
+      - source_data_element: user
+        relationship: created
+        target_data_element: local logon session
+      - source_data_element: user
+        relationship: created
+        target_data_element: domain logon session
+      - source_data_element: user
+        relationship: created
+        target_data_element: cloud logon session
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: port
+      - source_data_element: user
+        relationship: failed creation
+        target_data_element: logon session
+      - source_data_element: user
+        relationship: failed logon session creation from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: failed logon session creation from
+        target_data_element: port
+  - name: logon session termination
+    type: activity
+    description: A logon session for a user was terminated.
+    relationships:
+      - source_data_element: user
+        relationship: requested termination
+        target_data_element: logon session
+      - source_data_element: user
+        relationship: terminated
+        target_data_element: logon session
 references:
-- https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
