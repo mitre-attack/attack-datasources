@@ -1,0 +1,43 @@
+name: Config
+definition: Information associated with system configuration items.
+collection_layers:
+  - host
+platforms:
+  - Linux
+  - MacOS
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: arp cache
+    type: information
+    description: The contents of the Address Resolution Protocol (ARP) cache on the endpoint.
+  - name: name resolution
+    type: information
+    description: Name resolution configuration, such as /etc/hosts.
+  - name: supported protocols
+    type: information
+    description: Supported network protocols, such as /etc/protocols.
+  - name: port mappings
+    type: information
+    description: Protocol/port mappings, such as /etc/services.
+  - name: active directory local config
+    type: information #TBD - how to specify platform-specific (macos) components?
+    description: Local Active Directory configuration items.
+  - name: ssh authorized keys
+    type: information #TBD - how to specify platform-specific (macos, linux) components?
+    description: Data from the SSH authorized_keys file.
+  - name: ssh known hosts
+    type: information #TBD - how to specify platform-specific (macos, linux) components?
+    description: Data from the SSH known_hosts file.
+  - name: environment variables
+    type: information #TBD - how to specify platform-specific (windows) components?
+    description: The set of system-wide environment variables defined on an endpoint.
+  - name: audit policy modification
+    type: activity
+    description: System audit policy was changed.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: audit policy
