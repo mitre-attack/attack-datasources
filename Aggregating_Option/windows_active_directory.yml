@@ -1,3 +1,5 @@
+name: Windows active directory
+definition: Information about objects on a domain network such as a user, a group, or a workstation.
 collection_layers:
   - host
   - network
