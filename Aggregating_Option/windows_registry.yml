@@ -1,62 +1,82 @@
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: windows registry key creation
-  relationships:
-  - relationship: created
-    source_data_element: process
-    target_data_element: windows registry key
-  - relationship: created
-    source_data_element: process
-    target_data_element: windows registry key value
-  type: activity
-- name: windows registry key deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: windows registry key
-  - relationship: deleted
-    source_data_element: process
-    target_data_element: windows registry key
-  - relationship: deleted
-    source_data_element: process
-    target_data_element: windows registry key value
-  type: activity
-- name: windows registry key modification
-  relationships:
-  - relationship: modified
-    source_data_element: process
-    target_data_element: windows registry key
-  - relationship: modified
-    source_data_element: process
-    target_data_element: windows registry key value
-  - relationship: modified
-    source_data_element: user
-    target_data_element: windows registry key
-  - relationship: modified
-    source_data_element: user
-    target_data_element: windows registry key value
-  type: activity
-- name: Windows registry key access
-  relationships:
-  - relationship: accessed
-    source_data_element: process
-    target_data_element: windows registry key
-  - relationship: accessed
-    source_data_element: user
-    target_data_element: windows registry key
-  - relationship: requested access
-    source_data_element: process
-    target_data_element: windows registry key
-  - relationship: requested access
-    source_data_element: user
-    target_data_element: windows registry key
-  type: activity
-definition: Information about configuration data used by applications and system components.
-name: Windows registry
+  - host
+  - network
 platforms:
-- Windows
+  - Windows
+contributors: 
+  - ATT&CK
+data_components:
+  - name: windows registry key creation
+    type: activity
+    description: A registry key/value was created locally on an endpoint or remotely using the remote registry service (implemented over DCE/RPC).
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: remotely created #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key 
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key value
+      - source_data_element: process
+        relationship: remotely created #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key value 
+  - name: windows registry key deletion
+    type: activity
+    description: A registry key/value was deleted from an endpoint or remotely using the remote registry service (implemented over DCE/RPC). 
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: remotely deleted #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key value
+      - source_data_element: process
+        relationship: remotely deleted #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key value
+  - name: windows registry key modification
+    type: activity
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key value
+      - source_data_element: process
+        relationship: remotely modified #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: remotely modified #TBD - how to specify collection-layer (network) centric relationships?
+        target_data_element: windows registry key value
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key value
+  - name: windows registry key access
+    type: activity
+    description: A registry key/value was accessed. 
+    relationships:
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: requested access
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: requested access
+        target_data_element: windows registry key
 references:
-- https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
+  - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
