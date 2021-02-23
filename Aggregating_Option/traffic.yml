@@ -1,0 +1,69 @@
+name: Traffic
+definition: Network traffic, either summarized (e.g., as netflow) or captured in some format (e.g., as PCAP). This may be captured at the endpoint or network level.
+collection_layers:
+  - host
+  - network
+platforms:
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: administrative traffic #TBD - can't include protocol specific variants (ssh) here
+    type: activity
+    description: Network traffic associated with remote administration of hosts or devices, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: adminstrative traffic
+  - name: management traffic #TBD - can't include protocol specific variants (dhcp) here
+    type: activity
+    description: Network traffic associated with the management of hosts or devices, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: management traffic
+  - name: discovery traffic #TBD - can't include protocol specific variants (arp) here
+    type: activity
+    description: Network traffic associated with the discovery of hosts or devices, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: discovery traffic
+  - name: monitoring traffic #TBD - can't include protocol specific variants (icmp, snmp) here
+    type: activity
+    description: Network traffic associated with the monitoring of hosts or devices, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: monitoring traffic
+  - name: web traffic #TBD - can't include protocol specific variants (http) here
+    type: activity
+    description: Web network traffic, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: web traffic
+  - name: file transfer traffic #TBD - can't include protocol specific variants (ftp, smb) here
+    type: activity
+    description: Network traffic associated with the transfer of files, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: file transfer traffic
+  - name: mail traffic #TBD - can't include protocol specific variants (pop3, smtp) here
+    type: activity
+    description: Network traffic associated with the sending or receiving of email, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: mail traffic
+  - name: rpc traffic #TBD - can't include protocol specific variants (dce/rpc) here
+    type: activity
+    description: Remote Procedure Call (RPC) network traffic, either captured on the wire or on an endpoint.
+    relationships:
+      - source_data_element: process
+        relationship: generated
+        target_data_element: rpc traffic
