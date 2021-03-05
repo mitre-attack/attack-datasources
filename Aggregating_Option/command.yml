@@ -1,0 +1,30 @@
+collection_layers:
+- host
+contributors:
+- ATT&CK
+- Austin Clark
+data_components:
+- name: command execution
+  relationships:
+  - relationship: executed
+    source_data_element: user
+    target_data_element: command
+  - relationship: logged to
+    source_data_element: command
+    target_data_element: file
+  - relationship: logged to
+    source_data_element: command
+    target_data_element: powershell_log
+  - relationship: created
+    source_data_element: command
+    target_data_element: process
+  type: activity
+definition: Information about adversary commands executed through a command-line interface and/or script interpreter.
+name: Command
+platforms:
+- Windows
+- Linux
+- macOS
+- Network
+references:
+- 
