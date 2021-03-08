@@ -1,4 +1,4 @@
-name: Traffic
+name: Network Traffic
 definition: Network traffic, either summarized (e.g., as netflow) or captured in some format (e.g., as PCAP). This may be captured at the endpoint or network level.
 collection_layers:
   - host
@@ -11,59 +11,150 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: administrative traffic #TBD - can't include protocol specific variants (ssh) here
-    type: activity
-    description: Network traffic associated with remote administration of hosts or devices, either captured on the wire or on an endpoint.
+  - name: network traffic content
+    type: information
+    description: Information about the content of network packets and the protocols associated to them, either captured on the wire or on an endpoint.
     relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: adminstrative traffic
-  - name: management traffic #TBD - can't include protocol specific variants (dhcp) here
-    type: activity
-    description: Network traffic associated with the management of hosts or devices, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: management traffic
-  - name: discovery traffic #TBD - can't include protocol specific variants (arp) here
-    type: activity
-    description: Network traffic associated with the discovery of hosts or devices, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: discovery traffic
-  - name: monitoring traffic #TBD - can't include protocol specific variants (icmp, snmp) here
-    type: activity
-    description: Network traffic associated with the monitoring of hosts or devices, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: monitoring traffic
-  - name: web traffic #TBD - can't include protocol specific variants (http) here
-    type: activity
-    description: Web network traffic, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: web traffic
-  - name: file transfer traffic #TBD - can't include protocol specific variants (ftp, smb) here
-    type: activity
-    description: Network traffic associated with the transfer of files, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
-        target_data_element: file transfer traffic
-  - name: mail traffic #TBD - can't include protocol specific variants (pop3, smtp) here
-    type: activity
-    description: Network traffic associated with the sending or receiving of email, either captured on the wire or on an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: generated
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: administration traffic
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: dns traffic
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: encrypted traffic
+      - source_data_element: host
+        relationship: retrieved information about
         target_data_element: mail traffic
-  - name: rpc traffic #TBD - can't include protocol specific variants (dce/rpc) here
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: file transfer traffic
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: web traffic
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: remote code execution traffic
+  - name: network connection creation
     type: activity
-    description: Remote Procedure Call (RPC) network traffic, either captured on the wire or on an endpoint.
+    description: Information about the creation of a network connections, either captured on the wire or on an endpoint.
     relationships:
       - source_data_element: process
-        relationship: generated
-        target_data_element: rpc traffic
+        relationship: attempted connection to
+        target_data_element: ip
+      - source_data_element: process
+        relationship: attempted connection to
+        target_data_element: port
+      - source_data_element: process
+        relationship: attempted connection to
+        target_data_element: host
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: ip
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: port
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: host
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: ip
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: port
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: host
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: ip
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: port
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: host
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: ip
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: port
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: host
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: port
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: host
+      - source_data_element: process
+        relationship: attempted to bind on
+        target_data_element: port
+      - source_data_element: process
+        relationship: bound to
+        target_data_element: port
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: port
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: process
+      - source_data_element: process
+        relationship: attempted to listen on
+        target_data_element: port
+      - source_data_element: process
+        relationship: listened on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: process
+      
