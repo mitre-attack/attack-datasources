@@ -1,5 +1,5 @@
 name: Module
-definition: Information about portable executable files, such as a dll or an executable, consisting of one or more classes and interfaces.
+definition: Information about module files such as executable, dynamic link library (dll), executable and linkiable format (elf), and Mach-o consisting of one or more classes and interfaces.
 collection_layers:
   - host
 platforms:
@@ -10,43 +10,33 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: dll module sections #TBD - how to specify platform-specific (windows) components?
+  - name: module content
     type: information
-    description: DLL module file section information.
-  - name: dll module headers #TBD - how to specify platform-specific (windows) components?
+    description: Information about the content of a module such as sections and segments.
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: module
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: module
+  - name: module metadata
     type: information
-    description: DLL module file header information.
-  - name: elf module sections #TBD - how to specify platform-specific (linux) components?
-    type: information
-    description: ELF module file section information.
-  - name: elf module headers #TBD - how to specify platform-specific (linux) components?
-    type: information
-    description: ELF module file header information.
-  - name: mach-o module sections #TBD - how to specify platform-specific (macos) components?
-    type: information
-    description: Mach-o module file section information.
-  - name: mach-o module headers #TBD - how to specify platform-specific (macos) components?
-    type: information
-    description: Mach-o module file header information.
-  - name: module signing
-    type: information
-    description: Information about the signing of module files. 
+    description: Data and information that describe a module and activity around it such as header and signature.
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: module
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: module
   - name: module load
     type: activity
     description: A module was loaded into a process.
     relationships:
       - source_data_element: process
         relationship: loaded
-        target_data_element: dll
-      - source_data_element: process
-        relationship: loaded
-        target_data_element: elf
-      - source_data_element: process
-        relationship: loaded
-        target_data_element: mach-o #TBD - how to specify platform-specific relationships?
-      - source_data_element: process
-        relationship: loaded
-        target_data_element: executable
+        target_data_element: module
 references:
   - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
   - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
+  - https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
+  - https://elinux.org/Executable_and_Linkable_Format_(ELF)
