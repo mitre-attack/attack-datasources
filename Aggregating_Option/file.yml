@@ -1,5 +1,5 @@
 name: File
-definition: Information about file objects that represent computer resources that can be managed by the I/O system.
+definition: Information about file objects (All file systems) that represent computer resources that can be managed by the I/O system. This data source can be used as a reference to extend the concepts of other data sources such as driver, module, log file, and network share.
 collection_layers:
   - host
 platforms:
@@ -10,30 +10,29 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: file attributes
+  - name: file content
     type: information
-    description: Generic file system attributes of a file (e.g., creation time).
+    description: Information about the content of a file.
     relationships:
-      - source_data_element: process 
-        relationship: modified
-        target_data_element: file attributes
-  - name: ntfs file attributes #TBD - how to specify platform-specific components?
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: file
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: file
+  - name: file metadata
     type: information
-    description: Attributes specific to files stored on NTFS file systems.
+    description: Data and information that describe a file and activity around it.
     relationships:
-      - source_data_element: process 
+      - source_data_element: process
         relationship: created
-        target_data_element: ntfs alternate data stream
-      - source_data_element: process 
-        relationship: set
-        target_data_element: ntfs extended attribute
-  - name: file context
-    type: information
-    description: General information around files.
-    relationships:
-      - source_data_element: driver #TBD - delete this or move it to its own component?
-        relationship: loaded
-        target_data_element: 
+        target_data_element: file stream
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: file
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: file
   - name: file creation
     type: activity
     description: A new file was created.
@@ -67,9 +66,6 @@ data_components:
       - source_data_element: process
         relationship: requested access
         target_data_element: file
-      - source_data_element: process
-        relationship: raw access read #TBD - how to specify platform-specific relationships?
-        target_data_element: file
   - name: file modification
     type: activity
     description: An existing file was modified.
@@ -77,11 +73,10 @@ data_components:
       - source_data_element: process
         relationship: modified
         target_data_element: file
-      - source_data_element: process
-        relationship: renamed
-        target_data_element: file
       - source_data_element: user
         relationship: modified
         target_data_element: file
 references:
   - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
+  - https://docs.microsoft.com/en-us/windows/win32/fileio/file-streams
+  - https://docs.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems
