@@ -10,16 +10,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: service attributes
+  - name: service metadata
     type: information
-    description: Service-specific attributes, such as start type.
-    relationships:
-      - source_data_element: process
-        relationship: modified
-        target_data_element: service attributes
-  - name: service context
-    type: information
-    description: General information around services.
+    description: Data and information that describe a service and activity around it.
     relationships:
       - source_data_element: service
         relationship: started
@@ -27,9 +20,15 @@ data_components:
       - source_data_element: service
         relationship: stopped
         target_data_element: 
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: service
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: service
   - name: service creation
     type: activity
-    description: A new service/daemon is created.
+    description: A new service/daemon was created.
     relationships:
       - source_data_element: user
         relationship: created
@@ -41,10 +40,26 @@ data_components:
       - source_data_element: user
         relationship: requested access
         target_data_element: service
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: service
+  - name: service enumeration
+    type: activity
+    description: A service/daemon was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: service
+      - source_data_element: process
+        relationship: listed
+        target_data_element: service
   - name: service modification
     type: activity
     description: A service/daemon was modified.
     relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: service
       - source_data_element: process
         relationship: modified
         target_data_element: service
