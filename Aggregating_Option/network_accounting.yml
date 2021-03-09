@@ -1,57 +1,27 @@
-- name: Network Accounting
-  definition: Information about user actions performed on network devices.
+- name: Command
+  definition: Information about commands that can be used through a command-line interface and/or script interpreter.
   collection_layers:
     - host
+    - network
   platforms:
+    - Windows
+    - Linux
+    - macOS
     - Network
   contributors: 
     - Austin Clark
+    - ATT&CK
   data_components:
     - name: command execution
       type: activity
+      description: Information about commands executed through a command-line interface and/or script interpreter.
       relationships:
         - source_data_element: user
           relationship: executed
           target_data_element: command
-    - name: user creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: user
-    - name: user deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: user
-    - name: network connection
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: connected from
-          target_data_element: ip
-        - source_data_element: user
-          relationship: connected to
-          target_data_element: ip
-    - name: file deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: file
-    - name: file access
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: accessed
-          target_data_element: file
-    - name: file creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: file
+        - source_data_element: process
+          relationship: executed
+          target_data_element: command
   references:
     - https://tools.ietf.org/id/draft-ietf-opsawg-tacacs-07.html#rfc.section.7.2
     - https://tools.ietf.org/html/rfc2866
