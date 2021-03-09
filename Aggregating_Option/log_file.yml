@@ -9,16 +9,12 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: log file erasure
+  - name: log file deletion
     type: activity
-    description: Erasure/clearing of a log file.
+    description: A log file (such as pplication, system, or audit logs) was deleted.
     relationships:
       - source_data_element: process
-        relationship: erased  #TBD - how to specify platform-specific (windows) relationships?
-        target_data_element: application log 
-      - source_data_element: process
-        relationship: erased #TBD - how to specify platform-specific (windows) relationships?
-        target_data_element: system log
-      - source_data_element: process
-        relationship: erased #TBD - how to specify platform-specific (windows) relationships?
-        target_data_element: audit log
+        relationship: deleted
+        target_data_element: log
+references:
+  - https://www.loggly.com/ultimate-guide/linux-logging-basics/
