@@ -1,9 +1,13 @@
 name: Firewall
-definition: Information associated with the network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
+definition: Information associated with the network security system, running locally on an endpoint or remotely in a cloud environment, that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
 collection_layers:
   - cloud
   - host
 platforms:
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
   - AWS
   - Linux
   - MacOS
@@ -12,37 +16,68 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: firewall setting modification
-    type: activity
-    description: A setting was changed in a firewall running locally on an endpoint or remotely in a cloud environment.
+  - name: firewall metadata
+    type: information
+    description: Data and information that describe a firewall system and activity around it.
     relationships:
-      - source_data_element: process
-        relationship: modified
-        target_data_element: firewall setting
-  - name: firewall group policy modification #TBD - how to specify platform-specific (windows) components?
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: firewall
+      - source_data_element: firewall
+        relationship: blocked connection from
+        target_data_element: ip
+      - source_data_element: firewall
+        relationship: blocked connection from
+        target_data_element: port
+      - source_data_element: firewall
+        relationship: blocked connection from
+        target_data_element: process
+      - source_data_element: firewall
+        relationship: blocked connection to
+        target_data_element: ip
+      - source_data_element: firewall
+        relationship: blocked connection to
+        target_data_element: port
+      - source_data_element: firewall
+        relationship: blocked connection to
+        target_data_element: process
+  - name: firewall creation
     type: activity
-    description: A modification to the Windows Firewall group policy was made.
-    relationships:
-      - source_data_element: process
-        relationship: modified
-        target_data_element: firewall group policy
-  - name: firewall rule creation
-    type: activity
-    description: A new firewall rule was created on an endpoint or in a cloud environment.
+    description: A firewall system or element (rule) was created.
     relationships:
       - source_data_element: process
         relationship: created
         target_data_element: firewall rule
-  - name: firewall rule deletion
+  - name: firewall deletion
     type: activity
-    description: An existing firewall rule was deleted from an endpoint or a cloud environment.
+    description: A firewall system or element (rule) was deleted.
     relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: firewall
       - source_data_element: process
         relationship: deleted
         target_data_element: firewall rule
-  - name: firewall blocked connection
-    type: information
-    description: The firewall blocked an incoming or outgoing connection on an endpoint.
-  - name: firewall rule list
-    type: information
-    description: The list of rules currently running on a firewall.
+  - name: firewall modification
+    type: activity
+    description: A firewall system or element (rule) was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: firewall
+      - source_data_element: process
+        relationship: modified
+        target_data_element: firewall
+      - source_data_element: process
+        relationship: modified
+        target_data_element: firewall rule
+  - name: firewall enumeration
+    type: activity
+    description: A firewall system or element (rule) was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: firewall
+      - source_data_element: user
+        relationship: listed
+        target_data_element: firewall rule
