@@ -81,3 +81,5 @@ data_components:
       - source_data_element: user
         relationship: listed
         target_data_element: firewall rule
+references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
