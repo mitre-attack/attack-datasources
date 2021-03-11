@@ -1,0 +1,42 @@
+name: Cloud Service
+definition: Information about a service available within a cloud environment.
+collection_layers:
+  - cloud
+platforms:
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+contributors:
+  - ATT&CK
+data_components:
+  - name: cloud service metadata
+    type: information
+    description: Data and information that describe a cloud service and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: cloud service
+  - name: cloud service enumeration
+    type: activity
+    description: A cloud service was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: cloud service
+  - name: cloud service modification
+    type: activity
+    description: A cloud service was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: cloud service
+references:
+  - https://aws.amazon.com
+  - https://azure.microsoft.com/en-us/services/
