@@ -1,5 +1,5 @@
 name: Powershell log
-definition: Information about PowerShell operations related to PowerShell engine, providers, and cmdlets.
+definition: Information about PowerShell operations (either locally or remotely) related to PowerShell engine, providers, and cmdlets.
 collection_layers:
   - host
   - network
@@ -9,9 +9,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: powershell context
+  - name: powershell metadata
     type: information
-    description: General information around powershell.
+    description: Data and information that describe PowerShell operations.
     relationships:
       - source_data_element: application host
         relationship: started
@@ -20,7 +20,7 @@ data_components:
         relationship: started
         target_data_element:
   - name: powershell execution
-    description: Execution of powershell commands, either locally or remotely.
+    description: Execution of powershell commands.
     type: activity
     relationships:
       - source_data_element: user
@@ -29,8 +29,5 @@ data_components:
       - source_data_element: process
         relationship: executed
         target_data_element: command
-      - source_data_element: process
-        relationship: executed
-        target_data_element: remote command #TBD - how to specify collection-layer (network) centric relationships?
 references:
   - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
