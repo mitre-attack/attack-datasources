@@ -10,34 +10,15 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: process open files
+  - name: process metadata
     type: information
-    description: The list of files opened by a process.
-  - name: process open pipes
-    type: information
-    description: The list of pipes opened by a process.
-  - name: process environment variables
-    type: information
-    description: The set of environment variables defined for a process.
-  - name: process execution
-    type: information
-    description: Information about the execution of a process, such as the API calls that it makes.
+    description: Data and information that describe a process (Such as environment variables) and activity around it.
     relationships:
-      - source_data_element: process
-        relationship: executes
-        target_data_element: api call
-      - source_data_element: process
-        relationship: executes
-        target_data_element: system call
-  - name: process context #TBD - delete this or move it to its own component?
-    type: information
-    description: General information about a process.
-    relationships:
-      - source_data_element: process
-        relationship: terminated 
-        target_data_element: 
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: process
   - name: process creation
-    description: The creation of a new process.
+    description: A new process was created.
     type: activity
     relationships:
       - source_data_element: user
@@ -49,156 +30,39 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: thread
-      - source_data_element: process
-        relationship: created
-        target_data_element: remote thread
   - name: process termination
-    description: The termination of an existing process.
+    description: An existing process was terminated.
     type: activity
     relationships:
       - source_data_element: user
         relationship: terminated
         target_data_element: process
   - name: process modification
-    description: The modification of an existing process.
+    description: An existing process was modified.
     type: activity
     relationships:
       - source_data_element: process
-        relationship: wrote to
+        relationship: modified
         target_data_element: process
   - name: process access
-    description: A process opens or accesses another process.
+    description: An existing process was accessed.
     type: activity
     relationships:
       - source_data_element: process
         relationship: accessed
         target_data_element: process
       - source_data_element: process
-        relationship: requested access
+        relationship: requested access to
         target_data_element: process
-      - source_data_element: process
-        relationship: opened handle #TBD - how to specify platform-specific relationships?
-        target_data_element: process
-  - name: process network connection
-    type: activity
-    description: Information about network connections initiated by processes.
+  - name: process execution
+    type: information
+    description: Information about the execution of a process, such as the API (Operating system) calls that it makes.
     relationships:
       - source_data_element: process
-        relationship: connected to
-        target_data_element: port
+        relationship: executed
+        target_data_element: api call
       - source_data_element: process
-        relationship: connected to
-        target_data_element: ip
-      - source_data_element: process
-        relationship: connected to
-        target_data_element: host
-      - source_data_element: process
-        relationship: connected from
-        target_data_element: port
-      - source_data_element: process
-        relationship: connected from
-        target_data_element: ip
-      - source_data_element: process
-        relationship: connected from
-        target_data_element: host
-      - source_data_element: user
-        relationship: connected to
-        target_data_element: port
-      - source_data_element: user
-        relationship: connected to
-        target_data_element: ip
-      - source_data_element: user
-        relationship: connected to
-        target_data_element: host
-      - source_data_element: user
-        relationship: connected from
-        target_data_element: port
-      - source_data_element: user
-        relationship: connected from
-        target_data_element: ip
-      - source_data_element: user
-        relationship: connected from
-        target_data_element: host
-      - source_data_element: host
-        relationship: blocked connection on #TBD - wouldn't this and other blocked/allowed relationships make more sense for a firewall data source?
-        target_data_element: process
-      - source_data_element: host
-        relationship: blocked connection to
-        target_data_element: process
-      - source_data_element: host
-        relationship: blocked connection to
-        target_data_element: ip
-      - source_data_element: host
-        relationship: blocked connection to
-        target_data_element: port
-      - source_data_element: host
-        relationship: blocked connection from
-        target_data_element: process
-      - source_data_element: host
-        relationship: blocked connection from
-        target_data_element: ip
-      - source_data_element: host
-        relationship: blocked connection from
-        target_data_element: port
-      - source_data_element: process
-        relationship: attempted connection to
-        target_data_element: ip
-      - source_data_element: process
-        relationship: attempted connection to
-        target_data_element: port
-      - source_data_element: process
-        relationship: attempted connection from
-        target_data_element: ip
-      - source_data_element: process
-        relationship: attempted connection from
-        target_data_element: port
-      - source_data_element: host
-        relationship: permitted listener on
-        target_data_element: process
-      - source_data_element: host
-        relationship: permitted listener on
-        target_data_element: ip
-      - source_data_element: host
-        relationship: permitted listener on
-        target_data_element: port
-      - source_data_element: process
-        relationship: listened on
-        target_data_element: port
-      - source_data_element: host
-        relationship: blocked listener on
-        target_data_element: process
-      - source_data_element: host
-        relationship: blocked listener on
-        target_data_element: ip
-      - source_data_element: host
-        relationship: blocked listener on
-        target_data_element: port
-      - source_data_element: process
-        relationship: attempted to listen on
-        target_data_element: port
-      - source_data_element: host
-        relationship: permitted local port bind on
-        target_data_element: process
-      - source_data_element: host
-        relationship: permitted local port bind on
-        target_data_element: ip
-      - source_data_element: host
-        relationship: permitted local port bind on
-        target_data_element: port
-      - source_data_element: process
-        relationship: bound to
-        target_data_element: port
-      - source_data_element: host
-        relationship: blocked local port bind on
-        target_data_element: process
-      - source_data_element: host
-        relationship: blocked local port bind on
-        target_data_element: ip
-      - source_data_element: host
-        relationship: blocked local port bind on
-        target_data_element: port
-      - source_data_element: process
-        relationship: attempted to bind on
-        target_data_element: port
+        relationship: executed
+        target_data_element: system call
 references:
   - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
