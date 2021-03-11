@@ -1,5 +1,5 @@
-name: Windows active directory
-definition: Information about objects on a domain network such as a user, a group, or a workstation.
+name: Active Directory
+definition: Information associated with the Active Directory service or objects (Such as a user, a group, or a workstation) and activity around them.
 collection_layers:
   - host
   - network
@@ -9,25 +9,19 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: active directory kerberos authentication request #TBD - how to specify collection-layer (network) centric components?
-    type: activity
-    description: A Kerberos authentication ticket was requested.
-  - name: active directory kerberos authentication service request #TBD - how to specify collection-layer (network)  centric components?
-    type: activity
-    description: A Kerberos service ticket was requested.
-  - name: active directory ntlm authentication request #TBD - how to specify collection-layer (network) centric components?
-    type: activity
-    description: An NTLM authentication request was made.
-  - name: active directory service creation
-    description: An active directory service was created.
+  - name: active directory creation
+    description: An active directory service or object was created.
     type: activity
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: ad object
-  - name: active directory service deletion
+      - source_data_element: user
+        relationship: created
+        target_data_element: ad service
+  - name: active directory deletion
     type: activity
-    description: An active directory service was deleted
+    description: An active directory service or object was deleted
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -35,9 +29,12 @@ data_components:
       - source_data_element: user
         relationship: undeleted
         target_data_element: ad object
-  - name: active directory service access
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: ad service
+  - name: active directory access
     type: activity
-    description: An active directory service was accessed.
+    description: An active directory service or object was accessed.
     relationships:
       - source_data_element: user
         relationship: accessed
@@ -48,12 +45,31 @@ data_components:
       - source_data_element: process
         relationship: requested access
         target_data_element: ad object
-  - name: active directory service modification
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: ad service
+  - name: active directory modification
     type: activity
-    description: An active directory service was modified.
+    description: An active directory service or object was modified.
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: ad object
+      - source_data_element: user
+        relationship: modified
+        target_data_element: ad service
+  - name: active directory authentication
+    type: activity
+    description: An active directory object authenticated onto a system.
+    relationships:
+      - source_data_element: user
+        relationship: requested
+        target_data_element: security key
+      - source_data_element: user
+        relationship: requested authentication to
+        target_data_element: ad object
+      - source_data_element: ad object
+        relationship: authenticated
+        target_data_element: user
 references:
   - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
