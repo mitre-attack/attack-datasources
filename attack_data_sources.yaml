@@ -556,16 +556,11 @@
   references:
     - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
 - name: User Account
-  definition: Security principal, application, or entity that represents a person or machine and can be authenticated by an operating system or platform.
+  definition: Security principal or entity that represents a person or machine and can be authenticated by an operating system or platform.
   collection_layers:
     - host
-    - cloud
   platforms:
     - Windows
-    - IaaS
-    - SaaS
-    - Office 365
-    - Azure AD
   contributors: 
     - ATT&CK
   data_components:
@@ -621,29 +616,6 @@
           relationship: removed access
           target_data_element: user
         - source_data_element: user
-          relationship: modified
-          target_data_element: service principal
-        - source_data_element: user
-          relationship: modified
-          target_data_element: application
-        - source_data_element: user
-          relationship: modified
-          target_data_element: cloud account
-    - name: user account metadata
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: retrieved information about
-          target_data_element: user
-    - name: user account authentication
-      type: activity
-      relationships:
-        - source_data_element: application
-          relationship: authenticated
-          target_data_element: user
-        - source_data_element: provider
-          relationship: authenticated
-          target_data_element: user
   references:
     - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
 - name: Schedule Task
