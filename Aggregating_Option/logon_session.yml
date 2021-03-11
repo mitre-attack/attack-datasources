@@ -1,5 +1,5 @@
-name: Logon session
-definition: Information about logon sessions being created or terminated by accounts (Local or Domain), interactively or over the network, in order to interact with network resources, applications, or services.
+name: Logon Session
+definition: Information about logon sessions being created or terminated by accounts (Local, Domain, or Cloud), interactively or over the network, in order to interact with network resources, applications, or services.
 collection_layers:
   - host
   - network
@@ -12,60 +12,45 @@ platforms:
 contributors: 
   - ATT&CK
 data_components:
-  - name: logon session context
+  - name: logon session metadata
     type: information
-    description: General information about logon sessions.
+    description: Data and information that describe a logon session and activity around it.
     relationships:
-      - source_data_element: logon session
-        relationship: modified
-        target_data_element:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: logon session
   - name: logon session creation
     type: activity
     description: A logon session for a user was created.
     relationships:
       - source_data_element: user
-        relationship: requested creation
+        relationship: created
         target_data_element: logon session
-      - source_data_element: user
-        relationship: requested logon session creation from
-        target_data_element: ip
-      - source_data_element: user
-        relationship: requested logon session creation from
-        target_data_element: port
-      - source_data_element: user
-        relationship: created
-        target_data_element: logon session #TBD - deprecate in favor of more specific variants below?
-      - source_data_element: user
-        relationship: created
-        target_data_element: local logon session
-      - source_data_element: user
-        relationship: created
-        target_data_element: domain logon session
-      - source_data_element: user
-        relationship: created
-        target_data_element: cloud logon session
       - source_data_element: user
         relationship: created logon session from
         target_data_element: ip
       - source_data_element: user
         relationship: created logon session from
-        target_data_element: port
-      - source_data_element: user
-        relationship: failed creation
-        target_data_element: logon session
-      - source_data_element: user
-        relationship: failed logon session creation from
-        target_data_element: ip
-      - source_data_element: user
-        relationship: failed logon session creation from
         target_data_element: port
   - name: logon session termination
     type: activity
     description: A logon session for a user was terminated.
     relationships:
       - source_data_element: user
-        relationship: requested termination
-        target_data_element: logon session
+        relationship: logged off from
+        target_data_element: computer
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: application
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: port
       - source_data_element: user
         relationship: terminated
         target_data_element: logon session
