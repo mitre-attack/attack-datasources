@@ -90,8 +90,14 @@ data_components:
       - source_data_element: application
         relationship: authenticated
         target_data_element: user
+      - source_data_element: application
+        relationship: failed to authenticate
+        target_data_element: user
       - source_data_element: cloud service
         relationship: authenticated
+        target_data_element: user
+      - source_data_element: cloud service
+        relationship: failed to authenticate
         target_data_element: user
       - source_data_element: user
         relationship: authenticated from
