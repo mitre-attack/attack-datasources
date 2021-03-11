@@ -1,5 +1,5 @@
 name: User Account
-definition: Security principal or entity that represents a person or machine and can be authenticated by an operating system or platform.
+definition: The representation of a user, device, service or application that access resources within a network environment. It has login capabilities and can be authenticated by an operating system, application or platform.
 collection_layers:
   - host
   - cloud
@@ -8,69 +8,34 @@ platforms:
   - Linux
   - MacOS
   - AWS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
 contributors: 
   - ATT&CK
   - CTID
 data_components:
+  - name: user account metadata
+    type: activity
+    description: Data and information that describe a user account and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: user
   - name: user account creation
     type: activity
     description: A new user account was created.
     relationships:
       - source_data_element: user
         relationship: created
-        target_data_element: user #TBD - deprecate in favor of more specific variants below?
-      - source_data_element: user
-        relationship: created
-        target_data_element: local user 
-      - source_data_element: user
-        relationship: created
-        target_data_element: domain user
-      - source_data_element: user
-        relationship: created
-        target_data_element: cloud user
+        target_data_element: user
   - name: user account deletion
     type: activity
     description: An existing user account was deleted.
     relationships:
       - source_data_element: user
         relationship: deleted
-        target_data_element: user #TBD - deprecate in favor of more specific variants below?
-      - source_data_element: user
-        relationship: deleted
-        target_data_element: local user
-      - source_data_element: user
-        relationship: deleted
-        target_data_element: domain user
-      - source_data_element: user
-        relationship: deleted
-        target_data_element: cloud user
-  - name: user account enable
-    description: An existing user account was enabled.
-    type: activity
-    relationships:
-      - source_data_element: user
-        relationship: enabled
-        target_data_element: user
-  - name: user account disable
-    type: activity
-    description: An existing user account was disabled.
-    relationships:
-      - source_data_element: user
-        relationship: disabled
-        target_data_element: user
-  - name: user account lock
-    type: activity
-    description: A user account was locked.
-    relationships:
-      - source_data_element: user
-        relationship: locked
-        target_data_element: user
-  - name: user account unlock
-    type: activity
-    description: A user account was unlocked.
-    relationships:
-      - source_data_element: user
-        relationship: unlocked
         target_data_element: user
   - name: user account modification
     type: activity
@@ -83,45 +48,56 @@ data_components:
         relationship: modified
         target_data_element: user
       - source_data_element: user
+        relationship: modified
+        target_data_element: service principal
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: locked
+        target_data_element: user
+      - source_data_element: user
+        relationship: unlocked
+        target_data_element: user
+      - source_data_element: user
         relationship: granted access
         target_data_element: user
       - source_data_element: user
         relationship: removed access
         target_data_element: user
-  - name: user account logon
+  - name: user account authentication
     type: activity
-    description: A user account logged onto a system. 
+    description: A user account authenticated onto a system. 
     relationships:
       - source_data_element: user
-        relationship: logged into
-        target_data_element: application
-      - source_data_element: local user
-        relationship: logged onto
-        target_data_element: endpoint
-      - source_data_element: domain user
-        relationship: logged onto
-        target_data_element: endpoint
-      - source_data_element: cloud user 
-        relationship: logged onto #TBD - how to specify collection-layer (cloud) centric relationships?
-        target_data_element: cloud environment
-      - source_data_element: cloud user
-        relationship: console logged onto #TBD - how to specify collection-layer (cloud) centric relationships?
-        target_data_element: cloud environment
-  - name: user account logoff
-    type: activity
-    description: A user account logged off a system. 
-    relationships:
+        relationship: logged on
+        target_data_element: computer
       - source_data_element: user
-        relationship: logged off from
+        relationship: logged on
         target_data_element: application
-      - source_data_element: local user
-        relationship: logged offfrom
-        target_data_element: endpoint
-      - source_data_element: domain user
-        relationship: logged off from #TBD - how to specify collection-layer (cloud) centric relationships?
-        target_data_element: endpoint
-      - source_data_element: cloud user
-        relationship: logged off from #TBD - how to specify collection-layer (cloud) centric relationships?
-        target_data_element: cloud environment
+      - source_data_element: user
+        relationship: logged on
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: logged on from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: logged on from
+        target_data_element: port
+      - source_data_element: application
+        relationship: authenticated
+        target_data_element: user
+      - source_data_element: cloud service
+        relationship: authenticated
+        target_data_element: user
+      - source_data_element: user
+        relationship: authenticated from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: authenticated from
+        target_data_element: port
 references:
   - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
