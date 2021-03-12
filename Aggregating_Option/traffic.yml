@@ -15,26 +15,26 @@ data_components:
     type: information
     description: Information about the content of network packets and the protocols associated to them, either captured on the wire or on an endpoint.
     relationships:
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: administration traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: dns traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: encrypted traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: mail traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: file transfer traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: web traffic
-      - source_data_element: host
-        relationship: retrieved information about
+      - source_data_element: network traffic
+        relationship: contained
         target_data_element: remote code execution traffic
   - name: network connection creation
     type: activity
