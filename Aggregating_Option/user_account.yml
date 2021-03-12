@@ -73,37 +73,25 @@ data_components:
     description: A user account authenticated onto a system. 
     relationships:
       - source_data_element: user
-        relationship: logged on
+        relationship: attempted to authenticate to
         target_data_element: computer
       - source_data_element: user
-        relationship: logged on
+        relationship: attempted to authenticate to
         target_data_element: application
       - source_data_element: user
-        relationship: logged on
+        relationship: attempted to authenticate to
         target_data_element: cloud service
       - source_data_element: user
-        relationship: logged on from
+        relationship: attempted to authenticate from
         target_data_element: ip
       - source_data_element: user
-        relationship: logged on from
+        relationship: attempted to authenticate from
         target_data_element: port
       - source_data_element: application
-        relationship: authenticated
-        target_data_element: user
-      - source_data_element: application
-        relationship: failed to authenticate
+        relationship: attempted to authenticate
         target_data_element: user
       - source_data_element: cloud service
-        relationship: authenticated
+        relationship: attempted to authenticate
         target_data_element: user
-      - source_data_element: cloud service
-        relationship: failed to authenticate
-        target_data_element: user
-      - source_data_element: user
-        relationship: authenticated from
-        target_data_element: ip
-      - source_data_element: user
-        relationship: authenticated from
-        target_data_element: port
 references:
   - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
