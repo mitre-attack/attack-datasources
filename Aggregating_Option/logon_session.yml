@@ -9,12 +9,17 @@ platforms:
   - Linux
   - MacOS
   - AWS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
 contributors: 
   - ATT&CK
+  - CTID
 data_components:
   - name: logon session metadata
     type: information
-    description: Data and information that describe a logon session and activity around it.
+    description: Data and information that describe a logon session and activity within it.
     relationships:
       - source_data_element: user
         relationship: retrieved information about
