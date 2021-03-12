@@ -1,0 +1,57 @@
+name: Group
+definition: Information about collections of accounts or permissions within an organization.
+collection_layers:
+  - host
+  - cloud
+platforms:
+  - Windows
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+contributors:
+  - ATT&CK
+data_components:
+  - name: group metadata
+    type: information
+    description: Data and information that describe a group and activity around it such as group permissions.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: group
+  - name: group creation
+    type: activity
+    description: A group was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: group
+  - name: group deletion
+    type: activity
+    description: A group was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: group
+  - name: group enumeration
+    type: activity
+    description: A group was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: group
+  - name: group modification
+    type: activity
+    description: A group was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: group
+      - source_data_element: user
+        relationship: added
+        target_data_element: user
+      - source_data_element: user
+        relationship: removed
+        target_data_element: user
+references:
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html
