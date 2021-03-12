@@ -54,9 +54,9 @@ data_components:
       - source_data_element: process
         relationship: requested access to
         target_data_element: process
-  - name: process execution
-    type: information
-    description: Information about the execution of a process, such as the API (Operating system) calls that it makes.
+  - name: OS api execution
+    type: activity
+    description: Information about a process executing operating system api functions.
     relationships:
       - source_data_element: process
         relationship: executed
