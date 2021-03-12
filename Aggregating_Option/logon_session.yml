@@ -1,58 +1,63 @@
+name: Logon Session
+definition: Information about logon sessions being created or terminated by accounts (Local, Domain, or Cloud), interactively or over the network, in order to interact with network resources, applications, or services.
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: logon session context
-  relationships:
-  - relationship: modified
-    source_data_element: logon session
-    target_data_element: null
-  type: information
-- name: logon session creation
-  relationships:
-  - relationship: requested creation
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: requested logon session creation from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: requested logon session creation from
-    source_data_element: user
-    target_data_element: port
-  - relationship: created
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: created logon session from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: created logon session from
-    source_data_element: user
-    target_data_element: port
-  - relationship: failed creation
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: failed logon session creation from
-    source_data_element: user
-    target_data_element: ip
-  - relationship: failed logon session creation from
-    source_data_element: user
-    target_data_element: port
-  type: activity
-- name: logon session termination
-  relationships:
-  - relationship: requested termination
-    source_data_element: user
-    target_data_element: logon session
-  - relationship: terminated
-    source_data_element: user
-    target_data_element: logon session
-  type: activity
-definition: Information about logon sessions being created or terminated by accounts
-  (Local or Domain), interactively or over the network, in order to interact with
-  network resources, applications, or services.
-name: Logon session
+  - host
+  - network
+  - cloud
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+  - AWS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: logon session metadata
+    type: information
+    description: Data and information that describe a logon session and activity within it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: logon session
+  - name: logon session creation
+    type: activity
+    description: A logon session for a user was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: logon session
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: port
+  - name: logon session termination
+    type: activity
+    description: A logon session for a user was terminated.
+    relationships:
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: computer
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: application
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: port
+      - source_data_element: user
+        relationship: terminated
+        target_data_element: logon session
 references:
-- https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
