@@ -1,63 +1,97 @@
-collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: user account creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account enable
-  relationships:
-  - relationship: enabled
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account disable
-  relationships:
-  - relationship: disabled
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account lock
-  relationships:
-  - relationship: locked
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account unlock
-  relationships:
-  - relationship: unlocked
-    source_data_element: user
-    target_data_element: user
-  type: activity
-- name: user account modification
-  relationships:
-  - relationship: requested modification
-    source_data_element: user
-    target_data_element: user
-  - relationship: modified
-    source_data_element: user
-    target_data_element: user
-  - relationship: granted access
-    source_data_element: user
-    target_data_element: user
-  - relationship: removed access
-    source_data_element: user
-    target_data_element: user
-  type: activity
-definition: Security principal or entity that represents a person or machine and can
-  be authenticated by an operating system or platform.
 name: User Account
+definition: The representation of a user, device, service or application that access resources within a network environment. It has login capabilities and can be authenticated by an operating system, application or platform.
+collection_layers:
+  - host
+  - cloud
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+  - AWS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: user account metadata
+    type: activity
+    description: Data and information that describe a user account and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: user
+  - name: user account creation
+    type: activity
+    description: A new user account was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: user
+  - name: user account deletion
+    type: activity
+    description: An existing user account was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: user
+  - name: user account modification
+    type: activity
+    description: An existing user account was modified.
+    relationships:
+      - source_data_element: user
+        relationship: requested modification
+        target_data_element: user
+      - source_data_element: user
+        relationship: modified
+        target_data_element: user
+      - source_data_element: user
+        relationship: modified
+        target_data_element: service principal
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: locked
+        target_data_element: user
+      - source_data_element: user
+        relationship: unlocked
+        target_data_element: user
+      - source_data_element: user
+        relationship: granted access
+        target_data_element: user
+      - source_data_element: user
+        relationship: removed access
+        target_data_element: user
+  - name: user account authentication
+    type: activity
+    description: A user account authenticated onto a system. 
+    relationships:
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: computer
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: application
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: attempted to authenticate from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: attempted to authenticate from
+        target_data_element: port
+      - source_data_element: application
+        relationship: attempted to authenticate
+        target_data_element: user
+      - source_data_element: cloud service
+        relationship: attempted to authenticate
+        target_data_element: user
 references:
-- https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
+  - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
