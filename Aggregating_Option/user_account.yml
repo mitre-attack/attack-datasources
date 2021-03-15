@@ -7,7 +7,6 @@ platforms:
   - Windows
   - Linux
   - MacOS
-  - AWS
   - IaaS
   - SaaS
   - Office 365
