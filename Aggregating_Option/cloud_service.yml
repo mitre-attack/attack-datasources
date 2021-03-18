@@ -9,6 +9,7 @@ platforms:
   - Azure AD
 contributors:
   - ATT&CK
+  - CTID
 data_components:
   - name: cloud service metadata
     type: information
