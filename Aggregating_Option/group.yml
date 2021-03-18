@@ -11,6 +11,7 @@ platforms:
   - Azure AD
 contributors:
   - ATT&CK
+  - CTID
 data_components:
   - name: group metadata
     type: information
