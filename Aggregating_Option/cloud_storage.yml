@@ -1,0 +1,53 @@
+- name: Cloud Storage
+  definition: Information associated with data object storage provided by a cloud vendor.
+  collection_layers:
+    - cloud
+  platforms:
+    - IaaS
+  contributors: 
+    - ATT&CK
+    - CTID
+  data_components:
+    - name: cloud storage creation
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: created
+          target_data_element: cloud storage
+        - source_data_element: user
+          relationship: created
+          target_data_element: cloud storage object
+    - name: cloud storage deletion
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: cloud storage
+        - source_data_element: user
+          relationship: deleted
+          target_data_element: cloud storage object
+    - name: cloud storage metadata
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: retrieved information about
+          target_data_element: cloud storage
+    - name: cloud storage enumeration
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: listed
+          target_data_element: cloud storage
+        - source_data_element: user
+          relationship: listed
+          target_data_element: cloud storage objects
+    - name: cloud storage access
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: cloud storage object
+  references:
+    - https://aws.amazon.com/s3/
+    - https://azure.microsoft.com/en-us/services/storage/blobs/
+    - https://cloud.google.com/storage
