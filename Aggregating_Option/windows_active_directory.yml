@@ -3,73 +3,51 @@ definition: Information associated with the Active Directory service or objects 
 collection_layers:
   - host
   - network
+  - cloud
 platforms:
   - Windows
+  - Azure AD
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: active directory creation
-    description: An active directory service or object was created.
+  - name: active directory object creation
+    description: An active directory object was created.
     type: activity
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: ad object
-      - source_data_element: user
-        relationship: created
-        target_data_element: ad service
-  - name: active directory deletion
+  - name: active directory object deletion
     type: activity
-    description: An active directory service or object was deleted
+    description: An active directory object was deleted
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: ad object
-      - source_data_element: user
-        relationship: undeleted
-        target_data_element: ad object
-      - source_data_element: user
-        relationship: deleted
-        target_data_element: ad service
-  - name: active directory access
-    type: activity
-    description: An active directory service or object was accessed.
-    relationships:
-      - source_data_element: user
-        relationship: accessed
-        target_data_element: ad object
-      - source_data_element: user
-        relationship: requested access
-        target_data_element: ad object
-      - source_data_element: process
-        relationship: requested access
-        target_data_element: ad object
-      - source_data_element: user
-        relationship: accessed
-        target_data_element: ad service
-  - name: active directory modification
+  - name: active directory object modification
     type: activity
     description: An active directory service or object was modified.
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: ad object
-      - source_data_element: user
-        relationship: modified
-        target_data_element: ad service
-  - name: active directory authentication
+  - name: active directory credential request
     type: activity
-    description: An active directory object authenticated onto a system.
+    description: A user requested active directory credentials, such as a ticket or token.
     relationships:
       - source_data_element: user
         relationship: requested
-        target_data_element: security key
+        target_data_element: ad credential
+   - name: active directory object access
+    type: activity
+    description: An active directory object was accessed.
+    relationships:
       - source_data_element: user
-        relationship: requested authentication to
+        relationship: accessed
         target_data_element: ad object
-      - source_data_element: ad object
-        relationship: authenticated
-        target_data_element: user
+      - source_data_element: user
+        relationship: requested access
+        target_data_element: ad object
 references:
   - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
