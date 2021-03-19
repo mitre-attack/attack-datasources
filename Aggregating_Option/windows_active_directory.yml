@@ -2,7 +2,6 @@ name: Active Directory
 definition: Information associated with the Active Directory service or objects (Such as a user, a group, or a workstation) and activity around them.
 collection_layers:
   - host
-  - network
   - cloud
 platforms:
   - Windows
