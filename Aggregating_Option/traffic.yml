@@ -3,10 +3,12 @@ definition: Network traffic, either summarized (e.g., as netflow) or captured in
 collection_layers:
   - host
   - network
+  - cloud
 platforms:
   - Windows
   - Linux
   - MacOS
+  - IaaS
 contributors: 
   - ATT&CK
   - CTID
