@@ -1,5 +1,6 @@
 collection_layers:
 - host
+- cloud
 contributors:
 - ATT&CK
 data_components:
@@ -26,5 +27,6 @@ definition: Information about PowerShell operations related to PowerShell engine
 name: Powershell log
 platforms:
 - Windows
+- Office 365
 references:
 - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
