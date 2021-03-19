@@ -1,0 +1,56 @@
+name: Firewall
+definition: Information associated with the network security system, running locally on an endpoint or remotely in a cloud environment, that monitors and controls incoming and outgoing network traffic based on predetermined security rules.
+collection_layers:
+  - cloud
+  - host
+platforms:
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  - Linux
+  - MacOS
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: firewall metadata
+    type: information
+    description: Data and information that describe a firewall system and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: firewall
+  - name: firewall disable
+    type: activity
+    description: A firewall system was disabled.
+    relationships:
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: firewall
+  - name: firewall rule modification
+    type: activity
+    description: Rules of a firewall system was modified.
+    relationships:
+      - source_data_element: user
+        relationship: created 
+        target_data_element: firewall rule
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: firewall rule
+      - source_data_element: user
+        relationship: modified
+        target_data_element: firewall rule
+  - name: firewall enumeration
+    type: activity
+    description: A firewall system or element (rule) was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: firewall
+      - source_data_element: user
+        relationship: listed
+        target_data_element: firewall rule
+references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
