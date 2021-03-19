@@ -6,6 +6,7 @@
     - IaaS
   contributors: 
     - ATT&CK
+    - CTID
   data_components:
     - name: image creation
       type: activity
