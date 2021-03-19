@@ -8,7 +8,6 @@ platforms:
   - SaaS
   - Office 365
   - Azure AD
-  - AWS
   - Linux
   - MacOS
   - Windows
@@ -23,52 +22,24 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: firewall
-      - source_data_element: firewall
-        relationship: blocked connection from
-        target_data_element: ip
-      - source_data_element: firewall
-        relationship: blocked connection from
-        target_data_element: port
-      - source_data_element: firewall
-        relationship: blocked connection from
-        target_data_element: process
-      - source_data_element: firewall
-        relationship: blocked connection to
-        target_data_element: ip
-      - source_data_element: firewall
-        relationship: blocked connection to
-        target_data_element: port
-      - source_data_element: firewall
-        relationship: blocked connection to
-        target_data_element: process
-  - name: firewall creation
+  - name: firewall disable
     type: activity
-    description: A firewall system or element (rule) was created.
-    relationships:
-      - source_data_element: process
-        relationship: created
-        target_data_element: firewall rule
-  - name: firewall deletion
-    type: activity
-    description: A firewall system or element (rule) was deleted.
+    description: A firewall system was disabled.
     relationships:
       - source_data_element: user
-        relationship: deleted
+        relationship: disabled
         target_data_element: firewall
-      - source_data_element: process
-        relationship: deleted
-        target_data_element: firewall rule
-  - name: firewall modification
+  - name: firewall rule modification
     type: activity
-    description: A firewall system or element (rule) was modified.
+    description: Rules of a firewall system was modified.
     relationships:
       - source_data_element: user
-        relationship: modified
-        target_data_element: firewall
-      - source_data_element: process
-        relationship: modified
-        target_data_element: firewall
-      - source_data_element: process
+        relationship: created 
+        target_data_element: firewall rule
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: firewall rule
+      - source_data_element: user
         relationship: modified
         target_data_element: firewall rule
   - name: firewall enumeration
