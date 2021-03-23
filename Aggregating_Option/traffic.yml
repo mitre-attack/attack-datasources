@@ -21,7 +21,7 @@ data_components:
         relationship: originated from
 	target_data_element: ip
       - source_data_element: network traffic flow
-        relationship: responded from 
+        relationship: responded from
 	target_data_element: ip
       - source_data_element: network traffic flow
         relationship: originated from
