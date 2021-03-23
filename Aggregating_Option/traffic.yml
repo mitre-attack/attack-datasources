@@ -13,31 +13,31 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-- name: network traffic flow
-	type: information
-	description: Information about the flow of network packets in a network connection, either captured on the wire or on an endpoint.
-	relationships:
+  - name: network traffic flow
+    type: information
+    description: Information about the flow of network packets in a network connection, either captured on the wire or on an endpoint.
+    relationships:
       - source_data_element: network traffic flow
-      relationship: originated from
-      target_data_element: ip
+        relationship: originated from
+	target_data_element: ip
       - source_data_element: network traffic flow
-      relationship: responded from 
-      target_data_element: ip
-        - source_data_element: network traffic flow
-      relationship: originated from
-      target_data_element: port
+        relationship: responded from 
+	target_data_element: ip
       - source_data_element: network traffic flow
-      relationship: responded from
-      target_data_element: port
+        relationship: originated from
+	target_data_element: port
       - source_data_element: network traffic flow
-      relationship: identified
-      target_data_element: transport layer protocol
+        relationship: responded from
+	target_data_element: port
       - source_data_element: network traffic flow
-      relationship: identified
-      target_data_element: application layer protocol
+        relationship: identified
+	target_data_element: transport layer protocol
       - source_data_element: network traffic flow
-      relationship: identified
-      target_data_element: network traffic volume
+        relationship: identified
+	target_data_element: application layer protocol
+      - source_data_element: network traffic flow
+        relationship: identified
+	target_data_element: network traffic volume
   - name: network traffic content
     type: information
     description: Information about the content of network packets and the protocols associated to them, either captured on the wire or on an endpoint.
