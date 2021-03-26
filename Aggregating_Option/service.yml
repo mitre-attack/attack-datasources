@@ -1,34 +1,68 @@
-collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: service context
-  relationships:
-  - relationship: started
-    source_data_element: service
-    target_data_element: null
-  - relationship: stopped
-    source_data_element: service
-    target_data_element: null
-  type: information
-- name: service creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: service
-  type: activity
-- name: service access
-  relationships:
-  - relationship: requested access
-    source_data_element: user
-    target_data_element: service
-  type: activity
-definition: Information about software programs that run in the background and typically
-  start with the operating system.
 name: Service
+definition: Information about software programs that run in the background and typically start with the operating system.
+collection_layers:
+  - host
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: service metadata
+    type: information
+    description: Data and information that describe a service and activity around it.
+    relationships:
+      - source_data_element: service
+        relationship: started
+        target_data_element: 
+      - source_data_element: service
+        relationship: stopped
+        target_data_element: 
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: service
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: service
+  - name: service creation
+    type: activity
+    description: A new service/daemon was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: service
+  - name: service access
+    type: activity
+    description: A service/daemon was opened or accessed.
+    relationships:
+      - source_data_element: user
+        relationship: requested access
+        target_data_element: service
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: service
+  - name: service enumeration
+    type: activity
+    description: A service/daemon was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: service
+      - source_data_element: process
+        relationship: listed
+        target_data_element: service
+  - name: service modification
+    type: activity
+    description: A service/daemon was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: service
+      - source_data_element: process
+        relationship: modified
+        target_data_element: service
 references:
-- https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
-- https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
+  - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
+  - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
