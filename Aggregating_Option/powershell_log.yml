@@ -2,7 +2,6 @@ name: Powershell log
 definition: Information about PowerShell operations (either locally or remotely) related to PowerShell engine, providers, and cmdlets.
 collection_layers:
   - host
-  - network
 platforms:
   - Windows
 contributors: 
@@ -31,3 +30,4 @@ data_components:
         target_data_element: command
 references:
   - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
+  - https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
