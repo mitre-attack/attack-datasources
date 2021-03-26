@@ -19,12 +19,3 @@ data_components:
       - source_data_element: process
         relationship: modified
         target_data_element: network share
-  - name: acpi tables #TBD - how to specify platform-specific (linux, macos) components?
-    type: information
-    description: Firmware ACPI metadata and content. 
-  - name: bios
-    type: information
-    description: Information (e.g., key/value pairs) extracted from the BIOS on an endpoint.
-  - name: smbios
-    type: information
-    description: Information about the System Management BIOS (SMBIOS) on an endpoint.
