@@ -1,23 +1,38 @@
-collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: named pipe creation
-  relationships:
-  - relationship: created
-    source_data_element: process
-    target_data_element: pipe
-- name: named pipe connection
-  relationships:
-  - relationship: connected to
-    source_data_element: process
-    target_data_element: pipe
-definition: Information about mechanisms that allow inter-process communication locally
-  or over the network. A named pipe is usually found as a file and processes attach
-  to it.
 name: Named pipe
+definition: Information about mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it.
+collection_layers:
+  - host
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: named pipe creation
+    type: activity
+    description: A named pipe is created on a system.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: pipe
+  - name: named pipe connection
+    type: activity
+    description: Named pipe connection between a client and a server.
+    relationships:
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: pipe
+  - name: named pipe access
+    type: activity
+    description: A named pipe is accessed.
+    relationships:
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: pipe
+      - source_data_element: process
+        relationship: opened handle #TBD - how to specify platform-specific relationships?
+        target_data_element: pipe 
 references:
-- https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
+  - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
