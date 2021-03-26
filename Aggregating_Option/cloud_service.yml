@@ -18,6 +18,12 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: cloud service
+  - name: cloud service disable
+    type: activity
+    relationships:
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: cloud service
   - name: cloud service enumeration
     type: activity
     description: A cloud service was listed.
@@ -34,9 +40,6 @@ data_components:
         target_data_element: cloud service
       - source_data_element: user
         relationship: enabled
-        target_data_element: cloud service
-      - source_data_element: user
-        relationship: disabled
         target_data_element: cloud service
 references:
   - https://aws.amazon.com

@@ -13,8 +13,17 @@
       relationships:
         - source_data_element: user
           relationship: created
-          target_data_element: cloud storage
+          target_data_element: cloud storage bucket
         - source_data_element: user
+          relationship: created
+          target_data_element: cloud storage object
+    - name: cloud storage modification
+      type: activity
+      relationships:
+        - source_data_element: user
+          relationship: modified
+          target_data_element: cloud storage bucket
+        - source_data_element: modified
           relationship: created
           target_data_element: cloud storage object
     - name: cloud storage deletion
@@ -22,7 +31,7 @@
       relationships:
         - source_data_element: user
           relationship: deleted
-          target_data_element: cloud storage
+          target_data_element: cloud storage bucket
         - source_data_element: user
           relationship: deleted
           target_data_element: cloud storage object
@@ -37,13 +46,16 @@
       relationships:
         - source_data_element: user
           relationship: listed
-          target_data_element: cloud storage
+          target_data_element: cloud storage buckets
         - source_data_element: user
           relationship: listed
           target_data_element: cloud storage objects
     - name: cloud storage access
       type: activity
       relationships:
+        - source_data_element: user
+          relationship: accessed
+          target_data_element: cloud storage bucket
         - source_data_element: user
           relationship: accessed
           target_data_element: cloud storage object
