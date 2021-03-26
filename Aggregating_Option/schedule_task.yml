@@ -1,41 +1,63 @@
+name: Scheduled Job
+definition: Information about scheduled work that run automatically in the background of a computer system (Cron deamon, Task Scheduler).
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: schedule task creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task enable
-  relationships:
-  - relationship: enabled
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task disable
-  relationships:
-  - relationship: disabled
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-- name: schedule task modification
-  relationships:
-  - relationship: modified
-    source_data_element: user
-    target_data_element: schedule task
-  type: activity
-definition: Information about scheduled work that the Task Scheduler service performs.
-name: Schedule Task
+  - host
 platforms:
-- Windows
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: scheduled job metadata
+    type: information
+    description: Data and information that describe a scheduled job and activity around it.
+    relationships:
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: scheduled job
+  - name: scheduled job creation
+    type: activity
+    description: A new scheduled job was created, either locally or remotely.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: created
+        target_data_element: scheduled job
+  - name: scheduled job deletion
+    type: activity
+    description: An existing scheduled job was deleted, either locally or remotely.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: scheduled job
+  - name: schedule job modification
+    type: activity
+    description: An existing scheduled job was modified (e.g., the executable launched by the task was changed), either locally or remotely.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: modified
+        target_data_element: scheduled job
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: enabled
+        target_data_element: scheduled job
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: disabled
+        target_data_element: scheduled job
 references:
-- https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
+  - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
