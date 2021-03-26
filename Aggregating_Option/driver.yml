@@ -10,13 +10,6 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: driver additional context
-    type: information
-    description: General information about device driver that does not fit under other data components such as information about resources that support the creation of a device driver such as I/O Kit for the MacOS platform.
-    relationships:
-      - source_data_element: host
-        relationship: retrieved information about
-        target_data_element: driver
   - name: driver metadata
     type: information
     description: Data and information that describe a driver and activity around it such as driver issues reporting and driver integrity (Page hash, code) checking.
@@ -41,4 +34,3 @@ data_components:
 references:
   - https://developer.apple.com/library/archive/documentation/DeviceDrivers/Conceptual/IOKitFundamentals/Features/Features.html
   - https://docs.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode
-  
