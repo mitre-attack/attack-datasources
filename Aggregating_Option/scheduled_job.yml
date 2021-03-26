@@ -1,5 +1,5 @@
 name: Scheduled Job
-definition: Information about scheduled work that run automatically in the background of a computer system (Cron deamon, Task Scheduler).
+definition: Information about scheduled work that run automatically in the background of a computer system (Cron deamon, Task Scheduler, BITS).
 collection_layers:
   - host
 platforms:
@@ -37,7 +37,7 @@ data_components:
       - source_data_element: process
         relationship: deleted
         target_data_element: scheduled job
-  - name: schedule job modification
+  - name: scheduled job modification
     type: activity
     description: An existing scheduled job was modified (e.g., the executable launched by the task was changed), either locally or remotely.
     relationships:
