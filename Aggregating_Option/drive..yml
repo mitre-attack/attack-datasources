@@ -1,0 +1,42 @@
+name: Drive
+definition: Information associated with drive storage regions.
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: drive creation
+    type: activity
+    description: The creation of a new drive.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: drive
+  - name: drive deletion
+    type: activity
+    description: The deletion of an existing partition.
+    relationships:
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: drive
+  - name: drive modification
+    type: activity
+    description: The modification of data or information about a drive.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: drive
+  - name: drive access
+    type: activity
+    description: The raw access of the drive.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: drive
+  references:
+  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009
