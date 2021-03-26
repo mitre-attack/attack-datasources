@@ -1,42 +1,34 @@
+name: WMI
+definition: Information about objects from system classes (such as providers, filters, and consumers) that support Windows Management Instrumentation (WMI) activitites.
 collection_layers:
-- host
-contributors:
-- ATT&CK
-data_components:
-- name: wmi object context
-  relationships:
-  - relationship: created
-    source_data_element: wmi subscription
-    target_data_element: null
-  type: information
-- name: wmi object creation
-  relationships:
-  - relationship: created
-    source_data_element: user
-    target_data_element: wmi filter
-  - relationship: created
-    source_data_element: user
-    target_data_element: wmi consumer
-  - relationship: created
-    source_data_element: user
-    target_data_element: wmi subscription
-  type: activity
-- name: wmi object deletion
-  relationships:
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: wmi filter
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: wmi consumer
-  - relationship: deleted
-    source_data_element: user
-    target_data_element: wmi subscription
-  type: activity
-definition: Information about objects from the system classes, such as filters and
-  consumers, that support Windows Management Instrumentation activitites.
-name: WMI object
+  - host
 platforms:
-- Windows
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: wmi metadata
+    type: information
+    description: Data and information that describe a WMI object (filter, consumer, subscription, binding, provider) and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: wmi object
+  - name: wmi creation
+    type: activity
+    description: A new WMI object (filter, consumer, subscription, binding, provider) was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: wmi object
+  - name: wmi deletion
+    type: activity
+    description: An existing WMI object (filter, consumer, subscription, binding, provider) was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: wmi object
 references:
-- https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
+  - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
+  - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-architecture
