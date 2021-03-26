@@ -1,7 +1,6 @@
 name: Log file
 definition: Information associated with system log files, such as Windows application logs.
 collection_layers:
-  - cloud
   - host
 platforms:
   - Windows
@@ -11,7 +10,7 @@ contributors:
 data_components:
   - name: log file deletion
     type: activity
-    description: A log file (such as pplication, system, or audit logs) was deleted.
+    description: A log file (such as application, system, or audit logs) was deleted.
     relationships:
       - source_data_element: process
         relationship: deleted
