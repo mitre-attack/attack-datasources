@@ -10,29 +10,14 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: named pipe creation
-    type: activity
-    description: A named pipe is created on a system.
+  - name: named pipe metadata
+    type: information
+    description: Information about a named pipe on a system, including pipe name and creating process.
     relationships:
-      - source_data_element: process
-        relationship: created
-        target_data_element: pipe
-  - name: named pipe connection
-    type: activity
-    description: Named pipe connection between a client and a server.
-    relationships:
-      - source_data_element: process
-        relationship: connected to
-        target_data_element: pipe
-  - name: named pipe access
-    type: activity
-    description: A named pipe is accessed.
-    relationships:
-      - source_data_element: process
-        relationship: accessed
-        target_data_element: pipe
-      - source_data_element: process
-        relationship: opened handle #TBD - how to specify platform-specific relationships?
-        target_data_element: pipe 
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: named pipe
 references:
   - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
+  - https://github.com/SigmaHQ/sigma/blob/master/rules/windows/sysmon/sysmon_mal_namedpipes.yml
+  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90017
