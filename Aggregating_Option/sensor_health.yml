@@ -1,0 +1,19 @@
+name: Sensor Health
+definition: Information associated with sensors providing data about host system status.
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: host status
+    type: information
+    description: Data from a sensor about the health of an host system sensor
+    relationships:
+      - source_data_element: sensor health
+        relationship: contained
+        target_data_element: host system status
