@@ -19,25 +19,25 @@ data_components:
     relationships:
       - source_data_element: network traffic flow
         relationship: originated from
-	target_data_element: ip
+        target_data_element: ip
       - source_data_element: network traffic flow
         relationship: responded from
-	target_data_element: ip
+        target_data_element: ip
       - source_data_element: network traffic flow
         relationship: originated from
-	target_data_element: port
+        target_data_element: port
       - source_data_element: network traffic flow
         relationship: responded from
-	target_data_element: port
+        target_data_element: port
       - source_data_element: network traffic flow
         relationship: identified
-	target_data_element: transport layer protocol
+        target_data_element: transport layer protocol
       - source_data_element: network traffic flow
         relationship: identified
-	target_data_element: application layer protocol
+        target_data_element: application layer protocol
       - source_data_element: network traffic flow
         relationship: identified
-	target_data_element: network traffic volume
+        target_data_element: network traffic volume
   - name: network traffic content
     type: information
     description: Information about the content of network packets and the protocols associated to them, either captured on the wire or on an endpoint.
