@@ -1,32 +1,21 @@
 name: Kernel
-definition: Information associated with the computer program at the core of a computer's operating system.
+definition: Information associated with the operating system kernel of a host.
 collection_layers:
   - host
 platforms:
-  - Windows
   - Linux
   - MacOS
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: kernel active info
-    type: information
-    description: Information about the running kernel on a system.
-  - name: kernel module list
-    type: information
-    description: A list of kernel modules both loaded and within the load search path.
-  - name: kernel module load #TBD - how to specify platform-specific (macos, linux) components?
+  - name: kernel module load
     type: activity
-    description: A new kernel module was loaded on an endpoint.
+    description: A new kernel module was loaded on an host.
     relationships:
       - source_data_element: process
         relationship: loaded
         target_data_element: kernel module
-  - name: kernel module unload #TBD - how to specify platform-specific (macos, linux) components?
-    type: activity
-    description: An existing kernel module was unloaded from an endpoint.
-    relationships:
-      - source_data_element: process
-        relationship: unloaded
-        target_data_element: kernel module
+references:
+  - https://www.stigviewer.com/stig/oracle_linux_5/2016-12-20/finding/V-22383
+  - https://man7.org/linux/man-pages/man2/init_module.2.html
