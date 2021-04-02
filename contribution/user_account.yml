@@ -3,6 +3,7 @@ definition: The representation of a user, device, service or application that ac
 collection_layers:
   - host
   - cloud
+  - container
 platforms:
   - Windows
   - Linux
@@ -11,6 +12,7 @@ platforms:
   - SaaS
   - Office 365
   - Azure AD
+  - Containers
 contributors: 
   - ATT&CK
   - CTID

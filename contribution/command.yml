@@ -2,11 +2,13 @@ name: Command
 definition: Information about commands that can be used through a command-line interface and/or script interpreter.
 collection_layers:
   - host
+  - container
 platforms:
   - Windows
   - Linux
   - macOS
   - Network
+  - Containers
 contributors: 
   - Austin Clark
   - ATT&CK
