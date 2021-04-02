@@ -19,7 +19,7 @@ data_components:
         target_data_element: scheduled job
   - name: scheduled job creation
     type: activity
-    description: A new scheduled job was created, either locally or remotely.
+    description: A scheduled job was created, either locally or remotely.
     relationships:
       - source_data_element: user
         relationship: created
@@ -29,7 +29,7 @@ data_components:
         target_data_element: scheduled job
   - name: scheduled job deletion
     type: activity
-    description: An existing scheduled job was deleted, either locally or remotely.
+    description: A scheduled job was deleted, either locally or remotely.
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -39,7 +39,7 @@ data_components:
         target_data_element: scheduled job
   - name: scheduled job modification
     type: activity
-    description: An existing scheduled job was modified (e.g., the executable launched by the task was changed), either locally or remotely.
+    description: A scheduled job was modified (e.g., the executable launched by the task was changed), either locally or remotely.
     relationships:
       - source_data_element: user
         relationship: modified

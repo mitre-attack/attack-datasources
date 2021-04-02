@@ -16,7 +16,7 @@ contributors:
   - CTID
 data_components:
   - name: user account metadata
-    type: activity
+    type: information
     description: Data and information that describe a user account and activity around it.
     relationships:
       - source_data_element: user
@@ -24,24 +24,24 @@ data_components:
         target_data_element: user
   - name: user account creation
     type: activity
-    description: A new user account was created.
+    description: A user account was created.
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: user
   - name: user account deletion
     type: activity
-    description: An existing user account was deleted.
+    description: A user account was deleted.
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: user
   - name: user account modification
     type: activity
-    description: An existing user account was modified.
+    description: A user account was modified.
     relationships:
       - source_data_element: user
-        relationship: requested modification
+        relationship: requested modification of
         target_data_element: user
       - source_data_element: user
         relationship: modified
@@ -62,10 +62,10 @@ data_components:
         relationship: unlocked
         target_data_element: user
       - source_data_element: user
-        relationship: granted access
+        relationship: granted access to
         target_data_element: user
       - source_data_element: user
-        relationship: removed access
+        relationship: removed access from
         target_data_element: user
   - name: user account authentication
     type: activity

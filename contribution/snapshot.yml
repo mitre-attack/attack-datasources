@@ -1,0 +1,48 @@
+name: Snapshot
+definition: Information associated with the state of a system at a particular point in time.
+collection_layers:
+  - cloud
+platforms:
+  - IaaS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: snapshot creation
+    type: activity
+    description: A snapshot was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: snapshot
+  - name: snapshot modification
+    type: activity
+    description: A snapshot was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: snapshot
+  - name: snapshot deletion
+    type: activity
+    description: A snapshot was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: snapshot
+  - name: snapshot metadata
+    type: information
+    description: Data and information that describe a snapshot and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: snapshot
+  - name: snapshot enumeration
+    type: activity
+    description: A snapshot was listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: snapshot
+references:
+  - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/snapshot-copy-managed-disk
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html

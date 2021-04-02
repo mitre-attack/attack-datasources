@@ -1,0 +1,34 @@
+name: Image
+definition: Information about a virtual machine image.
+collection_layers:
+  - cloud
+platforms:
+  - IaaS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: image creation
+    type: activity
+    description: An image was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: image
+  - name: image modification
+    type: activity
+    description: An image was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: image
+  - name: image deletion
+    type: activity
+    description: An image was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: image
+references:
+  - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html

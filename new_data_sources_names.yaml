@@ -1,18 +1,18 @@
-- Sensor health and status: Sensor log
-  Access tokens: Access token
-  PowerShell logs: Powershell log
-  API monitoring: API
-  Application logs: Application log
+- Sensor health and status: Sensor Health
+  Access tokens: Web Credential
+  PowerShell logs: Powershell Log
+  API monitoring: Process
+  Application logs: Application Log
   File monitoring: File
-  Authentication logs: Logon session
-  Named Pipes: Named pipe
+  Authentication logs: Logon Session
+  Named Pipes: Named Pipe
   Process monitoring: Process
   Process use of network: Process
-  Process command-line parameters: Process
+  Process command-line parameters: Command
   DLL monitoring: Module
   Loaded DLLs: Module
-  Windows Registry: Windows registry
-  DNS records: DNS
-  Digital certificate logs: Digital certificate log
-  WMI Objects: WMI object
+  Windows Registry: Windows Registry
+  DNS records: Network Traffic
+  Digital certificate logs: Digital Certificate Log
+  WMI Objects: WMI
   Services: Service

@@ -38,7 +38,7 @@ data_components:
       - source_data_element: user
         relationship: requested
         target_data_element: ad credential
-   - name: active directory object access
+  - name: active directory object access
     type: activity
     description: An active directory object was accessed.
     relationships:
@@ -46,7 +46,7 @@ data_components:
         relationship: accessed
         target_data_element: ad object
       - source_data_element: user
-        relationship: requested access
+        relationship: requested access to
         target_data_element: ad object
 references:
   - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started

@@ -12,7 +12,8 @@ contributors:
 data_components:
   - name: module content
     type: information
-    description: Information about the content of a module such as sections and segments.
+    description: Data contained in a module such as sections and segments.
+    relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: module
@@ -22,6 +23,7 @@ data_components:
   - name: module metadata
     type: information
     description: Data and information that describe a module and activity around it such as header and signature.
+    relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: module

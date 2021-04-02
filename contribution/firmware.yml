@@ -13,9 +13,11 @@ data_components:
   - name: firmware modification
     type: activity
     description: The firmware of a system component was modified.
+    relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: firmware
       - source_data_element: process
         relationship: modified
-        target_data_element: network share
+        target_data_element: firmware
+references:
