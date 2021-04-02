@@ -1,6 +1,6 @@
 - Sensor health and status: Sensor Health
   Access tokens: Web Credential
-  PowerShell logs: Powershell Log
+  PowerShell logs: Script
   API monitoring: Process
   Application logs: Application Log
   File monitoring: File
@@ -16,3 +16,5 @@
   Digital certificate logs: Digital Certificate Log
   WMI Objects: WMI
   Services: Service
+  Netflow/Enclave netflow: Network Traffic
+  Packet capture: Network Traffic
