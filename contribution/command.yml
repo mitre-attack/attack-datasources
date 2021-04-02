@@ -12,6 +12,7 @@ platforms:
 contributors: 
   - Austin Clark
   - ATT&CK
+  - CTID
 data_components:
   - name: command execution
     type: activity
