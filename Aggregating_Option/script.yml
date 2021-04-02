@@ -15,7 +15,7 @@ data_components:
       - source_data_element: command
         relationship: executed
         target_data_element: script
-  - source_data_element: process
+      - source_data_element: process
         relationship: executed
         target_data_element: script
 references:
