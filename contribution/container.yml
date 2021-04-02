@@ -1,0 +1,40 @@
+name: Container
+definition: Information about a container within an environment.
+collection_layers:
+  - container
+platforms:
+  - Containers
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: container creation
+    type: activity
+    description: A container was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: container
+  - name: container metadata
+    type: information
+    description: Data and information that describe a container and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: container
+  - name: container enumeration
+    type: activity
+    description: Containers were listed.
+    relationships:
+      - source_data_element: user
+        relationship: listed
+        target_data_element: containers
+  - name: container start
+    type: activity
+    description: A container was started.
+    relationships:
+      - source_data_element: user
+        relationship: started
+        target_data_element: container
+references:
+  - https://docs.docker.com/engine/api/v1.41/#tag/Container

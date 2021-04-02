@@ -2,10 +2,12 @@ name: Scheduled Job
 definition: Information about scheduled work that run automatically in the background of a computer system (Cron deamon, Task Scheduler, BITS).
 collection_layers:
   - host
+  - container
 platforms:
   - Windows
   - Linux
   - MacOS
+  - Containers
 contributors: 
   - ATT&CK
   - CTID
