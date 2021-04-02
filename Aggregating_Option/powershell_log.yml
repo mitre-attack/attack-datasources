@@ -1,5 +1,5 @@
-name: Powershell log
-definition: Information about PowerShell operations (either locally or remotely) related to PowerShell engine, providers, and cmdlets.
+name: Script
+definition: Information about executable script content, such as data provided by PowerShell logs and/or AMSI
 collection_layers:
   - host
 platforms:
@@ -8,26 +8,17 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: powershell metadata
-    type: information
-    description: Data and information that describe PowerShell operations.
-    relationships:
-      - source_data_element: application host
-        relationship: started
-        target_data_element:
-      - source_data_element: application domain
-        relationship: started
-        target_data_element:
-  - name: powershell execution
-    description: Execution of powershell commands.
+  - name: script execution
     type: activity
+    description: Data and information that describe contents of an execution script
     relationships:
-      - source_data_element: user
-        relationship: started
-        target_data_element: application host
-      - source_data_element: process
+      - source_data_element: command
         relationship: executed
-        target_data_element: command
+        target_data_element: script
+  - source_data_element: process
+        relationship: executed
+        target_data_element: script
 references:
   - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
   - https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
+  - https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal
