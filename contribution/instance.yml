@@ -49,7 +49,7 @@ data_components:
         target_data_element: instance
   - name: instance enumeration
     type: activity
-    description: An instance was listed.
+    description: Instances were listed.
     relationships:
       - source_data_element: user
         relationship: listed

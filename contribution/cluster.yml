@@ -1,0 +1,20 @@
+name: Cluster
+definition: Information about a cluster within a containerized environment.
+collection_layers:
+  - container
+platforms:
+  - Containers
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: cluster metadata
+    type: information
+    description: Data and information that describe a cluster and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: cluster
+references:
+  - https://kubernetes.io/docs/concepts/cluster-administration/
+  - https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cluster-info
