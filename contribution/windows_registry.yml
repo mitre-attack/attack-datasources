@@ -1,0 +1,66 @@
+name: Windows Registry
+definition: Information about configuration data used by applications and system components.
+platforms:
+  - Windows
+collection_layers:
+  - host
+contributors:
+  - ATT&CK
+data_components:
+  - name: windows registry key creation
+    type: activity
+    description: A registry key was created.
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key value
+  - name: windows registry key deletion
+    type: activity
+    description: A registry key was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key value
+  - name: windows registry key modification
+    type: activity
+    description: A registry key was modified.
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key value
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key value
+  - name: Windows registry key access
+    type: activity
+    description: A registry key was accessed.
+    relationships:
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: requested access to
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: requested access to
+        target_data_element: windows registry key
+references:
+- https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry

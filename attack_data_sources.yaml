@@ -1,677 +1,1656 @@
-- name: Service
-  definition: Information about software programs that run in the background and typically start with the operating system.
+- name: Active Directory
+  definition: Information associated with the Active Directory service or objects
+    (Such as a user, a group, or a workstation) and activity around them.
   collection_layers:
-    - host
+  - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Azure AD
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: service context
-      type: information
-      relationships:
-        - source_data_element: service
-          relationship: started
-          target_data_element: 
-        - source_data_element: service
-          relationship: stopped
-          target_data_element: 
-    - name: service creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: service
-    - name: service access
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: requested access
-          target_data_element: service
+  - name: active directory object creation
+    description: An active directory object was created.
+    type: activity
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: ad object
+  - name: active directory object deletion
+    type: activity
+    description: An active directory object was deleted
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: ad object
+  - name: active directory object modification
+    type: activity
+    description: An active directory service or object was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: ad object
+  - name: active directory credential request
+    type: activity
+    description: A user requested active directory credentials, such as a ticket or
+      token.
+    relationships:
+    - source_data_element: user
+      relationship: requested
+      target_data_element: ad credential
+  - name: active directory object access
+    type: activity
+    description: An active directory object was accessed.
+    relationships:
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: ad object
+    - source_data_element: user
+      relationship: requested access to
+      target_data_element: ad object
   references:
-    - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
-    - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
-- name: Module
-  definition: Information about portable executable files, such as a dll or an executable, consisting of one or more classes and interfaces.
+  - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
+- name: Application Log
+  definition: Logs from events in third-party applications (mail server, web applications,
+    etc.).
   collection_layers:
-    - host
+  - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  - IaaS
+  - SaaS
+  - Office 365
+  contributors:
+  - ATT&CK
   data_components:
-    - name: module load
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: loaded
-          target_data_element: dll
-        - source_data_element: process
-          relationship: loaded
-          target_data_element: executable
+  - name: application log content
+    type: information
+    description: Data captured in an application log.
+    relationships:
+    - source_data_element: application log
+      relationship: contained
+      target_data_element: application event entries
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
-    - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
-- name: WMI object
-  definition: Information about objects from the system classes, such as filters and consumers, that support Windows Management Instrumentation activitites.
+  - https://confluence.atlassian.com/doc/working-with-confluence-logs-108364721.html
+- name: Cloud Service
+  definition: Information about a service available within a cloud environment.
   collection_layers:
-    - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: wmi object context
-      type: information
-      relationships:
-        - source_data_element: wmi subscription
-          relationship: created
-          target_data_element:
-    - name: wmi object creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: wmi filter
-        - source_data_element: user
-          relationship: created
-          target_data_element: wmi consumer
-        - source_data_element: user
-          relationship: created
-          target_data_element: wmi subscription
-    - name: wmi object deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: wmi filter
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: wmi consumer
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: wmi subscription
+  - name: cloud service metadata
+    type: information
+    description: Data and information that describe a cloud service and activity around
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: cloud service
+  - name: cloud service disable
+    type: activity
+    description: A cloud service was disabled.
+    relationships:
+    - source_data_element: user
+      relationship: disabled
+      target_data_element: cloud service
+  - name: cloud service enumeration
+    type: activity
+    description: A cloud service was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: cloud service
+  - name: cloud service modification
+    type: activity
+    description: A cloud service was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: cloud service
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
+  - https://aws.amazon.com
+  - https://azure.microsoft.com/en-us/services/
+- name: Cloud Storage
+  definition: Information associated with data object storage provided by a cloud
+    vendor.
+  collection_layers:
+  - cloud
+  platforms:
+  - IaaS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: cloud storage creation
+    type: activity
+    description: A cloud storage was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: cloud storage bucket
+    - source_data_element: user
+      relationship: created
+      target_data_element: cloud storage object
+  - name: cloud storage modification
+    type: activity
+    description: A cloud storage was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: cloud storage bucket
+    - source_data_element: modified
+      relationship: created
+      target_data_element: cloud storage object
+  - name: cloud storage deletion
+    type: activity
+    description: A cloud storage was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: cloud storage bucket
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: cloud storage object
+  - name: cloud storage metadata
+    type: information
+    description: Data and information that describe a cloud storage and activity around
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: cloud storage
+  - name: cloud storage enumeration
+    type: activity
+    description: A cloud storage was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: cloud storage buckets
+    - source_data_element: user
+      relationship: listed
+      target_data_element: cloud storage objects
+  - name: cloud storage access
+    type: activity
+    description: A cloud storage was opened or accessed.
+    relationships:
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: cloud storage bucket
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: cloud storage object
+  references:
+  - https://aws.amazon.com/s3/
+  - https://azure.microsoft.com/en-us/services/storage/blobs/
+  - https://cloud.google.com/storage
+- name: Command
+  definition: Information about commands that can be used through a command-line interface
+    and/or script interpreter.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - macOS
+  - Network
+  contributors:
+  - Austin Clark
+  - ATT&CK
+  data_components:
+  - name: command execution
+    type: activity
+    description: Information about commands executed through a command-line interface
+      and/or script interpreter.
+    relationships:
+    - source_data_element: user
+      relationship: executed
+      target_data_element: command
+    - source_data_element: process
+      relationship: executed
+      target_data_element: command
+  references:
+  - https://tools.ietf.org/id/draft-ietf-opsawg-tacacs-07.html#rfc.section.7.2
+  - https://tools.ietf.org/html/rfc2866
+- name: Drive
+  definition: Information associated with drive storage regions.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: drive creation
+    type: activity
+    description: A drive was created.
+    relationships:
+    - source_data_element: process
+      relationship: created
+      target_data_element: drive
+  - name: drive deletion
+    type: activity
+    description: A drive partition was deleted.
+    relationships:
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: drive
+  - name: drive modification
+    type: activity
+    description: A drive partition was modified.
+    relationships:
+    - source_data_element: process
+      relationship: modified
+      target_data_element: drive
+  - name: drive access
+    type: activity
+    description: A drive partition was accessed.
+    relationships:
+    - source_data_element: process
+      relationship: accessed
+      target_data_element: drive
+  references:
+  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009
+- name: Driver
+  definition: Information associated with device drivers, or computer programs that
+    operate or control a particular type of device that is attached to a computer.
+  collection_layers:
+  - host
+  platforms:
+  - Linux
+  - MacOS
+  - Windows
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: driver metadata
+    type: information
+    description: Data and information that describe a driver and activity around it
+      such as driver issues reporting and driver integrity (Page hash, code) checking.
+    relationships:
+    - source_data_element: host
+      relationship: retrieved information about
+      target_data_element: driver
+  - name: driver load
+    type: activity
+    description: A driver (User-mode, kernel-mode) was loaded.
+    relationships:
+    - source_data_element: process
+      relationship: loaded
+      target_data_element: driver
+  - name: driver unload
+    type: activity
+    description: A driver (User-mode, kernel-mode) was unloaded.
+    relationships:
+    - source_data_element: process
+      relationship: unloaded
+      target_data_element: driver
+  references:
+  - https://developer.apple.com/library/archive/documentation/DeviceDrivers/Conceptual/IOKitFundamentals/Features/Features.html
+  - https://docs.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode
 - name: File
-  definition: Information about file objects that represent computer resources that can be managed by the I/O system.
+  definition: Information about file objects (All file systems) that represent computer
+    resources that can be managed by the I/O system. This data source can be used
+    as a reference to extend the concepts of other data sources such as driver, module,
+    and network share.
   collection_layers:
-    - host
+  - host
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: file context
-      type: information
-      relationships:
-        - source_data_element: driver
-          relationship: loaded
-          target_data_element: 
-    - name: file creation
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: created
-          target_data_element: file
-    - name: file deletion
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: deleted
-          target_data_element: file
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: file
-    - name: file access
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: accessed
-          target_data_element: file
-        - source_data_element: process
-          relationship: accessed
-          target_data_element: file
-        - source_data_element: user
-          relationship: requested access
-          target_data_element: file
-        - source_data_element: process
-          relationship: requested access
-          target_data_element: file
-    - name: file modification
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: modified
-          target_data_element: file
-        - source_data_element: user
-          relationship: modified
-          target_data_element: file
-    - name: file share creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: file share
-    - name: file share deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: file share
-    - name: file share access
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: accessed
-          target_data_element: file share
-    - name: file share modification
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: modified
-          target_data_element: file share
+  - name: file content
+    type: information
+    description: Data contained in a file.
+    relationships:
+    - source_data_element: process
+      relationship: retrieved information about
+      target_data_element: file
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: file
+  - name: file metadata
+    type: information
+    description: Data and information that describe a file and activity around it.
+    relationships:
+    - source_data_element: process
+      relationship: created
+      target_data_element: file stream
+    - source_data_element: process
+      relationship: retrieved information about
+      target_data_element: file
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: file
+  - name: file creation
+    type: activity
+    description: A file was created.
+    relationships:
+    - source_data_element: process
+      relationship: created
+      target_data_element: file
+  - name: file deletion
+    type: activity
+    description: A file was deleted.
+    relationships:
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: file
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: file
+  - name: file access
+    type: activity
+    description: A file was opened or accessed.
+    relationships:
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: file
+    - source_data_element: process
+      relationship: accessed
+      target_data_element: file
+    - source_data_element: user
+      relationship: requested access to
+      target_data_element: file
+    - source_data_element: process
+      relationship: requested access to
+      target_data_element: file
+  - name: file modification
+    type: activity
+    description: A file was modified.
+    relationships:
+    - source_data_element: process
+      relationship: modified
+      target_data_element: file
+    - source_data_element: user
+      relationship: modified
+      target_data_element: file
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
-- name: Named pipe
-  definition: Information about mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it.
+  - https://docs.microsoft.com/en-us/windows/win32/fileio/file-management
+  - https://docs.microsoft.com/en-us/windows/win32/fileio/file-streams
+  - https://docs.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems
+- name: Firewall
+  definition: Information associated with the network security system, running locally
+    on an endpoint or remotely in a cloud environment, that monitors and controls
+    incoming and outgoing network traffic based on predetermined security rules.
   collection_layers:
-    - host
+  - cloud
+  - host
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  - Linux
+  - MacOS
+  - Windows
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: named pipe creation
-      relationships:
-        - source_data_element: process
-          relationship: created
-          target_data_element: pipe
-    - name: named pipe connection
-      relationships:
-        - source_data_element: process
-          relationship: connected to
-          target_data_element: pipe
+  - name: firewall metadata
+    type: information
+    description: Data and information that describe a firewall system and activity
+      around it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: firewall
+  - name: firewall disable
+    type: activity
+    description: A firewall system was disabled.
+    relationships:
+    - source_data_element: user
+      relationship: disabled
+      target_data_element: firewall
+  - name: firewall rule modification
+    type: activity
+    description: A rule of a firewall system was modified.
+    relationships:
+    - source_data_element: user
+      relationship: added
+      target_data_element: firewall rule
+    - source_data_element: user
+      relationship: removed
+      target_data_element: firewall rule
+    - source_data_element: user
+      relationship: modified
+      target_data_element: firewall rule
+  - name: firewall enumeration
+    type: activity
+    description: A firewall system or element (rule) was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: firewall
+    - source_data_element: user
+      relationship: listed
+      target_data_element: firewall rule
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
-- name: Powershell log
-  definition: Information about PowerShell operations related to PowerShell engine, providers, and cmdlets.
+  - https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
+- name: Firmware
+  definition: Information associated with computer software that provides the low-level
+    control for a device's specific hardware.
   collection_layers:
-    - host
+  - host
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: powershell context
-      type: information
-      relationships:
-        - source_data_element: application host
-          relationship: started
-          target_data_element:
-        - source_data_element: application domain
-          relationship: started
-          target_data_element:
-    - name: powershell execution
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: started
-          target_data_element: application host
-        - source_data_element: process
-          relationship: executed
-          target_data_element: command
-  references:
-    - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
-- name: Windows active directory
-  definition: Information about objects on a domain network such as a user, a group, or a workstation.
+  - name: firmware modification
+    type: activity
+    description: The firmware of a system component was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: firmware
+    - source_data_element: process
+      relationship: modified
+      target_data_element: firmware
+  references: null
+- name: Group
+  definition: Information about collections of accounts or permissions within an organization.
   collection_layers:
-    - host
+  - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: active directory service creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: ad object
-    - name: active directory service deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: ad object
-        - source_data_element: user
-          relationship: undeleted
-          target_data_element: ad object
-    - name: active directory service access
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: accessed
-          target_data_element: ad object
-        - source_data_element: user
-          relationship: requested access
-          target_data_element: ad object
-        - source_data_element: process
-          relationship: requested access
-          target_data_element: ad object
-    - name: active directory service modification
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: modified
-          target_data_element: ad object
+  - name: group metadata
+    type: information
+    description: Data and information that describe a group and activity around it
+      such as group permissions.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: group
+  - name: group creation
+    type: activity
+    description: A group was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: group
+  - name: group deletion
+    type: activity
+    description: A group was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: group
+  - name: group enumeration
+    type: activity
+    description: A group was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: group
+  - name: group modification
+    type: activity
+    description: A group was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: group
+    - source_data_element: user
+      relationship: added
+      target_data_element: user
+    - source_data_element: user
+      relationship: removed
+      target_data_element: user
   references:
-    - https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/ad-ds-getting-started
-- name: Windows registry
-  definition: Information about configuration data used by applications and system components.
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html
+- name: Image
+  definition: Information about a virtual machine image.
   collection_layers:
-    - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - IaaS
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: windows registry key creation
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: created
-          target_data_element: windows registry key
-        - source_data_element: process
-          relationship: created
-          target_data_element: windows registry key value
-    - name: windows registry key deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: windows registry key
-        - source_data_element: process
-          relationship: deleted
-          target_data_element: windows registry key
-        - source_data_element: process
-          relationship: deleted
-          target_data_element: windows registry key value
-    - name: windows registry key modification
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: modified
-          target_data_element: windows registry key
-        - source_data_element: process
-          relationship: modified
-          target_data_element: windows registry key value
-        - source_data_element: user
-          relationship: modified
-          target_data_element: windows registry key
-        - source_data_element: user
-          relationship: modified
-          target_data_element: windows registry key value
-    - name: Windows registry key access
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: accessed
-          target_data_element: windows registry key
-        - source_data_element: user
-          relationship: accessed
-          target_data_element: windows registry key
-        - source_data_element: process
-          relationship: requested access
-          target_data_element: windows registry key
-        - source_data_element: user
-          relationship: requested access
-          target_data_element: windows registry key
+  - name: image creation
+    type: activity
+    description: An image was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: image
+  - name: image modification
+    type: activity
+    description: An image was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: image
+  - name: image deletion
+    type: activity
+    description: An image was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: image
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
-- name: Logon session
-  definition: Information about logon sessions being created or terminated by accounts (Local or Domain), interactively or over the network, in order to interact with network resources, applications, or services. 
+  - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
+- name: Instance
+  definition: Information about a virtual system within a cloud environment.
   collection_layers:
-    - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - IaaS
+  contributors:
+  - ATT&CK
   data_components:
-    - name: logon session context
-      type: information
-      relationships:
-        - source_data_element: logon session
-          relationship: modified
-          target_data_element:
-    - name: logon session creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: requested creation
-          target_data_element: logon session
-        - source_data_element: user
-          relationship: requested logon session creation from
-          target_data_element: ip
-        - source_data_element: user
-          relationship: requested logon session creation from
-          target_data_element: port
-        - source_data_element: user
-          relationship: created
-          target_data_element: logon session
-        - source_data_element: user
-          relationship: created logon session from
-          target_data_element: ip
-        - source_data_element: user
-          relationship: created logon session from
-          target_data_element: port
-        - source_data_element: user
-          relationship: failed creation
-          target_data_element: logon session
-        - source_data_element: user
-          relationship: failed logon session creation from
-          target_data_element: ip
-        - source_data_element: user
-          relationship: failed logon session creation from
-          target_data_element: port
-    - name: logon session termination
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: requested termination
-          target_data_element: logon session
-        - source_data_element: user
-          relationship: terminated
-          target_data_element: logon session
+  - name: instance creation
+    type: activity
+    description: An instance was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: instance
+  - name: instance modification
+    type: activity
+    description: An instance was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: instance
+    - source_data_element: user
+      relationship: attached
+      target_data_element: disk/volume
+    - source_data_element: user
+      relationship: detached
+      target_data_element: disk/volume
+    - source_data_element: user
+      relationship: updated
+      target_data_element: instance
+  - name: instance deletion
+    type: activity
+    description: An instance was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: instance
+    - source_data_element: user
+      relationship: terminated
+      target_data_element: instance
+  - name: instance metadata
+    type: information
+    description: Data and information that describe an instance and activity around
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: instance
+  - name: instance enumeration
+    type: activity
+    description: An instance was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: instances
+    - source_data_element: user
+      relationship: described
+      target_data_element: instances
+    - source_data_element: user
+      relationship: viewed
+      target_data_element: instance
+  - name: instance start
+    type: activity
+    description: An instance was started.
+    relationships:
+    - source_data_element: user
+      relationship: started
+      target_data_element: instance
+    - source_data_element: user
+      relationship: ran
+      target_data_element: instance
+    - source_data_element: user
+      relationship: redeployed
+      target_data_element: instance
+  - name: instance stop
+    type: activity
+    description: An instance was stopped.
+    relationships:
+    - source_data_element: user
+      relationship: stopped
+      target_data_element: instance
+    - source_data_element: user
+      relationship: powered off
+      target_data_element: instance
   references:
-    - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
+  - https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc
+  - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
+  - https://cloud.google.com/compute/docs/instances
+- name: Kernel
+  definition: Information associated with the operating system kernel of a host.
+  collection_layers:
+  - host
+  platforms:
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: kernel module load
+    type: activity
+    description: A kernel module was loaded on a host.
+    relationships:
+    - source_data_element: process
+      relationship: loaded
+      target_data_element: kernel module
+  references:
+  - https://www.stigviewer.com/stig/oracle_linux_5/2016-12-20/finding/V-22383
+  - https://man7.org/linux/man-pages/man2/init_module.2.html
+- name: Logon Session
+  definition: Information about logon sessions being created or terminated by accounts
+    (Local, Domain, or Cloud), interactively or over the network, in order to interact
+    with network resources, applications, or services.
+  collection_layers:
+  - host
+  - network
+  - cloud
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: logon session metadata
+    type: information
+    description: Data and information that describe a logon session and activity within
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: logon session
+  - name: logon session creation
+    type: activity
+    description: A logon session for a user was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: logon session
+    - source_data_element: user
+      relationship: created logon session from
+      target_data_element: ip
+    - source_data_element: user
+      relationship: created logon session from
+      target_data_element: port
+  - name: logon session termination
+    type: activity
+    description: A logon session for a user was terminated.
+    relationships:
+    - source_data_element: user
+      relationship: logged off from
+      target_data_element: computer
+    - source_data_element: user
+      relationship: logged off from
+      target_data_element: application
+    - source_data_element: user
+      relationship: logged off from
+      target_data_element: cloud service
+    - source_data_element: user
+      relationship: logged off from
+      target_data_element: ip
+    - source_data_element: user
+      relationship: logged off from
+      target_data_element: port
+    - source_data_element: user
+      relationship: terminated
+      target_data_element: logon session
+  references:
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
+- name: Module
+  definition: Information about module files such as executable, dynamic link library
+    (dll), executable and linkiable format (elf), and Mach-o consisting of one or
+    more classes and interfaces.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: module content
+    type: information
+    description: Data contained in a module such as sections and segments.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: module
+    - source_data_element: process
+      relationship: retrieved information about
+      target_data_element: module
+  - name: module metadata
+    type: information
+    description: Data and information that describe a module and activity around it
+      such as header and signature.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: module
+    - source_data_element: process
+      relationship: retrieved information about
+      target_data_element: module
+  - name: module load
+    type: activity
+    description: A module was loaded into a process.
+    relationships:
+    - source_data_element: process
+      relationship: loaded
+      target_data_element: module
+  references:
+  - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+  - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
+  - https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
+  - https://elinux.org/Executable_and_Linkable_Format_(ELF)
+- name: Named Pipe
+  definition: Information about mechanisms that allow inter-process communication
+    locally or over the network. A named pipe is usually found as a file and processes
+    attach to it.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: named pipe metadata
+    type: information
+    description: Information about a named pipe on a system, including pipe name and
+      creating process.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: named pipe
+  references:
+  - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
+  - https://github.com/SigmaHQ/sigma/blob/master/rules/windows/sysmon/sysmon_mal_namedpipes.yml
+  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90017
+- name: Network Share
+  definition: Information associated with computer resources made available from one
+    host to other hosts on a computer network using protocols such as Server Message
+    Protocol (SMB) and Network File System (NFS).
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: network share creation
+    type: activity
+    description: A network share was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: network share
+    - source_data_element: process
+      relationship: created
+      target_data_element: network share
+  - name: network share deletion
+    type: activity
+    description: A network share was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: network share
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: network share
+  - name: network share modification
+    type: activity
+    description: A network share was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: network share
+    - source_data_element: process
+      relationship: modified
+      target_data_element: network share
+  - name: network share access
+    type: activity
+    description: A network share was opened or accessed.
+    relationships:
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: network share
+    - source_data_element: process
+      relationship: accessed
+      target_data_element: network share
+  references:
+  - https://docs.microsoft.com/en-us/windows-server/storage/nfs/nfs-overview
+  - https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview
+- name: Network Traffic
+  definition: Network traffic, either summarized (e.g., as netflow) or captured in
+    some format (e.g., as PCAP). This may be captured at the endpoint or network level.
+  collection_layers:
+  - host
+  - network
+  - cloud
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  - IaaS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: network traffic flow
+    type: information
+    description: Information about the flow of network packets in a network connection,
+      either captured on the wire or on an endpoint.
+    relationships:
+    - source_data_element: network traffic flow
+      relationship: originated from
+      target_data_element: ip
+    - source_data_element: network traffic flow
+      relationship: responded from
+      target_data_element: ip
+    - source_data_element: network traffic flow
+      relationship: originated from
+      target_data_element: port
+    - source_data_element: network traffic flow
+      relationship: responded from
+      target_data_element: port
+    - source_data_element: network traffic flow
+      relationship: identified
+      target_data_element: transport layer protocol
+    - source_data_element: network traffic flow
+      relationship: identified
+      target_data_element: application layer protocol
+    - source_data_element: network traffic flow
+      relationship: identified
+      target_data_element: network traffic volume
+  - name: network traffic content
+    type: information
+    description: Information about the content of network packets and the protocols
+      associated to them, either captured on the wire or on an endpoint.
+    relationships:
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: administration traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: dns traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: encrypted traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: mail traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: file transfer traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: web traffic
+    - source_data_element: network traffic
+      relationship: contained
+      target_data_element: remote code execution traffic
+  - name: network connection creation
+    type: activity
+    description: Information about the creation of a network connection, either captured
+      on the wire or on an endpoint.
+    relationships:
+    - source_data_element: process
+      relationship: attempted connection to
+      target_data_element: ip
+    - source_data_element: process
+      relationship: attempted connection to
+      target_data_element: port
+    - source_data_element: process
+      relationship: attempted connection to
+      target_data_element: host
+    - source_data_element: process
+      relationship: attempted connection from
+      target_data_element: ip
+    - source_data_element: process
+      relationship: attempted connection from
+      target_data_element: port
+    - source_data_element: process
+      relationship: attempted connection from
+      target_data_element: host
+    - source_data_element: process
+      relationship: connected to
+      target_data_element: ip
+    - source_data_element: process
+      relationship: connected to
+      target_data_element: port
+    - source_data_element: process
+      relationship: connected to
+      target_data_element: host
+    - source_data_element: process
+      relationship: connected from
+      target_data_element: ip
+    - source_data_element: process
+      relationship: connected from
+      target_data_element: port
+    - source_data_element: process
+      relationship: connected from
+      target_data_element: host
+    - source_data_element: user
+      relationship: connected to
+      target_data_element: ip
+    - source_data_element: user
+      relationship: connected to
+      target_data_element: port
+    - source_data_element: user
+      relationship: connected to
+      target_data_element: host
+    - source_data_element: user
+      relationship: connected from
+      target_data_element: ip
+    - source_data_element: user
+      relationship: connected from
+      target_data_element: port
+    - source_data_element: user
+      relationship: connected from
+      target_data_element: host
+    - source_data_element: process
+      relationship: attempted to bind on
+      target_data_element: port
+    - source_data_element: process
+      relationship: bound to
+      target_data_element: port
+    - source_data_element: host
+      relationship: permitted listener on
+      target_data_element: ip
+    - source_data_element: host
+      relationship: permitted listener on
+      target_data_element: port
+    - source_data_element: host
+      relationship: permitted listener on
+      target_data_element: process
+    - source_data_element: process
+      relationship: attempted to listen on
+      target_data_element: port
+    - source_data_element: process
+      relationship: listened on
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked port bind on
+      target_data_element: ip
+    - source_data_element: host
+      relationship: blocked port bind on
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked port bind on
+      target_data_element: process
+    - source_data_element: host
+      relationship: blocked connection to
+      target_data_element: ip
+    - source_data_element: host
+      relationship: blocked connection to
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked connection to
+      target_data_element: process
+    - source_data_element: host
+      relationship: blocked connection from
+      target_data_element: ip
+    - source_data_element: host
+      relationship: blocked connection from
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked connection from
+      target_data_element: process
+    - source_data_element: host
+      relationship: blocked connection to
+      target_data_element: ip
+    - source_data_element: host
+      relationship: blocked connection to
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked listener on
+      target_data_element: ip
+    - source_data_element: host
+      relationship: blocked listener on
+      target_data_element: port
+    - source_data_element: host
+      relationship: blocked listener on
+      target_data_element: process
+  references: null
 - name: Process
-  definition: Information about instances of computer programs that are being executed by at least one thread.
+  definition: Information about instances of computer programs that are being executed
+    by at least one thread.
   collection_layers:
-    - host
+  - host
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: process context
-      type: information
-      relationships:
-        - source_data_element: process
-          relationship: terminated
-          target_data_element: 
-    - name: process creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: process
-        - source_data_element: process
-          relationship: created
-          target_data_element: process
-        - source_data_element: process
-          relationship: created
-          target_data_element: thread
-    - name: process termination
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: terminated
-          target_data_element: process
-    - name: process modification
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: wrote to
-          target_data_element: process
-    - name: process access
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: accessed
-          target_data_element: process
-        - source_data_element: process
-          relationship: requested access
-          target_data_element: process
-    - name: process network connection
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: connected to
-          target_data_element: port
-        - source_data_element: process
-          relationship: connected to
-          target_data_element: ip
-        - source_data_element: process
-          relationship: connected to
-          target_data_element: host
-        - source_data_element: process
-          relationship: connected from
-          target_data_element: port
-        - source_data_element: process
-          relationship: connected from
-          target_data_element: ip
-        - source_data_element: process
-          relationship: connected from
-          target_data_element: host
-        - source_data_element: user
-          relationship: connected to
-          target_data_element: port
-        - source_data_element: user
-          relationship: connected to
-          target_data_element: ip
-        - source_data_element: user
-          relationship: connected to
-          target_data_element: host
-        - source_data_element: user
-          relationship: connected from
-          target_data_element: port
-        - source_data_element: user
-          relationship: connected from
-          target_data_element: ip
-        - source_data_element: user
-          relationship: connected from
-          target_data_element: host
-        - source_data_element: host
-          relationship: blocked connection on
-          target_data_element: process
-        - source_data_element: host
-          relationship: blocked connection to
-          target_data_element: process
-        - source_data_element: host
-          relationship: blocked connection to
-          target_data_element: ip
-        - source_data_element: host
-          relationship: blocked connection to
-          target_data_element: port
-        - source_data_element: host
-          relationship: blocked connection from
-          target_data_element: process
-        - source_data_element: host
-          relationship: blocked connection from
-          target_data_element: ip
-        - source_data_element: host
-          relationship: blocked connection from
-          target_data_element: port
-        - source_data_element: process
-          relationship: attempted connection to
-          target_data_element: ip
-        - source_data_element: process
-          relationship: attempted connection to
-          target_data_element: port
-        - source_data_element: process
-          relationship: attempted connection from
-          target_data_element: ip
-        - source_data_element: process
-          relationship: attempted connection from
-          target_data_element: port
-        - source_data_element: host
-          relationship: permitted listener on
-          target_data_element: process
-        - source_data_element: host
-          relationship: permitted listener on
-          target_data_element: ip
-        - source_data_element: host
-          relationship: permitted listener on
-          target_data_element: port
-        - source_data_element: process
-          relationship: listened on
-          target_data_element: port
-        - source_data_element: host
-          relationship: blocked listener on
-          target_data_element: process
-        - source_data_element: host
-          relationship: blocked listener on
-          target_data_element: ip
-        - source_data_element: host
-          relationship: blocked listener on
-          target_data_element: port
-        - source_data_element: process
-          relationship: attempted to listen on
-          target_data_element: port
-        - source_data_element: host
-          relationship: permitted local port bind on
-          target_data_element: process
-        - source_data_element: host
-          relationship: permitted local port bind on
-          target_data_element: ip
-        - source_data_element: host
-          relationship: permitted local port bind on
-          target_data_element: port
-        - source_data_element: process
-          relationship: bound to
-          target_data_element: port
-        - source_data_element: host
-          relationship: blocked local port bind on
-          target_data_element: process
-        - source_data_element: host
-          relationship: blocked local port bind on
-          target_data_element: ip
-        - source_data_element: host
-          relationship: blocked local port bind on
-          target_data_element: port
-        - source_data_element: process
-          relationship: attempted to bind on
-          target_data_element: port
+  - name: process metadata
+    type: information
+    description: Data and information that describe a process (Such as environment
+      variables) and activity around it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: process
+  - name: process creation
+    type: activity
+    description: A process was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: process
+    - source_data_element: process
+      relationship: created
+      target_data_element: process
+    - source_data_element: process
+      relationship: created
+      target_data_element: thread
+  - name: process termination
+    type: activity
+    description: A process was terminated.
+    relationships:
+    - source_data_element: user
+      relationship: terminated
+      target_data_element: process
+  - name: process modification
+    type: activity
+    description: A process was modified.
+    relationships:
+    - source_data_element: process
+      relationship: modified
+      target_data_element: process
+  - name: process access
+    type: activity
+    description: A process was accessed.
+    relationships:
+    - source_data_element: process
+      relationship: accessed
+      target_data_element: process
+    - source_data_element: process
+      relationship: requested access to
+      target_data_element: process
+  - name: OS api execution
+    type: activity
+    description: A process executed operating system api functions.
+    relationships:
+    - source_data_element: process
+      relationship: executed
+      target_data_element: api call
+    - source_data_element: process
+      relationship: executed
+      target_data_element: system call
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
+  - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
+- name: Scheduled Job
+  definition: Information about scheduled work that run automatically in the background
+    of a computer system (Cron deamon, Task Scheduler, BITS).
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: scheduled job metadata
+    type: information
+    description: Data and information that describe a scheduled job and activity around
+      it.
+    relationships:
+    - source_data_element: host
+      relationship: retrieved information about
+      target_data_element: scheduled job
+  - name: scheduled job creation
+    type: activity
+    description: A scheduled job was created, either locally or remotely.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: scheduled job
+    - source_data_element: process
+      relationship: created
+      target_data_element: scheduled job
+  - name: scheduled job deletion
+    type: activity
+    description: A scheduled job was deleted, either locally or remotely.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: scheduled job
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: scheduled job
+  - name: scheduled job modification
+    type: activity
+    description: A scheduled job was modified (e.g., the executable launched by the
+      task was changed), either locally or remotely.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: scheduled job
+    - source_data_element: process
+      relationship: modified
+      target_data_element: scheduled job
+    - source_data_element: user
+      relationship: enabled
+      target_data_element: scheduled job
+    - source_data_element: process
+      relationship: enabled
+      target_data_element: scheduled job
+    - source_data_element: user
+      relationship: disabled
+      target_data_element: scheduled job
+    - source_data_element: process
+      relationship: disabled
+      target_data_element: scheduled job
+  references:
+  - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
+- name: Script
+  definition: Information about executable script content, such as data provided by
+    PowerShell logs and/or AMSI
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: script execution
+    type: activity
+    description: Data and information that describe contents of an execution script
+    relationships:
+    - source_data_element: command
+      relationship: executed
+      target_data_element: script
+    - source_data_element: process
+      relationship: executed
+      target_data_element: script
+  references:
+  - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
+  - https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
+  - https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal
+- name: Sensor Health
+  definition: Information associated with sensors providing data about host system
+    status.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: host status
+    type: information
+    description: Data from a sensor about the health of a host system sensor
+    relationships:
+    - source_data_element: sensor health
+      relationship: contained
+      target_data_element: host system status
+  references: null
+- name: Service
+  definition: Information about software programs that run in the background and typically
+    start with the operating system.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: service metadata
+    type: information
+    description: Data and information that describe a service and activity around
+      it.
+    relationships:
+    - source_data_element: service
+      relationship: started
+      target_data_element: null
+    - source_data_element: service
+      relationship: stopped
+      target_data_element: null
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: service
+    - source_data_element: process
+      relationship: retrieved information about
+      target_data_element: service
+  - name: service creation
+    type: activity
+    description: A service/daemon was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: service
+  - name: service access
+    type: activity
+    description: A service/daemon was opened or accessed.
+    relationships:
+    - source_data_element: user
+      relationship: requested access to
+      target_data_element: service
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: service
+  - name: service enumeration
+    type: activity
+    description: A service/daemon was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: service
+    - source_data_element: process
+      relationship: listed
+      target_data_element: service
+  - name: service modification
+    type: activity
+    description: A service/daemon was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: service
+    - source_data_element: process
+      relationship: modified
+      target_data_element: service
+  references:
+  - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
+  - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
+- name: Snapshot
+  definition: Information associated with the state of a system at a particular point
+    in time.
+  collection_layers:
+  - cloud
+  platforms:
+  - IaaS
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: snapshot creation
+    type: activity
+    description: A snapshot was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: snapshot
+  - name: snapshot modification
+    type: activity
+    description: A snapshot was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: snapshot
+  - name: snapshot deletion
+    type: activity
+    description: A snapshot was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: snapshot
+  - name: snapshot metadata
+    type: information
+    description: Data and information that describe a snapshot and activity around
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: snapshot
+  - name: snapshot enumeration
+    type: activity
+    description: A snapshot was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: snapshot
+  references:
+  - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/snapshot-copy-managed-disk
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html
 - name: User Account
-  definition: Security principal or entity that represents a person or machine and can be authenticated by an operating system or platform.
+  definition: The representation of a user, device, service or application that access
+    resources within a network environment. It has login capabilities and can be authenticated
+    by an operating system, application or platform.
   collection_layers:
-    - host
+  - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  - IaaS
+  - SaaS
+  - Office 365
+  - Azure AD
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: user account creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: user
-    - name: user account deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: user
-    - name: user account enable
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: enabled
-          target_data_element: user
-    - name: user account disable
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: disabled
-          target_data_element: user
-    - name: user account lock
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: locked
-          target_data_element: user
-    - name: user account unlock
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: unlocked
-          target_data_element: user
-    - name: user account modification
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: requested modification
-          target_data_element: user
-        - source_data_element: user
-          relationship: modified
-          target_data_element: user
-        - source_data_element: user
-          relationship: granted access
-          target_data_element: user
-        - source_data_element: user
-          relationship: removed access
-          target_data_element: user
+  - name: user account metadata
+    type: information
+    description: Data and information that describe a user account and activity around
+      it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: user
+  - name: user account creation
+    type: activity
+    description: A user account was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: user
+  - name: user account deletion
+    type: activity
+    description: A user account was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: user
+  - name: user account modification
+    type: activity
+    description: A user account was modified.
+    relationships:
+    - source_data_element: user
+      relationship: requested modification of
+      target_data_element: user
+    - source_data_element: user
+      relationship: modified
+      target_data_element: user
+    - source_data_element: user
+      relationship: modified
+      target_data_element: service principal
+    - source_data_element: user
+      relationship: enabled
+      target_data_element: user
+    - source_data_element: user
+      relationship: disabled
+      target_data_element: user
+    - source_data_element: user
+      relationship: locked
+      target_data_element: user
+    - source_data_element: user
+      relationship: unlocked
+      target_data_element: user
+    - source_data_element: user
+      relationship: granted access to
+      target_data_element: user
+    - source_data_element: user
+      relationship: removed access from
+      target_data_element: user
+  - name: user account authentication
+    type: activity
+    description: A user account authenticated onto a system.
+    relationships:
+    - source_data_element: user
+      relationship: attempted to authenticate to
+      target_data_element: computer
+    - source_data_element: user
+      relationship: attempted to authenticate to
+      target_data_element: application
+    - source_data_element: user
+      relationship: attempted to authenticate to
+      target_data_element: cloud service
+    - source_data_element: user
+      relationship: attempted to authenticate from
+      target_data_element: ip
+    - source_data_element: user
+      relationship: attempted to authenticate from
+      target_data_element: port
+    - source_data_element: application
+      relationship: attempted to authenticate
+      target_data_element: user
+    - source_data_element: cloud service
+      relationship: attempted to authenticate
+      target_data_element: user
   references:
-    - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
-- name: Schedule Task
-  definition: Information about scheduled work that the Task Scheduler service performs.
+  - https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-principals
+- name: Volume
+  definition: Information associated with accessible storage areas with a single file
+    system.
   collection_layers:
-    - host
+  - cloud
+  - host
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - IaaS
+  - Windows
+  - Linux
+  - MacOS
+  contributors:
+  - ATT&CK
+  - CTID
   data_components:
-    - name: schedule task creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: schedule task
-    - name: schedule task deletion
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: deleted
-          target_data_element: schedule task
-    - name: schedule task enable
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: enabled
-          target_data_element: schedule task
-    - name: schedule task disable
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: disabled
-          target_data_element: schedule task
-    - name: schedule task modification
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: modified
-          target_data_element: schedule task
+  - name: volume creation
+    type: activity
+    description: A volume was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: volume
+  - name: volume modification
+    type: activity
+    description: A volume was modified.
+    relationships:
+    - source_data_element: user
+      relationship: modified
+      target_data_element: volume
+  - name: volume deletion
+    type: activity
+    description: A volume was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: volume
+  - name: volume metadata
+    type: information
+    description: Data and information that describe a volume and activity around it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: volume
+  - name: volume enumeration
+    type: activity
+    description: A volume was listed.
+    relationships:
+    - source_data_element: user
+      relationship: listed
+      target_data_element: volume
   references:
-    - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
-- name: DNS
-  definition: Information about the Domain Name System (DNS) protocol that provides resources (Such as computers or services) names-to- IP address mapping name resolution services.
+  - https://aws.amazon.com/s3/
+  - https://azure.microsoft.com/en-us/services/storage/blobs/
+  - https://cloud.google.com/storage
+- name: Web Credential
+  definition: Data describing activity around web authentication credentials such
+    as tokens and cookies
   collection_layers:
-    - host
+  - host
+  - cloud
   platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
+  - Windows
+  - Linux
+  - MacOS
+  - SaaS
+  - Office 365
+  - Azure AD
+  contributors:
+  - ATT&CK
   data_components:
-    - name: dns query execution
-      type: activity
-      relationships:
-        - source_data_element: process
-          relationship: executed
-          target_data_element: dns query
+  - name: web credential creation
+    type: activity
+    description: A web credential was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: web credential
+  - name: web credential usage
+    type: activity
+    description: A web credential was used.
+    relationships:
+    - source_data_element: user
+      relationship: attempted to use
+      target_data_element: web credential
   references:
-    - https://docs.microsoft.com/en-us/windows-server/networking/dns/dns-top
+  - https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4
+  - https://auth0.com/docs/tokens/access-tokens
+- name: Windows Registry
+  definition: Information about configuration data used by applications and system
+    components.
+  platforms:
+  - Windows
+  collection_layers:
+  - host
+  contributors:
+  - ATT&CK
+  data_components:
+  - name: windows registry key creation
+    type: activity
+    description: A registry key was created.
+    relationships:
+    - source_data_element: process
+      relationship: created
+      target_data_element: windows registry key
+    - source_data_element: process
+      relationship: created
+      target_data_element: windows registry key value
+  - name: windows registry key deletion
+    type: activity
+    description: A registry key was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: windows registry key
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: windows registry key
+    - source_data_element: process
+      relationship: deleted
+      target_data_element: windows registry key value
+  - name: windows registry key modification
+    type: activity
+    description: A registry key was modified.
+    relationships:
+    - source_data_element: process
+      relationship: modified
+      target_data_element: windows registry key
+    - source_data_element: process
+      relationship: modified
+      target_data_element: windows registry key value
+    - source_data_element: user
+      relationship: modified
+      target_data_element: windows registry key
+    - source_data_element: user
+      relationship: modified
+      target_data_element: windows registry key value
+  - name: Windows registry key access
+    type: activity
+    description: A registry key was accessed.
+    relationships:
+    - source_data_element: process
+      relationship: accessed
+      target_data_element: windows registry key
+    - source_data_element: user
+      relationship: accessed
+      target_data_element: windows registry key
+    - source_data_element: process
+      relationship: requested access to
+      target_data_element: windows registry key
+    - source_data_element: user
+      relationship: requested access to
+      target_data_element: windows registry key
+  references:
+  - https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry
+- name: WMI
+  definition: Information about objects from system classes (such as providers, filters,
+    and consumers) that support Windows Management Instrumentation (WMI) activitites.
+  collection_layers:
+  - host
+  platforms:
+  - Windows
+  contributors:
+  - ATT&CK
+  - CTID
+  data_components:
+  - name: wmi metadata
+    type: information
+    description: Data and information that describe a WMI object (filter, consumer,
+      subscription, binding, provider) and activity around it.
+    relationships:
+    - source_data_element: user
+      relationship: retrieved information about
+      target_data_element: wmi object
+  - name: wmi creation
+    type: activity
+    description: A WMI object (filter, consumer, subscription, binding, provider)
+      was created.
+    relationships:
+    - source_data_element: user
+      relationship: created
+      target_data_element: wmi object
+  - name: wmi deletion
+    type: activity
+    description: A WMI object (filter, consumer, subscription, binding, provider)
+      was deleted.
+    relationships:
+    - source_data_element: user
+      relationship: deleted
+      target_data_element: wmi object
+  references:
+  - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-system-classes
+  - https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-architecture

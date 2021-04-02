@@ -11,7 +11,7 @@ contributors:
 data_components:
   - name: kernel module load
     type: activity
-    description: A new kernel module was loaded on a host.
+    description: A kernel module was loaded on a host.
     relationships:
       - source_data_element: process
         relationship: loaded

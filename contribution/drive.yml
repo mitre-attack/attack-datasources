@@ -12,31 +12,31 @@ contributors:
 data_components:
   - name: drive creation
     type: activity
-    description: The creation of a new drive.
+    description: A drive was created.
     relationships:
       - source_data_element: process
         relationship: created
         target_data_element: drive
   - name: drive deletion
     type: activity
-    description: The deletion of an existing partition.
+    description: A drive partition was deleted.
     relationships:
       - source_data_element: process
         relationship: deleted
         target_data_element: drive
   - name: drive modification
     type: activity
-    description: The modification of data or information about a drive.
+    description: A drive partition was modified.
     relationships:
       - source_data_element: process
         relationship: modified
         target_data_element: drive
   - name: drive access
     type: activity
-    description: The raw access of the drive.
+    description: A drive partition was accessed.
     relationships:
       - source_data_element: process
-        relationship: modified
+        relationship: accessed
         target_data_element: drive
-  references:
+references:
   - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009

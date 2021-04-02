@@ -1,0 +1,55 @@
+name: Network Share
+definition: Information associated with computer resources made available from one host to other hosts on a computer network using protocols such as Server Message Protocol (SMB) and Network File System (NFS).
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - MacOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: network share creation
+    type: activity
+    description: A network share was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: network share
+      - source_data_element: process
+        relationship: created
+        target_data_element: network share
+  - name: network share deletion
+    type: activity
+    description: A network share was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: network share
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: network share
+  - name: network share modification
+    type: activity
+    description: A network share was modified.
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: network share
+      - source_data_element: process
+        relationship: modified
+        target_data_element: network share
+  - name: network share access
+    type: activity
+    description: A network share was opened or accessed.
+    relationships:
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: network share
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: network share
+references:
+  - https://docs.microsoft.com/en-us/windows-server/storage/nfs/nfs-overview
+  - https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview

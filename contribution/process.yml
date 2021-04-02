@@ -18,8 +18,8 @@ data_components:
         relationship: retrieved information about
         target_data_element: process
   - name: process creation
-    description: A new process was created.
     type: activity
+    description: A process was created.
     relationships:
       - source_data_element: user
         relationship: created
@@ -31,22 +31,22 @@ data_components:
         relationship: created
         target_data_element: thread
   - name: process termination
-    description: An existing process was terminated.
     type: activity
+    description: A process was terminated.
     relationships:
       - source_data_element: user
         relationship: terminated
         target_data_element: process
   - name: process modification
-    description: An existing process was modified.
     type: activity
+    description: A process was modified.
     relationships:
       - source_data_element: process
         relationship: modified
         target_data_element: process
   - name: process access
-    description: An existing process was accessed.
     type: activity
+    description: A process was accessed.
     relationships:
       - source_data_element: process
         relationship: accessed
@@ -56,7 +56,7 @@ data_components:
         target_data_element: process
   - name: OS api execution
     type: activity
-    description: Information about a process executing operating system api functions.
+    description: A process executed operating system api functions.
     relationships:
       - source_data_element: process
         relationship: executed

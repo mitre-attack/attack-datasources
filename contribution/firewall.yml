@@ -31,7 +31,7 @@ data_components:
         target_data_element: firewall
   - name: firewall rule modification
     type: activity
-    description: Rules of a firewall system was modified.
+    description: A rule of a firewall system was modified.
     relationships:
       - source_data_element: user
         relationship: added 

@@ -65,7 +65,7 @@ data_components:
         target_data_element: remote code execution traffic
   - name: network connection creation
     type: activity
-    description: Information about the creation of a network connections, either captured on the wire or on an endpoint.
+    description: Information about the creation of a network connection, either captured on the wire or on an endpoint.
     relationships:
       - source_data_element: process
         relationship: attempted connection to
@@ -184,4 +184,4 @@ data_components:
       - source_data_element: host
         relationship: blocked listener on
         target_data_element: process
-      
+references:

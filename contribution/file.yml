@@ -1,5 +1,5 @@
 name: File
-definition: Information about file objects (All file systems) that represent computer resources that can be managed by the I/O system. This data source can be used as a reference to extend the concepts of other data sources such as driver, module, log file, and network share.
+definition: Information about file objects (All file systems) that represent computer resources that can be managed by the I/O system. This data source can be used as a reference to extend the concepts of other data sources such as driver, module, and network share.
 collection_layers:
   - host
 platforms:
@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: file content
     type: information
-    description: Information about the content of a file.
+    description: Data contained in a file.
     relationships:
       - source_data_element: process
         relationship: retrieved information about
@@ -35,14 +35,14 @@ data_components:
         target_data_element: file
   - name: file creation
     type: activity
-    description: A new file was created.
+    description: A file was created.
     relationships:
       - source_data_element: process
         relationship: created
         target_data_element: file
   - name: file deletion
     type: activity
-    description: An existing file was deleted.
+    description: A file was deleted.
     relationships:
       - source_data_element: process
         relationship: deleted
@@ -52,7 +52,7 @@ data_components:
         target_data_element: file
   - name: file access
     type: activity
-    description: An existing file was opened or accessed.
+    description: A file was opened or accessed.
     relationships:
       - source_data_element: user
         relationship: accessed
@@ -61,14 +61,14 @@ data_components:
         relationship: accessed
         target_data_element: file
       - source_data_element: user
-        relationship: requested access
+        relationship: requested access to
         target_data_element: file
       - source_data_element: process
-        relationship: requested access
+        relationship: requested access to
         target_data_element: file
   - name: file modification
     type: activity
-    description: An existing file was modified.
+    description: A file was modified.
     relationships:
       - source_data_element: process
         relationship: modified

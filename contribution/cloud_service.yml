@@ -20,6 +20,7 @@ data_components:
         target_data_element: cloud service
   - name: cloud service disable
     type: activity
+    description: A cloud service was disabled.
     relationships:
       - source_data_element: user
         relationship: disabled

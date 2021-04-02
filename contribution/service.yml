@@ -28,7 +28,7 @@ data_components:
         target_data_element: service
   - name: service creation
     type: activity
-    description: A new service/daemon was created.
+    description: A service/daemon was created.
     relationships:
       - source_data_element: user
         relationship: created
@@ -38,7 +38,7 @@ data_components:
     description: A service/daemon was opened or accessed.
     relationships:
       - source_data_element: user
-        relationship: requested access
+        relationship: requested access to
         target_data_element: service
       - source_data_element: user
         relationship: accessed

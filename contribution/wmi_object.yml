@@ -17,14 +17,14 @@ data_components:
         target_data_element: wmi object
   - name: wmi creation
     type: activity
-    description: A new WMI object (filter, consumer, subscription, binding, provider) was created.
+    description: A WMI object (filter, consumer, subscription, binding, provider) was created.
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: wmi object
   - name: wmi deletion
     type: activity
-    description: An existing WMI object (filter, consumer, subscription, binding, provider) was deleted.
+    description: A WMI object (filter, consumer, subscription, binding, provider) was deleted.
     relationships:
       - source_data_element: user
         relationship: deleted

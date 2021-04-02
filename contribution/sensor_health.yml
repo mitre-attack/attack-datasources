@@ -12,8 +12,9 @@ contributors:
 data_components:
   - name: host status
     type: information
-    description: Data from a sensor about the health of an host system sensor
+    description: Data from a sensor about the health of a host system sensor
     relationships:
       - source_data_element: sensor health
         relationship: contained
         target_data_element: host system status
+references:
