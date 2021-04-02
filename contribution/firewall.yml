@@ -34,10 +34,10 @@ data_components:
     description: A rule of a firewall system was modified.
     relationships:
       - source_data_element: user
-        relationship: created 
+        relationship: added 
         target_data_element: firewall rule
       - source_data_element: user
-        relationship: deleted
+        relationship: removed
         target_data_element: firewall rule
       - source_data_element: user
         relationship: modified
