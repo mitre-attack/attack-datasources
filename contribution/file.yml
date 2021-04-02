@@ -6,6 +6,7 @@ platforms:
   - Windows
   - Linux
   - MacOS
+  - Network
 contributors: 
   - ATT&CK
   - CTID
