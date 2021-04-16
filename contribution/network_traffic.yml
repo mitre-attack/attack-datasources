@@ -12,6 +12,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - ExtraHop
 data_components:
   - name: network traffic flow
     type: information
