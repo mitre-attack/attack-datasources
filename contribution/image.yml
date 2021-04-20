@@ -29,6 +29,13 @@ data_components:
       - source_data_element: user
         relationship: deleted
         target_data_element: image
+   - name: image metadata
+    type: information
+    description: Data and information that describe an image and activity around it.
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: image
 references:
   - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
