@@ -203,7 +203,7 @@
   platforms:
   - Windows
   - Linux
-  - macOS
+  - MacOS
   - Network
   contributors:
   - Austin Clark
