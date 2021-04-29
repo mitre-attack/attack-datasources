@@ -1,5 +1,5 @@
 name: Module
-definition: Information about module files such as executable, dynamic link library (dll), executable and linkiable format (elf), and Mach-o consisting of one or more classes and interfaces.
+definition: Information about module files consisting of one or more classes and interfaces, such as portable executable (PE) format executables/dynamic link libraries (DLL), executable and linkable format (ELF) executables/shared libraries, and Mach-O format executables/shared libraries.
 collection_layers:
   - host
 platforms:
