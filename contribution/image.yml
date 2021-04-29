@@ -29,7 +29,7 @@ data_components:
       - source_data_element: user
         relationship: deleted
         target_data_element: image
-   - name: image metadata
+  - name: image metadata
     type: information
     description: Data and information that describe an image and activity around it.
     relationships:
