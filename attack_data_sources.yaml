@@ -1598,7 +1598,7 @@
     - source_data_element: user
       relationship: modified
       target_data_element: windows registry key value
-  - name: Windows registry key access
+  - name: windows registry key access
     type: activity
     description: A registry key was accessed.
     relationships:
