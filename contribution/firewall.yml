@@ -11,6 +11,7 @@ platforms:
   - Linux
   - MacOS
   - Windows
+  - Google Workspace
 contributors: 
   - ATT&CK
   - CTID

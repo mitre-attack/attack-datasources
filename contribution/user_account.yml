@@ -13,6 +13,7 @@ platforms:
   - Office 365
   - Azure AD
   - Containers
+  - Google Workspace
 contributors: 
   - ATT&CK
   - CTID
