@@ -61,7 +61,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - IaaS
   - SaaS
   - Office 365
@@ -230,7 +230,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -272,7 +272,7 @@
   - host
   platforms:
   - Linux
-  - MacOS
+  - macOS
   - Windows
   contributors:
   - ATT&CK
@@ -313,7 +313,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -401,7 +401,7 @@
   - Office 365
   - Azure AD
   - Linux
-  - MacOS
+  - macOS
   - Windows
   contributors:
   - ATT&CK
@@ -455,7 +455,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -660,7 +660,7 @@
   - host
   platforms:
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -686,7 +686,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - IaaS
   - SaaS
   - Office 365
@@ -749,7 +749,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -796,7 +796,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -822,7 +822,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -880,7 +880,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - IaaS
   contributors:
   - ATT&CK
@@ -1069,7 +1069,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -1139,7 +1139,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -1230,7 +1230,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -1251,7 +1251,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -1373,7 +1373,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - IaaS
   - SaaS
   - Office 365
@@ -1472,7 +1472,7 @@
   - IaaS
   - Windows
   - Linux
-  - MacOS
+  - macOS
   contributors:
   - ATT&CK
   - CTID
@@ -1525,7 +1525,7 @@
   platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - SaaS
   - Office 365
   - Azure AD
@@ -1598,7 +1598,7 @@
     - source_data_element: user
       relationship: modified
       target_data_element: windows registry key value
-  - name: Windows registry key access
+  - name: windows registry key access
     type: activity
     description: A registry key was accessed.
     relationships:
