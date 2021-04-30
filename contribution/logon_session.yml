@@ -19,7 +19,7 @@ contributors:
 data_components:
   - name: logon session metadata
     type: information
-    description: Data and information that describe a logon session and activity within it.
+    description: Data and information that describe a logon session (ex: logon type) and activity within it.
     relationships:
       - source_data_element: user
         relationship: retrieved information about
