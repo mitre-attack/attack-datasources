@@ -12,6 +12,7 @@ platforms:
   - SaaS
   - Office 365
   - Azure AD
+  - Google Workspace
 contributors: 
   - ATT&CK
   - CTID
