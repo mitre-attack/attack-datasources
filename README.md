@@ -7,6 +7,7 @@ You can find a more detailed explanation of this methodology here:
 
 * [Defining ATT&CK Data Sources, Part I: Enhancing the Current State](https://medium.com/mitre-attack/defining-attack-data-sources-part-i-4c39e581454f)
 * [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
+* [Data Sources, Containers, Cloud, and More: What’s New in ATT&CK v9?](https://medium.com/mitre-attack/attack-april-2021-release-39accaf23c81)
 
 ## Data Source Object
 Currently, data sources are metadata provided for each (sub)technique. However, in order to be able to add metadata to each data source, we have proposed the definition of a data source object as part of the ATT&CK model.
