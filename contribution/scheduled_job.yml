@@ -6,7 +6,7 @@ collection_layers:
 platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - Containers
 contributors: 
   - ATT&CK

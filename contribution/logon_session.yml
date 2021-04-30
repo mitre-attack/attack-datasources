@@ -7,7 +7,7 @@ collection_layers:
 platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - IaaS
   - SaaS
   - Office 365

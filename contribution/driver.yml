@@ -4,7 +4,7 @@ collection_layers:
   - host
 platforms:
   - Linux
-  - MacOS
+  - macOS
   - Windows
 contributors: 
   - ATT&CK
