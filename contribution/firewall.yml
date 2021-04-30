@@ -9,7 +9,7 @@ platforms:
   - Office 365
   - Azure AD
   - Linux
-  - MacOS
+  - macOS
   - Windows
   - Google Workspace
 contributors: 

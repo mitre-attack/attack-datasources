@@ -5,7 +5,7 @@ collection_layers:
 platforms:
   - Windows
   - Linux
-  - MacOS
+  - macOS
   - Network
 contributors: 
   - ATT&CK
