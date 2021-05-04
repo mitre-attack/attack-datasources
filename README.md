@@ -1,9 +1,9 @@
 # ATT&CK Data Sources
-As part of the **ATT&CK 2021 Roadmap**, we have defined an initial methodology that will help us improve the definition of current data sources. The idea behind this methodology is to ensure same quality of information among data sources, and provide additional information or metadata related to data sources in order to get a better understanding of them and expedite the identification of relevant data for recommended data sources.
+As part of the [**ATT&CK 2021 Roadmap**](https://medium.com/mitre-attack/att-ck-2021-roadmap-68bab3886fa2), we have defined a methodology that will help improve how ATT&CK maps adversary behaviors to detection data sources. The idea behind this methodology is to improve quality and consistency of ATT&CK data sources as well as to provide additional information to help users make better use of these values.
 
 <img src="docs/images/ATTCK_InfoSec_Community.jpg" width=500>
 
-The previous image shows only some of the elements that the methodology brings out such as *data components* and *relationships*, however it represents the main goal of this project: **connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**.
+The previous image shows only some of the elements that the methodology brings out such as *data components* and *relationships*, however it represents the main goal of this project: **better connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**.
 
 ## **A Methodology to define Data Sources Objects**
 
