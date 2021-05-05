@@ -1,6 +1,6 @@
 ## **A Methodology to define Data Sources Objects**
 
-<img src="images/Methodology_Data_Sources.jpg" width=500>
+<img src="images/Methodology_Data_Sources.jpg" width=800>
 
 The following methodology describes basic steps we followed in order to define ***data sources objects***. Even though this methodology considers the analysis of security telemetry, specific events' names or identification numbers (ids) are not listed within the information provided by ATT&CK. 
 
@@ -21,24 +21,24 @@ The definition of data elements within the ATT&CK framework migh or might not al
 ### **Identifying Relationships Among Data Elements**
 By documenting telemetry collected within a netork environment we were able to identify the activity that triggered the generation of security telemetry (*creation of a new process*) and data elements that were involved on this action (*user account* and *process*). Using these concepts as a reference, we can start describing interactions among data elements through relationships. The image below shows some of the relationships that we have identified so far:
 
-<img src="images/relationships_example.jpg" width=500>
+<img src="images/relationships_example.jpg" width=800>
 
 We have categorized relationships in *activity* and *information*. Activity relationships are the ones that make reference to the action that triggered the generation of the security event. On the other hand, information relationships are the ones defined based on the metadata provided by the security event. As you can see in the image above, one event can give you security context for more than one relationship. What relationship(s) should we use? It will depend on the use case you are working on.
 
 If we repeat all the steps described so far, we can start identifying different relationships among data elements based on different security events.
 
-<img src="images/more_relationships_example.jpg" width=500>
+<img src="images/more_relationships_example.jpg" width=800>
 
 ### **Defining Data Components**
 As you can see in the image above, different relationships can be indentified based on information provided by security events. However, some of them describe the same security context. Therefore, we decided to group relationships that are related. *Data components* will help us to categorized relationships among data elements based on the security context they describe (*i.e. Creation, execution, deletion*) and the type of relationships (*Activity and Information*). The following image shows data components defined for the relationships that we have identified previously:
 
-<img src="images/data_components_example.jpg" width=500>
+<img src="images/data_components_example.jpg" width=800>
 
 Even though relationships describe interactions among different data elements, grouping them throguh data components allowed us to identify main network security concepts that are described by collected security events such as *Process*, *Command*, and *Network Traffic*. These network security concepts will represent data sources that we can collect data and information from.
 
-<img src="images/data_sources_example.jpg" width=500>
+<img src="images/data_sources_example.jpg" width=800>
 
 ### **Assembling ATT&CK Data Source Objects**
 During the development of this methodology we have identified data sources' context that can help us to describe the activity within a network environment. We have decided to formalize all this contex thorugh the definition of **Data Source Objects** within the ATT&CK Object Model. The objects' strcuture is represented in the following image:
 
-<img src="images/Data_Source_Object.png" width=500>
+<img src="images/Data_Source_Object.png" width=800>
