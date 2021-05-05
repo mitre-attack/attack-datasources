@@ -156,9 +156,9 @@ def barh_chart(dataframe,xfield,yfield,title,xlabel = '',ylabel = '',figSize = (
 def attack_network_graph(mapping):
     ## Code Reference: https://towardsdatascience.com/customizing-networkx-graphs-f80b4e69bedf
     ## Creating dataframe for relationships
-    technique_to_data_source = mapping[['technique','data_source']].rename(columns={'technique':'source','data_source':'target'})
+    technique_to_component = mapping[['technique','data_component']].rename(columns={'technique':'source','data_component':'target'})
     data_source_to_component = mapping[['data_source','data_component']].rename(columns={'data_source':'source','data_component':'target'})
-    df = pd.concat([technique_to_data_source,data_source_to_component]).drop_duplicates()
+    df = pd.concat([technique_to_component,data_source_to_component]).drop_duplicates()
     ## Creating dataframe nodes characteristics
     technique = mapping[['technique']].rename(columns={'technique':'node'})
     technique['type'] = 'technique'
@@ -188,6 +188,7 @@ def attack_network_graph(mapping):
     leg_data_source = mpatches.Patch(color='orange', label='Data Source')
     leg_data_component = mpatches.Patch(color='lime', label='Data Component')
     plt.legend(handles=[leg_technique,leg_data_source,leg_data_component],loc = 'best', fontsize = 14)
+    plt.margins(0.1)
     plt.show()
 
 def network_graph_bokeh(dataframe):
