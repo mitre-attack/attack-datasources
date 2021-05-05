@@ -1,14 +1,14 @@
 # ATT&CK Data Sources
 As part of the [**ATT&CK 2021 Roadmap**](https://medium.com/mitre-attack/att-ck-2021-roadmap-68bab3886fa2), we have defined a methodology that will help improve how ATT&CK maps adversary behaviors to detection data sources. The idea behind this methodology is to improve quality and consistency of ATT&CK data sources as well as to provide additional information to help users make better use of these values.
 
-<img src="docs/images/ATTCK_InfoSec_Community.jpg" width=500>
+<img src="docs/images/ATTCK_InfoSec_Community.jpg" width=800>
 
 The previous image shows only some of the elements that the methodology brings out such as *data components* and *relationships*, however it represents the main goal of this project: **better connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**.
 
 ## **Assembling ATT&CK Data Source Objects**
 During the development of this project we have identified data sources' context that can help us to describe the activity within a network environment. We have decided to formalize all this contex thorugh the definition of **Data Source Objects** within the ATT&CK Object Model. The objects' strcuture is represented in the following image:
 
-<img src="docs/images/Data_Source_Object.png" width=500>
+<img src="docs/images/Data_Source_Object.png" width=800>
 
 If you are interested on getting a better understanding of the concepts and methodology we have developed so far, please review the following documents and blogs we have prepared for you:
 
@@ -23,14 +23,14 @@ If you are interested on getting a better understanding of the concepts and meth
 ### **Identification of Relevant Data Sources and Components**
 A common questions regarding ATT&CK data sources is *What data source or component can help me to develop detections for most techniques?* The definition of coverage metrics is something the community has been working on since the initial release of the framework. Therefore, measuring the number of techniques per data source is always a good starting point.
 
-<img src="docs/images/relevant_data_components.jpg" width=500>
+<img src="docs/images/relevant_data_components.jpg" width=800>
 
 The image above shows that, considering all platforms and tactics within the Enterprise matrix, *command execution*, *process creation*, and *file modification* are a good starting point when analyzing most (sub)techniques.
 
 ### **Identification of Relevant Data Sources and Components: A Network Perspective**
 Another way to represent the interaction among techniques, data sources and components is by using a network graph. Using *Python* libraries such as *NetworkX* and *Matplotlib*, we can create a visualization that will support our analysis.
 
-<img src="docs/images/network_graph.jpg" width=500>
+<img src="docs/images/network_graph.jpg" width=800>
 
 The image above shows the interaction among sub-techniques and recommended data sources and components under [T1134 - Access Token Manipulation](https://attack.mitre.org/techniques/T1134/) technique for Desense Evasion (Tactic) in Windows (Platform) environments.
 
@@ -39,16 +39,16 @@ Data components gives us context of the activity or metadata related to network 
 
 For instance, let's say the *Process* data source is recommended for the detection of *T1543.003 Create or Modifiy System Process / Windows Service* technique. Without any other security context, the first question that might come to your mind is *what information about a process is required?*. The following image shows some of the available option by using components:
 
-<img src="docs/images/process_data_components_example.jpg" width=500>
+<img src="docs/images/process_data_components_example.jpg" width=800>
 
 Each data component represents activity and/or information generated within a network environment because of actions or behaviors performed by a user or a potential adversary. The ATT&CK framework (v9) now provides data components that can help you to represent specific actions or behaviors related to a technique. According to the framework, the **creation of processes** and **execution of operating system's API calls** are a good starting point from a Process perspective.
 
-<img src="docs/images/attck_T1543-003.jpg" width=500>
+<img src="docs/images/attck_T1543-003.jpg" width=800>
 
 ### **Identification of Relevant Security Events**
 At the beginning of this document, we mentioned that the main goal of this project was to **connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**. Even though the scope of this project does not consider mapping security events to data components and relationships, we believe that the information provided by data source objects can help you to identify relevant security data that should be collected in your environemnt in order to expedite the development of effective detections.
 
-<img src="docs/images/Sub_Technique_Data_Components.jpg" width=500>
+<img src="docs/images/Sub_Technique_Data_Components.jpg" width=800>
 
 For example, the framework considers *Process/Process Creation* s a recommended data source for *[T1543.003 - Create or Modify System Process: Windows Service](https://attack.mitre.org/techniques/T1543/003/)* technique. The mos important  question here is *What security events logs can give me context about the creation of a process?*. For Windows platform environments, Security Auditing event 4688 and Sysmon event 1 can help us to cover this data source recommendation. The image above shows an example of security events mapped to other recommended data sources for the same technique.
 
