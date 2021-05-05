@@ -12,7 +12,7 @@ During the development of this project we have identified data sources' context 
 
 If you are interested on getting a better understanding of the concepts and methodology we have developed so far, please review the following documents and blogs we have prepared for you:
 
-* [A Methodology to define ATT&CK Data Sources Objects](https://github.com/Cyb3rPandaH/attack-datasources/docs/methodology.md)
+* [A Methodology to define ATT&CK Data Sources Objects](https://github.com/mitre-attack/attack-datasources/blob/main/docs/methodology.md)
 * [Defining ATT&CK Data Sources, Part I: Enhancing the Current State](https://medium.com/mitre-attack/defining-attack-data-sources-part-i-4c39e581454f)
 * [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
 * [Data Sources, Containers, Cloud, and More: What’s New in ATT&CK v9?](https://medium.com/mitre-attack/attack-april-2021-release-39accaf23c81)
@@ -92,7 +92,7 @@ references:
 ## **How can you Consume Data Source Objects Content?**
 The idea of storing all this data using **YAML** files is to facilitate the consumption of data source objects content until we move everything to our TAXII Server. So, feel free to use any tool that can handle yaml files and that is available for you. We have prepared a Jupyter notebook using libraries such attackcti, pandas, and yaml to give you an example of how can you gather up-to-date ATT&CK knowledge and YAML files' content, so you can merge all this information. You can find the notebook in the following link.
 
-- [Adding more security context to the data source piece of ATT&CK - Notebook](https://github.com/mitre-attack/attack-datasources/blob/main/DataSourcesDefinition.ipynb)
+- [Adding more security context to the data source piece of ATT&CK - Notebook](https://github.com/mitre-attack/attack-datasources/blob/main/ATT&CK-Data-Sources.ipynb)
 
 ## **How Can You Contribute?**
 We love feedback!! Hopefully, the explanation of our methodology provided in this document helps you to undertand the structure of a data source object and gives you an idea on how to come up with new content. Take a look at the current data source objects [here](https://github.com/mitre-attack/attack-datasources/tree/main/contribution), propose or improve data relationships, components, and data sources, and submit a pull request!!
