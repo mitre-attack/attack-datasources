@@ -50,7 +50,7 @@ At the beginning of this document, we mentioned that the main goal of this proje
 
 <img src="docs/images/Sub_Technique_Data_Components.jpg" width=800>
 
-For example, the framework considers *Process/Process Creation* s a recommended data source for *[T1543.003 - Create or Modify System Process: Windows Service](https://attack.mitre.org/techniques/T1543/003/)* technique. The mos important  question here is *What security events logs can give me context about the creation of a process?*. For Windows platform environments, Security Auditing event 4688 and Sysmon event 1 can help us to cover this data source recommendation. The image above shows an example of security events mapped to other recommended data sources for the same technique.
+For example, the framework considers *Process/Process Creation* s a recommended data source for *[T1543.003 - Create or Modify System Process: Windows Service](https://attack.mitre.org/techniques/T1543/003/)* technique. The most important  question here is *What security events logs can give me context about the creation of a process?*. For Windows platform environments, Security Auditing event 4688 and Sysmon event 1 can help us to cover this data source recommendation. The image above shows an example of security events mapped to other recommended data sources for the same technique.
 
 ## **Where are the New Data Sources Objects Stored?**
 V9 of the ATT&CK framework contains only data components as part of the new metadata for sata sources. However, you can find our current Data Source Objects [here](https://github.com/mitre-attack/attack-datasources/tree/main/contribution). We are storing this new metadata using YAML files, but in the future it will be store within our TAXII Server in STIX format.
