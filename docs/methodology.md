@@ -1,4 +1,4 @@
-## **A Methodology to define Data Sources Objects**
+## **A Methodology to Define Data Sources Objects**
 
 <img src="images/Methodology_Data_Sources.jpg" width=800>
 
@@ -16,10 +16,10 @@ Data elements help us not only to represent (elements) and describe (attributes)
 
 Let's take a look at the *4688: A new process has been crated* security event again. Within the information provided by this event, we have identified network security concepts such as the [*user account*](https://github.com/mitre-attack/attack-datasources/blob/main/contribution/user_account.yml) that requested the creation of the [*process*](https://github.com/mitre-attack/attack-datasources/blob/main/contribution/process.yml), and we also have information of the process which ran the new process. This security event also provides metadata that can help us to describe our data elements. For instance, regarding the user account data element, we have information of its *Logon Id* and the *Domain* it belongs to. Regarding the process data element, we have information of its *Id* and *Token Elevation Type*.
 
-The definition of data elements within the ATT&CK framework migh or might not align with the reality of your organization. However, as a [mid-level model (Figure 5)](https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf), you can use ATT&CK as a starting point and customize your definition of data elements.
+The definition of data elements within the ATT&CK framework might or might not align with the reality of your organization. However, as a [mid-level model (Figure 5)](https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf), you can use ATT&CK as a starting point and customize your definition of data elements.
 
 ### **Identifying Relationships Among Data Elements**
-By documenting telemetry collected within a netork environment we were able to identify the activity that triggered the generation of security telemetry (*creation of a new process*) and data elements that were involved on this action (*user account* and *process*). Using these concepts as a reference, we can start describing interactions among data elements through relationships. The image below shows some of the relationships that we have identified so far:
+By documenting telemetry collected within a network environment we were able to identify the activity that triggered the generation of security telemetry (*creation of a new process*) and data elements that were involved on this action (*user account* and *process*). Using these concepts as a reference, we can start describing interactions among data elements through relationships. The image below shows some of the relationships that we have identified so far:
 
 <img src="images/relationships_example.jpg" width=800>
 
@@ -30,15 +30,37 @@ If we repeat all the steps described so far, we can start identifying different 
 <img src="images/more_relationships_example.jpg" width=800>
 
 ### **Defining Data Components**
-As you can see in the image above, different relationships can be indentified based on information provided by security events. However, some of them describe the same security context. Therefore, we decided to group relationships that are related. *Data components* will help us to categorized relationships among data elements based on the security context they describe (*i.e. Creation, execution, deletion*) and the type of relationships (*Activity and Information*). The following image shows data components defined for the relationships that we have identified previously:
+As you can see in the image above, different relationships can be identified based on information provided by security events. However, some of them describe the same security context. Therefore, we decided to group relationships that are related. *Data components* will help us to categorize relationships among data elements based on the security context they describe (*i.e. Creation, Execution, Deletion*) and the type of relationships (*Activity and Information*). The following image shows data components defined for the relationships that we have identified previously:
 
 <img src="images/data_components_example.jpg" width=800>
 
-Even though relationships describe interactions among different data elements, grouping them throguh data components allowed us to identify main network security concepts that are described by collected security events such as *Process*, *Command*, and *Network Traffic*. These network security concepts will represent data sources that we can collect data and information from.
+Even though relationships describe interactions among different data elements, grouping them through data components allow us to identify main network security concepts that are described by collected security events such as *Process*, *Command*, and *Network Traffic*. These network security concepts will represent data sources that we can collect data and information from.
 
 <img src="images/data_sources_example.jpg" width=800>
 
 ### **Assembling ATT&CK Data Source Objects**
-During the development of this methodology we have identified data sources' context that can help us to describe the activity within a network environment. We have decided to formalize all this contex thorugh the definition of **Data Source Objects** within the ATT&CK Object Model. The objects' strcuture is represented in the following image:
+During the development of this methodology we have identified data sources' context that can help us to describe the activity within a network environment. We have decided to formalize all this context thorugh the definition of **Data Source Objects** within the ATT&CK Object Model. The objects' strcuture is represented in the following image:
 
 <img src="images/Data_Source_Object.png" width=800>
+
+## Notice
+
+©2020 Copyright The MITRE Corporation. ALL RIGHTS RESERVED.
+
+Approved for Public Release; Distribution Unlimited. Public Release Case Number 20-2841
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+This project makes use of ATT&CK®
+
+[ATT&CK Terms of Use](https://attack.mitre.org/resources/terms-of-use/)
