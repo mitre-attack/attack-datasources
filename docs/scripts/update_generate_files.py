@@ -74,21 +74,35 @@ attck_mapping = attck_mapping.drop(['name','data_component_name'], axis = 1)
 
 print("[+] Merging (Sub)Technqiues to Relationships mapping DATAFRAME..")
 technique_to_relationships = pd.merge(attck, attck_mapping, how = 'left', on = ['data_source','data_component'])
-technique_to_relationships = technique_to_relationships.reindex(columns = ['technique_id','x_mitre_is_subtechnique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references'])
-technique_to_relationships_dict = technique_to_relationships.reset_index().to_dict(orient = 'records')
+technique_to_relationships = technique_to_relationships.reindex(columns = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references'])
 
+technique_to_relationships_dict = technique_to_relationships.reset_index().to_dict(orient = 'records')
 for x in technique_to_relationships_dict:
+    x.pop('index')
+
+technique_to_components_dict = attck.reset_index().to_dict(orient = 'records')
+for x in technique_to_components_dict:
     x.pop('index')
 
 print("[+] Creating (Sub)Technqiues to Relationships mapping YAML file..")
 with open("../techniques_to_relationships_mapping.yaml", 'w') as yamlfile:
     data = yaml.dump(technique_to_relationships_dict, yamlfile,sort_keys = False, default_flow_style = False)
 
-###### Creating CSV file with (Sub)Techniques to Relationships Mapping
+print("[+] Creating (Sub)Technqiues to Components mapping YAML file..")
+with open("../techniques_to_components_mapping.yaml", 'w') as yamlfile:
+    data = yaml.dump(technique_to_components_dict, yamlfile,sort_keys = False, default_flow_style = False)
+
+###### Creating CSV file with (Sub)Techniques to Components/Relationships Mapping
 print("[+] Creating ATT&CK techniques to relationships mapping CSV file..")
 
-header_fields = ['technique_id','x_mitre_is_subtechnique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references']
+header_fields = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references']
 with open('../techniques_to_relationships_mapping.csv', 'w', newline='')  as output_file:
     dict_writer = csv.DictWriter(output_file, header_fields)
     dict_writer.writeheader()
     dict_writer.writerows(technique_to_relationships_dict)
+
+header_fields = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','data_component']
+with open('../techniques_to_components_mapping.csv', 'w', newline='')  as output_file:
+    dict_writer = csv.DictWriter(output_file, header_fields)
+    dict_writer.writeheader()
+    dict_writer.writerows(technique_to_components_dict)
