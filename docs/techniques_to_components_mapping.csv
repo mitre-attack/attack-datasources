@@ -1,0 +1,1645 @@
+technique_id,x_mitre_is_subtechnique,technique,tactic,platform,data_source,data_component
+T1553.006,True,Code Signing Policy Modification,['defense-evasion'],"['Windows', 'macOS']",windows registry,windows registry key modification
+T1553.006,True,Code Signing Policy Modification,['defense-evasion'],"['Windows', 'macOS']",command,command execution
+T1553.006,True,Code Signing Policy Modification,['defense-evasion'],"['Windows', 'macOS']",process,process creation
+T1614,False,System Location Discovery,['discovery'],"['Windows', 'Linux', 'macOS', 'IaaS']",instance,instance metadata
+T1614,False,System Location Discovery,['discovery'],"['Windows', 'Linux', 'macOS', 'IaaS']",process,process creation
+T1614,False,System Location Discovery,['discovery'],"['Windows', 'Linux', 'macOS', 'IaaS']",command,command execution
+T1614,False,System Location Discovery,['discovery'],"['Windows', 'Linux', 'macOS', 'IaaS']",process,os api execution
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],cluster,cluster metadata
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],container,container enumeration
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],container,container metadata
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],pod,pod enumeration
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],pod,pod metadata
+T1613,False,Container and Resource Discovery,['discovery'],['Containers'],application log,application log content
+T1552.007,True,Container API,['credential-access'],['Containers'],command,command execution
+T1552.007,True,Container API,['credential-access'],['Containers'],file,file access
+T1552.007,True,Container API,['credential-access'],['Containers'],user account,user account authentication
+T1612,False,Build Image on Host,['defense-evasion'],['Containers'],image,image creation
+T1612,False,Build Image on Host,['defense-evasion'],['Containers'],network traffic,network connection creation
+T1612,False,Build Image on Host,['defense-evasion'],['Containers'],network traffic,network traffic flow
+T1612,False,Build Image on Host,['defense-evasion'],['Containers'],network traffic,network traffic content
+T1611,False,Escape to Host,['privilege-escalation'],"['Windows', 'Linux', 'Containers']",container,container creation
+T1611,False,Escape to Host,['privilege-escalation'],"['Windows', 'Linux', 'Containers']",process,os api execution
+T1611,False,Escape to Host,['privilege-escalation'],"['Windows', 'Linux', 'Containers']",process,process creation
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",container,container creation
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",container,container start
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",command,command execution
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",image,image creation
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",instance,instance creation
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",instance,instance start
+T1204.003,True,Malicious Image,['execution'],"['IaaS', 'Containers']",application log,application log content
+T1053.007,True,Container Orchestration Job,"['execution', 'persistence', 'privilege-escalation']",['Containers'],scheduled job,scheduled job creation
+T1053.007,True,Container Orchestration Job,"['execution', 'persistence', 'privilege-escalation']",['Containers'],container,container creation
+T1053.007,True,Container Orchestration Job,"['execution', 'persistence', 'privilege-escalation']",['Containers'],file,file creation
+T1610,False,Deploy Container,"['defense-evasion', 'execution']",['Containers'],container,container creation
+T1610,False,Deploy Container,"['defense-evasion', 'execution']",['Containers'],container,container start
+T1610,False,Deploy Container,"['defense-evasion', 'execution']",['Containers'],pod,pod creation
+T1610,False,Deploy Container,"['defense-evasion', 'execution']",['Containers'],pod,pod modification
+T1610,False,Deploy Container,"['defense-evasion', 'execution']",['Containers'],application log,application log content
+T1609,False,Container Administration Command,['execution'],['Containers'],command,command execution
+T1608.005,True,Link Target,['resource-development'],['PRE'],nan,nan
+T1608.004,True,Drive-by Target,['resource-development'],['PRE'],nan,nan
+T1608.003,True,Install Digital Certificate,['resource-development'],['PRE'],nan,nan
+T1608.002,True,Upload Tool,['resource-development'],['PRE'],nan,nan
+T1608.001,True,Upload Malware,['resource-development'],['PRE'],nan,nan
+T1608,False,Stage Capabilities,['resource-development'],['PRE'],nan,nan
+T1016.001,True,Internet Connection Discovery,['discovery'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1016.001,True,Internet Connection Discovery,['discovery'],"['Windows', 'Linux', 'macOS']",command,command execution
+T1553.005,True,Mark-of-the-Web Bypass,['defense-evasion'],['Windows'],file,file creation
+T1553.005,True,Mark-of-the-Web Bypass,['defense-evasion'],['Windows'],file,file metadata
+T1555.005,True,Password Managers,['credential-access'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1555.005,True,Password Managers,['credential-access'],"['Linux', 'macOS', 'Windows']",file,file access
+T1555.005,True,Password Managers,['credential-access'],"['Linux', 'macOS', 'Windows']",process,process access
+T1555.005,True,Password Managers,['credential-access'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1484.002,True,Domain Trust Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",active directory,active directory object creation
+T1484.002,True,Domain Trust Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",active directory,active directory object modification
+T1484.002,True,Domain Trust Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",command,command execution
+T1484.001,True,Group Policy Modification,"['defense-evasion', 'privilege-escalation']",['Windows'],active directory,active directory object creation
+T1484.001,True,Group Policy Modification,"['defense-evasion', 'privilege-escalation']",['Windows'],active directory,active directory object deletion
+T1484.001,True,Group Policy Modification,"['defense-evasion', 'privilege-escalation']",['Windows'],active directory,active directory object modification
+T1484.001,True,Group Policy Modification,"['defense-evasion', 'privilege-escalation']",['Windows'],command,command execution
+T1547.014,True,Active Setup,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key creation
+T1547.014,True,Active Setup,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.014,True,Active Setup,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1547.014,True,Active Setup,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1606.002,True,SAML Tokens,['credential-access'],"['Azure AD', 'SaaS', 'Windows', 'Office 365', 'Google Workspace']",logon session,logon session creation
+T1606.002,True,SAML Tokens,['credential-access'],"['Azure AD', 'SaaS', 'Windows', 'Office 365', 'Google Workspace']",web credential,web credential creation
+T1606.002,True,SAML Tokens,['credential-access'],"['Azure AD', 'SaaS', 'Windows', 'Office 365', 'Google Workspace']",web credential,web credential usage
+T1606.001,True,Web Cookies,['credential-access'],"['Linux', 'macOS', 'Windows', 'SaaS']",logon session,logon session creation
+T1606.001,True,Web Cookies,['credential-access'],"['Linux', 'macOS', 'Windows', 'SaaS']",web credential,web credential creation
+T1606.001,True,Web Cookies,['credential-access'],"['Linux', 'macOS', 'Windows', 'SaaS']",web credential,web credential usage
+T1606,False,Forge Web Credentials,['credential-access'],"['SaaS', 'Windows', 'macOS', 'Linux', 'Azure AD', 'Office 365', 'Google Workspace']",logon session,logon session creation
+T1606,False,Forge Web Credentials,['credential-access'],"['SaaS', 'Windows', 'macOS', 'Linux', 'Azure AD', 'Office 365', 'Google Workspace']",web credential,web credential creation
+T1606,False,Forge Web Credentials,['credential-access'],"['SaaS', 'Windows', 'macOS', 'Linux', 'Azure AD', 'Office 365', 'Google Workspace']",web credential,web credential usage
+T1555.004,True,Windows Credential Manager,['credential-access'],['Windows'],process,process creation
+T1555.004,True,Windows Credential Manager,['credential-access'],['Windows'],command,command execution
+T1555.004,True,Windows Credential Manager,['credential-access'],['Windows'],process,os api execution
+T1555.004,True,Windows Credential Manager,['credential-access'],['Windows'],file,file access
+T1059.008,True,Network Device CLI,['execution'],['Network'],command,command execution
+T1602.002,True,Network Device Configuration Dump,['collection'],['Network'],network traffic,network connection creation
+T1602.002,True,Network Device Configuration Dump,['collection'],['Network'],network traffic,network traffic content
+T1542.005,True,TFTP Boot,"['defense-evasion', 'persistence']",['Network'],command,command execution
+T1542.005,True,TFTP Boot,"['defense-evasion', 'persistence']",['Network'],network traffic,network connection creation
+T1542.005,True,TFTP Boot,"['defense-evasion', 'persistence']",['Network'],firmware,firmware modification
+T1542.004,True,ROMMONkit,"['defense-evasion', 'persistence']",['Network'],firmware,firmware modification
+T1602.001,True,SNMP (MIB Dump),['collection'],['Network'],network traffic,network connection creation
+T1602.001,True,SNMP (MIB Dump),['collection'],['Network'],network traffic,network traffic content
+T1602,False,Data from Configuration Repository,['collection'],['Network'],network traffic,network connection creation
+T1602,False,Data from Configuration Repository,['collection'],['Network'],network traffic,network traffic content
+T1601.002,True,Downgrade System Image,['defense-evasion'],['Network'],file,file modification
+T1601.001,True,Patch System Image,['defense-evasion'],['Network'],file,file modification
+T1601,False,Modify System Image,['defense-evasion'],['Network'],file,file modification
+T1600.002,True,Disable Crypto Hardware,['defense-evasion'],['Network'],file,file modification
+T1600.001,True,Reduce Key Space,['defense-evasion'],['Network'],file,file modification
+T1600,False,Weaken Encryption,['defense-evasion'],['Network'],file,file modification
+T1556.004,True,Network Device Authentication,"['credential-access', 'defense-evasion', 'persistence']",['Network'],file,file modification
+T1599.001,True,Network Address Translation Traversal,['defense-evasion'],['Network'],network traffic,network traffic flow
+T1599.001,True,Network Address Translation Traversal,['defense-evasion'],['Network'],network traffic,network traffic content
+T1599,False,Network Boundary Bridging,['defense-evasion'],['Network'],network traffic,network traffic flow
+T1599,False,Network Boundary Bridging,['defense-evasion'],['Network'],network traffic,network traffic content
+T1020.001,True,Traffic Duplication,['exfiltration'],['Network'],network traffic,network connection creation
+T1020.001,True,Traffic Duplication,['exfiltration'],['Network'],network traffic,network traffic flow
+T1557.002,True,ARP Cache Poisoning,"['credential-access', 'collection']","['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1557.002,True,ARP Cache Poisoning,"['credential-access', 'collection']","['Linux', 'Windows', 'macOS']",network traffic,network traffic flow
+T1588.006,True,Vulnerabilities,['resource-development'],['PRE'],nan,nan
+T1053.006,True,Systemd Timers,"['execution', 'persistence', 'privilege-escalation']",['Linux'],scheduled job,scheduled job creation
+T1053.006,True,Systemd Timers,"['execution', 'persistence', 'privilege-escalation']",['Linux'],command,command execution
+T1053.006,True,Systemd Timers,"['execution', 'persistence', 'privilege-escalation']",['Linux'],file,file modification
+T1053.006,True,Systemd Timers,"['execution', 'persistence', 'privilege-escalation']",['Linux'],process,process creation
+T1562.008,True,Disable Cloud Logs,['defense-evasion'],['IaaS'],cloud service,cloud service modification
+T1562.008,True,Disable Cloud Logs,['defense-evasion'],['IaaS'],cloud service,cloud service disable
+T1547.012,True,Print Processors,"['persistence', 'privilege-escalation']",['Windows'],file,file creation
+T1547.012,True,Print Processors,"['persistence', 'privilege-escalation']",['Windows'],process,os api execution
+T1547.012,True,Print Processors,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.012,True,Print Processors,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.012,True,Print Processors,"['persistence', 'privilege-escalation']",['Windows'],driver,driver load
+T1598.003,True,Spearphishing Link,['reconnaissance'],['PRE'],application log,application log content
+T1598.003,True,Spearphishing Link,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1598.003,True,Spearphishing Link,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1598.002,True,Spearphishing Attachment,['reconnaissance'],['PRE'],application log,application log content
+T1598.002,True,Spearphishing Attachment,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1598.002,True,Spearphishing Attachment,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1598.001,True,Spearphishing Service,['reconnaissance'],['PRE'],application log,application log content
+T1598.001,True,Spearphishing Service,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1598.001,True,Spearphishing Service,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1598,False,Phishing for Information,['reconnaissance'],['PRE'],application log,application log content
+T1598,False,Phishing for Information,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1598,False,Phishing for Information,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1597.002,True,Purchase Technical Data,['reconnaissance'],['PRE'],nan,nan
+T1597.001,True,Threat Intel Vendors,['reconnaissance'],['PRE'],nan,nan
+T1597,False,Search Closed Sources,['reconnaissance'],['PRE'],nan,nan
+T1596.005,True,Scan Databases,['reconnaissance'],['PRE'],nan,nan
+T1596.004,True,CDNs,['reconnaissance'],['PRE'],nan,nan
+T1596.003,True,Digital Certificates,['reconnaissance'],['PRE'],nan,nan
+T1596.001,True,DNS/Passive DNS,['reconnaissance'],['PRE'],nan,nan
+T1596.002,True,WHOIS,['reconnaissance'],['PRE'],nan,nan
+T1596,False,Search Open Technical Databases,['reconnaissance'],['PRE'],nan,nan
+T1595.002,True,Vulnerability Scanning,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1595.002,True,Vulnerability Scanning,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1595.001,True,Scanning IP Blocks,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1595,False,Active Scanning,['reconnaissance'],['PRE'],network traffic,network traffic flow
+T1595,False,Active Scanning,['reconnaissance'],['PRE'],network traffic,network traffic content
+T1594,False,Search Victim-Owned Websites,['reconnaissance'],['PRE'],application log,application log content
+T1593.002,True,Search Engines,['reconnaissance'],['PRE'],nan,nan
+T1593.001,True,Social Media,['reconnaissance'],['PRE'],nan,nan
+T1593,False,Search Open Websites/Domains,['reconnaissance'],['PRE'],nan,nan
+T1592.004,True,Client Configurations,['reconnaissance'],['PRE'],nan,nan
+T1592.003,True,Firmware,['reconnaissance'],['PRE'],nan,nan
+T1592.002,True,Software,['reconnaissance'],['PRE'],nan,nan
+T1592.001,True,Hardware,['reconnaissance'],['PRE'],nan,nan
+T1592,False,Gather Victim Host Information,['reconnaissance'],['PRE'],nan,nan
+T1591.004,True,Identify Roles,['reconnaissance'],['PRE'],nan,nan
+T1591.003,True,Identify Business Tempo,['reconnaissance'],['PRE'],nan,nan
+T1591.001,True,Determine Physical Locations,['reconnaissance'],['PRE'],nan,nan
+T1591.002,True,Business Relationships,['reconnaissance'],['PRE'],nan,nan
+T1591,False,Gather Victim Org Information,['reconnaissance'],['PRE'],nan,nan
+T1590.006,True,Network Security Appliances,['reconnaissance'],['PRE'],nan,nan
+T1590.005,True,IP Addresses,['reconnaissance'],['PRE'],nan,nan
+T1590.004,True,Network Topology,['reconnaissance'],['PRE'],nan,nan
+T1590.003,True,Network Trust Dependencies,['reconnaissance'],['PRE'],nan,nan
+T1590.002,True,DNS,['reconnaissance'],['PRE'],nan,nan
+T1590.001,True,Domain Properties,['reconnaissance'],['PRE'],nan,nan
+T1590,False,Gather Victim Network Information,['reconnaissance'],['PRE'],nan,nan
+T1589.003,True,Employee Names,['reconnaissance'],['PRE'],nan,nan
+T1589.002,True,Email Addresses,['reconnaissance'],['PRE'],nan,nan
+T1589.001,True,Credentials,['reconnaissance'],['PRE'],nan,nan
+T1589,False,Gather Victim Identity Information,['reconnaissance'],['PRE'],nan,nan
+T1588.005,True,Exploits,['resource-development'],['PRE'],nan,nan
+T1588.004,True,Digital Certificates,['resource-development'],['PRE'],nan,nan
+T1588.003,True,Code Signing Certificates,['resource-development'],['PRE'],nan,nan
+T1588.002,True,Tool,['resource-development'],['PRE'],nan,nan
+T1588.001,True,Malware,['resource-development'],['PRE'],nan,nan
+T1588,False,Obtain Capabilities,['resource-development'],['PRE'],nan,nan
+T1587.004,True,Exploits,['resource-development'],['PRE'],nan,nan
+T1587.003,True,Digital Certificates,['resource-development'],['PRE'],nan,nan
+T1587.002,True,Code Signing Certificates,['resource-development'],['PRE'],nan,nan
+T1587.001,True,Malware,['resource-development'],['PRE'],nan,nan
+T1587,False,Develop Capabilities,['resource-development'],['PRE'],nan,nan
+T1586.002,True,Email Accounts,['resource-development'],['PRE'],nan,nan
+T1586.001,True,Social Media Accounts,['resource-development'],['PRE'],nan,nan
+T1586,False,Compromise Accounts,['resource-development'],['PRE'],nan,nan
+T1585.002,True,Email Accounts,['resource-development'],['PRE'],nan,nan
+T1585.001,True,Social Media Accounts,['resource-development'],['PRE'],nan,nan
+T1585,False,Establish Accounts,['resource-development'],['PRE'],nan,nan
+T1584.006,True,Web Services,['resource-development'],['PRE'],nan,nan
+T1584.005,True,Botnet,['resource-development'],['PRE'],nan,nan
+T1584.004,True,Server,['resource-development'],['PRE'],nan,nan
+T1584.003,True,Virtual Private Server,['resource-development'],['PRE'],nan,nan
+T1584.002,True,DNS Server,['resource-development'],['PRE'],nan,nan
+T1584.001,True,Domains,['resource-development'],['PRE'],nan,nan
+T1583.006,True,Web Services,['resource-development'],['PRE'],nan,nan
+T1583.005,True,Botnet,['resource-development'],['PRE'],nan,nan
+T1583.004,True,Server,['resource-development'],['PRE'],nan,nan
+T1583.003,True,Virtual Private Server,['resource-development'],['PRE'],nan,nan
+T1583.002,True,DNS Server,['resource-development'],['PRE'],nan,nan
+T1584,False,Compromise Infrastructure,['resource-development'],['PRE'],nan,nan
+T1583.001,True,Domains,['resource-development'],['PRE'],nan,nan
+T1583,False,Acquire Infrastructure,['resource-development'],['PRE'],nan,nan
+T1564.007,True,VBA Stomping,['defense-evasion'],"['Linux', 'Windows', 'macOS']",script,script execution
+T1564.007,True,VBA Stomping,['defense-evasion'],"['Linux', 'Windows', 'macOS']",file,file content
+T1558.004,True,AS-REP Roasting,['credential-access'],['Windows'],active directory,active directory credential request
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],instance,instance metadata
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],instance,instance enumeration
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],snapshot,snapshot metadata
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],snapshot,snapshot enumeration
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],cloud storage,cloud storage metadata
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],cloud storage,cloud storage enumeration
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],volume,volume metadata
+T1580,False,Cloud Infrastructure Discovery,['discovery'],['IaaS'],volume,volume enumeration
+T1218.012,True,Verclsid,['defense-evasion'],['Windows'],process,process creation
+T1218.012,True,Verclsid,['defense-evasion'],['Windows'],command,command execution
+T1205.001,True,Port Knocking,"['defense-evasion', 'persistence', 'command-and-control']","['Linux', 'macOS', 'Windows', 'Network']",network traffic,network connection creation
+T1205.001,True,Port Knocking,"['defense-evasion', 'persistence', 'command-and-control']","['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic flow
+T1564.006,True,Run Virtual Instance,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1564.006,True,Run Virtual Instance,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1564.006,True,Run Virtual Instance,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1564.006,True,Run Virtual Instance,['defense-evasion'],"['Linux', 'macOS', 'Windows']",service,service creation
+T1564.006,True,Run Virtual Instance,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1564.005,True,Hidden File System,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1564.005,True,Hidden File System,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1564.005,True,Hidden File System,['defense-evasion'],"['Linux', 'macOS', 'Windows']",firmware,firmware modification
+T1556.003,True,Pluggable Authentication Modules,"['credential-access', 'defense-evasion', 'persistence']","['Linux', 'macOS']",file,file modification
+T1556.003,True,Pluggable Authentication Modules,"['credential-access', 'defense-evasion', 'persistence']","['Linux', 'macOS']",logon session,logon session creation
+T1574.012,True,COR_PROFILER,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],windows registry,windows registry key modification
+T1574.012,True,COR_PROFILER,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.012,True,COR_PROFILER,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],module,module load
+T1574.012,True,COR_PROFILER,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],command,command execution
+T1562.007,True,Disable or Modify Cloud Firewall,['defense-evasion'],['IaaS'],firewall,firewall rule modification
+T1562.007,True,Disable or Modify Cloud Firewall,['defense-evasion'],['IaaS'],firewall,firewall disable
+T1098.004,True,SSH Authorized Keys,['persistence'],"['Linux', 'macOS']",process,process creation
+T1098.004,True,SSH Authorized Keys,['persistence'],"['Linux', 'macOS']",command,command execution
+T1098.004,True,SSH Authorized Keys,['persistence'],"['Linux', 'macOS']",file,file modification
+T1480.001,True,Environmental Keying,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1480.001,True,Environmental Keying,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1059.007,True,JavaScript,['execution'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1059.007,True,JavaScript,['execution'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1059.007,True,JavaScript,['execution'],"['Windows', 'macOS', 'Linux']",module,module load
+T1059.007,True,JavaScript,['execution'],"['Windows', 'macOS', 'Linux']",script,script execution
+T1578.004,True,Revert Cloud Instance,['defense-evasion'],['IaaS'],instance,instance modification
+T1578.004,True,Revert Cloud Instance,['defense-evasion'],['IaaS'],instance,instance start
+T1578.004,True,Revert Cloud Instance,['defense-evasion'],['IaaS'],instance,instance stop
+T1578.003,True,Delete Cloud Instance,['defense-evasion'],['IaaS'],instance,instance deletion
+T1578.001,True,Create Snapshot,['defense-evasion'],['IaaS'],snapshot,snapshot creation
+T1578.002,True,Create Cloud Instance,['defense-evasion'],['IaaS'],instance,instance creation
+T1127.001,True,MSBuild,['defense-evasion'],['Windows'],process,process creation
+T1127.001,True,MSBuild,['defense-evasion'],['Windows'],command,command execution
+T1027.005,True,Indicator Removal from Tools,['defense-evasion'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1562.006,True,Indicator Blocking,['defense-evasion'],"['Windows', 'macOS', 'Linux']",windows registry,windows registry key modification
+T1562.006,True,Indicator Blocking,['defense-evasion'],"['Windows', 'macOS', 'Linux']",sensor health,host status
+T1562.006,True,Indicator Blocking,['defense-evasion'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1573.002,True,Asymmetric Cryptography,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1573.001,True,Symmetric Cryptography,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1573,False,Encrypted Channel,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1027.004,True,Compile After Delivery,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1027.004,True,Compile After Delivery,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1027.004,True,Compile After Delivery,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1027.004,True,Compile After Delivery,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1574.004,True,Dylib Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['macOS'],file,file creation
+T1574.004,True,Dylib Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['macOS'],file,file modification
+T1574.004,True,Dylib Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['macOS'],module,module load
+T1546.015,True,Component Object Model Hijacking,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.015,True,Component Object Model Hijacking,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.015,True,Component Object Model Hijacking,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.015,True,Component Object Model Hijacking,"['privilege-escalation', 'persistence']",['Windows'],module,module load
+T1071.004,True,DNS,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1071.004,True,DNS,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1071.003,True,Mail Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1071.003,True,Mail Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1071.002,True,File Transfer Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1071.002,True,File Transfer Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1071.001,True,Web Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1071.001,True,Web Protocols,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1572,False,Protocol Tunneling,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1572,False,Protocol Tunneling,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1572,False,Protocol Tunneling,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1048.003,True,Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1048.003,True,Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1048.003,True,Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1048.003,True,Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1048.003,True,Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1048.002,True,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1048.002,True,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1048.002,True,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1048.002,True,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1048.002,True,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1048.001,True,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1048.001,True,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1048.001,True,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1048.001,True,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1048.001,True,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1001.003,True,Protocol Impersonation,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1001.002,True,Steganography,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1001.001,True,Junk Data,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1132.002,True,Non-Standard Encoding,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1132.001,True,Standard Encoding,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1090.004,True,Domain Fronting,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1090.003,True,Multi-hop Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic flow
+T1090.003,True,Multi-hop Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network connection creation
+T1090.003,True,Multi-hop Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic content
+T1090.002,True,External Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1090.002,True,External Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1090.002,True,External Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1090.001,True,Internal Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1090.001,True,Internal Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1090.001,True,Internal Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1102.003,True,One-Way Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1102.003,True,One-Way Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1102.003,True,One-Way Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1102.002,True,Bidirectional Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1102.002,True,Bidirectional Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1102.002,True,Bidirectional Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1102.001,True,Dead Drop Resolver,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1102.001,True,Dead Drop Resolver,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1571,False,Non-Standard Port,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1571,False,Non-Standard Port,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1571,False,Non-Standard Port,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1074.002,True,Remote Data Staging,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file access
+T1074.002,True,Remote Data Staging,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file creation
+T1074.002,True,Remote Data Staging,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",command,command execution
+T1074.001,True,Local Data Staging,['collection'],"['Linux', 'macOS', 'Windows']",file,file access
+T1074.001,True,Local Data Staging,['collection'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1074.001,True,Local Data Staging,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1078.004,True,Cloud Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",user account,user account authentication
+T1078.004,True,Cloud Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",logon session,logon session creation
+T1564.004,True,NTFS File Attributes,['defense-evasion'],['Windows'],process,os api execution
+T1564.004,True,NTFS File Attributes,['defense-evasion'],['Windows'],file,file metadata
+T1564.004,True,NTFS File Attributes,['defense-evasion'],['Windows'],file,file modification
+T1564.004,True,NTFS File Attributes,['defense-evasion'],['Windows'],command,command execution
+T1564.003,True,Hidden Window,['defense-evasion'],"['macOS', 'Windows']",process,process creation
+T1564.003,True,Hidden Window,['defense-evasion'],"['macOS', 'Windows']",command,command execution
+T1564.003,True,Hidden Window,['defense-evasion'],"['macOS', 'Windows']",script,script execution
+T1564.003,True,Hidden Window,['defense-evasion'],"['macOS', 'Windows']",file,file modification
+T1078.003,True,Local Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Linux', 'macOS', 'Windows', 'Containers']",user account,user account authentication
+T1078.003,True,Local Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Linux', 'macOS', 'Windows', 'Containers']",logon session,logon session creation
+T1078.002,True,Domain Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Linux', 'macOS', 'Windows']",user account,user account authentication
+T1078.002,True,Domain Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Linux', 'macOS', 'Windows']",logon session,logon session creation
+T1078.001,True,Default Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1078.001,True,Default Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",logon session,logon session creation
+T1564.002,True,Hidden Users,['defense-evasion'],['macOS'],user account,user account creation
+T1564.002,True,Hidden Users,['defense-evasion'],['macOS'],user account,user account metadata
+T1564.002,True,Hidden Users,['defense-evasion'],['macOS'],file,file modification
+T1574.006,True,Dynamic Linker Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",file,file creation
+T1574.006,True,Dynamic Linker Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",file,file modification
+T1574.006,True,Dynamic Linker Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",module,module load
+T1574.006,True,Dynamic Linker Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",process,process creation
+T1574.006,True,Dynamic Linker Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",command,command execution
+T1574.002,True,DLL Side-Loading,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.002,True,DLL Side-Loading,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.002,True,DLL Side-Loading,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],module,module load
+T1574.002,True,DLL Side-Loading,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.001,True,DLL Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.001,True,DLL Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.001,True,DLL Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],module,module load
+T1574.008,True,Path Interception by Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.008,True,Path Interception by Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.008,True,Path Interception by Search Order Hijacking,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.007,True,Path Interception by PATH Environment Variable,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.007,True,Path Interception by PATH Environment Variable,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.007,True,Path Interception by PATH Environment Variable,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.009,True,Path Interception by Unquoted Path,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.009,True,Path Interception by Unquoted Path,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.009,True,Path Interception by Unquoted Path,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.011,True,Services Registry Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],windows registry,windows registry key modification
+T1574.011,True,Services Registry Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.011,True,Services Registry Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],service,service metadata
+T1574.011,True,Services Registry Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],command,command execution
+T1574.005,True,Executable Installer File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.005,True,Executable Installer File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.005,True,Executable Installer File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],module,module load
+T1574.005,True,Executable Installer File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.005,True,Executable Installer File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],service,service metadata
+T1574.010,True,Services File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file creation
+T1574.010,True,Services File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],file,file modification
+T1574.010,True,Services File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1574.010,True,Services File Permissions Weakness,"['persistence', 'privilege-escalation', 'defense-evasion']",['Windows'],service,service metadata
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",process,process creation
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",module,module load
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",command,command execution
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",service,service metadata
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",file,file creation
+T1574,False,Hijack Execution Flow,"['persistence', 'privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",file,file modification
+T1069.001,True,Local Groups,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1069.001,True,Local Groups,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1570,False,Lateral Tool Transfer,['lateral-movement'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1568.003,True,DNS Calculation,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1204.002,True,Malicious File,['execution'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1204.002,True,Malicious File,['execution'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1204.001,True,Malicious Link,['execution'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1204.001,True,Malicious Link,['execution'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1204.001,True,Malicious Link,['execution'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1195.003,True,Compromise Hardware Supply Chain,['initial-access'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1195.002,True,Compromise Software Supply Chain,['initial-access'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1195.001,True,Compromise Software Dependencies and Development Tools,['initial-access'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1568.001,True,Fast Flux DNS,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1568.001,True,Fast Flux DNS,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1052.001,True,Exfiltration over USB,['exfiltration'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1052.001,True,Exfiltration over USB,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1052.001,True,Exfiltration over USB,['exfiltration'],"['Linux', 'macOS', 'Windows']",drive,drive creation
+T1052.001,True,Exfiltration over USB,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1569.002,True,Service Execution,['execution'],['Windows'],command,command execution
+T1569.002,True,Service Execution,['execution'],['Windows'],process,process creation
+T1569.002,True,Service Execution,['execution'],['Windows'],service,service creation
+T1569.002,True,Service Execution,['execution'],['Windows'],windows registry,windows registry key modification
+T1569.001,True,Launchctl,['execution'],['macOS'],command,command execution
+T1569.001,True,Launchctl,['execution'],['macOS'],process,process creation
+T1569.001,True,Launchctl,['execution'],['macOS'],service,service creation
+T1569.001,True,Launchctl,['execution'],['macOS'],file,file modification
+T1569,False,System Services,['execution'],"['Windows', 'macOS']",command,command execution
+T1569,False,System Services,['execution'],"['Windows', 'macOS']",process,process creation
+T1569,False,System Services,['execution'],"['Windows', 'macOS']",service,service creation
+T1569,False,System Services,['execution'],"['Windows', 'macOS']",file,file modification
+T1569,False,System Services,['execution'],"['Windows', 'macOS']",windows registry,windows registry key modification
+T1568.002,True,Domain Generation Algorithms,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1568.002,True,Domain Generation Algorithms,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1568,False,Dynamic Resolution,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1568,False,Dynamic Resolution,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1568,False,Dynamic Resolution,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1011.001,True,Exfiltration Over Bluetooth,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1011.001,True,Exfiltration Over Bluetooth,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1011.001,True,Exfiltration Over Bluetooth,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1011.001,True,Exfiltration Over Bluetooth,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1011.001,True,Exfiltration Over Bluetooth,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1567.002,True,Exfiltration to Cloud Storage,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1567.002,True,Exfiltration to Cloud Storage,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1567.002,True,Exfiltration to Cloud Storage,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1567.002,True,Exfiltration to Cloud Storage,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1567.001,True,Exfiltration to Code Repository,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1567.001,True,Exfiltration to Code Repository,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1567.001,True,Exfiltration to Code Repository,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1567.001,True,Exfiltration to Code Repository,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1059.006,True,Python,['execution'],"['Linux', 'Windows', 'macOS']",command,command execution
+T1059.006,True,Python,['execution'],"['Linux', 'Windows', 'macOS']",process,process creation
+T1059.005,True,Visual Basic,['execution'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1059.005,True,Visual Basic,['execution'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1059.005,True,Visual Basic,['execution'],"['Windows', 'macOS', 'Linux']",module,module load
+T1059.005,True,Visual Basic,['execution'],"['Windows', 'macOS', 'Linux']",script,script execution
+T1059.004,True,Unix Shell,['execution'],"['macOS', 'Linux']",command,command execution
+T1059.004,True,Unix Shell,['execution'],"['macOS', 'Linux']",process,process creation
+T1059.003,True,Windows Command Shell,['execution'],['Windows'],command,command execution
+T1059.003,True,Windows Command Shell,['execution'],['Windows'],process,process creation
+T1059.002,True,AppleScript,['execution'],['macOS'],command,command execution
+T1059.002,True,AppleScript,['execution'],['macOS'],process,process creation
+T1059.002,True,AppleScript,['execution'],['macOS'],process,os api execution
+T1059.001,True,PowerShell,['execution'],['Windows'],command,command execution
+T1059.001,True,PowerShell,['execution'],['Windows'],module,module load
+T1059.001,True,PowerShell,['execution'],['Windows'],process,process creation
+T1059.001,True,PowerShell,['execution'],['Windows'],script,script execution
+T1567,False,Exfiltration Over Web Service,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1567,False,Exfiltration Over Web Service,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1567,False,Exfiltration Over Web Service,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1567,False,Exfiltration Over Web Service,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1497.003,True,Time Based Evasion,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,process creation
+T1497.003,True,Time Based Evasion,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",command,command execution
+T1497.003,True,Time Based Evasion,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1497.002,True,User Activity Based Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,process creation
+T1497.002,True,User Activity Based Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",command,command execution
+T1497.002,True,User Activity Based Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1497.001,True,System Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,process creation
+T1497.001,True,System Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",command,command execution
+T1497.001,True,System Checks,"['defense-evasion', 'discovery']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1498.002,True,Reflection Amplification,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",sensor health,host status
+T1498.002,True,Reflection Amplification,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic flow
+T1498.001,True,Direct Network Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",sensor health,host status
+T1498.001,True,Direct Network Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic flow
+T1566.003,True,Spearphishing via Service,['initial-access'],"['Linux', 'macOS', 'Windows']",application log,application log content
+T1566.003,True,Spearphishing via Service,['initial-access'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1566.003,True,Spearphishing via Service,['initial-access'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1566.002,True,Spearphishing Link,['initial-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'SaaS', 'Google Workspace']",application log,application log content
+T1566.002,True,Spearphishing Link,['initial-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'SaaS', 'Google Workspace']",network traffic,network traffic content
+T1566.002,True,Spearphishing Link,['initial-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'SaaS', 'Google Workspace']",network traffic,network traffic flow
+T1566.001,True,Spearphishing Attachment,['initial-access'],"['macOS', 'Windows', 'Linux']",application log,application log content
+T1566.001,True,Spearphishing Attachment,['initial-access'],"['macOS', 'Windows', 'Linux']",network traffic,network traffic content
+T1566.001,True,Spearphishing Attachment,['initial-access'],"['macOS', 'Windows', 'Linux']",network traffic,network traffic flow
+T1566,False,Phishing,['initial-access'],"['Linux', 'macOS', 'Windows', 'SaaS', 'Office 365', 'Google Workspace']",application log,application log content
+T1566,False,Phishing,['initial-access'],"['Linux', 'macOS', 'Windows', 'SaaS', 'Office 365', 'Google Workspace']",network traffic,network traffic flow
+T1566,False,Phishing,['initial-access'],"['Linux', 'macOS', 'Windows', 'SaaS', 'Office 365', 'Google Workspace']",network traffic,network traffic content
+T1565.003,True,Runtime Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1565.003,True,Runtime Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1565.003,True,Runtime Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1565.003,True,Runtime Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1565.003,True,Runtime Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1565.002,True,Transmitted Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1565.002,True,Transmitted Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1565.002,True,Transmitted Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1565.001,True,Stored Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1565.001,True,Stored Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1565.001,True,Stored Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1565,False,Data Manipulation,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1564.001,True,Hidden Files and Directories,['defense-evasion'],"['Windows', 'macOS', 'Linux']",file,file creation
+T1564.001,True,Hidden Files and Directories,['defense-evasion'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1564.001,True,Hidden Files and Directories,['defense-evasion'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1564.001,True,Hidden Files and Directories,['defense-evasion'],"['Windows', 'macOS', 'Linux']",file,file metadata
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",user account,user account creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",user account,user account metadata
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",firmware,firmware modification
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",service,service creation
+T1564,False,Hide Artifacts,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file content
+T1563.002,True,RDP Hijacking,['lateral-movement'],['Windows'],network traffic,network traffic flow
+T1563.002,True,RDP Hijacking,['lateral-movement'],['Windows'],network traffic,network traffic content
+T1563.002,True,RDP Hijacking,['lateral-movement'],['Windows'],logon session,logon session creation
+T1563.002,True,RDP Hijacking,['lateral-movement'],['Windows'],command,command execution
+T1563.002,True,RDP Hijacking,['lateral-movement'],['Windows'],process,process creation
+T1563.001,True,SSH Hijacking,['lateral-movement'],"['Linux', 'macOS']",network traffic,network traffic flow
+T1563.001,True,SSH Hijacking,['lateral-movement'],"['Linux', 'macOS']",network traffic,network traffic content
+T1563.001,True,SSH Hijacking,['lateral-movement'],"['Linux', 'macOS']",logon session,logon session creation
+T1563.001,True,SSH Hijacking,['lateral-movement'],"['Linux', 'macOS']",command,command execution
+T1563.001,True,SSH Hijacking,['lateral-movement'],"['Linux', 'macOS']",process,process creation
+T1563,False,Remote Service Session Hijacking,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1563,False,Remote Service Session Hijacking,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1563,False,Remote Service Session Hijacking,['lateral-movement'],"['Linux', 'macOS', 'Windows']",logon session,logon session creation
+T1563,False,Remote Service Session Hijacking,['lateral-movement'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1563,False,Remote Service Session Hijacking,['lateral-movement'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1518.001,True,Security Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",firewall,firewall metadata
+T1518.001,True,Security Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",firewall,firewall enumeration
+T1518.001,True,Security Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1518.001,True,Security Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1518.001,True,Security Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,os api execution
+T1069.003,True,Cloud Groups,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",process,process creation
+T1069.003,True,Cloud Groups,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",command,command execution
+T1069.003,True,Cloud Groups,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",group,group enumeration
+T1069.003,True,Cloud Groups,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",group,group metadata
+T1069.003,True,Cloud Groups,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",application log,application log content
+T1069.002,True,Domain Groups,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1069.002,True,Domain Groups,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1087.004,True,Cloud Account,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",user account,user account metadata
+T1087.004,True,Cloud Account,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",command,command execution
+T1087.003,True,Email Account,['discovery'],"['Windows', 'Office 365', 'Google Workspace']",user account,user account metadata
+T1087.003,True,Email Account,['discovery'],"['Windows', 'Office 365', 'Google Workspace']",command,command execution
+T1087.002,True,Domain Account,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1087.002,True,Domain Account,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1087.001,True,Local Account,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1087.001,True,Local Account,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1087.001,True,Local Account,['discovery'],"['Linux', 'macOS', 'Windows']",file,file access
+T1553.004,True,Install Root Certificate,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key creation
+T1553.004,True,Install Root Certificate,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1553.004,True,Install Root Certificate,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1553.004,True,Install Root Certificate,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1562.004,True,Disable or Modify System Firewall,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1562.004,True,Disable or Modify System Firewall,['defense-evasion'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1562.004,True,Disable or Modify System Firewall,['defense-evasion'],"['Linux', 'macOS', 'Windows']",firewall,firewall disable
+T1562.004,True,Disable or Modify System Firewall,['defense-evasion'],"['Linux', 'macOS', 'Windows']",firewall,firewall rule modification
+T1562.003,True,Impair Command History Logging,['defense-evasion'],"['Linux', 'macOS', 'Windows']",sensor health,host status
+T1562.003,True,Impair Command History Logging,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1562.002,True,Disable Windows Event Logging,['defense-evasion'],['Windows'],sensor health,host status
+T1562.002,True,Disable Windows Event Logging,['defense-evasion'],['Windows'],command,command execution
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",process,process termination
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",windows registry,windows registry key modification
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",windows registry,windows registry key deletion
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",command,command execution
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",service,service metadata
+T1562.001,True,Disable or Modify Tools,['defense-evasion'],"['Windows', 'macOS', 'Linux', 'Containers', 'IaaS']",sensor health,host status
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",process,process termination
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",windows registry,windows registry key modification
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",windows registry,windows registry key deletion
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",command,command execution
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",service,service metadata
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",sensor health,host status
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",script,script execution
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",firewall,firewall disable
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",firewall,firewall rule modification
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",cloud service,cloud service modification
+T1562,False,Impair Defenses,['defense-evasion'],"['Windows', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Containers']",cloud service,cloud service disable
+T1003.004,True,LSA Secrets,['credential-access'],['Windows'],windows registry,windows registry key access
+T1003.004,True,LSA Secrets,['credential-access'],['Windows'],command,command execution
+T1003.005,True,Cached Domain Credentials,['credential-access'],['Windows'],command,command execution
+T1561.002,True,Disk Structure Wipe,['impact'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1561.002,True,Disk Structure Wipe,['impact'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1561.002,True,Disk Structure Wipe,['impact'],"['Linux', 'macOS', 'Windows']",driver,driver load
+T1561.002,True,Disk Structure Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive access
+T1561.002,True,Disk Structure Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive modification
+T1561.001,True,Disk Content Wipe,['impact'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1561.001,True,Disk Content Wipe,['impact'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1561.001,True,Disk Content Wipe,['impact'],"['Linux', 'macOS', 'Windows']",driver,driver load
+T1561.001,True,Disk Content Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive access
+T1561.001,True,Disk Content Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive modification
+T1561,False,Disk Wipe,['impact'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1561,False,Disk Wipe,['impact'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1561,False,Disk Wipe,['impact'],"['Linux', 'macOS', 'Windows']",driver,driver load
+T1561,False,Disk Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive access
+T1561,False,Disk Wipe,['impact'],"['Linux', 'macOS', 'Windows']",drive,drive modification
+T1560.003,True,Archive via Custom Method,['collection'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1560.003,True,Archive via Custom Method,['collection'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1560.002,True,Archive via Library,['collection'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1560.002,True,Archive via Library,['collection'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1560.001,True,Archive via Utility,['collection'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1560.001,True,Archive via Utility,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1560.001,True,Archive via Utility,['collection'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1560,False,Archive Collected Data,['collection'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1560,False,Archive Collected Data,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1560,False,Archive Collected Data,['collection'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1560,False,Archive Collected Data,['collection'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1499.004,True,Application or System Exploitation,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",sensor health,host status
+T1499.004,True,Application or System Exploitation,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",application log,application log content
+T1499.004,True,Application or System Exploitation,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic content
+T1499.004,True,Application or System Exploitation,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic flow
+T1499.003,True,Application Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",sensor health,host status
+T1499.003,True,Application Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",application log,application log content
+T1499.003,True,Application Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic content
+T1499.003,True,Application Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic flow
+T1499.002,True,Service Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",sensor health,host status
+T1499.002,True,Service Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",application log,application log content
+T1499.002,True,Service Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic content
+T1499.002,True,Service Exhaustion Flood,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",network traffic,network traffic flow
+T1499.001,True,OS Exhaustion Flood,['impact'],"['Linux', 'macOS', 'Windows']",sensor health,host status
+T1499.001,True,OS Exhaustion Flood,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1499.001,True,OS Exhaustion Flood,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1491.002,True,External Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file modification
+T1491.002,True,External Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file creation
+T1491.002,True,External Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",application log,application log content
+T1491.002,True,External Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",network traffic,network traffic content
+T1491.001,True,Internal Defacement,['impact'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1491.001,True,Internal Defacement,['impact'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1491.001,True,Internal Defacement,['impact'],"['Linux', 'macOS', 'Windows']",application log,application log content
+T1491.001,True,Internal Defacement,['impact'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1114.003,True,Email Forwarding Rule,['collection'],"['Office 365', 'Windows', 'Google Workspace']",application log,application log content
+T1114.002,True,Remote Email Collection,['collection'],"['Office 365', 'Windows', 'Google Workspace']",network traffic,network connection creation
+T1114.002,True,Remote Email Collection,['collection'],"['Office 365', 'Windows', 'Google Workspace']",logon session,logon session creation
+T1114.002,True,Remote Email Collection,['collection'],"['Office 365', 'Windows', 'Google Workspace']",command,command execution
+T1114.001,True,Local Email Collection,['collection'],['Windows'],file,file access
+T1114.001,True,Local Email Collection,['collection'],['Windows'],command,command execution
+T1134.005,True,SID-History Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134.005,True,SID-History Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],user account,user account metadata
+T1134.005,True,SID-History Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],active directory,active directory object modification
+T1134.004,True,Parent PID Spoofing,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134.004,True,Parent PID Spoofing,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process creation
+T1134.004,True,Parent PID Spoofing,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process metadata
+T1134.003,True,Make and Impersonate Token,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134.003,True,Make and Impersonate Token,"['defense-evasion', 'privilege-escalation']",['Windows'],command,command execution
+T1134.002,True,Create Process with Token,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134.002,True,Create Process with Token,"['defense-evasion', 'privilege-escalation']",['Windows'],command,command execution
+T1134.001,True,Token Impersonation/Theft,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134.001,True,Token Impersonation/Theft,"['defense-evasion', 'privilege-escalation']",['Windows'],command,command execution
+T1213.002,True,Sharepoint,['collection'],"['Windows', 'Office 365']",logon session,logon session creation
+T1213.002,True,Sharepoint,['collection'],"['Windows', 'Office 365']",application log,application log content
+T1213.001,True,Confluence,['collection'],['SaaS'],logon session,logon session creation
+T1213.001,True,Confluence,['collection'],['SaaS'],application log,application log content
+T1555.003,True,Credentials from Web Browsers,['credential-access'],"['Linux', 'macOS', 'Windows']",file,file access
+T1555.003,True,Credentials from Web Browsers,['credential-access'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1555.003,True,Credentials from Web Browsers,['credential-access'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1555.003,True,Credentials from Web Browsers,['credential-access'],"['Linux', 'macOS', 'Windows']",process,process access
+T1555.002,True,Securityd Memory,['credential-access'],"['Linux', 'macOS']",command,command execution
+T1555.002,True,Securityd Memory,['credential-access'],"['Linux', 'macOS']",process,process access
+T1555.001,True,Keychain,['credential-access'],['macOS'],command,command execution
+T1555.001,True,Keychain,['credential-access'],['macOS'],process,os api execution
+T1555.001,True,Keychain,['credential-access'],['macOS'],file,file access
+T1559.002,True,Dynamic Data Exchange,['execution'],['Windows'],module,module load
+T1559.002,True,Dynamic Data Exchange,['execution'],['Windows'],process,process creation
+T1559.002,True,Dynamic Data Exchange,['execution'],['Windows'],script,script execution
+T1559.001,True,Component Object Model,['execution'],['Windows'],module,module load
+T1559.001,True,Component Object Model,['execution'],['Windows'],process,process creation
+T1559.001,True,Component Object Model,['execution'],['Windows'],script,script execution
+T1559,False,Inter-Process Communication,['execution'],['Windows'],module,module load
+T1559,False,Inter-Process Communication,['execution'],['Windows'],process,process creation
+T1559,False,Inter-Process Communication,['execution'],['Windows'],script,script execution
+T1558.002,True,Silver Ticket,['credential-access'],['Windows'],logon session,logon session metadata
+T1558.001,True,Golden Ticket,['credential-access'],['Windows'],active directory,active directory credential request
+T1558.001,True,Golden Ticket,['credential-access'],['Windows'],logon session,logon session metadata
+T1558,False,Steal or Forge Kerberos Tickets,['credential-access'],['Windows'],active directory,active directory credential request
+T1558,False,Steal or Forge Kerberos Tickets,['credential-access'],['Windows'],logon session,logon session metadata
+T1557.001,True,LLMNR/NBT-NS Poisoning and SMB Relay,"['credential-access', 'collection']",['Windows'],network traffic,network traffic flow
+T1557.001,True,LLMNR/NBT-NS Poisoning and SMB Relay,"['credential-access', 'collection']",['Windows'],network traffic,network traffic flow
+T1557.001,True,LLMNR/NBT-NS Poisoning and SMB Relay,"['credential-access', 'collection']",['Windows'],service,service creation
+T1557.001,True,LLMNR/NBT-NS Poisoning and SMB Relay,"['credential-access', 'collection']",['Windows'],windows registry,windows registry key modification
+T1557,False,Man-in-the-Middle,"['credential-access', 'collection']","['Windows', 'macOS', 'Linux']",network traffic,network traffic flow
+T1557,False,Man-in-the-Middle,"['credential-access', 'collection']","['Windows', 'macOS', 'Linux']",network traffic,network traffic flow
+T1557,False,Man-in-the-Middle,"['credential-access', 'collection']","['Windows', 'macOS', 'Linux']",service,service creation
+T1557,False,Man-in-the-Middle,"['credential-access', 'collection']","['Windows', 'macOS', 'Linux']",windows registry,windows registry key modification
+T1556.002,True,Password Filter DLL,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],file,file creation
+T1556.002,True,Password Filter DLL,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],module,module load
+T1556.002,True,Password Filter DLL,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1556.001,True,Domain Controller Authentication,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],logon session,logon session creation
+T1556.001,True,Domain Controller Authentication,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],process,os api execution
+T1556.001,True,Domain Controller Authentication,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],process,process access
+T1556.001,True,Domain Controller Authentication,"['credential-access', 'defense-evasion', 'persistence']",['Windows'],file,file modification
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",logon session,logon session creation
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",process,os api execution
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",process,process access
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",file,file modification
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",file,file creation
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",module,module load
+T1556,False,Modify Authentication Process,"['credential-access', 'defense-evasion', 'persistence']","['Windows', 'Linux', 'macOS', 'Network']",windows registry,windows registry key modification
+T1056.004,True,Credential API Hooking,"['collection', 'credential-access']",['Windows'],process,os api execution
+T1056.004,True,Credential API Hooking,"['collection', 'credential-access']",['Windows'],process,process metadata
+T1056.003,True,Web Portal Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows']",file,file modification
+T1056.002,True,GUI Input Capture,"['collection', 'credential-access']","['macOS', 'Windows']",process,process creation
+T1056.001,True,Keylogging,"['collection', 'credential-access']","['Windows', 'macOS', 'Linux', 'Network']",windows registry,windows registry key modification
+T1056.001,True,Keylogging,"['collection', 'credential-access']","['Windows', 'macOS', 'Linux', 'Network']",driver,driver load
+T1056.001,True,Keylogging,"['collection', 'credential-access']","['Windows', 'macOS', 'Linux', 'Network']",process,os api execution
+T1555,False,Credentials from Password Stores,['credential-access'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1555,False,Credentials from Password Stores,['credential-access'],"['Linux', 'macOS', 'Windows']",file,file access
+T1555,False,Credentials from Password Stores,['credential-access'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1555,False,Credentials from Password Stores,['credential-access'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1555,False,Credentials from Password Stores,['credential-access'],"['Linux', 'macOS', 'Windows']",process,process access
+T1552.005,True,Cloud Instance Metadata API,['credential-access'],['IaaS'],user account,user account authentication
+T1003.008,True,/etc/passwd and /etc/shadow,['credential-access'],['Linux'],command,command execution
+T1003.008,True,/etc/passwd and /etc/shadow,['credential-access'],['Linux'],file,file access
+T1003.007,True,Proc Filesystem,['credential-access'],['Linux'],command,command execution
+T1003.007,True,Proc Filesystem,['credential-access'],['Linux'],file,file access
+T1003.006,True,DCSync,['credential-access'],['Windows'],active directory,active directory object access
+T1003.006,True,DCSync,['credential-access'],['Windows'],network traffic,network traffic flow
+T1003.006,True,DCSync,['credential-access'],['Windows'],network traffic,network traffic content
+T1558.003,True,Kerberoasting,['credential-access'],['Windows'],active directory,active directory credential request
+T1552.006,True,Group Policy Preferences,['credential-access'],['Windows'],file,file access
+T1552.006,True,Group Policy Preferences,['credential-access'],['Windows'],command,command execution
+T1003.003,True,NTDS,['credential-access'],['Windows'],file,file access
+T1003.003,True,NTDS,['credential-access'],['Windows'],command,command execution
+T1003.002,True,Security Account Manager,['credential-access'],['Windows'],command,command execution
+T1003.002,True,Security Account Manager,['credential-access'],['Windows'],windows registry,windows registry key access
+T1003.002,True,Security Account Manager,['credential-access'],['Windows'],file,file access
+T1003.001,True,LSASS Memory,['credential-access'],['Windows'],process,process creation
+T1003.001,True,LSASS Memory,['credential-access'],['Windows'],process,process access
+T1003.001,True,LSASS Memory,['credential-access'],['Windows'],command,command execution
+T1003.001,True,LSASS Memory,['credential-access'],['Windows'],process,os api execution
+T1110.004,True,Credential Stuffing,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1110.004,True,Credential Stuffing,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",application log,application log content
+T1110.003,True,Password Spraying,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1110.003,True,Password Spraying,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",application log,application log content
+T1110.002,True,Password Cracking,['credential-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'Azure AD']",user account,user account authentication
+T1110.002,True,Password Cracking,['credential-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'Azure AD']",application log,application log content
+T1110.001,True,Password Guessing,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1110.001,True,Password Guessing,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",application log,application log content
+T1021.006,True,Windows Remote Management,['lateral-movement'],['Windows'],process,process creation
+T1021.006,True,Windows Remote Management,['lateral-movement'],['Windows'],network traffic,network connection creation
+T1021.006,True,Windows Remote Management,['lateral-movement'],['Windows'],logon session,logon session creation
+T1021.006,True,Windows Remote Management,['lateral-movement'],['Windows'],command,command execution
+T1021.005,True,VNC,['lateral-movement'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1021.005,True,VNC,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1021.005,True,VNC,['lateral-movement'],"['Linux', 'macOS', 'Windows']",logon session,logon session creation
+T1021.004,True,SSH,['lateral-movement'],"['Linux', 'macOS']",process,process creation
+T1021.004,True,SSH,['lateral-movement'],"['Linux', 'macOS']",network traffic,network connection creation
+T1021.004,True,SSH,['lateral-movement'],"['Linux', 'macOS']",logon session,logon session creation
+T1021.003,True,Distributed Component Object Model,['lateral-movement'],['Windows'],module,module load
+T1021.003,True,Distributed Component Object Model,['lateral-movement'],['Windows'],process,process creation
+T1021.003,True,Distributed Component Object Model,['lateral-movement'],['Windows'],network traffic,network connection creation
+T1021.002,True,SMB/Windows Admin Shares,['lateral-movement'],['Windows'],command,command execution
+T1021.002,True,SMB/Windows Admin Shares,['lateral-movement'],['Windows'],network traffic,network connection creation
+T1021.002,True,SMB/Windows Admin Shares,['lateral-movement'],['Windows'],network traffic,network traffic flow
+T1021.002,True,SMB/Windows Admin Shares,['lateral-movement'],['Windows'],logon session,logon session creation
+T1021.002,True,SMB/Windows Admin Shares,['lateral-movement'],['Windows'],network share,network share access
+T1021.001,True,Remote Desktop Protocol,['lateral-movement'],['Windows'],process,process creation
+T1021.001,True,Remote Desktop Protocol,['lateral-movement'],['Windows'],network traffic,network connection creation
+T1021.001,True,Remote Desktop Protocol,['lateral-movement'],['Windows'],network traffic,network traffic flow
+T1021.001,True,Remote Desktop Protocol,['lateral-movement'],['Windows'],logon session,logon session creation
+T1554,False,Compromise Client Software Binary,['persistence'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1554,False,Compromise Client Software Binary,['persistence'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1554,False,Compromise Client Software Binary,['persistence'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1554,False,Compromise Client Software Binary,['persistence'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1036.006,True,Space after Filename,['defense-evasion'],"['Linux', 'macOS']",file,file metadata
+T1036.005,True,Match Legitimate Name or Location,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",image,image metadata
+T1036.005,True,Match Legitimate Name or Location,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file metadata
+T1036.005,True,Match Legitimate Name or Location,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",process,process metadata
+T1036.004,True,Masquerade Task or Service,['defense-evasion'],"['Windows', 'Linux']",command,command execution
+T1036.004,True,Masquerade Task or Service,['defense-evasion'],"['Windows', 'Linux']",service,service metadata
+T1036.004,True,Masquerade Task or Service,['defense-evasion'],"['Windows', 'Linux']",service,service creation
+T1036.004,True,Masquerade Task or Service,['defense-evasion'],"['Windows', 'Linux']",scheduled job,scheduled job metadata
+T1036.004,True,Masquerade Task or Service,['defense-evasion'],"['Windows', 'Linux']",scheduled job,scheduled job modification
+T1036.003,True,Rename System Utilities,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1036.003,True,Rename System Utilities,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process metadata
+T1036.003,True,Rename System Utilities,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1036.003,True,Rename System Utilities,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1036.002,True,Right-to-Left Override,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1036.001,True,Invalid Code Signature,['defense-evasion'],"['macOS', 'Windows']",file,file metadata
+T1553.003,True,SIP and Trust Provider Hijacking,['defense-evasion'],['Windows'],module,module load
+T1553.003,True,SIP and Trust Provider Hijacking,['defense-evasion'],['Windows'],windows registry,windows registry key modification
+T1553.003,True,SIP and Trust Provider Hijacking,['defense-evasion'],['Windows'],file,file modification
+T1553.002,True,Code Signing,['defense-evasion'],"['macOS', 'Windows']",file,file metadata
+T1553.001,True,Gatekeeper Bypass,['defense-evasion'],['macOS'],file,file metadata
+T1553.001,True,Gatekeeper Bypass,['defense-evasion'],['macOS'],file,file modification
+T1553.001,True,Gatekeeper Bypass,['defense-evasion'],['macOS'],process,process creation
+T1553.001,True,Gatekeeper Bypass,['defense-evasion'],['macOS'],command,command execution
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",windows registry,windows registry key creation
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",windows registry,windows registry key modification
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",file,file metadata
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",file,file modification
+T1553,False,Subvert Trust Controls,['defense-evasion'],"['Windows', 'macOS', 'Linux']",module,module load
+T1027.003,True,Steganography,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file content
+T1027.002,True,Software Packing,['defense-evasion'],"['macOS', 'Windows']",file,file metadata
+T1027.002,True,Software Packing,['defense-evasion'],"['macOS', 'Windows']",file,file content
+T1027.001,True,Binary Padding,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1027.001,True,Binary Padding,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file content
+T1222.002,True,Linux and Mac File and Directory Permissions Modification,['defense-evasion'],"['macOS', 'Linux']",process,process creation
+T1222.002,True,Linux and Mac File and Directory Permissions Modification,['defense-evasion'],"['macOS', 'Linux']",command,command execution
+T1222.002,True,Linux and Mac File and Directory Permissions Modification,['defense-evasion'],"['macOS', 'Linux']",file,file metadata
+T1222.001,True,Windows File and Directory Permissions Modification,['defense-evasion'],['Windows'],process,process creation
+T1222.001,True,Windows File and Directory Permissions Modification,['defense-evasion'],['Windows'],command,command execution
+T1222.001,True,Windows File and Directory Permissions Modification,['defense-evasion'],['Windows'],active directory,active directory object modification
+T1222.001,True,Windows File and Directory Permissions Modification,['defense-evasion'],['Windows'],file,file metadata
+T1552.004,True,Private Keys,['credential-access'],"['Linux', 'macOS', 'Windows']",file,file access
+T1552.004,True,Private Keys,['credential-access'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1552.003,True,Bash History,['credential-access'],"['Linux', 'macOS']",file,file access
+T1552.003,True,Bash History,['credential-access'],"['Linux', 'macOS']",command,command execution
+T1552.002,True,Credentials in Registry,['credential-access'],['Windows'],process,process creation
+T1552.002,True,Credentials in Registry,['credential-access'],['Windows'],command,command execution
+T1552.002,True,Credentials in Registry,['credential-access'],['Windows'],windows registry,windows registry key access
+T1552.001,True,Credentials In Files,['credential-access'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",file,file access
+T1552.001,True,Credentials In Files,['credential-access'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",command,command execution
+T1552,False,Unsecured Credentials,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",command,command execution
+T1552,False,Unsecured Credentials,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",file,file access
+T1552,False,Unsecured Credentials,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",process,process creation
+T1552,False,Unsecured Credentials,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1552,False,Unsecured Credentials,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",windows registry,windows registry key access
+T1216.001,True,PubPrn,['defense-evasion'],['Windows'],process,process creation
+T1216.001,True,PubPrn,['defense-evasion'],['Windows'],command,command execution
+T1216.001,True,PubPrn,['defense-evasion'],['Windows'],script,script execution
+T1070.006,True,Timestomp,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1070.006,True,Timestomp,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1070.005,True,Network Share Connection Removal,['defense-evasion'],['Windows'],process,process creation
+T1070.005,True,Network Share Connection Removal,['defense-evasion'],['Windows'],command,command execution
+T1070.005,True,Network Share Connection Removal,['defense-evasion'],['Windows'],network traffic,network traffic content
+T1070.005,True,Network Share Connection Removal,['defense-evasion'],['Windows'],user account,user account authentication
+T1070.004,True,File Deletion,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1070.004,True,File Deletion,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1070.003,True,Clear Command History,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1070.003,True,Clear Command History,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file modification
+T1070.003,True,Clear Command History,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file deletion
+T1550.004,True,Web Session Cookie,"['defense-evasion', 'lateral-movement']","['Office 365', 'SaaS', 'Google Workspace']",web credential,web credential usage
+T1550.004,True,Web Session Cookie,"['defense-evasion', 'lateral-movement']","['Office 365', 'SaaS', 'Google Workspace']",application log,application log content
+T1550.001,True,Application Access Token,"['defense-evasion', 'lateral-movement']","['Office 365', 'SaaS', 'Google Workspace']",web credential,web credential usage
+T1550.001,True,Application Access Token,"['defense-evasion', 'lateral-movement']","['Office 365', 'SaaS', 'Google Workspace']",application log,application log content
+T1550.003,True,Pass the Ticket,"['defense-evasion', 'lateral-movement']",['Windows'],user account,user account authentication
+T1550.003,True,Pass the Ticket,"['defense-evasion', 'lateral-movement']",['Windows'],logon session,logon session creation
+T1550.003,True,Pass the Ticket,"['defense-evasion', 'lateral-movement']",['Windows'],active directory,active directory credential request
+T1550.002,True,Pass the Hash,"['defense-evasion', 'lateral-movement']",['Windows'],user account,user account authentication
+T1550.002,True,Pass the Hash,"['defense-evasion', 'lateral-movement']",['Windows'],logon session,logon session creation
+T1550.002,True,Pass the Hash,"['defense-evasion', 'lateral-movement']",['Windows'],active directory,active directory credential request
+T1550,False,Use Alternate Authentication Material,"['defense-evasion', 'lateral-movement']","['Windows', 'Office 365', 'SaaS', 'Google Workspace']",logon session,logon session creation
+T1550,False,Use Alternate Authentication Material,"['defense-evasion', 'lateral-movement']","['Windows', 'Office 365', 'SaaS', 'Google Workspace']",web credential,web credential usage
+T1550,False,Use Alternate Authentication Material,"['defense-evasion', 'lateral-movement']","['Windows', 'Office 365', 'SaaS', 'Google Workspace']",application log,application log content
+T1550,False,Use Alternate Authentication Material,"['defense-evasion', 'lateral-movement']","['Windows', 'Office 365', 'SaaS', 'Google Workspace']",user account,user account authentication
+T1550,False,Use Alternate Authentication Material,"['defense-evasion', 'lateral-movement']","['Windows', 'Office 365', 'SaaS', 'Google Workspace']",active directory,active directory credential request
+T1548.004,True,Elevated Execution with Prompt,"['privilege-escalation', 'defense-evasion']",['macOS'],process,os api execution
+T1548.004,True,Elevated Execution with Prompt,"['privilege-escalation', 'defense-evasion']",['macOS'],process,process creation
+T1548.003,True,Sudo and Sudo Caching,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",process,process metadata
+T1548.003,True,Sudo and Sudo Caching,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",process,process creation
+T1548.003,True,Sudo and Sudo Caching,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",command,command execution
+T1548.003,True,Sudo and Sudo Caching,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",file,file modification
+T1548.002,True,Bypass User Account Control,"['privilege-escalation', 'defense-evasion']",['Windows'],process,process metadata
+T1548.002,True,Bypass User Account Control,"['privilege-escalation', 'defense-evasion']",['Windows'],process,process creation
+T1548.002,True,Bypass User Account Control,"['privilege-escalation', 'defense-evasion']",['Windows'],windows registry,windows registry key modification
+T1548.002,True,Bypass User Account Control,"['privilege-escalation', 'defense-evasion']",['Windows'],command,command execution
+T1548.001,True,Setuid and Setgid,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",command,command execution
+T1548.001,True,Setuid and Setgid,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",file,file metadata
+T1548.001,True,Setuid and Setgid,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS']",file,file modification
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",process,process metadata
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",process,process creation
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",command,command execution
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",file,file metadata
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",file,file modification
+T1548,False,Abuse Elevation Control Mechanism,"['privilege-escalation', 'defense-evasion']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1136.003,True,Cloud Account,['persistence'],"['Azure AD', 'Office 365', 'IaaS', 'Google Workspace']",user account,user account creation
+T1070.002,True,Clear Linux or Mac System Logs,['defense-evasion'],"['Linux', 'macOS']",file,file deletion
+T1070.002,True,Clear Linux or Mac System Logs,['defense-evasion'],"['Linux', 'macOS']",file,file modification
+T1070.002,True,Clear Linux or Mac System Logs,['defense-evasion'],"['Linux', 'macOS']",command,command execution
+T1070.001,True,Clear Windows Event Logs,['defense-evasion'],['Windows'],process,os api execution
+T1070.001,True,Clear Windows Event Logs,['defense-evasion'],['Windows'],command,command execution
+T1136.002,True,Domain Account,['persistence'],"['Windows', 'macOS', 'Linux']",user account,user account creation
+T1136.002,True,Domain Account,['persistence'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1136.002,True,Domain Account,['persistence'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1136.001,True,Local Account,['persistence'],"['Linux', 'macOS', 'Windows']",user account,user account creation
+T1136.001,True,Local Account,['persistence'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1136.001,True,Local Account,['persistence'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1547.011,True,Plist Modification,"['persistence', 'privilege-escalation']",['macOS'],file,file creation
+T1547.011,True,Plist Modification,"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1547.011,True,Plist Modification,"['persistence', 'privilege-escalation']",['macOS'],process,process creation
+T1547.010,True,Port Monitors,"['persistence', 'privilege-escalation']",['Windows'],file,file creation
+T1547.010,True,Port Monitors,"['persistence', 'privilege-escalation']",['Windows'],process,os api execution
+T1547.010,True,Port Monitors,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.010,True,Port Monitors,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.009,True,Shortcut Modification,"['persistence', 'privilege-escalation']",['Windows'],file,file creation
+T1547.009,True,Shortcut Modification,"['persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1547.009,True,Shortcut Modification,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1547.008,True,LSASS Driver,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.008,True,LSASS Driver,"['persistence', 'privilege-escalation']",['Windows'],driver,driver load
+T1547.008,True,LSASS Driver,"['persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1547.008,True,LSASS Driver,"['persistence', 'privilege-escalation']",['Windows'],file,file creation
+T1547.007,True,Re-opened Applications,"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1547.007,True,Re-opened Applications,"['persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1547.006,True,Kernel Modules and Extensions,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",command,command execution
+T1547.006,True,Kernel Modules and Extensions,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",file,file creation
+T1547.006,True,Kernel Modules and Extensions,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",kernel,kernel module load
+T1547.005,True,Security Support Provider,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.005,True,Security Support Provider,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.005,True,Security Support Provider,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1547.004,True,Winlogon Helper DLL,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.004,True,Winlogon Helper DLL,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.004,True,Winlogon Helper DLL,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1547.003,True,Time Providers,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.003,True,Time Providers,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.003,True,Time Providers,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1547.003,True,Time Providers,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1546.014,True,Emond,"['privilege-escalation', 'persistence']",['macOS'],process,process creation
+T1546.014,True,Emond,"['privilege-escalation', 'persistence']",['macOS'],command,command execution
+T1546.014,True,Emond,"['privilege-escalation', 'persistence']",['macOS'],file,file modification
+T1546.014,True,Emond,"['privilege-escalation', 'persistence']",['macOS'],file,file creation
+T1546.013,True,PowerShell Profile,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.013,True,PowerShell Profile,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.013,True,PowerShell Profile,"['privilege-escalation', 'persistence']",['Windows'],file,file modification
+T1546.013,True,PowerShell Profile,"['privilege-escalation', 'persistence']",['Windows'],file,file creation
+T1546.012,True,Image File Execution Options Injection,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.012,True,Image File Execution Options Injection,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.012,True,Image File Execution Options Injection,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1218.008,True,Odbcconf,['defense-evasion'],['Windows'],process,process creation
+T1218.008,True,Odbcconf,['defense-evasion'],['Windows'],module,module load
+T1218.008,True,Odbcconf,['defense-evasion'],['Windows'],command,command execution
+T1546.011,True,Application Shimming,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.011,True,Application Shimming,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.011,True,Application Shimming,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.011,True,Application Shimming,"['privilege-escalation', 'persistence']",['Windows'],module,module load
+T1546.011,True,Application Shimming,"['privilege-escalation', 'persistence']",['Windows'],file,file modification
+T1547.002,True,Authentication Package,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.002,True,Authentication Package,"['persistence', 'privilege-escalation']",['Windows'],module,module load
+T1547.002,True,Authentication Package,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1546.010,True,AppInit DLLs,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.010,True,AppInit DLLs,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.010,True,AppInit DLLs,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.010,True,AppInit DLLs,"['privilege-escalation', 'persistence']",['Windows'],module,module load
+T1546.009,True,AppCert DLLs,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.009,True,AppCert DLLs,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.009,True,AppCert DLLs,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.009,True,AppCert DLLs,"['privilege-escalation', 'persistence']",['Windows'],module,module load
+T1218.007,True,Msiexec,['defense-evasion'],['Windows'],process,process creation
+T1218.007,True,Msiexec,['defense-evasion'],['Windows'],module,module load
+T1218.007,True,Msiexec,['defense-evasion'],['Windows'],command,command execution
+T1218.007,True,Msiexec,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1546.008,True,Accessibility Features,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.008,True,Accessibility Features,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.008,True,Accessibility Features,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.008,True,Accessibility Features,"['privilege-escalation', 'persistence']",['Windows'],file,file creation
+T1546.008,True,Accessibility Features,"['privilege-escalation', 'persistence']",['Windows'],file,file modification
+T1546.007,True,Netsh Helper DLL,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.007,True,Netsh Helper DLL,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.007,True,Netsh Helper DLL,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.007,True,Netsh Helper DLL,"['privilege-escalation', 'persistence']",['Windows'],module,module load
+T1546.006,True,LC_LOAD_DYLIB Addition,"['privilege-escalation', 'persistence']",['macOS'],process,process creation
+T1546.006,True,LC_LOAD_DYLIB Addition,"['privilege-escalation', 'persistence']",['macOS'],command,command execution
+T1546.006,True,LC_LOAD_DYLIB Addition,"['privilege-escalation', 'persistence']",['macOS'],file,file metadata
+T1546.006,True,LC_LOAD_DYLIB Addition,"['privilege-escalation', 'persistence']",['macOS'],file,file modification
+T1546.006,True,LC_LOAD_DYLIB Addition,"['privilege-escalation', 'persistence']",['macOS'],module,module load
+T1546.005,True,Trap,"['privilege-escalation', 'persistence']","['macOS', 'Linux']",process,process creation
+T1546.005,True,Trap,"['privilege-escalation', 'persistence']","['macOS', 'Linux']",command,command execution
+T1546.005,True,Trap,"['privilege-escalation', 'persistence']","['macOS', 'Linux']",file,file creation
+T1546.005,True,Trap,"['privilege-escalation', 'persistence']","['macOS', 'Linux']",file,file modification
+T1546.004,True,Unix Shell Configuration Modification,"['privilege-escalation', 'persistence']","['Linux', 'macOS']",process,process creation
+T1546.004,True,Unix Shell Configuration Modification,"['privilege-escalation', 'persistence']","['Linux', 'macOS']",command,command execution
+T1546.004,True,Unix Shell Configuration Modification,"['privilege-escalation', 'persistence']","['Linux', 'macOS']",file,file creation
+T1546.004,True,Unix Shell Configuration Modification,"['privilege-escalation', 'persistence']","['Linux', 'macOS']",file,file modification
+T1546.003,True,Windows Management Instrumentation Event Subscription,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.003,True,Windows Management Instrumentation Event Subscription,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.003,True,Windows Management Instrumentation Event Subscription,"['privilege-escalation', 'persistence']",['Windows'],wmi,wmi creation
+T1546.002,True,Screensaver,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.002,True,Screensaver,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.002,True,Screensaver,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1546.002,True,Screensaver,"['privilege-escalation', 'persistence']",['Windows'],file,file creation
+T1546.002,True,Screensaver,"['privilege-escalation', 'persistence']",['Windows'],file,file modification
+T1546.001,True,Change Default File Association,"['privilege-escalation', 'persistence']",['Windows'],process,process creation
+T1546.001,True,Change Default File Association,"['privilege-escalation', 'persistence']",['Windows'],windows registry,windows registry key modification
+T1546.001,True,Change Default File Association,"['privilege-escalation', 'persistence']",['Windows'],command,command execution
+T1547.001,True,Registry Run Keys / Startup Folder,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key creation
+T1547.001,True,Registry Run Keys / Startup Folder,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1547.001,True,Registry Run Keys / Startup Folder,"['persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1547.001,True,Registry Run Keys / Startup Folder,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1547.001,True,Registry Run Keys / Startup Folder,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],process,process creation
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],file,file creation
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],module,module load
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],process,os api execution
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],command,command execution
+T1218.002,True,Control Panel,['defense-evasion'],['Windows'],windows registry,windows registry key modification
+T1218.010,True,Regsvr32,['defense-evasion'],['Windows'],process,process creation
+T1218.010,True,Regsvr32,['defense-evasion'],['Windows'],module,module load
+T1218.010,True,Regsvr32,['defense-evasion'],['Windows'],command,command execution
+T1218.010,True,Regsvr32,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1218.009,True,Regsvcs/Regasm,['defense-evasion'],['Windows'],process,process creation
+T1218.009,True,Regsvcs/Regasm,['defense-evasion'],['Windows'],command,command execution
+T1218.005,True,Mshta,['defense-evasion'],['Windows'],process,process creation
+T1218.005,True,Mshta,['defense-evasion'],['Windows'],file,file creation
+T1218.005,True,Mshta,['defense-evasion'],['Windows'],command,command execution
+T1218.005,True,Mshta,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1218.004,True,InstallUtil,['defense-evasion'],['Windows'],process,process creation
+T1218.004,True,InstallUtil,['defense-evasion'],['Windows'],command,command execution
+T1218.001,True,Compiled HTML File,['defense-evasion'],['Windows'],process,process creation
+T1218.001,True,Compiled HTML File,['defense-evasion'],['Windows'],file,file creation
+T1218.001,True,Compiled HTML File,['defense-evasion'],['Windows'],command,command execution
+T1218.003,True,CMSTP,['defense-evasion'],['Windows'],process,process creation
+T1218.003,True,CMSTP,['defense-evasion'],['Windows'],command,command execution
+T1218.003,True,CMSTP,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1218.011,True,Rundll32,['defense-evasion'],['Windows'],process,process creation
+T1218.011,True,Rundll32,['defense-evasion'],['Windows'],command,command execution
+T1218.011,True,Rundll32,['defense-evasion'],['Windows'],module,module load
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",file,file creation
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",windows registry,windows registry key creation
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",file,file modification
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",command,command execution
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",process,process creation
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",module,module load
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",kernel,kernel module load
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",driver,driver load
+T1547,False,Boot or Logon Autostart Execution,"['persistence', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",process,process creation
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",windows registry,windows registry key modification
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",command,command execution
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",file,file creation
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",file,file modification
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",wmi,wmi creation
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",file,file metadata
+T1546,False,Event Triggered Execution,"['privilege-escalation', 'persistence']","['Linux', 'macOS', 'Windows']",module,module load
+T1098.003,True,Add Office 365 Global Administrator Role,['persistence'],['Office 365'],user account,user account modification
+T1098.002,True,Exchange Email Delegate Permissions,['persistence'],"['Windows', 'Office 365']",group,group modification
+T1098.002,True,Exchange Email Delegate Permissions,['persistence'],"['Windows', 'Office 365']",user account,user account modification
+T1098.001,True,Additional Cloud Credentials,['persistence'],"['IaaS', 'Azure AD']",user account,user account modification
+T1098.001,True,Additional Cloud Credentials,['persistence'],"['IaaS', 'Azure AD']",active directory,active directory object modification
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],file,file creation
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],process,process creation
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],service,service creation
+T1543.004,True,Launch Daemon,"['persistence', 'privilege-escalation']",['macOS'],service,service modification
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],service,service creation
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],service,service modification
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],process,os api execution
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key creation
+T1543.003,True,Windows Service,"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key modification
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],file,file creation
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],file,file modification
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],process,process creation
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],command,command execution
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],service,service creation
+T1543.002,True,Systemd Service,"['persistence', 'privilege-escalation']",['Linux'],service,service modification
+T1543.001,True,Launch Agent,"['persistence', 'privilege-escalation']",['macOS'],file,file creation
+T1543.001,True,Launch Agent,"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1543.001,True,Launch Agent,"['persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1543.001,True,Launch Agent,"['persistence', 'privilege-escalation']",['macOS'],service,service creation
+T1543.001,True,Launch Agent,"['persistence', 'privilege-escalation']",['macOS'],service,service modification
+T1037.005,True,Startup Items,"['persistence', 'privilege-escalation']",['macOS'],file,file creation
+T1037.005,True,Startup Items,"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1037.005,True,Startup Items,"['persistence', 'privilege-escalation']",['macOS'],process,process creation
+T1037.005,True,Startup Items,"['persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1037.004,True,RC Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",file,file creation
+T1037.004,True,RC Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",file,file modification
+T1037.004,True,RC Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",process,process creation
+T1037.004,True,RC Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Linux']",command,command execution
+T1055.012,True,Process Hollowing,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.012,True,Process Hollowing,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1055.013,True,Process Doppelgänging,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.013,True,Process Doppelgänging,"['defense-evasion', 'privilege-escalation']",['Windows'],file,file metadata
+T1055.011,True,Extra Window Memory Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.014,True,VDSO Hijacking,"['defense-evasion', 'privilege-escalation']",['Linux'],process,os api execution
+T1055.014,True,VDSO Hijacking,"['defense-evasion', 'privilege-escalation']",['Linux'],module,module load
+T1055.009,True,Proc Memory,"['defense-evasion', 'privilege-escalation']",['Linux'],file,file modification
+T1055.008,True,Ptrace System Calls,"['defense-evasion', 'privilege-escalation']",['Linux'],process,os api execution
+T1055.008,True,Ptrace System Calls,"['defense-evasion', 'privilege-escalation']",['Linux'],process,process access
+T1055.005,True,Thread Local Storage,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.005,True,Thread Local Storage,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1055.004,True,Asynchronous Procedure Call,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.004,True,Asynchronous Procedure Call,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1055.003,True,Thread Execution Hijacking,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.003,True,Thread Execution Hijacking,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1055.002,True,Portable Executable Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.002,True,Portable Executable Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1055.001,True,Dynamic-link Library Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],module,module load
+T1055.001,True,Dynamic-link Library Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1055.001,True,Dynamic-link Library Injection,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process access
+T1037.003,True,Network Logon Script,"['persistence', 'privilege-escalation']",['Windows'],file,file creation
+T1037.003,True,Network Logon Script,"['persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1037.003,True,Network Logon Script,"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1037.003,True,Network Logon Script,"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1037.003,True,Network Logon Script,"['persistence', 'privilege-escalation']",['Windows'],active directory,active directory object modification
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",service,service creation
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",service,service modification
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",process,process creation
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",process,os api execution
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",command,command execution
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",windows registry,windows registry key creation
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",windows registry,windows registry key modification
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",file,file creation
+T1543,False,Create or Modify System Process,"['persistence', 'privilege-escalation']","['Windows', 'macOS', 'Linux']",file,file modification
+T1037.002,True,Logon Script (Mac),"['persistence', 'privilege-escalation']",['macOS'],file,file creation
+T1037.002,True,Logon Script (Mac),"['persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1037.002,True,Logon Script (Mac),"['persistence', 'privilege-escalation']",['macOS'],process,process creation
+T1037.002,True,Logon Script (Mac),"['persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1037.001,True,Logon Script (Windows),"['persistence', 'privilege-escalation']",['Windows'],windows registry,windows registry key creation
+T1037.001,True,Logon Script (Windows),"['persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1037.001,True,Logon Script (Windows),"['persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1542.003,True,Bootkit,"['persistence', 'defense-evasion']","['Linux', 'Windows']",drive,drive modification
+T1542.002,True,Component Firmware,"['persistence', 'defense-evasion']",['Windows'],driver,driver metadata
+T1542.002,True,Component Firmware,"['persistence', 'defense-evasion']",['Windows'],firmware,firmware modification
+T1542.002,True,Component Firmware,"['persistence', 'defense-evasion']",['Windows'],process,os api execution
+T1542.001,True,System Firmware,"['persistence', 'defense-evasion']",['Windows'],firmware,firmware modification
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",file,file creation
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",file,file modification
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",process,process creation
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic flow
+T1505.003,True,Web Shell,['persistence'],"['Linux', 'Windows', 'macOS']",application log,application log content
+T1505.002,True,Transport Agent,['persistence'],"['Linux', 'Windows']",file,file creation
+T1505.002,True,Transport Agent,['persistence'],"['Linux', 'Windows']",application log,application log content
+T1505.001,True,SQL Stored Procedures,['persistence'],"['Windows', 'Linux']",application log,application log content
+T1053.003,True,Cron,"['execution', 'persistence', 'privilege-escalation']","['Linux', 'macOS']",scheduled job,scheduled job creation
+T1053.003,True,Cron,"['execution', 'persistence', 'privilege-escalation']","['Linux', 'macOS']",command,command execution
+T1053.003,True,Cron,"['execution', 'persistence', 'privilege-escalation']","['Linux', 'macOS']",file,file modification
+T1053.003,True,Cron,"['execution', 'persistence', 'privilege-escalation']","['Linux', 'macOS']",process,process creation
+T1053.004,True,Launchd,"['execution', 'persistence', 'privilege-escalation']",['macOS'],scheduled job,scheduled job creation
+T1053.004,True,Launchd,"['execution', 'persistence', 'privilege-escalation']",['macOS'],command,command execution
+T1053.004,True,Launchd,"['execution', 'persistence', 'privilege-escalation']",['macOS'],file,file modification
+T1053.004,True,Launchd,"['execution', 'persistence', 'privilege-escalation']",['macOS'],process,process creation
+T1053.001,True,At (Linux),"['execution', 'persistence', 'privilege-escalation']",['Linux'],scheduled job,scheduled job creation
+T1053.001,True,At (Linux),"['execution', 'persistence', 'privilege-escalation']",['Linux'],command,command execution
+T1053.001,True,At (Linux),"['execution', 'persistence', 'privilege-escalation']",['Linux'],process,process creation
+T1053.005,True,Scheduled Task,"['execution', 'persistence', 'privilege-escalation']",['Windows'],scheduled job,scheduled job creation
+T1053.005,True,Scheduled Task,"['execution', 'persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1053.005,True,Scheduled Task,"['execution', 'persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1053.005,True,Scheduled Task,"['execution', 'persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1053.002,True,At (Windows),"['execution', 'persistence', 'privilege-escalation']",['Windows'],scheduled job,scheduled job creation
+T1053.002,True,At (Windows),"['execution', 'persistence', 'privilege-escalation']",['Windows'],command,command execution
+T1053.002,True,At (Windows),"['execution', 'persistence', 'privilege-escalation']",['Windows'],file,file modification
+T1053.002,True,At (Windows),"['execution', 'persistence', 'privilege-escalation']",['Windows'],process,process creation
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",command,command execution
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",network traffic,network connection creation
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",firmware,firmware modification
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",driver,driver metadata
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",process,os api execution
+T1542,False,Pre-OS Boot,"['defense-evasion', 'persistence']","['Linux', 'Windows', 'Network']",drive,drive modification
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key creation
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key modification
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",file,file creation
+T1137.001,True,Office Template Macros,['persistence'],"['Windows', 'Office 365']",file,file modification
+T1137.004,True,Outlook Home Page,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.004,True,Outlook Home Page,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.004,True,Outlook Home Page,['persistence'],"['Windows', 'Office 365']",application log,application log content
+T1137.003,True,Outlook Forms,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.003,True,Outlook Forms,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.003,True,Outlook Forms,['persistence'],"['Windows', 'Office 365']",application log,application log content
+T1137.005,True,Outlook Rules,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.005,True,Outlook Rules,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.005,True,Outlook Rules,['persistence'],"['Windows', 'Office 365']",application log,application log content
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key creation
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key modification
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",file,file creation
+T1137.006,True,Add-ins,['persistence'],"['Windows', 'Office 365']",file,file modification
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key creation
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key modification
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",file,file creation
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",file,file modification
+T1137.002,True,Office Test,['persistence'],"['Windows', 'Office 365']",module,module load
+T1531,False,Account Access Removal,['impact'],"['Linux', 'macOS', 'Windows']",user account,user account deletion
+T1531,False,Account Access Removal,['impact'],"['Linux', 'macOS', 'Windows']",user account,user account modification
+T1531,False,Account Access Removal,['impact'],"['Linux', 'macOS', 'Windows']",active directory,active directory object modification
+T1539,False,Steal Web Session Cookie,['credential-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'SaaS', 'Google Workspace']",file,file access
+T1539,False,Steal Web Session Cookie,['credential-access'],"['Linux', 'macOS', 'Windows', 'Office 365', 'SaaS', 'Google Workspace']",process,process access
+T1529,False,System Shutdown/Reboot,['impact'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1529,False,System Shutdown/Reboot,['impact'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1529,False,System Shutdown/Reboot,['impact'],"['Linux', 'macOS', 'Windows']",sensor health,host status
+T1518,False,Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",firewall,firewall metadata
+T1518,False,Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",firewall,firewall enumeration
+T1518,False,Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1518,False,Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1518,False,Software Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,os api execution
+T1547.013,True,XDG Autostart Entries,"['persistence', 'privilege-escalation']",['Linux'],file,file creation
+T1547.013,True,XDG Autostart Entries,"['persistence', 'privilege-escalation']",['Linux'],file,file modification
+T1547.013,True,XDG Autostart Entries,"['persistence', 'privilege-escalation']",['Linux'],process,process creation
+T1547.013,True,XDG Autostart Entries,"['persistence', 'privilege-escalation']",['Linux'],command,command execution
+T1534,False,Internal Spearphishing,['lateral-movement'],"['Windows', 'macOS', 'Linux', 'Office 365', 'SaaS', 'Google Workspace']",application log,application log content
+T1534,False,Internal Spearphishing,['lateral-movement'],"['Windows', 'macOS', 'Linux', 'Office 365', 'SaaS', 'Google Workspace']",network traffic,network traffic flow
+T1534,False,Internal Spearphishing,['lateral-movement'],"['Windows', 'macOS', 'Linux', 'Office 365', 'SaaS', 'Google Workspace']",network traffic,network traffic content
+T1528,False,Steal Application Access Token,['credential-access'],"['SaaS', 'Office 365', 'Azure AD', 'Google Workspace']",user account,user account modification
+T1535,False,Unused/Unsupported Cloud Regions,['defense-evasion'],['IaaS'],instance,instance creation
+T1525,False,Implant Internal Image,['persistence'],"['IaaS', 'Containers']",image,image creation
+T1525,False,Implant Internal Image,['persistence'],"['IaaS', 'Containers']",image,image modification
+T1538,False,Cloud Service Dashboard,['discovery'],"['Azure AD', 'Office 365', 'IaaS', 'Google Workspace']",user account,user account authentication
+T1538,False,Cloud Service Dashboard,['discovery'],"['Azure AD', 'Office 365', 'IaaS', 'Google Workspace']",logon session,logon session creation
+T1530,False,Data from Cloud Storage Object,['collection'],['IaaS'],cloud storage,cloud storage access
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],instance,instance stop
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],instance,instance start
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],instance,instance creation
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],instance,instance modification
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],instance,instance deletion
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],snapshot,snapshot creation
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],snapshot,snapshot modification
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],snapshot,snapshot deletion
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],volume,volume creation
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],volume,volume modification
+T1578,False,Modify Cloud Compute Infrastructure,['defense-evasion'],['IaaS'],volume,volume deletion
+T1537,False,Transfer Data to Cloud Account,['exfiltration'],['IaaS'],snapshot,snapshot creation
+T1537,False,Transfer Data to Cloud Account,['exfiltration'],['IaaS'],snapshot,snapshot modification
+T1537,False,Transfer Data to Cloud Account,['exfiltration'],['IaaS'],cloud storage,cloud storage modification
+T1537,False,Transfer Data to Cloud Account,['exfiltration'],['IaaS'],cloud storage,cloud storage creation
+T1526,False,Cloud Service Discovery,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",cloud service,cloud service metadata
+T1526,False,Cloud Service Discovery,['discovery'],"['Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Google Workspace']",cloud service,cloud service enumeration
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",file,file creation
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",file,file modification
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",network traffic,network traffic content
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",network traffic,network traffic flow
+T1505,False,Server Software Component,['persistence'],"['Windows', 'Linux', 'macOS']",application log,application log content
+T1499,False,Endpoint Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",sensor health,host status
+T1499,False,Endpoint Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",application log,application log content
+T1499,False,Endpoint Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",network traffic,network traffic content
+T1499,False,Endpoint Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",network traffic,network traffic flow
+T1497,False,Virtualization/Sandbox Evasion,"['defense-evasion', 'discovery']","['Windows', 'macOS', 'Linux']",process,process creation
+T1497,False,Virtualization/Sandbox Evasion,"['defense-evasion', 'discovery']","['Windows', 'macOS', 'Linux']",command,command execution
+T1497,False,Virtualization/Sandbox Evasion,"['defense-evasion', 'discovery']","['Windows', 'macOS', 'Linux']",process,os api execution
+T1498,False,Network Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",sensor health,host status
+T1498,False,Network Denial of Service,['impact'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",network traffic,network traffic flow
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",process,process creation
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",command,command execution
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",file,file creation
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",network traffic,network connection creation
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",network traffic,network traffic flow
+T1496,False,Resource Hijacking,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",sensor health,host status
+T1495,False,Firmware Corruption,['impact'],"['Linux', 'macOS', 'Windows']",firmware,firmware modification
+T1491,False,Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file modification
+T1491,False,Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file creation
+T1491,False,Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",application log,application log content
+T1491,False,Defacement,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",network traffic,network traffic content
+T1490,False,Inhibit System Recovery,['impact'],"['Windows', 'macOS', 'Linux']",process,process creation
+T1490,False,Inhibit System Recovery,['impact'],"['Windows', 'macOS', 'Linux']",command,command execution
+T1490,False,Inhibit System Recovery,['impact'],"['Windows', 'macOS', 'Linux']",service,service metadata
+T1490,False,Inhibit System Recovery,['impact'],"['Windows', 'macOS', 'Linux']",windows registry,windows registry key modification
+T1490,False,Inhibit System Recovery,['impact'],"['Windows', 'macOS', 'Linux']",file,file deletion
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",command,command execution
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",process,os api execution
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",service,service metadata
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",windows registry,windows registry key modification
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",file,file modification
+T1489,False,Service Stop,['impact'],"['Windows', 'Linux', 'macOS']",process,process termination
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",cloud storage,cloud storage metadata
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",cloud storage,cloud storage modification
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",process,process creation
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",command,command execution
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",file,file modification
+T1486,False,Data Encrypted for Impact,['impact'],"['Linux', 'macOS', 'Windows', 'IaaS']",file,file creation
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",process,process creation
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",command,command execution
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file modification
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file deletion
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",image,image deletion
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",instance,instance deletion
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",snapshot,snapshot deletion
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",cloud storage,cloud storage deletion
+T1485,False,Data Destruction,['impact'],"['Windows', 'IaaS', 'Linux', 'macOS']",volume,volume deletion
+T1484,False,Domain Policy Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",active directory,active directory object creation
+T1484,False,Domain Policy Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",active directory,active directory object deletion
+T1484,False,Domain Policy Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",active directory,active directory object modification
+T1484,False,Domain Policy Modification,"['defense-evasion', 'privilege-escalation']","['Windows', 'Azure AD']",command,command execution
+T1482,False,Domain Trust Discovery,['discovery'],['Windows'],process,process creation
+T1482,False,Domain Trust Discovery,['discovery'],['Windows'],command,command execution
+T1482,False,Domain Trust Discovery,['discovery'],['Windows'],process,os api execution
+T1482,False,Domain Trust Discovery,['discovery'],['Windows'],script,script execution
+T1480,False,Execution Guardrails,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1480,False,Execution Guardrails,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1221,False,Template Injection,['defense-evasion'],['Windows'],process,process creation
+T1221,False,Template Injection,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1221,False,Template Injection,['defense-evasion'],['Windows'],network traffic,network traffic content
+T1220,False,XSL Script Processing,['defense-evasion'],['Windows'],process,process creation
+T1220,False,XSL Script Processing,['defense-evasion'],['Windows'],module,module load
+T1222,False,File and Directory Permissions Modification,['defense-evasion'],"['Linux', 'Windows', 'macOS']",process,process creation
+T1222,False,File and Directory Permissions Modification,['defense-evasion'],"['Linux', 'Windows', 'macOS']",command,command execution
+T1222,False,File and Directory Permissions Modification,['defense-evasion'],"['Linux', 'Windows', 'macOS']",active directory,active directory object modification
+T1222,False,File and Directory Permissions Modification,['defense-evasion'],"['Linux', 'Windows', 'macOS']",file,file metadata
+T1189,False,Drive-by Compromise,['initial-access'],"['Windows', 'Linux', 'macOS', 'SaaS']",file,file creation
+T1189,False,Drive-by Compromise,['initial-access'],"['Windows', 'Linux', 'macOS', 'SaaS']",process,process creation
+T1189,False,Drive-by Compromise,['initial-access'],"['Windows', 'Linux', 'macOS', 'SaaS']",network traffic,network connection creation
+T1189,False,Drive-by Compromise,['initial-access'],"['Windows', 'Linux', 'macOS', 'SaaS']",network traffic,network traffic content
+T1189,False,Drive-by Compromise,['initial-access'],"['Windows', 'Linux', 'macOS', 'SaaS']",application log,application log content
+T1207,False,Rogue Domain Controller,['defense-evasion'],['Windows'],active directory,active directory object creation
+T1207,False,Rogue Domain Controller,['defense-evasion'],['Windows'],active directory,active directory object modification
+T1207,False,Rogue Domain Controller,['defense-evasion'],['Windows'],network traffic,network traffic content
+T1207,False,Rogue Domain Controller,['defense-evasion'],['Windows'],user account,user account authentication
+T1199,False,Trusted Relationship,['initial-access'],"['Windows', 'SaaS', 'IaaS', 'Linux', 'macOS']",application log,application log content
+T1199,False,Trusted Relationship,['initial-access'],"['Windows', 'SaaS', 'IaaS', 'Linux', 'macOS']",logon session,logon session metadata
+T1199,False,Trusted Relationship,['initial-access'],"['Windows', 'SaaS', 'IaaS', 'Linux', 'macOS']",logon session,logon session creation
+T1197,False,BITS Jobs,"['defense-evasion', 'persistence']",['Windows'],process,process creation
+T1197,False,BITS Jobs,"['defense-evasion', 'persistence']",['Windows'],network traffic,network connection creation
+T1197,False,BITS Jobs,"['defense-evasion', 'persistence']",['Windows'],service,service metadata
+T1197,False,BITS Jobs,"['defense-evasion', 'persistence']",['Windows'],command,command execution
+T1217,False,Browser Bookmark Discovery,['discovery'],"['Linux', 'Windows', 'macOS']",process,process creation
+T1217,False,Browser Bookmark Discovery,['discovery'],"['Linux', 'Windows', 'macOS']",command,command execution
+T1217,False,Browser Bookmark Discovery,['discovery'],"['Linux', 'Windows', 'macOS']",file,file access
+T1213,False,Data from Information Repositories,['collection'],"['Linux', 'Windows', 'macOS', 'SaaS', 'Office 365', 'Google Workspace']",logon session,logon session creation
+T1213,False,Data from Information Repositories,['collection'],"['Linux', 'Windows', 'macOS', 'SaaS', 'Office 365', 'Google Workspace']",application log,application log content
+T1212,False,Exploitation for Credential Access,['credential-access'],"['Linux', 'Windows', 'macOS']",nan,nan
+T1211,False,Exploitation for Defense Evasion,['defense-evasion'],"['Linux', 'Windows', 'macOS']",nan,nan
+T1200,False,Hardware Additions,['initial-access'],"['Windows', 'Linux', 'macOS']",nan,nan
+T1202,False,Indirect Command Execution,['defense-evasion'],['Windows'],process,process creation
+T1202,False,Indirect Command Execution,['defense-evasion'],['Windows'],command,command execution
+T1201,False,Password Policy Discovery,['discovery'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1201,False,Password Policy Discovery,['discovery'],"['Windows', 'Linux', 'macOS']",command,command execution
+T1190,False,Exploit Public-Facing Application,['initial-access'],"['Windows', 'IaaS', 'Network', 'Linux', 'macOS', 'Containers']",application log,application log content
+T1190,False,Exploit Public-Facing Application,['initial-access'],"['Windows', 'IaaS', 'Network', 'Linux', 'macOS', 'Containers']",network traffic,network traffic content
+T1210,False,Exploitation of Remote Services,['lateral-movement'],"['Linux', 'Windows', 'macOS']",application log,application log content
+T1210,False,Exploitation of Remote Services,['lateral-movement'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1219,False,Remote Access Software,['command-and-control'],"['Linux', 'Windows', 'macOS']",process,process creation
+T1219,False,Remote Access Software,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic flow
+T1219,False,Remote Access Software,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network connection creation
+T1219,False,Remote Access Software,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic content
+T1195,False,Supply Chain Compromise,['initial-access'],"['Linux', 'Windows', 'macOS']",nan,nan
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",application log,application log content
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",instance,instance start
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",instance,instance creation
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",image,image creation
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",command,command execution
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",container,container start
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",container,container creation
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",network traffic,network connection creation
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",network traffic,network traffic content
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",file,file creation
+T1204,False,User Execution,['execution'],"['Linux', 'Windows', 'macOS', 'IaaS', 'Containers']",process,process creation
+T1203,False,Exploitation for Client Execution,['execution'],"['Linux', 'Windows', 'macOS']",nan,nan
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],process,process creation
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],file,file creation
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],module,module load
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],process,os api execution
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],command,command execution
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],windows registry,windows registry key modification
+T1218,False,Signed Binary Proxy Execution,['defense-evasion'],['Windows'],network traffic,network connection creation
+T1205,False,Traffic Signaling,"['defense-evasion', 'persistence', 'command-and-control']","['Linux', 'macOS', 'Windows', 'Network']",network traffic,network connection creation
+T1205,False,Traffic Signaling,"['defense-evasion', 'persistence', 'command-and-control']","['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic flow
+T1205,False,Traffic Signaling,"['defense-evasion', 'persistence', 'command-and-control']","['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic content
+T1216,False,Signed Script Proxy Execution,['defense-evasion'],['Windows'],process,process creation
+T1216,False,Signed Script Proxy Execution,['defense-evasion'],['Windows'],command,command execution
+T1216,False,Signed Script Proxy Execution,['defense-evasion'],['Windows'],script,script execution
+T1176,False,Browser Extensions,['persistence'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1176,False,Browser Extensions,['persistence'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1176,False,Browser Extensions,['persistence'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1176,False,Browser Extensions,['persistence'],"['Linux', 'macOS', 'Windows']",windows registry,windows registry key creation
+T1176,False,Browser Extensions,['persistence'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1175,False,Component Object Model and Distributed COM,"['lateral-movement', 'execution']",['Windows'],nan,nan
+T1187,False,Forced Authentication,['credential-access'],['Windows'],file,file access
+T1187,False,Forced Authentication,['credential-access'],['Windows'],file,file creation
+T1187,False,Forced Authentication,['credential-access'],['Windows'],file,file modification
+T1187,False,Forced Authentication,['credential-access'],['Windows'],network traffic,network traffic content
+T1187,False,Forced Authentication,['credential-access'],['Windows'],network traffic,network traffic flow
+T1185,False,Man in the Browser,['collection'],['Windows'],process,process access
+T1185,False,Man in the Browser,['collection'],['Windows'],logon session,logon session creation
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process creation
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],process,process metadata
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],process,os api execution
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],user account,user account metadata
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],active directory,active directory object modification
+T1134,False,Access Token Manipulation,"['defense-evasion', 'privilege-escalation']",['Windows'],command,command execution
+T1136,False,Create Account,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",user account,user account creation
+T1136,False,Create Account,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1136,False,Create Account,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1149,False,LC_MAIN Hijacking,['defense-evasion'],['macOS'],nan,nan
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",process,process creation
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",command,command execution
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key creation
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",windows registry,windows registry key modification
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",file,file creation
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",file,file modification
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",module,module load
+T1137,False,Office Application Startup,['persistence'],"['Windows', 'Office 365']",application log,application log content
+T1140,False,Deobfuscate/Decode Files or Information,['defense-evasion'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1140,False,Deobfuscate/Decode Files or Information,['defense-evasion'],"['Windows', 'Linux', 'macOS']",file,file modification
+T1140,False,Deobfuscate/Decode Files or Information,['defense-evasion'],"['Windows', 'Linux', 'macOS']",script,script execution
+T1135,False,Network Share Discovery,['discovery'],"['macOS', 'Windows', 'Linux']",process,process creation
+T1135,False,Network Share Discovery,['discovery'],"['macOS', 'Windows', 'Linux']",command,command execution
+T1135,False,Network Share Discovery,['discovery'],"['macOS', 'Windows', 'Linux']",process,os api execution
+T1153,False,Source,['execution'],"['Linux', 'macOS']",nan,nan
+T1133,False,External Remote Services,"['persistence', 'initial-access']","['Windows', 'Linux', 'Containers']",application log,application log content
+T1133,False,External Remote Services,"['persistence', 'initial-access']","['Windows', 'Linux', 'Containers']",logon session,logon session metadata
+T1133,False,External Remote Services,"['persistence', 'initial-access']","['Windows', 'Linux', 'Containers']",network traffic,network traffic flow
+T1132,False,Data Encoding,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1129,False,Shared Modules,['execution'],['Windows'],process,os api execution
+T1129,False,Shared Modules,['execution'],['Windows'],module,module load
+T1127,False,Trusted Developer Utilities Proxy Execution,['defense-evasion'],['Windows'],process,process creation
+T1127,False,Trusted Developer Utilities Proxy Execution,['defense-evasion'],['Windows'],command,command execution
+T1125,False,Video Capture,['collection'],"['Windows', 'macOS']",process,os api execution
+T1125,False,Video Capture,['collection'],"['Windows', 'macOS']",command,command execution
+T1124,False,System Time Discovery,['discovery'],['Windows'],process,process creation
+T1124,False,System Time Discovery,['discovery'],['Windows'],command,command execution
+T1124,False,System Time Discovery,['discovery'],['Windows'],process,os api execution
+T1123,False,Audio Capture,['collection'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1123,False,Audio Capture,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1120,False,Peripheral Device Discovery,['discovery'],"['Windows', 'macOS']",process,process creation
+T1120,False,Peripheral Device Discovery,['discovery'],"['Windows', 'macOS']",command,command execution
+T1120,False,Peripheral Device Discovery,['discovery'],"['Windows', 'macOS']",process,os api execution
+T1119,False,Automated Collection,['collection'],"['Linux', 'macOS', 'Windows']",file,file access
+T1119,False,Automated Collection,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1119,False,Automated Collection,['collection'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1115,False,Clipboard Data,['collection'],"['Linux', 'Windows', 'macOS']",process,os api execution
+T1115,False,Clipboard Data,['collection'],"['Linux', 'Windows', 'macOS']",command,command execution
+T1114,False,Email Collection,['collection'],"['Windows', 'Office 365', 'Google Workspace']",file,file access
+T1114,False,Email Collection,['collection'],"['Windows', 'Office 365', 'Google Workspace']",network traffic,network connection creation
+T1114,False,Email Collection,['collection'],"['Windows', 'Office 365', 'Google Workspace']",logon session,logon session creation
+T1114,False,Email Collection,['collection'],"['Windows', 'Office 365', 'Google Workspace']",command,command execution
+T1114,False,Email Collection,['collection'],"['Windows', 'Office 365', 'Google Workspace']",application log,application log content
+T1113,False,Screen Capture,['collection'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1113,False,Screen Capture,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],process,process creation
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],process,os api execution
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],command,command execution
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],windows registry,windows registry key creation
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],windows registry,windows registry key modification
+T1112,False,Modify Registry,['defense-evasion'],['Windows'],windows registry,windows registry key deletion
+T1111,False,Two-Factor Authentication Interception,['credential-access'],"['Linux', 'Windows', 'macOS']",windows registry,windows registry key modification
+T1111,False,Two-Factor Authentication Interception,['credential-access'],"['Linux', 'Windows', 'macOS']",driver,driver load
+T1111,False,Two-Factor Authentication Interception,['credential-access'],"['Linux', 'Windows', 'macOS']",process,os api execution
+T1110,False,Brute Force,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1110,False,Brute Force,['credential-access'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",application log,application log content
+T1108,False,Redundant Access,"['defense-evasion', 'persistence']","['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS']",nan,nan
+T1106,False,Native API,['execution'],"['Windows', 'macOS', 'Linux']",process,os api execution
+T1106,False,Native API,['execution'],"['Windows', 'macOS', 'Linux']",module,module load
+T1105,False,Ingress Tool Transfer,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1105,False,Ingress Tool Transfer,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1105,False,Ingress Tool Transfer,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1105,False,Ingress Tool Transfer,['command-and-control'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1104,False,Multi-Stage Channels,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1104,False,Multi-Stage Channels,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1102,False,Web Service,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1102,False,Web Service,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1102,False,Web Service,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",file,file modification
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",group,group modification
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",user account,user account modification
+T1098,False,Account Manipulation,['persistence'],"['Windows', 'Azure AD', 'Office 365', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",active directory,active directory object modification
+T1095,False,Non-Application Layer Protocol,['command-and-control'],"['Windows', 'Linux', 'macOS', 'Network']",network traffic,network traffic flow
+T1095,False,Non-Application Layer Protocol,['command-and-control'],"['Windows', 'Linux', 'macOS', 'Network']",network traffic,network traffic content
+T1092,False,Communication Through Removable Media,['command-and-control'],"['Linux', 'macOS', 'Windows']",drive,drive creation
+T1092,False,Communication Through Removable Media,['command-and-control'],"['Linux', 'macOS', 'Windows']",drive,drive access
+T1091,False,Replication Through Removable Media,"['lateral-movement', 'initial-access']",['Windows'],process,process creation
+T1091,False,Replication Through Removable Media,"['lateral-movement', 'initial-access']",['Windows'],file,file access
+T1091,False,Replication Through Removable Media,"['lateral-movement', 'initial-access']",['Windows'],file,file creation
+T1091,False,Replication Through Removable Media,"['lateral-movement', 'initial-access']",['Windows'],drive,drive creation
+T1090,False,Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic flow
+T1090,False,Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network connection creation
+T1090,False,Proxy,['command-and-control'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic content
+T1087,False,Account Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",user account,user account metadata
+T1087,False,Account Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1087,False,Account Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1087,False,Account Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",file,file access
+T1083,False,File and Directory Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1083,False,File and Directory Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1083,False,File and Directory Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1082,False,System Information Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",instance,instance metadata
+T1082,False,System Information Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",process,process creation
+T1082,False,System Information Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",command,command execution
+T1082,False,System Information Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",process,os api execution
+T1080,False,Taint Shared Content,['lateral-movement'],['Windows'],process,process creation
+T1080,False,Taint Shared Content,['lateral-movement'],['Windows'],file,file creation
+T1080,False,Taint Shared Content,['lateral-movement'],['Windows'],file,file modification
+T1080,False,Taint Shared Content,['lateral-movement'],['Windows'],network share,network share access
+T1078,False,Valid Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",user account,user account authentication
+T1078,False,Valid Accounts,"['defense-evasion', 'persistence', 'privilege-escalation', 'initial-access']","['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace', 'Containers']",logon session,logon session creation
+T1074,False,Data Staged,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file access
+T1074,False,Data Staged,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",file,file creation
+T1074,False,Data Staged,['collection'],"['Windows', 'IaaS', 'Linux', 'macOS']",command,command execution
+T1072,False,Software Deployment Tools,"['execution', 'lateral-movement']","['Linux', 'macOS', 'Windows']",application log,application log content
+T1072,False,Software Deployment Tools,"['execution', 'lateral-movement']","['Linux', 'macOS', 'Windows']",process,process creation
+T1071,False,Application Layer Protocol,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1071,False,Application Layer Protocol,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",process,process creation
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file deletion
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file modification
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",windows registry,windows registry key modification
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",windows registry,windows registry key deletion
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",process,os api execution
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",command,command execution
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",network traffic,network traffic content
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",user account,user account authentication
+T1070,False,Indicator Removal on Host,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file metadata
+T1069,False,Permission Groups Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",process,process creation
+T1069,False,Permission Groups Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",command,command execution
+T1069,False,Permission Groups Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",group,group enumeration
+T1069,False,Permission Groups Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",group,group metadata
+T1069,False,Permission Groups Discovery,['discovery'],"['Windows', 'Azure AD', 'Office 365', 'SaaS', 'IaaS', 'Linux', 'macOS', 'Google Workspace']",application log,application log content
+T1068,False,Exploitation for Privilege Escalation,['privilege-escalation'],"['Linux', 'macOS', 'Windows', 'Containers']",driver,driver load
+T1064,False,Scripting,"['defense-evasion', 'execution']","['Linux', 'macOS', 'Windows']",nan,nan
+T1062,False,Hypervisor,['persistence'],['Windows'],nan,nan
+T1061,False,Graphical User Interface,['execution'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1059,False,Command and Scripting Interpreter,['execution'],"['Linux', 'macOS', 'Windows', 'Network']",command,command execution
+T1059,False,Command and Scripting Interpreter,['execution'],"['Linux', 'macOS', 'Windows', 'Network']",process,process creation
+T1059,False,Command and Scripting Interpreter,['execution'],"['Linux', 'macOS', 'Windows', 'Network']",module,module load
+T1059,False,Command and Scripting Interpreter,['execution'],"['Linux', 'macOS', 'Windows', 'Network']",script,script execution
+T1057,False,Process Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1057,False,Process Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1057,False,Process Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",windows registry,windows registry key modification
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",driver,driver load
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",process,os api execution
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",process,process creation
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",file,file modification
+T1056,False,Input Capture,"['collection', 'credential-access']","['Linux', 'macOS', 'Windows', 'Network']",process,process metadata
+T1055,False,Process Injection,"['defense-evasion', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",module,module load
+T1055,False,Process Injection,"['defense-evasion', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",process,os api execution
+T1055,False,Process Injection,"['defense-evasion', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",process,process access
+T1055,False,Process Injection,"['defense-evasion', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",file,file modification
+T1055,False,Process Injection,"['defense-evasion', 'privilege-escalation']","['Linux', 'macOS', 'Windows']",file,file metadata
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",file,file creation
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",container,container creation
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",scheduled job,scheduled job creation
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",command,command execution
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",file,file modification
+T1053,False,Scheduled Task/Job,"['execution', 'persistence', 'privilege-escalation']","['Windows', 'Linux', 'macOS', 'Containers']",process,process creation
+T1052,False,Exfiltration Over Physical Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1052,False,Exfiltration Over Physical Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1052,False,Exfiltration Over Physical Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",drive,drive creation
+T1052,False,Exfiltration Over Physical Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1051,False,Shared Webroot,['lateral-movement'],['Windows'],nan,nan
+T1049,False,System Network Connections Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",process,process creation
+T1049,False,System Network Connections Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",command,command execution
+T1049,False,System Network Connections Discovery,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS']",process,os api execution
+T1048,False,Exfiltration Over Alternative Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1048,False,Exfiltration Over Alternative Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1048,False,Exfiltration Over Alternative Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1048,False,Exfiltration Over Alternative Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1048,False,Exfiltration Over Alternative Protocol,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1047,False,Windows Management Instrumentation,['execution'],['Windows'],command,command execution
+T1047,False,Windows Management Instrumentation,['execution'],['Windows'],process,process creation
+T1047,False,Windows Management Instrumentation,['execution'],['Windows'],network traffic,network connection creation
+T1046,False,Network Service Scanning,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",command,command execution
+T1046,False,Network Service Scanning,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",cloud service,cloud service enumeration
+T1046,False,Network Service Scanning,['discovery'],"['Windows', 'IaaS', 'Linux', 'macOS', 'Containers']",network traffic,network traffic flow
+T1043,False,Commonly Used Port,['command-and-control'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1041,False,Exfiltration Over C2 Channel,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1041,False,Exfiltration Over C2 Channel,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1041,False,Exfiltration Over C2 Channel,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1041,False,Exfiltration Over C2 Channel,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1041,False,Exfiltration Over C2 Channel,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1040,False,Network Sniffing,"['credential-access', 'discovery']","['Linux', 'macOS', 'Windows', 'Network']",process,process creation
+T1040,False,Network Sniffing,"['credential-access', 'discovery']","['Linux', 'macOS', 'Windows', 'Network']",command,command execution
+T1039,False,Data from Network Shared Drive,['collection'],"['Linux', 'macOS', 'Windows']",file,file access
+T1039,False,Data from Network Shared Drive,['collection'],"['Linux', 'macOS', 'Windows']",network share,network share access
+T1039,False,Data from Network Shared Drive,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",windows registry,windows registry key creation
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",process,process creation
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",command,command execution
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",active directory,active directory object modification
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",file,file creation
+T1037,False,Boot or Logon Initialization Scripts,"['persistence', 'privilege-escalation']","['macOS', 'Windows', 'Linux']",file,file modification
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",image,image metadata
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",command,command execution
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",service,service metadata
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",service,service creation
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",scheduled job,scheduled job metadata
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",scheduled job,scheduled job modification
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file metadata
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",process,process metadata
+T1036,False,Masquerading,['defense-evasion'],"['Linux', 'macOS', 'Windows', 'Containers']",file,file modification
+T1034,False,Path Interception,"['persistence', 'privilege-escalation']",['Windows'],nan,nan
+T1033,False,System Owner/User Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1033,False,System Owner/User Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1030,False,Data Transfer Size Limits,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1030,False,Data Transfer Size Limits,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1029,False,Scheduled Transfer,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1029,False,Scheduled Transfer,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file content
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file metadata
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",file,file creation
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1027,False,Obfuscated Files or Information,['defense-evasion'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1026,False,Multiband Communication,['command-and-control'],"['Linux', 'macOS', 'Windows']",nan,nan
+T1025,False,Data from Removable Media,['collection'],"['Linux', 'macOS', 'Windows']",file,file access
+T1025,False,Data from Removable Media,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",logon session,logon session creation
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",network share,network share access
+T1021,False,Remote Services,['lateral-movement'],"['Linux', 'macOS', 'Windows']",module,module load
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",command,command execution
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",script,script execution
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network connection creation
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic flow
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",network traffic,network traffic content
+T1020,False,Automated Exfiltration,['exfiltration'],"['Linux', 'macOS', 'Windows', 'Network']",file,file access
+T1018,False,Remote System Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1018,False,Remote System Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1018,False,Remote System Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1018,False,Remote System Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",file,file access
+T1016,False,System Network Configuration Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,process creation
+T1016,False,System Network Configuration Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",script,script execution
+T1016,False,System Network Configuration Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1016,False,System Network Configuration Discovery,['discovery'],"['Linux', 'macOS', 'Windows']",process,os api execution
+T1014,False,Rootkit,['defense-evasion'],"['Linux', 'macOS', 'Windows']",drive,drive modification
+T1014,False,Rootkit,['defense-evasion'],"['Linux', 'macOS', 'Windows']",firmware,firmware modification
+T1012,False,Query Registry,['discovery'],['Windows'],process,process creation
+T1012,False,Query Registry,['discovery'],['Windows'],command,command execution
+T1012,False,Query Registry,['discovery'],['Windows'],windows registry,windows registry key access
+T1012,False,Query Registry,['discovery'],['Windows'],process,os api execution
+T1011,False,Exfiltration Over Other Network Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network connection creation
+T1011,False,Exfiltration Over Other Network Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic flow
+T1011,False,Exfiltration Over Other Network Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
+T1011,False,Exfiltration Over Other Network Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",file,file access
+T1011,False,Exfiltration Over Other Network Medium,['exfiltration'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1010,False,Application Window Discovery,['discovery'],"['macOS', 'Windows']",process,process creation
+T1010,False,Application Window Discovery,['discovery'],"['macOS', 'Windows']",command,command execution
+T1010,False,Application Window Discovery,['discovery'],"['macOS', 'Windows']",process,os api execution
+T1008,False,Fallback Channels,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network traffic flow
+T1008,False,Fallback Channels,['command-and-control'],"['Linux', 'Windows', 'macOS']",network traffic,network connection creation
+T1007,False,System Service Discovery,['discovery'],['Windows'],process,process creation
+T1007,False,System Service Discovery,['discovery'],['Windows'],command,command execution
+T1006,False,Direct Volume Access,['defense-evasion'],['Windows'],command,command execution
+T1006,False,Direct Volume Access,['defense-evasion'],['Windows'],drive,drive access
+T1005,False,Data from Local System,['collection'],"['Linux', 'macOS', 'Windows']",file,file access
+T1005,False,Data from Local System,['collection'],"['Linux', 'macOS', 'Windows']",command,command execution
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",process,process creation
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",process,process access
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",command,command execution
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",file,file access
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",windows registry,windows registry key access
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",active directory,active directory object access
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",network traffic,network traffic flow
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",network traffic,network traffic content
+T1003,False,OS Credential Dumping,['credential-access'],"['Windows', 'Linux', 'macOS']",process,os api execution
+T1001,False,Data Obfuscation,['command-and-control'],"['Linux', 'macOS', 'Windows']",network traffic,network traffic content
