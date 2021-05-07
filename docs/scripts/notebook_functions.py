@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 # Author: Jose Rodriguez (@Cyb3rPandaH)
-# License: GNU General Public License v3 (GPLv3)
 
 ###### Importing Python Libraries
 
