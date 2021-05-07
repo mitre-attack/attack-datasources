@@ -1,86 +1,108 @@
-# Defining ATT&CK Data Sources
-As part of the revamping process of **ATT&CK data sources**, we have defined an initial methodology that will help us improve the definition of current data sources. The idea behind this methodology is to ensure same quality of information among data sources, and provide additional information or metadata related to data sources in order to get a better understanding of them. 
+# ATT&CK Data Sources
+As part of the [**ATT&CK 2021 Roadmap**](https://medium.com/mitre-attack/att-ck-2021-roadmap-68bab3886fa2), we have defined a methodology that will help improve how ATT&CK maps adversary behaviors to detection data sources. The idea behind this methodology is to improve quality and consistency of ATT&CK data sources as well as to provide additional information to help users make better use of these values.
 
-<img src="images/Methodology_Data_Sources.jpg" width=500>
+<img src="docs/images/ATTCK_InfoSec_Community.jpg" width=800>
 
-You can find a more detailed explanation of this methodology here:
+The previous image shows only some of the elements that the methodology brings out such as *data components* and *relationships*, however it represents the main goal of this project: **to better connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**.
 
+## Table of Contents
+1. [Assembling ATT&CK Data Source Objects](#assembling-attck-data-source-objects)
+2. [How Data Source Objects Can Support Security Operations?](#how-data-source-objects-can-support-security-operations)
+3. [Where are the New Data Sources Objects Stored?](#where-are-the-new-data-sources-objects-stored)
+4. [How can you Consume Data Source Objects Content?](#how-can-you-consume-data-source-objects-content)
+5. [How Can You Contribute?](#how-can-you-contribute)
+
+## **Assembling ATT&CK Data Source Objects**
+During the development of this project we have identified that data sources' context can help us better describe adversary activity within a network environment. We have formalized this context through the definition of **Data Source Objects** within the ATT&CK Object Model. The objects' structure is represented in the following image:
+
+<img src="docs/images/Data_Source_Object.png" width=800>
+
+If you are interested on getting a better understanding of the concepts and methodology we have developed so far, please review the following documents and blogs:
+
+* [A Methodology to define ATT&CK Data Sources Objects](https://github.com/mitre-attack/attack-datasources/blob/main/docs/methodology.md)
 * [Defining ATT&CK Data Sources, Part I: Enhancing the Current State](https://medium.com/mitre-attack/defining-attack-data-sources-part-i-4c39e581454f)
 * [Defining ATT&CK Data Sources, Part II: Operationalizing the Methodology](https://medium.com/mitre-attack/defining-attack-data-sources-part-ii-1fc98738ba5b)
 * [Data Sources, Containers, Cloud, and More: What’s New in ATT&CK v9?](https://medium.com/mitre-attack/attack-april-2021-release-39accaf23c81)
+* [ATT&CK 2021 Roadmap](https://medium.com/mitre-attack/att-ck-2021-roadmap-68bab3886fa2)
 
-## Data Source Object
-Currently, data sources are metadata provided for each (sub)technique. However, in order to be able to add metadata to each data source, we have proposed the definition of a data source object as part of the ATT&CK model.
+## **How Data Source Objects Can Support Security Operations?**
 
-<img src="images/Data_Source_Object.png" width=500>
+### **Identification of Relevant Data Sources and Components**
+A common questions regarding ATT&CK data sources is *What data source or component can help me to develop detections for most techniques?* The definition of coverage metrics is something the community has been working on since the initial release of the framework. This is a complex problem, but one starting point is to measure the number of listed techniques associated with each data source.
 
-## Relationships & Sub Data Sources
-As part of the new metadata provided by ATT&CK data sources, we proposed the following concepts: **relationships** and **data components**. These concepts will help us to represent adversary behavior from a data perspective. In addition, they might be good reference to start mapping telemetry collected in your environment to specific sub(techniques) and/or tactics.
+<img src="docs/images/relevant_data_components.jpg" width=800>
 
-<img src="images/Sub_Technique_Data_Components.jpg" width=500>
+The image above shows that, considering all platforms and tactics within the Enterprise matrix, *command execution*, *process creation*, and *file modification* are a good starting point when analyzing most (sub)techniques.
 
-## Where can you find Data Sources Objects?
-We are storing this new metadata using YAML files, so you can access this content programatically.
+### **Identification of Relevant Data Sources and Components: A Graph Perspective**
+Another way to represent the interaction among techniques, data sources and components is by using a network graph. Using *Python* libraries such as *NetworkX* and *Matplotlib*, we can create a visualization that will support our analysis.
 
-```yaml
-- name: Service
-  definition: Information about software programs that run in the background and typically start with the operating system.
-  collection_layers:
-    - host
-  platforms:
-    - Windows
-  contributors: 
-    - ATT&CK
-  data_components:
-    - name: service creation
-      type: activity
-      relationships:
-        - source_data_element: user
-          relationship: created
-          target_data_element: service
-  references:
-    - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
-    - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/
-```
+<img src="docs/images/network_graph.jpg" width=800>
 
-In the image above, you can see the structure of the **Service** data source as an example of the content you will find within each YAML file.
+The image above shows the interaction among sub-techniques and recommended data sources and components under the [T1134 - Access Token Manipulation](https://attack.mitre.org/techniques/T1134/) technique for Defense Evasion (Tactic) in the Windows (Platform) environments.
 
-Based on our initial research, we have identified relationships such as: A **user** has **created** a **Service**
+### **Representation of Adversary Behavior**
+Data components gives us specific context of the activity or metadata related to network security concepts recommended as data sources by the ATT&CK framework.
 
-We are grouping these type of relationships within the data component: **Service Creation**.
+For instance, let's say the *Process* data source is recommended for the detection of the *[T1543.003 - Create or Modify System Process: Windows Service](https://attack.mitre.org/techniques/T1543/003/)* technique. Without any other security context, the first question that might come to your mind is *what information about a process is required?* The following image shows some of the available option by using data components:
 
-## How can we consume this information?
-The idea of storing all this data using **YAML** files is to facilitate the consumption of data sources definition content. So, feel free to use any tool that can handle yaml files and that is available for you. We have prepared a Jupyter notebook using libraries such attackcti, pandas, and yaml to give you an example of how can you gather up to date ATT&CK knowledge and YAML files' content, so you can merge all this information. You can find the notebook in the following link.
+<img src="docs/images/process_data_components_example.jpg" width=800>
 
-- [Adding more security context to the data source piece of ATT&CK - Notebook](./DataSourcesDefinition.ipynb)
+Each data component represents activity and/or information generated within a network environment because of actions or behaviors performed by a potential adversary. The ATT&CK framework (v9) now provides data components that can help you to represent specific actions or behaviors related to a technique. According to the framework, the **creation of processes** and **execution of operating system's API calls** are a good starting point from a Process perspective.
 
-Something you need to consider when consuming the data within each YAML file is that some of the names of current data sources has been changed based on the propoed methodology. We are also providing a YAML file showing current and proposed data sources names. The structure of the YAML files is showed below: On the left, you can see the current names of data sources and on the right you can see the proposed name.
+<img src="docs/images/attck_T1543-003.jpg" width=800>
+
+### **Identification of Relevant Security Events**
+At the beginning of this document, we mentioned that the main goal of this project was to **connect the defensive data in ATT&CK with how operational defenders analyze potential adversaries/ behaviors**. Even though the scope of this project does not consider mapping security events to data components and relationships, we believe that the information provided by data source objects can help you to identify relevant security data that should be collected in your environment in order to expedite the development of effective detections.
+
+<img src="docs/images/Sub_Technique_Data_Components.jpg" width=800>
+
+For example, the framework considers *Process: Process Creation* as a recommended data source for the *[T1543.003 - Create or Modify System Process: Windows Service](https://attack.mitre.org/techniques/T1543/003/)* technique. The important question here is *What security events logs can give me context about the creation of a process?* For example, on the Windows platform environments Security Auditing event 4688 and Sysmon event 1 can help us to cover this data source recommendation. The image above shows an example of security events mapped to other recommended data sources for the same technique.
+
+## **Where are the New Data Sources Objects Stored?**
+V9 of the ATT&CK framework contains only data components as part of the new metadata for data sources. However, you can find our current Data Source Objects [here](https://github.com/mitre-attack/attack-datasources/tree/main/contribution). We are storing this new metadata using YAML files, but in the future it will be stored in STIX.
 
 ```yaml
-Sensor health and status: Sensor log
-Access tokens: Access token
-PowerShell logs: Powershell log
-API monitoring: API
-Application logs: Application log
-File monitoring: File
-Authentication logs: Logon session
-Named Pipes: Named pipe
-Process monitoring: Process
-Process use of network: Process
-Process command-line parameters: Process
-DLL monitoring: Module
-Loaded DLLs: Module
-Windows Registry: Windows registry
-DNS records: DNS
-Digital certificate logs: Digital certificate log
-WMI Objects: WMI object
-Services: Service
+name: Process
+definition: Information about instances of computer programs that are being executed by at least one thread.
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: process creation
+    type: activity
+    description: A process was created.
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: process
+      - source_data_element: process
+        relationship: created
+        target_data_element: process
+  - name: OS api execution
+    type: activity
+    description: A process executed operating system api functions.
+    relationships:
+      - source_data_element: process
+        relationship: executed
+        target_data_element: api call
+references:
+  - https://docs.microsoft.com/en-us/windows/win32/procthread/processes-and-threads
 ```
 
-## Have we defined each data source within ATT&CK?
-The initial scope of this research considered the Enterprise matrix, the Windows platform, the host collection layer and free telemetry such as Sysmon logs. Therefore, there are a lot of opportunities for you to contribute to the data sources piece of ATT&CK.
+## **How can you Consume Data Source Objects Content?**
+The idea of storing all this data using **YAML** files is to facilitate the consumption of data source objects content until we move everything to STIX. So, feel free to use any tool that can handle yaml files and that is available for you. We have prepared a Jupyter notebook using libraries such attackcti, pandas, and yaml to give you an example of how can you gather up-to-date ATT&CK knowledge and YAML files' content. You can find the notebook in the following link.
 
+- [Adding more security context to the data source piece of ATT&CK - Notebook](https://github.com/mitre-attack/attack-datasources/blob/main/ATT&CK-Data-Sources.ipynb)
 
+## **How Can You Contribute?**
+We love feedback!! Hopefully, the explanation of our methodology provided in this document helps you to understand the structure of a data source object and gives you an idea on how to come up with new content. Take a look at the current data source objects [here](https://github.com/mitre-attack/attack-datasources/tree/main/contribution), propose or improve data relationships, components, and data sources, and submit a pull request!!
 
 ## Notice
 
