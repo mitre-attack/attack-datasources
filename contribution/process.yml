@@ -9,6 +9,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - Open Threat Research (OTR)
 data_components:
   - name: process metadata
     type: information
