@@ -10,6 +10,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - Open Threat Research (OTR)
 data_components:
   - name: file content
     type: information
@@ -39,6 +40,9 @@ data_components:
     description: A file was created.
     relationships:
       - source_data_element: process
+        relationship: created
+        target_data_element: file
+      - source_data_element: user
         relationship: created
         target_data_element: file
   - name: file deletion

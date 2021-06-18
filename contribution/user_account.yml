@@ -17,6 +17,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - Open Threat Research (OTR)
 data_components:
   - name: user account metadata
     type: information
@@ -91,6 +92,9 @@ data_components:
         target_data_element: port
       - source_data_element: application
         relationship: attempted to authenticate
+        target_data_element: user
+      - source_data_element: application
+        relationship: authenticated
         target_data_element: user
       - source_data_element: cloud service
         relationship: attempted to authenticate

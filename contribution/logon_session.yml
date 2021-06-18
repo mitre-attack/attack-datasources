@@ -16,6 +16,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - Open Threat Research (OTR)
 data_components:
   - name: logon session metadata
     type: information
@@ -24,6 +25,9 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: logon session
+      - source_data_element: logon session
+        relationship: modified
+        target_data_element: null
   - name: logon session creation
     type: activity
     description: A logon session for a user was created.

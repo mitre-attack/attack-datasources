@@ -15,6 +15,7 @@ platforms:
 contributors: 
   - ATT&CK
   - CTID
+  - Open Threat Research (OTR)
 data_components:
   - name: firewall metadata
     type: information
@@ -23,6 +24,21 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: firewall
+      - source_data_element: firewall
+        relationship: started
+        target_data_element: null
+      - source_data_element: firewall
+        relationship: stopped
+        target_data_element: null
+      - source_data_element: firewall rule
+        relationship: added
+        target_data_element: null
+      - source_data_element: firewall rule
+        relationship: modified
+        target_data_element: null
+      - source_data_element: firewall rule
+        relationship: deleted
+        target_data_element: null
   - name: firewall disable
     type: activity
     description: A firewall system was disabled.
@@ -35,6 +51,9 @@ data_components:
     description: A rule of a firewall system was modified.
     relationships:
       - source_data_element: user
+        relationship: added 
+        target_data_element: firewall rule
+      - source_data_element: process
         relationship: added 
         target_data_element: firewall rule
       - source_data_element: user
