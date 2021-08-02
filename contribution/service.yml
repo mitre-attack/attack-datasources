@@ -10,16 +10,30 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
+  - name: service start
+    type: activity
+    description: A service/daemon was started.
+    relationships:
+      - source_data_element: user
+        relationship: started
+        target_data_element: service
+      - source_data_element: process
+        relationship: started
+        target_data_element: service 
+  - name: service stop
+    type: activity
+    description: A service/daemon was stopped.
+    relationships:      
+      - source_data_element: user
+        relationship: stopped
+        target_data_element: service   
+      - source_data_element: process
+        relationship: stopped
+        target_data_element: service
   - name: service metadata
     type: information
     description: Data and information that describe a service and activity around it.
     relationships:
-      - source_data_element: service
-        relationship: started
-        target_data_element: 
-      - source_data_element: service
-        relationship: stopped
-        target_data_element: 
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: service
@@ -33,6 +47,9 @@ data_components:
       - source_data_element: user
         relationship: created
         target_data_element: service
+      - source_data_element: process
+        relationship: created
+        target_data_element: service
   - name: service access
     type: activity
     description: A service/daemon was opened or accessed.
@@ -40,6 +57,12 @@ data_components:
       - source_data_element: user
         relationship: requested access to
         target_data_element: service
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: service
+      - source_data_element: process
+        relationship: requested access to
+        target_data_element: process
       - source_data_element: user
         relationship: accessed
         target_data_element: service
@@ -62,6 +85,16 @@ data_components:
         target_data_element: service
       - source_data_element: process
         relationship: modified
+        target_data_element: service
+  - name: service deletion
+    type: activity
+    description: A service/daemon was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: service
+      - source_data_element: process
+        relationship: deleted
         target_data_element: service
 references:
   - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
