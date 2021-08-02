@@ -53,10 +53,10 @@ data_components:
     relationships:
       - source_data_element: user
         relationship: listed
-        target_data_element: instances
+        target_data_element: instance
       - source_data_element: user
         relationship: described
-        target_data_element: instances
+        target_data_element: instance
       - source_data_element: user
         relationship: viewed
         target_data_element: instance
