@@ -28,6 +28,9 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: file stream
+      - source_data_element: user
+        relationship: created
+        target_data_element: file stream
       - source_data_element: process
         relationship: retrieved information about
         target_data_element: file
@@ -39,6 +42,9 @@ data_components:
     description: A file was created.
     relationships:
       - source_data_element: process
+        relationship: created
+        target_data_element: file
+      - source_data_element: user
         relationship: created
         target_data_element: file
   - name: file deletion
