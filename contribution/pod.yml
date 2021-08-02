@@ -38,7 +38,7 @@ data_components:
     relationships:
       - source_data_element: user
         relationship: listed
-        target_data_element: pods
+        target_data_element: pod
 references:
   - https://kubernetes.io/docs/reference/kubectl/kubectl/
   - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#pod-v1-core
