@@ -18,13 +18,13 @@ data_components:
       - source_data_element: host
         relationship: retrieved information about
         target_data_element: driver
-      - source_data_element: driver
-        relationship: loaded
-        target_data_element: null
   - name: driver load
     type: activity
     description: A driver (User-mode, kernel-mode) was loaded.
     relationships:
+      - source_data_element: driver
+        relationship: loaded
+        target_data_element: null
       - source_data_element: process
         relationship: loaded
         target_data_element: driver
