@@ -25,9 +25,6 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: logon session
-      - source_data_element: logon session
-        relationship: modified
-        target_data_element: null
   - name: logon session creation
     type: activity
     description: A logon session for a user was created.
@@ -63,5 +60,12 @@ data_components:
       - source_data_element: user
         relationship: terminated
         target_data_element: logon session
+  - name: logon session modification
+    type: activity
+    description: A logon session for a user was modified.
+    relationships:
+      - source_data_element: logon session
+        relationship: modified
+        target_data_element: null
 references:
   - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events
