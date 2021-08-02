@@ -36,5 +36,19 @@ data_components:
       - source_data_element: user
         relationship: started
         target_data_element: container
+  - name: container stop
+    type: activity
+    description: A container was stoped.
+    relationships:
+      - source_data_element: user
+        relationship: stoped
+        target_data_element: container
+  - name: container deletion
+    type: activity
+    description: A container was deleted.
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: container
 references:
   - https://docs.docker.com/engine/api/v1.41/#tag/Container
