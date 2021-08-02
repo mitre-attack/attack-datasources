@@ -24,25 +24,20 @@ data_components:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: firewall
+  - name: firewall enable
+    type: activity
+    description: A firewall system was enabled.
+    relationships:
       - source_data_element: firewall
-        relationship: started
-        target_data_element: null
-      - source_data_element: firewall
-        relationship: stopped
-        target_data_element: null
-      - source_data_element: firewall rule
-        relationship: added
-        target_data_element: null
-      - source_data_element: firewall rule
-        relationship: modified
-        target_data_element: null
-      - source_data_element: firewall rule
-        relationship: deleted
+        relationship: enabled
         target_data_element: null
   - name: firewall disable
     type: activity
     description: A firewall system was disabled.
     relationships:
+      - source_data_element: firewall
+        relationship: disabled
+        target_data_element: null
       - source_data_element: user
         relationship: disabled
         target_data_element: firewall
@@ -50,6 +45,15 @@ data_components:
     type: activity
     description: A rule of a firewall system was modified.
     relationships:
+      - source_data_element: firewall rule
+        relationship: added
+        target_data_element: null
+      - source_data_element: firewall rule
+        relationship: modified
+        target_data_element: null
+      - source_data_element: firewall rule
+        relationship: removed
+        target_data_element: null
       - source_data_element: user
         relationship: added 
         target_data_element: firewall rule
