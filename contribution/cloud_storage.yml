@@ -25,8 +25,8 @@ data_components:
       - source_data_element: user
         relationship: modified
         target_data_element: cloud storage bucket
-      - source_data_element: modified
-        relationship: created
+      - source_data_element: user
+        relationship: modified
         target_data_element: cloud storage object
   - name: cloud storage deletion
     type: activity
@@ -44,17 +44,20 @@ data_components:
     relationships:
       - source_data_element: user
         relationship: retrieved information about
-        target_data_element: cloud storage
+        target_data_element: cloud storage bucket
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: cloud storage object
   - name: cloud storage enumeration
     type: activity
     description: A cloud storage was listed.
     relationships:
       - source_data_element: user
         relationship: listed
-        target_data_element: cloud storage buckets
+        target_data_element: cloud storage bucket
       - source_data_element: user
         relationship: listed
-        target_data_element: cloud storage objects
+        target_data_element: cloud storage object
   - name: cloud storage access
     type: activity
     description: A cloud storage was opened or accessed.
