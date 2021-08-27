@@ -1,5 +1,5 @@
 name: WMI
-definition: Information about objects from system classes (such as providers, filters, and consumers) that support Windows Management Instrumentation (WMI) activitites.
+definition: The infrastructure for management data and operations that enables local and remote management of Windows personal computers and servers
 collection_layers:
   - host
 platforms:
@@ -10,21 +10,21 @@ contributors:
 data_components:
   - name: wmi metadata
     type: information
-    description: Data and information that describe a WMI object (filter, consumer, subscription, binding, provider) and activity around it.
+    description: Contextual data about a WMI object, such as name, namespace, or provider
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: wmi object
   - name: wmi creation
     type: activity
-    description: A WMI object (filter, consumer, subscription, binding, provider) was created.
+    description: Initial construction of a WMI object, such as a filter, consumer, subscription, binding, or provider (ex:  Sysmon EIDs 19-21)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: wmi object
   - name: wmi deletion
     type: activity
-    description: A WMI object (filter, consumer, subscription, binding, provider) was deleted.
+    description: Removal of a WMI object, such as a filter, consumer, subscription, binding, or provider
     relationships:
       - source_data_element: user
         relationship: deleted
