@@ -1,5 +1,5 @@
 name: Command
-definition: Information about commands that can be used through a command-line interface and/or script interpreter.
+definition: A directive given to a computer program, acting as an interpreter of some kind, in order to perform a specific task
 collection_layers:
   - host
   - container
@@ -16,7 +16,7 @@ contributors:
 data_components:
   - name: command execution
     type: activity
-    description: Information about commands executed through a command-line interface and/or script interpreter.
+    description: Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters)
     relationships:
       - source_data_element: user
         relationship: executed
