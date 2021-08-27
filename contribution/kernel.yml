@@ -1,5 +1,5 @@
 name: Kernel
-definition: Information associated with the operating system kernel of a host.
+definition: A computer program, at the core of a computer OS, that resides in memory and facilitates interactions between hardware and software components
 collection_layers:
   - host
 platforms:
@@ -11,7 +11,7 @@ contributors:
 data_components:
   - name: kernel module load
     type: activity
-    description: A kernel module was loaded on a host.
+    description: An object file that contains code to extend the running kernel of an OS, typically used to add support for new hardware (as device drivers) and/or filesystems, or for adding system calls 
     relationships:
       - source_data_element: process
         relationship: loaded
