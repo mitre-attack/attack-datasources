@@ -1,5 +1,5 @@
 name: Cloud Service
-definition: Information about a service available within a cloud environment.
+definition: Infrastructure, platforms, or software that are hosted on-premise or by third-party providers, made available to users through network connections and/or APIs
 collection_layers:
   - cloud
 platforms:
@@ -14,28 +14,28 @@ contributors:
 data_components:
   - name: cloud service metadata
     type: information
-    description: Data and information that describe a cloud service and activity around it.
+    description: Contextual data about a cloud service and activity around it such as name, type, or purpose/function
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: cloud service
   - name: cloud service disable
     type: activity
-    description: A cloud service was disabled.
+    description: Deactivation or stoppage of a cloud service (ex: AWS Cloudtrail StopLogging)
     relationships:
       - source_data_element: user
         relationship: disabled
         target_data_element: cloud service
   - name: cloud service enumeration
     type: activity
-    description: A cloud service was listed.
+    description: An extracted list of cloud servies (ex: AWS ECS ListServices)
     relationships:
       - source_data_element: user
         relationship: listed
         target_data_element: cloud service
   - name: cloud service modification
     type: activity
-    description: A cloud service was modified.
+    description: Changes made to a cloud service, including its settings and/or data (ex: AWS CloudTrail DeleteTrail or DeleteConfigRule)
     relationships:
       - source_data_element: user
         relationship: modified
