@@ -1,5 +1,5 @@
 name: Firmware
-definition: Information associated with computer software that provides the low-level control for a device's specific hardware.
+definition: Computer software that provides low-level control for the hardware and device(s) of a host, such as BIOS or UEFI/EFI
 collection_layers:
   - host
 platforms:
@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: firmware modification
     type: activity
-    description: The firmware of a system component was modified.
+    description: Changes made to firmware, including its settings and/or data, such as MBR (Master Boot Record) and VBR (Volume Boot Record)
     relationships:
       - source_data_element: user
         relationship: modified
