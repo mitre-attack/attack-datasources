@@ -1,5 +1,5 @@
 name: Instance
-definition: Information about a virtual system within a cloud environment.
+definition: A virtual server environment which runs workloads, hosted on-premise or by third-party cloud providers 
 collection_layers:
   - cloud
 platforms:
@@ -9,14 +9,14 @@ contributors:
 data_components:
   - name: instance creation
     type: activity
-    description: An instance was created.
+    description: Initial construction of a new instance (ex: instance.insert within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: instance
   - name: instance modification
     type: activity
-    description: An instance was modified.
+    description: Changes made to an instance, including its settings and/or control data (ex: instance.addResourcePolicies or instances.setMetadata within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -32,7 +32,7 @@ data_components:
         target_data_element: instance
   - name: instance deletion
     type: activity
-    description: An instance was deleted.
+    description: Removal of an instance (ex: instance.delete within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -42,14 +42,14 @@ data_components:
         target_data_element: instance
   - name: instance metadata
     type: information
-    description: Data and information that describe an instance and activity around it.
+    description: Contextual data about an instance and activity around it such as name, type, or status
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: instance
   - name: instance enumeration
     type: activity
-    description: Instances were listed.
+    description: An extracted list of instances within a cloud environment (ex: instance.list within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: listed
@@ -62,7 +62,7 @@ data_components:
         target_data_element: instance
   - name: instance start
     type: activity
-    description: An instance was started.
+    description: Activation or invocation of an instance (ex: instance.start within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: started
@@ -75,7 +75,7 @@ data_components:
         target_data_element: instance
   - name: instance stop
     type: activity
-    description: An instance was stopped.
+    description: Deactivation or stoppage of an instance (ex: instance.stop within GCP Audit Logs)
     relationships:
       - source_data_element: user
         relationship: stopped
