@@ -1,5 +1,5 @@
 name: Kernel
-definition: A computer program, at the core of a computer OS, that resides in memory and facilitates interactions between hardware and software components
+definition: A computer program, at the core of a computer OS, that resides in memory and facilitates interactions between hardware and software components (ex: init_module())
 collection_layers:
   - host
 platforms:
