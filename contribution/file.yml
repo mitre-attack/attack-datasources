@@ -1,5 +1,5 @@
 name: File
-definition: Information about file objects (All file systems) that represent computer resources that can be managed by the I/O system. This data source can be used as a reference to extend the concepts of other data sources such as driver, module, and network share.
+definition: A computer resource object, managed by the I/O system, for storing data (such as images, text, videos, computer programs, or any wide variety of other media) 
 collection_layers:
   - host
 platforms:
@@ -11,19 +11,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: file content
-    type: information
-    description: Data contained in a file.
-    relationships:
-      - source_data_element: process
-        relationship: retrieved information about
-        target_data_element: file
-      - source_data_element: user
-        relationship: retrieved information about
-        target_data_element: file
   - name: file metadata
     type: information
-    description: Data and information that describe a file and activity around it.
+    description: Contextual data about a file, which may include information such as name, the content (ex: signature, headers, or data/media), user/ower, permissions, etc. 
     relationships:
       - source_data_element: process
         relationship: created
@@ -36,14 +26,14 @@ data_components:
         target_data_element: file
   - name: file creation
     type: activity
-    description: A file was created.
+    description: Initial construction of a new file (ex: Sysmon EID 11)
     relationships:
       - source_data_element: process
         relationship: created
         target_data_element: file
   - name: file deletion
     type: activity
-    description: A file was deleted.
+    description: Removal of a file (ex: Sysmon EID 23, Linux Commandline /rm or /shred)
     relationships:
       - source_data_element: process
         relationship: deleted
@@ -53,7 +43,7 @@ data_components:
         target_data_element: file
   - name: file access
     type: activity
-    description: A file was opened or accessed.
+    description: Opening a file, which makes the file contents available to the requestor (ex: Windows EID 4663)
     relationships:
       - source_data_element: user
         relationship: accessed
@@ -69,7 +59,7 @@ data_components:
         target_data_element: file
   - name: file modification
     type: activity
-    description: A file was modified.
+    description: Changes made to a file, or its access permissions and attributes, typically to alter the contents of the targeted file (ex: Windows EID 4670 or Sysmon EID 2)
     relationships:
       - source_data_element: process
         relationship: modified
