@@ -1,5 +1,5 @@
 name: Pod
-definition: Information about a pod within a containerized environment.
+definition: A single unit of shared resources within a cluster, compromised of one or more containers
 collection_layers:
   - container
 platforms:
@@ -10,14 +10,14 @@ contributors:
 data_components:
   - name: pod creation
     type: activity
-    description: A pod was created.
+    description: Initial construction of a new pod (ex: kubectl create)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: pod
   - name: pod modification
     type: activity
-    description: A pod was modified.
+    description: Changes made to a pod, including its settings and/or control data (ex: kubectl set)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -27,14 +27,14 @@ data_components:
         target_data_element: pod
   - name: pod metadata
     type: information
-    description: Data and information that describe a pod and activity around it.
+    description: Contextual data about a pod and activity around it such as name, ID, namespace, or status
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: pod
   - name: pod enumeration
     type: activity
-    description: Pods were listed.
+    description: An extracted list of pods within a cluster (ex: kubectl list pods)
     relationships:
       - source_data_element: user
         relationship: listed
