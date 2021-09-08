@@ -1,5 +1,5 @@
 name: Cluster
-definition: Information about a cluster within a containerized environment.
+definition: A set of containerized computing resources that are managed together but have separate nodes to execute various tasks and/or applications
 collection_layers:
   - container
 platforms:
@@ -10,7 +10,7 @@ contributors:
 data_components:
   - name: cluster metadata
     type: information
-    description: Data and information that describe a cluster and activity around it.
+    description: Contextual data about a containerized cluster and activity around it such as name, namespace, age, or status
     relationships:
       - source_data_element: user
         relationship: retrieved information about
