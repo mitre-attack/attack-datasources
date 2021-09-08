@@ -16,7 +16,7 @@ contributors:
 data_components:
   - name: command execution
     type: activity
-    description: Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters)
+    description: Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters, /osascript, /var/log/cmdline)
     relationships:
       - source_data_element: user
         relationship: executed
