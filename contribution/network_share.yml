@@ -1,5 +1,5 @@
 name: Network Share
-definition: Information associated with computer resources made available from one host to other hosts on a computer network using protocols such as Server Message Protocol (SMB) and Network File System (NFS).
+definition: A storage resource (typically a folder or drive) made available from one host to others using network protocols, such as Server Message Block (SMB) or Network File System (NFS)
 collection_layers:
   - host
 platforms:
@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: network share creation
     type: activity
-    description: A network share was created.
+    description: Initial construction of a new network share (ex: Windows EID 5142)
     relationships:
       - source_data_element: user
         relationship: created
@@ -22,7 +22,7 @@ data_components:
         target_data_element: network share
   - name: network share deletion
     type: activity
-    description: A network share was deleted.
+    description: Removal of a network share (ex: Windows EID 5144)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -32,7 +32,7 @@ data_components:
         target_data_element: network share
   - name: network share modification
     type: activity
-    description: A network share was modified.
+    description: Changes made to a network share, or its access permissions and attributes, typically to alter the contents of the targeted share (ex: Windows EID 5143)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -42,7 +42,7 @@ data_components:
         target_data_element: network share
   - name: network share access
     type: activity
-    description: A network share was opened or accessed.
+    description: Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)
     relationships:
       - source_data_element: user
         relationship: accessed
