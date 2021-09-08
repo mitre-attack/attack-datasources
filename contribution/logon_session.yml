@@ -1,5 +1,5 @@
 name: Logon Session
-definition: Information about logon sessions being created or terminated by accounts (Local, Domain, or Cloud), interactively or over the network, in order to interact with network resources, applications, or services.
+definition: Logon occurring on a system or resource (local, domain, or cloud) to which a user/device is gaining access after successful authentication and authorizaton 
 collection_layers:
   - host
   - network
@@ -19,14 +19,14 @@ contributors:
 data_components:
   - name: logon session metadata
     type: information
-    description: Data and information that describe a logon session (such as logon type) and activity within it.
+    description: Contextual data about a logon session, such as username, logon type, access tokens (security context, user SIDs, logon identifiers, and logon SID), and any activity associated within it
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: logon session
   - name: logon session creation
     type: activity
-    description: A logon session for a user was created.
+    description: Initial construction of a new user logon session (ex: Windows EID 4624, /var/log/utmp, /var/log/wmtp)
     relationships:
       - source_data_element: user
         relationship: created
@@ -39,7 +39,7 @@ data_components:
         target_data_element: port
   - name: logon session termination
     type: activity
-    description: A logon session for a user was terminated.
+    description: Exit of a user logon session (ex: Windows EID 4634)
     relationships:
       - source_data_element: user
         relationship: logged off from
