@@ -1,5 +1,5 @@
 name: Application Log
-definition: Logs from events in third-party applications (mail server, web applications, etc.).
+definition: Events collected by third-party services such as mail servers, web applications, or other appliances (not by the native OS or platform)
 collection_layers:
   - host
   - cloud
@@ -16,7 +16,7 @@ contributors:
 data_components:
   - name: application log content
     type: information
-    description: Data captured in an application log.
+    description: Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)
     relationships:
       - source_data_element: application log
         relationship: contained
