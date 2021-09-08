@@ -1,5 +1,5 @@
 name: User Account
-definition: The representation of a user, device, service or application that access resources within a network environment. It has login capabilities and can be authenticated by an operating system, application or platform.
+definition: A profile representing a user, device, service, or application used to authenticate and access resources
 collection_layers:
   - host
   - cloud
@@ -20,28 +20,28 @@ contributors:
 data_components:
   - name: user account metadata
     type: information
-    description: Data and information that describe a user account and activity around it.
+    description: Contextual data about an account, which may include a username, user ID, environmental data, etc.
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: user
   - name: user account creation
     type: activity
-    description: A user account was created.
+    description: Initial construction of a new account (ex: Windows EID 4720 or /etc/group or etc/passwd logs)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: user
   - name: user account deletion
     type: activity
-    description: A user account was deleted.
+    description: Removal of an account (ex: Windows EID 4726 or /var/log access/authentication logs)
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: user
   - name: user account modification
     type: activity
-    description: A user account was modified.
+    description: Changes made to an account, such as permissions and/or membership in specific groups (ex: Windows EID 4738 or /var/log access/authentication logs)
     relationships:
       - source_data_element: user
         relationship: requested modification of
@@ -72,7 +72,7 @@ data_components:
         target_data_element: user
   - name: user account authentication
     type: activity
-    description: A user account authenticated onto a system. 
+    description: An attempt by a user to gain access to a network or computing resource, often by providing credentials (ex: Windows EID 4625 or /var/log/auth.log)
     relationships:
       - source_data_element: user
         relationship: attempted to authenticate to
