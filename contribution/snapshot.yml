@@ -1,5 +1,5 @@
 name: Snapshot
-definition: Information associated with the state of a system at a particular point in time.
+definition: A point-in-time copy of cloud volumes (files, settings, etc.) that can be created and/or deployed in cloud environments
 collection_layers:
   - cloud
 platforms:
@@ -10,35 +10,35 @@ contributors:
 data_components:
   - name: snapshot creation
     type: activity
-    description: A snapshot was created.
+    description: Initial construction of a new snapshot (ex: AWS CloudTrail CreateDBSnapshot)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: snapshot
   - name: snapshot modification
     type: activity
-    description: A snapshot was modified.
+    description: Changes made to a snapshop, such as metadata and control data (ex: AWS CloudTrail ModifyDBSnapshotAttribute)
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: snapshot
   - name: snapshot deletion
     type: activity
-    description: A snapshot was deleted.
+    description: Removal of a snapshot (ex: AWS CloudTrail DeleteDBSnapshot)
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: snapshot
   - name: snapshot metadata
     type: information
-    description: Data and information that describe a snapshot and activity around it.
+    description: Contextual data about a snapshot, which may include information such as ID, type, and status
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: snapshot
   - name: snapshot enumeration
     type: activity
-    description: A snapshot was listed.
+    description: An extracted list of snapshops within a cloud environment (ex: AWS DescribeDBSnapshots)
     relationships:
       - source_data_element: user
         relationship: listed
