@@ -34,7 +34,7 @@ data_components:
         target_data_element: pod
   - name: pod enumeration
     type: activity
-    description: An extracted list of pods within a cluster (ex: kubectl list pods)
+    description: An extracted list of pods within a cluster (ex: kubectl get pods)
     relationships:
       - source_data_element: user
         relationship: listed
