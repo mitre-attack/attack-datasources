@@ -1,5 +1,5 @@
 name: Pod
-definition: A single unit of shared resources within a cluster, compromised of one or more containers
+definition: A single unit of shared resources within a cluster, comprised of one or more containers
 collection_layers:
   - container
 platforms:
