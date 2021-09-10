@@ -10,21 +10,21 @@ contributors:
 data_components:
   - name: snapshot creation
     type: activity
-    description: Initial construction of a new snapshot (ex: AWS CloudTrail CreateDBSnapshot)
+    description: Initial construction of a new snapshot (ex: AWS create-snapshot)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: snapshot
   - name: snapshot modification
     type: activity
-    description: Changes made to a snapshop, such as metadata and control data (ex: AWS CloudTrail ModifyDBSnapshotAttribute)
+    description: Changes made to a snapshop, such as metadata and control data (ex: AWS modify-snapshot-attribute)
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: snapshot
   - name: snapshot deletion
     type: activity
-    description: Removal of a snapshot (ex: AWS CloudTrail DeleteDBSnapshot)
+    description: Removal of a snapshot (ex: AWS delete-snapshot)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -38,7 +38,7 @@ data_components:
         target_data_element: snapshot
   - name: snapshot enumeration
     type: activity
-    description: An extracted list of snapshops within a cloud environment (ex: AWS DescribeDBSnapshots)
+    description: An extracted list of snapshops within a cloud environment (ex: AWS describe-snapshots)
     relationships:
       - source_data_element: user
         relationship: listed
