@@ -28,7 +28,7 @@ data_components:
         target_data_element: cloud service
   - name: cloud service enumeration
     type: activity
-    description: An extracted list of cloud servies (ex: AWS ECS ListServices)
+    description: An extracted list of cloud services (ex: AWS ECS ListServices)
     relationships:
       - source_data_element: user
         relationship: listed
