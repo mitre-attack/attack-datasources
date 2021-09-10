@@ -21,7 +21,7 @@ data_components:
         target_data_element: volume
   - name: volume modification
     type: activity
-    description: Changes made to a cloud volume, including the settings and control data (ex: AWS modify-volume)
+    description: Changes made to a cloud volume, including its settings and control data (ex: AWS modify-volume)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -42,7 +42,7 @@ data_components:
         target_data_element: volume
   - name: volume enumeration
     type: activity
-    description: An extracted list of available volumes within a cloud environement (ex: AWS describe-volumes)
+    description: An extracted list of available volumes within a cloud environment (ex: AWS describe-volumes)
     relationships:
       - source_data_element: user
         relationship: listed
