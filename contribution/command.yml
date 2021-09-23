@@ -14,9 +14,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: command execution
+  - name: Command Execution
     type: activity
-    description: Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters, /osascript, /var/log/cmdline)
+    description: Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters, ~/.bash_history, or /.zsh_history)
     relationships:
       - source_data_element: user
         relationship: executed
@@ -25,7 +25,5 @@ data_components:
         relationship: executed
         target_data_element: command
 references:
-  - https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon#event-id-1-process-creation
   - https://confluence.atlassian.com/confkb/how-to-enable-command-line-audit-logging-in-linux-956166545.html
   - https://www.scip.ch/en/?labs.20150108
-  - https://tools.ietf.org/id/draft-ietf-opsawg-tacacs-07.html#AuthorizationAttributes
