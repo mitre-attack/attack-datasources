@@ -14,7 +14,7 @@ platforms:
 contributors: 
   - ATT&CK
 data_components:
-  - name: application log content
+  - name: Application Log Content
     type: information
     description: Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)
     relationships:
