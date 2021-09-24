@@ -1,5 +1,5 @@
 name: Driver
-definition: Information associated with device drivers, or computer programs that operate or control a particular type of device that is attached to a computer.
+definition: A computer program that operates or controls a particular type of device that is attached to a computer. Provides a software interface to hardware devices, enabling operating systems and other computer programs to access hardware functions without needing to know precise details about the hardware being used
 collection_layers:
   - host
 platforms:
@@ -10,23 +10,23 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: driver metadata
+  - name: Driver Metadata
     type: information
-    description: Data and information that describe a driver and activity around it such as driver issues reporting and driver integrity (Page hash, code) checking.
+    description: Contextual data about a driver and activity around it such as driver issues reporting or integrity (page hash, code) checking
     relationships:
       - source_data_element: host
         relationship: retrieved information about
         target_data_element: driver
-  - name: driver load
+  - name: Driver Load
     type: activity
-    description: A driver (User-mode, kernel-mode) was loaded.
+    description: Attaching a driver to either user or kernel-mode of a system (ex: Sysmon EID 6)
     relationships:
       - source_data_element: process
         relationship: loaded
         target_data_element: driver
-  - name: driver unload
+  - name: Driver Unload
     type: activity
-    description: A driver (User-mode, kernel-mode) was unloaded.
+    description: Deattaching a driver from either user or kernel-mode of a system (ex: DRIVER_UNLOAD)
     relationships:
       - source_data_element: process
         relationship: unloaded
