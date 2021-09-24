@@ -39,4 +39,4 @@ data_components:
         relationship: accessed
         target_data_element: drive
 references:
-  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009
+  - https://docs.microsoft.com/sysinternals/downloads/sysmon#event-id-9-rawaccessread
