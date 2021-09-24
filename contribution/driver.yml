@@ -10,21 +10,21 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: driver metadata
+  - name: Driver Metadata
     type: information
     description: Contextual data about a driver and activity around it such as driver issues reporting or integrity (page hash, code) checking
     relationships:
       - source_data_element: host
         relationship: retrieved information about
         target_data_element: driver
-  - name: driver load
+  - name: Driver Load
     type: activity
     description: Attaching a driver to either user or kernel-mode of a system (ex: Sysmon EID 6)
     relationships:
       - source_data_element: process
         relationship: loaded
         target_data_element: driver
-  - name: driver unload
+  - name: Driver Unload
     type: activity
     description: Deattaching a driver from either user or kernel-mode of a system (ex: DRIVER_UNLOAD)
     relationships:
