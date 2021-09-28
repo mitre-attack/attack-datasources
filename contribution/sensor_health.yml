@@ -1,5 +1,5 @@
 name: Sensor Health
-definition: Information associated with sensors providing data about host system status.
+definition: Information from host telemetry providing insights about system status, errors, or other notable functional activity
 collection_layers:
   - host
 platforms:
@@ -10,9 +10,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: host status
+  - name: Host Status
     type: information
-    description: Data from a sensor about the health of a host system sensor
+    description: Logging, messaging, and other artifacts highlighting the health of host sensors (ex: metrics, errors, and/or exceptions from logging applications)
     relationships:
       - source_data_element: sensor health
         relationship: contained
