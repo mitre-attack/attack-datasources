@@ -1,5 +1,5 @@
 name: Network Share
-definition: Information associated with computer resources made available from one host to other hosts on a computer network using protocols such as Server Message Protocol (SMB) and Network File System (NFS).
+definition: A storage resource (typically a folder or drive) made available from one host to others using network protocols, such as Server Message Block (SMB) or Network File System (NFS)
 collection_layers:
   - host
 platforms:
@@ -10,9 +10,9 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: network share creation
+  - name: Network Share Creation
     type: activity
-    description: A network share was created.
+    description: Initial construction of a new network share (ex: Windows EID 5142)
     relationships:
       - source_data_element: user
         relationship: created
@@ -20,9 +20,9 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: network share
-  - name: network share deletion
+  - name: Network Share Deletion
     type: activity
-    description: A network share was deleted.
+    description: Removal of a network share (ex: Windows EID 5144)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -30,9 +30,9 @@ data_components:
       - source_data_element: process
         relationship: deleted
         target_data_element: network share
-  - name: network share modification
+  - name: Network Share Modification
     type: activity
-    description: A network share was modified.
+    description: Changes made to a network share, or its access permissions and attributes, typically to alter the contents of the targeted share (ex: Windows EID 5143)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -40,9 +40,9 @@ data_components:
       - source_data_element: process
         relationship: modified
         target_data_element: network share
-  - name: network share access
+  - name: Network Share Access
     type: activity
-    description: A network share was opened or accessed.
+    description: Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)
     relationships:
       - source_data_element: user
         relationship: accessed
@@ -52,4 +52,3 @@ data_components:
         target_data_element: network share
 references:
   - https://docs.microsoft.com/en-us/windows-server/storage/nfs/nfs-overview
-  - https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview
