@@ -1,5 +1,5 @@
 name: Scheduled Job
-definition: Information about scheduled work that run automatically in the background of a computer system (Cron deamon, Task Scheduler, BITS).
+definition: Automated tasks that can be executed at a specific time or on a recurring schedule running in the background (ex: Cron daemon, task scheduler, BITS)
 collection_layers:
   - host
   - container
@@ -12,16 +12,16 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: scheduled job metadata
+  - name: Scheduled Job Metadata
     type: information
-    description: Data and information that describe a scheduled job and activity around it.
+    description: Contextual data about a scheduled job, which may include information such as name, timing, command(s), etc.
     relationships:
       - source_data_element: host
         relationship: retrieved information about
         target_data_element: scheduled job
-  - name: scheduled job creation
+  - name: Scheduled Job Creation
     type: activity
-    description: A scheduled job was created, either locally or remotely.
+    description: Initial construction of a new scheduled job (ex: Windows EID 4698 or /var/log cron logs)
     relationships:
       - source_data_element: user
         relationship: created
@@ -29,9 +29,9 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: scheduled job
-  - name: scheduled job deletion
+  - name: Scheduled Job Deletion
     type: activity
-    description: A scheduled job was deleted, either locally or remotely.
+    description: Removal of a scheduled job from a computer system (ex: Windows EID 4699 or /var/log cron logs)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -39,9 +39,9 @@ data_components:
       - source_data_element: process
         relationship: deleted
         target_data_element: scheduled job
-  - name: scheduled job modification
+  - name: Scheduled Job Modification
     type: activity
-    description: A scheduled job was modified (e.g., the executable launched by the task was changed), either locally or remotely.
+    description: Changes made to a scheduled job, such as modifications to the execution launch (ex: Windows EID 4702 or /var/log cron logs)
     relationships:
       - source_data_element: user
         relationship: modified
