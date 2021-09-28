@@ -17,16 +17,16 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: logon session metadata
+  - name: Logon Session Metadata
     type: information
     description: Contextual data about a logon session, such as username, logon type, access tokens (security context, user SIDs, logon identifiers, and logon SID), and any activity associated within it
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: logon session
-  - name: logon session creation
+  - name: Logon Session Creation
     type: activity
-    description: Initial construction of a new user logon session (ex: Windows EID 4624, /var/log/utmp, /var/log/wmtp)
+    description: Initial construction of a new user logon session (ex: Windows EID 4624, /var/log/utmp, or /var/log/wmtp)
     relationships:
       - source_data_element: user
         relationship: created
@@ -37,7 +37,7 @@ data_components:
       - source_data_element: user
         relationship: created logon session from
         target_data_element: port
-  - name: logon session termination
+  - name: Logon Session Termination
     type: activity
     description: Exit of a user logon session (ex: Windows EID 4634)
     relationships:
