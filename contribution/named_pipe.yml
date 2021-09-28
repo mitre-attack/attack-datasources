@@ -1,5 +1,5 @@
 name: Named Pipe
-definition: Information about mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it.
+definition: Mechanisms that allow inter-process communication locally or over the network. A named pipe is usually found as a file and processes attach to it
 collection_layers:
   - host
 platforms:
@@ -10,7 +10,7 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: named pipe metadata
+  - name: Named Pipe Metadata
     type: information
     description: Contextual data about a named pipe on a system, including pipe name and creating process (Ex: Sysmon EIDs 17-18)
     relationships:
@@ -19,5 +19,3 @@ data_components:
         target_data_element: named pipe
 references:
   - https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes
-  - https://github.com/SigmaHQ/sigma/blob/master/rules/windows/sysmon/sysmon_mal_namedpipes.yml
-  - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90017
