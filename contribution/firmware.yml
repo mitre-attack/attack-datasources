@@ -10,7 +10,7 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: firmware modification
+  - name: Firmware Modification
     type: activity
     description: Changes made to firmware, including its settings and/or data, such as MBR (Master Boot Record) and VBR (Volume Boot Record)
     relationships:
