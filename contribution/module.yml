@@ -10,7 +10,7 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: module load
+  - name: Module Load
     type: activity
     description: Attaching a module into the memory of a process/program, typically to access shared resources/features provided by the module (ex: Sysmon EID 7)
     relationships:
@@ -19,6 +19,4 @@ data_components:
         target_data_element: module
 references:
   - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
-  - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module?view=netcore-3.1
-  - https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
-  - https://elinux.org/Executable_and_Linkable_Format_(ELF)
+  - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module
