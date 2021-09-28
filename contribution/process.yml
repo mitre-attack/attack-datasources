@@ -1,5 +1,5 @@
 name: Process
-definition: Information about instances of computer programs that are being executed by at least one thread.
+definition: Instances of computer programs that are being executed by at least one thread. Processes have memory space for process executables, loaded modules (DLLs or shared libraries), and allocated memory regions containing everything from user input to application-specific data structures
 collection_layers:
   - host
 platforms:
@@ -10,16 +10,16 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: process metadata
+  - name: Process Metadata
     type: information
-    description: Data and information that describe a process (Such as environment variables) and activity around it.
+    description: Contextual data about a running process, which may include information such as environment variables, image name, user/owner, etc.
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: process
-  - name: process creation
+  - name: Process Creation
     type: activity
-    description: A process was created.
+    description: Birth of a new running process (ex: Sysmon EID 1 or Windows EID 4688)
     relationships:
       - source_data_element: user
         relationship: created
@@ -30,23 +30,23 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: thread
-  - name: process termination
+  - name: Process Termination
     type: activity
-    description: A process was terminated.
+    description: Exit of a running process (ex: Sysmon EID 5 or Windows EID 4689)
     relationships:
       - source_data_element: user
         relationship: terminated
         target_data_element: process
-  - name: process modification
+  - name: Process Modification
     type: activity
-    description: A process was modified.
+    description: Changes made to a process, or its contents, typically to write and/or execute code in the memory of the target process (ex: Sysmon EID 8)
     relationships:
       - source_data_element: process
         relationship: modified
         target_data_element: process
-  - name: process access
+  - name: Process Access
     type: activity
-    description: A process was accessed.
+    description: Opening of a process by another process, typically to read memory of the target process (ex: Sysmon EID 10)
     relationships:
       - source_data_element: process
         relationship: accessed
@@ -54,9 +54,9 @@ data_components:
       - source_data_element: process
         relationship: requested access to
         target_data_element: process
-  - name: OS api execution
+  - name: OS API Execution
     type: activity
-    description: A process executed operating system api functions.
+    description: Operating system function/method calls executed by a process.
     relationships:
       - source_data_element: process
         relationship: executed
