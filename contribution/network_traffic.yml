@@ -14,7 +14,7 @@ contributors:
   - CTID
   - ExtraHop
 data_components:
-  - name: network traffic flow
+  - name: Network Traffic Flow
     type: information
     description: Summarized network packet data, with metrics, such as protocol headers and volume (ex: Netflow or Zeek http.log)
     relationships:
@@ -39,7 +39,7 @@ data_components:
       - source_data_element: network traffic flow
         relationship: identified
         target_data_element: network traffic volume
-  - name: network traffic content
+  - name: Network Traffic Content
     type: information
     description: Logged network traffic data showing both protocol header and body values (ex: PCAP)
     relationships:
@@ -64,7 +64,7 @@ data_components:
       - source_data_element: network traffic
         relationship: contained
         target_data_element: remote code execution traffic
-  - name: network connection creation
+  - name: Network Connection Creation
     type: activity
     description: Initial construction of a network connection, such as capturing socket information with a source/destination IP and port(s) (ex: Windows EID 5156, Sysmon EID 3, or Zeek conn.log)
     relationships:
