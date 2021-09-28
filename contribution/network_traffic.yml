@@ -1,5 +1,5 @@
 name: Network Traffic
-definition: Network traffic, either summarized (e.g., as netflow) or captured in some format (e.g., as PCAP). This may be captured at the endpoint or network level.
+definition: Data transmitted across a network (ex: Web, DNS, Mail, File, etc.), that is either summarized (ex: Netflow) and/or captured as raw data in an analyzable format (ex: PCAP)
 collection_layers:
   - host
   - network
@@ -14,9 +14,9 @@ contributors:
   - CTID
   - ExtraHop
 data_components:
-  - name: network traffic flow
+  - name: Network Traffic Flow
     type: information
-    description: Information about the flow of network packets in a network connection, either captured on the wire or on an endpoint.
+    description: Summarized network packet data, with metrics, such as protocol headers and volume (ex: Netflow or Zeek http.log)
     relationships:
       - source_data_element: network traffic flow
         relationship: originated from
@@ -39,9 +39,9 @@ data_components:
       - source_data_element: network traffic flow
         relationship: identified
         target_data_element: network traffic volume
-  - name: network traffic content
+  - name: Network Traffic Content
     type: information
-    description: Information about the content of network packets and the protocols associated to them, either captured on the wire or on an endpoint.
+    description: Logged network traffic data showing both protocol header and body values (ex: PCAP)
     relationships:
       - source_data_element: network traffic
         relationship: contained
@@ -64,9 +64,9 @@ data_components:
       - source_data_element: network traffic
         relationship: contained
         target_data_element: remote code execution traffic
-  - name: network connection creation
+  - name: Network Connection Creation
     type: activity
-    description: Information about the creation of a network connection, either captured on the wire or on an endpoint.
+    description: Initial construction of a network connection, such as capturing socket information with a source/destination IP and port(s) (ex: Windows EID 5156, Sysmon EID 3, or Zeek conn.log)
     relationships:
       - source_data_element: process
         relationship: attempted connection to
