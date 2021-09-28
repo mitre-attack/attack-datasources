@@ -1,5 +1,5 @@
 name: Script
-definition: A file containing a list of commands, allowing them to be launched in sequence
+definition: A file or stream containing a list of commands, allowing them to be launched in sequence
 collection_layers:
   - host
 platforms:
@@ -8,7 +8,7 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: script execution
+  - name: Script Execution
     type: activity
     description: Launching a list of commands through a script file (ex: Windows EID 4104)
     relationships:
