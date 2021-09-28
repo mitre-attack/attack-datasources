@@ -10,7 +10,7 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: network share creation
+  - name: Network Share Creation
     type: activity
     description: Initial construction of a new network share (ex: Windows EID 5142)
     relationships:
@@ -20,7 +20,7 @@ data_components:
       - source_data_element: process
         relationship: created
         target_data_element: network share
-  - name: network share deletion
+  - name: Network Share Deletion
     type: activity
     description: Removal of a network share (ex: Windows EID 5144)
     relationships:
@@ -30,7 +30,7 @@ data_components:
       - source_data_element: process
         relationship: deleted
         target_data_element: network share
-  - name: network share modification
+  - name: Network Share Modification
     type: activity
     description: Changes made to a network share, or its access permissions and attributes, typically to alter the contents of the targeted share (ex: Windows EID 5143)
     relationships:
@@ -40,7 +40,7 @@ data_components:
       - source_data_element: process
         relationship: modified
         target_data_element: network share
-  - name: network share access
+  - name: Network Share Access
     type: activity
     description: Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)
     relationships:
@@ -52,4 +52,3 @@ data_components:
         target_data_element: network share
 references:
   - https://docs.microsoft.com/en-us/windows-server/storage/nfs/nfs-overview
-  - https://docs.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview
