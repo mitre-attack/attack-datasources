@@ -16,7 +16,7 @@ contributors:
 data_components:
   - name: Application Log Content
     type: information
-    description: Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)
+    description: "Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)"
     relationships:
       - source_data_element: application log
         relationship: contained
