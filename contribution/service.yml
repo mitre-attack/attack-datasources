@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: Service Metadata
     type: information
-    description: Contextual data about a service/daemon, which may include information such as name, service executable, start type, etc. 
+    description: "Contextual data about a service/daemon, which may include information such as name, service executable, start type, etc."
     relationships:
       - source_data_element: service
         relationship: started
@@ -28,14 +28,14 @@ data_components:
         target_data_element: service
   - name: Service Creation
     type: activity
-    description: Initial construction of a new service/daemon (ex: Windows EID 4697 or /var/log daemon logs)
+    description: "Initial construction of a new service/daemon (ex: Windows EID 4697 or /var/log daemon logs)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: service
   - name: Service Modification
     type: activity
-    description: Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or or /var/log daemon logs)
+    description: "Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or or /var/log daemon logs)"
     relationships:
       - source_data_element: user
         relationship: modified
