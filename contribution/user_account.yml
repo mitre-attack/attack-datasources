@@ -18,28 +18,28 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: user account metadata
+  - name: User Account Metadata
     type: information
     description: "Contextual data about an account, which may include a username, user ID, environmental data, etc."
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: user
-  - name: user account creation
+  - name: User Account Creation
     type: activity
     description: "Initial construction of a new account (ex: Windows EID 4720 or /etc/passwd logs)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: user
-  - name: user account deletion
+  - name: User Account Deletion
     type: activity
     description: "Removal of an account (ex: Windows EID 4726 or /var/log access/authentication logs)"
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: user
-  - name: user account modification
+  - name: User Account Modification
     type: activity
     description: "Changes made to an account, such as permissions and/or membership in specific groups (ex: Windows EID 4738 or /var/log access/authentication logs)"
     relationships:
@@ -70,7 +70,7 @@ data_components:
       - source_data_element: user
         relationship: removed access from
         target_data_element: user
-  - name: user account authentication
+  - name: User Account Authentication
     type: activity
     description: "An attempt by a user to gain access to a network or computing resource, often by providing credentials (ex: Windows EID 4625 or /var/log/auth.log)"
     relationships:
