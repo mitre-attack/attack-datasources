@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: Host Status
     type: information
-    description: Logging, messaging, and other artifacts highlighting the health of host sensors (ex: metrics, errors, and/or exceptions from logging applications)
+    description: "Logging, messaging, and other artifacts highlighting the health of host sensors (ex: metrics, errors, and/or exceptions from logging applications)"
     relationships:
       - source_data_element: sensor health
         relationship: contained
