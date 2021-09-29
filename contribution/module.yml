@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: Module Load
     type: activity
-    description: Attaching a module into the memory of a process/program, typically to access shared resources/features provided by the module (ex: Sysmon EID 7)
+    description: "Attaching a module into the memory of a process/program, typically to access shared resources/features provided by the module (ex: Sysmon EID 7)"
     relationships:
       - source_data_element: process
         relationship: loaded
