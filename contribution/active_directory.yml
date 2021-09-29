@@ -11,7 +11,7 @@ contributors:
   - CTID
 data_components:
   - name: Active Directory Object Creation
-    description: Initial construction of a new active directory object (ex: Windows EID 5137)
+    description: "Initial construction of a new active directory object (ex: Windows EID 5137)"
     type: activity
     relationships:
       - source_data_element: user
@@ -19,28 +19,28 @@ data_components:
         target_data_element: ad object
   - name: Active Directory Object Deletion
     type: activity
-    description: Removal of an active directory object (ex: Windows EID 5141)
+    description: "Removal of an active directory object (ex: Windows EID 5141)"
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: ad object
   - name: Active Directory Object Modification
     type: activity
-    description: Changes made to an active directory object (ex: Windows EID 5163 or 5136)
+    description: "Changes made to an active directory object (ex: Windows EID 5163 or 5136)"
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: ad object
   - name: Active Directory Credential Request
     type: activity
-    description: A user requested active directory credentials, such as a ticket or token (ex: Windows EID 4769)
+    description: "A user requested active directory credentials, such as a ticket or token (ex: Windows EID 4769)"
     relationships:
       - source_data_element: user
         relationship: requested
         target_data_element: ad credential
   - name: Active Directory Object Access
     type: activity
-    description: Opening of an active directory object, typically to collect/read its value (ex: Windows EID 4661)
+    description: "Opening of an active directory object, typically to collect/read its value (ex: Windows EID 4661)"
     relationships:
       - source_data_element: user
         relationship: accessed
