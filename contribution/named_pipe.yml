@@ -12,7 +12,7 @@ contributors:
 data_components:
   - name: Named Pipe Metadata
     type: information
-    description: Contextual data about a named pipe on a system, including pipe name and creating process (Ex: Sysmon EIDs 17-18)
+    description: "Contextual data about a named pipe on a system, including pipe name and creating process (ex: Sysmon EIDs 17-18)"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
