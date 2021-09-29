@@ -13,7 +13,7 @@ contributors:
 data_components:
   - name: File Metadata
     type: information
-    description: Contextual data about a file, which may include information such as name, the content (ex: signature, headers, or data/media), user/ower, permissions, etc. 
+    description: "Contextual data about a file, which may include information such as name, the content (ex: signature, headers, or data/media), user/ower, permissions, etc." 
     relationships:
       - source_data_element: process
         relationship: created
@@ -26,14 +26,14 @@ data_components:
         target_data_element: file
   - name: File Creation
     type: activity
-    description: Initial construction of a new file (ex: Sysmon EID 11)
+    description: "Initial construction of a new file (ex: Sysmon EID 11)"
     relationships:
       - source_data_element: process
         relationship: created
         target_data_element: file
   - name: File Deletion
     type: activity
-    description: Removal of a file (ex: Sysmon EID 23)
+    description: "Removal of a file (ex: Sysmon EID 23)"
     relationships:
       - source_data_element: process
         relationship: deleted
@@ -43,7 +43,7 @@ data_components:
         target_data_element: file
   - name: File Access
     type: activity
-    description: Opening a file, which makes the file contents available to the requestor (ex: Windows EID 4663)
+    description: "Opening a file, which makes the file contents available to the requestor (ex: Windows EID 4663)"
     relationships:
       - source_data_element: user
         relationship: accessed
@@ -59,7 +59,7 @@ data_components:
         target_data_element: file
   - name: File Modification
     type: activity
-    description: Changes made to a file, or its access permissions and attributes, typically to alter the contents of the targeted file (ex: Windows EID 4670 or Sysmon EID 2)
+    description: "Changes made to a file, or its access permissions and attributes, typically to alter the contents of the targeted file (ex: Windows EID 4670 or Sysmon EID 2)"
     relationships:
       - source_data_element: process
         relationship: modified
