@@ -10,7 +10,7 @@ contributors:
 data_components:
   - name: Script Execution
     type: activity
-    description: Launching a list of commands through a script file (ex: Windows EID 4104)
+    description: "Launching a list of commands through a script file (ex: Windows EID 4104)"
     relationships:
       - source_data_element: command
         relationship: executed
