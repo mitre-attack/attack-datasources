@@ -12,5 +12,5 @@ data_components:
     description: "Logged domain name system (DNS) data highlighting timelines of domain to IP address resolutions"
   - name: Active DNS
     type: information
-    description: "Queried domain registry data highlighting current domain to IP address resolutions"
+    description: "Queried domain name system (DNS) registry data highlighting current domain to IP address resolutions"
 references:
