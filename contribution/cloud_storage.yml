@@ -1,5 +1,5 @@
 name: Cloud Storage
-definition: Data storage infrastructure hosted on-premise or by third-party providers, made available to users through network connections and/or APIs
+definition: Data object storage infrastructure hosted on-premise or by third-party providers, made available to users through network connections and/or APIs
 collection_layers:
   - Cloud Control Plane
 platforms:
