@@ -1,37 +1,37 @@
 name: Image
-definition: Information about a virtual machine image.
+definition: A single file used to deploy a virtual machine/bootable disk into an on-premise or third-party cloud environment
 collection_layers:
-  - cloud
+  - Cloud Control Plane
 platforms:
   - IaaS
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: image creation
+  - name: Image Creation
     type: activity
-    description: An image was created.
+    description: Initial construction of a virtual machine image (ex: Azure Compute Service Images PUT)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: image
-  - name: image modification
+  - name: Image Modification
     type: activity
-    description: An image was modified.
+    description: Changes made to a virtual machine image, including setting and/or control data (ex: Azure Compute Service Images PATCH)
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: image
-  - name: image deletion
+  - name: Image Deletion
     type: activity
-    description: An image was deleted.
+    description: Removal of a virtual machine image (ex: Azure Compute Service Images DELETE)
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: image
-  - name: image metadata
+  - name: Image Metadata
     type: information
-    description: Data and information that describe an image and activity around it.
+    description: Contextual data about a virtual machine image such as name, resource group, state, or type
     relationships:
       - source_data_element: user
         relationship: retrieved information about
