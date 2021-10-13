@@ -1,5 +1,5 @@
 name: Domain Name
-definition: Information obtained (commonly through registration or activity logs) regarding one or more IP addresses registered with human readable names (ex: mitre.org)
+definition: "Information obtained (commonly through registration or activity logs) regarding one or more IP addresses registered with human readable names (ex: mitre.org)"
 collection_layers:
   - OSINT
 platforms:
