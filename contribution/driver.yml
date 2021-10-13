@@ -1,7 +1,7 @@
 name: Driver
 definition: A computer program that operates or controls a particular type of device that is attached to a computer. Provides a software interface to hardware devices, enabling operating systems and other computer programs to access hardware functions without needing to know precise details about the hardware being used
 collection_layers:
-  - host
+  - Host
 platforms:
   - Linux
   - macOS

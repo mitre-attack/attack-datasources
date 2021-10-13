@@ -3,7 +3,7 @@ definition: A Windows OS hierarchical database that stores much of the informati
 platforms:
   - Windows
 collection_layers:
-  - host
+  - Host
 contributors:
   - ATT&CK
 data_components:

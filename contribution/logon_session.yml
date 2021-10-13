@@ -1,9 +1,9 @@
 name: Logon Session
 definition: Logon occurring on a system or resource (local, domain, or cloud) to which a user/device is gaining access after successful authentication and authorizaton 
 collection_layers:
-  - host
-  - network
-  - cloud
+  - Host
+  - Network
+  - Cloud Control Plane
 platforms:
   - Windows
   - Linux

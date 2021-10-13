@@ -1,7 +1,7 @@
 name: WMI
 definition: The infrastructure for management data and operations that enables local and remote management of Windows personal computers and servers
 collection_layers:
-  - host
+  - Host
 platforms:
   - Windows
 contributors: 

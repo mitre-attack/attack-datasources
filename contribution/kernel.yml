@@ -1,7 +1,7 @@
 name: Kernel
 definition: A computer program, at the core of a computer OS, that resides in memory and facilitates interactions between hardware and software components
 collection_layers:
-  - host
+  - Host
 platforms:
   - Linux
   - macOS
