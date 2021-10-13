@@ -84,6 +84,5 @@ data_components:
         relationship: powered off
         target_data_element: instance
 references:
-  - https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc
   - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
   - https://cloud.google.com/compute/docs/instances
