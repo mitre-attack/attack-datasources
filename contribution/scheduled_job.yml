@@ -2,7 +2,7 @@ name: Scheduled Job
 definition: "Automated tasks that can be executed at a specific time or on a recurring schedule running in the background (ex: Cron daemon, task scheduler, BITS)"
 collection_layers:
   - Host
-  - Cloud Control Plane
+  - Container
 platforms:
   - Windows
   - Linux
