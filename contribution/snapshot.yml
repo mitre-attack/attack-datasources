@@ -24,7 +24,7 @@ data_components:
         target_data_element: snapshot
   - name: Snapshot Deletion
     type: activity
-    description: "Removal of a snapshot (ex: AWS delete-snapshot)
+    description: "Removal of a snapshot (ex: AWS delete-snapshot)"
     relationships:
       - source_data_element: user
         relationship: deleted
