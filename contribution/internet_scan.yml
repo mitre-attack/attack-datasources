@@ -12,5 +12,5 @@ data_components:
     description: "Contextual data about an Internet-facing resource gathered from a scan, such as running services or ports"
   - name: Response Content
     type: information
-    description: "Logged network traffic in response to a scan showing both protocol header and body values (ex: PCAP, cookies, certificates, etc.)"
+    description: "Logged network traffic in response to a scan showing both protocol header and body values"
 references:
