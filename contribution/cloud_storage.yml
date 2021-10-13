@@ -1,16 +1,16 @@
 name: Cloud Storage
-definition: Data object storage hosted on-premise or by third-party providers, made available to users through network connections and/or APIs
+definition: Data storage infrastructure hosted on-premise or by third-party providers, made available to users through network connections and/or APIs
 collection_layers:
-  - cloud
+  - Cloud Control Plane
 platforms:
   - IaaS
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: cloud storage creation
+  - name: Cloud Storage Creation
     type: activity
-    description: Initial construction of a new cloud storage object (ex: AWS S3 CreateBucket)
+    description: Initial construction of new cloud storage infrastructure (ex: AWS S3 CreateBucket)
     relationships:
       - source_data_element: user
         relationship: created
@@ -18,9 +18,9 @@ data_components:
       - source_data_element: user
         relationship: created
         target_data_element: cloud storage object
-  - name: cloud storage modification
+  - name: Cloud Storage Modification
     type: activity
-    description: Changes made to a cloud storage object, including its settings and/or data (ex: AWS S3 PutObject or PutObjectAcl)
+    description: Changes made to cloud storage infrastructure, including its settings and/or data (ex: AWS S3 PutObject or PutObjectAcl)
     relationships:
       - source_data_element: user
         relationship: modified
@@ -28,9 +28,9 @@ data_components:
       - source_data_element: modified
         relationship: created
         target_data_element: cloud storage object
-  - name: cloud storage deletion
+  - name: Cloud Storage Deletion
     type: activity
-    description: Removal of a cloud storage object (ex: AWS S3 DeleteBucket)
+    description: Removal of cloud storage infrastructure (ex: AWS S3 DeleteBucket)
     relationships:
       - source_data_element: user
         relationship: deleted
@@ -38,16 +38,16 @@ data_components:
       - source_data_element: user
         relationship: deleted
         target_data_element: cloud storage object
-  - name: cloud storage metadata
+  - name: Cloud Storage Metadata
     type: information
-    description: Contextual data about a cloud storage object and activity around it such as name, size, or owner
+    description: Contextual data about cloud storage infrastructure and activity around it such as name, size, or owner
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: cloud storage
-  - name: cloud storage enumeration
+  - name: Cloud Storage Enumeration
     type: activity
-    description: An extracted list of cloud storage objects (ex: AWS S3 ListBuckets or ListObjects)
+    description: An extracted list of cloud storage infrastructure (ex: AWS S3 ListBuckets or ListObjects)
     relationships:
       - source_data_element: user
         relationship: listed
@@ -55,9 +55,9 @@ data_components:
       - source_data_element: user
         relationship: listed
         target_data_element: cloud storage objects
-  - name: cloud storage access
+  - name: Cloud Storage Access
     type: activity
-    description: Opening of a cloud storage object, typically to collect/read its value (ex: AWS S3 GetObject)
+    description: Opening of a cloud storage infrastructure, typically to collect/read its value (ex: AWS S3 GetObject)
     relationships:
       - source_data_element: user
         relationship: accessed
