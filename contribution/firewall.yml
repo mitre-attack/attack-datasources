@@ -18,21 +18,21 @@ contributors:
 data_components:
   - name: Firewall Metadata
     type: information
-    description: Contextual data about a firewall and activity around it such as name, policy, or status
+    description: "Contextual data about a firewall and activity around it such as name, policy, or status"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: firewall
   - name: Firewall Disable
     type: activity
-    description: Deactivation or stoppage of a cloud service (ex: Write/Delete entries within Azure Firewall Activity Logs)
+    description: "Deactivation or stoppage of a cloud service (ex: Write/Delete entries within Azure Firewall Activity Logs)"
     relationships:
       - source_data_element: user
         relationship: disabled
         target_data_element: firewall
   - name: Firewall Rule Modification
     type: activity
-    description: Changes made to a firewall rule, typically to allow/block specific network traffic (ex: Windows EID 4950 or Write/Delete entries within Azure Firewall Rule Collection Activity Logs)
+    description: "Changes made to a firewall rule, typically to allow/block specific network traffic (ex: Windows EID 4950 or Write/Delete entries within Azure Firewall Rule Collection Activity Logs)"
     relationships:
       - source_data_element: user
         relationship: added 
@@ -45,7 +45,7 @@ data_components:
         target_data_element: firewall rule
   - name: Firewall Enumeration
     type: activity
-    description: An extracted list of available firewalls and/or their associated settings/rules (ex: Azure Network Firewall CLI Show commands)
+    description: "An extracted list of available firewalls and/or their associated settings/rules (ex: Azure Network Firewall CLI Show commands)"
     relationships:
       - source_data_element: user
         relationship: listed
