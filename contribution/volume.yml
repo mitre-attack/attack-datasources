@@ -1,8 +1,8 @@
 name: Volume
-definition: Information associated with accessible storage areas with a single file system.
+definition: Block object storage hosted on-premise or by third-party providers, typically made available to resources as virtualized hard drives
 collection_layers:
-  - cloud
-  - host
+  - Cloud Control Plane
+  - Host
 platforms:
   - IaaS
   - Windows
@@ -12,37 +12,37 @@ contributors:
   - ATT&CK
   - CTID
 data_components:
-  - name: volume creation
+  - name: Volume Creation
     type: activity
-    description: A volume was created.
+    description: Initial construction of a cloud volume (ex: AWS create-volume)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: volume
-  - name: volume modification
+  - name: Volume Modification
     type: activity
-    description: A volume was modified.
+    description: Changes made to a cloud volume, including its settings and control data (ex: AWS modify-volume)
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: volume
-  - name: volume deletion
+  - name: Volume Deletion
     type: activity
-    description: A volume was deleted.
+    description: Removal of a a cloud volume (ex: AWS delete-volume)
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: volume
-  - name: volume metadata
+  - name: Volume Metadata
     type: information
-    description: Data and information that describe a volume and activity around it.
+    description: Contextual data about a cloud volume and activity around it, such as id, type, state, and size
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: volume
-  - name: volume enumeration
+  - name: Volume Enumeration
     type: activity
-    description: A volume was listed.
+    description: An extracted list of available volumes within a cloud environment (ex: AWS describe-volumes)
     relationships:
       - source_data_element: user
         relationship: listed
