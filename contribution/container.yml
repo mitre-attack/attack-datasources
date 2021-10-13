@@ -1,35 +1,35 @@
 name: Container
 definition: A standard unit of virtualized software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another
 collection_layers:
-  - container
+  - Container
 platforms:
   - Containers
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: container creation
+  - name: Container Creation
     type: activity
     description: Initial construction of a new container (ex: docker create <container_name>)
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: container
-  - name: container metadata
+  - name: Container Metadata
     type: information
     description: Contextual data about a container and activity around it such as name, ID, image, or status
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: container
-  - name: container enumeration
+  - name: Container Enumeration
     type: activity
     description: An extracted list of containers (ex: docker ps)
     relationships:
       - source_data_element: user
         relationship: listed
         target_data_element: containers
-  - name: container start
+  - name: Container Start
     type: activity
     description: Activation or invocation of a container (ex: docker start or docker restart)
     relationships:
