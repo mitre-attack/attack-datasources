@@ -1,14 +1,14 @@
 name: Cluster
 definition: A set of containerized computing resources that are managed together but have separate nodes to execute various tasks and/or applications
 collection_layers:
-  - container
+  - Container
 platforms:
   - Containers
 contributors: 
   - ATT&CK
   - CTID
 data_components:
-  - name: cluster metadata
+  - name: Cluster Metadata
     type: information
     description: Contextual data about a cluster and activity around it such as name, namespace, age, or status
     relationships:
