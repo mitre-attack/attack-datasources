@@ -1,0 +1,16 @@
+name: Domain Name
+definition: Information obtained (commonly through registration or activity logs) regarding one or more IP addresses registered with human readable names (ex: mitre.org)
+collection_layers:
+  - OSINT
+platforms:
+  - PRE
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Passive DNS
+    type: information
+    description: "Logged domain name system (DNS) data highlighting timelines of domain to IP address resolutions"
+  - name: Active DNS
+    type: information
+    description: "Queried domain registry data highlighting current domain to IP address resolutions"
+references:
