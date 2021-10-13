@@ -14,28 +14,28 @@ contributors:
 data_components:
   - name: Cloud Service Metadata
     type: information
-    description: Contextual data about a cloud service and activity around it such as name, type, or purpose/function
+    description: "Contextual data about a cloud service and activity around it such as name, type, or purpose/function"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: cloud service
   - name: Cloud Service Disable
     type: activity
-    description: Deactivation or stoppage of a cloud service (ex: AWS Cloudtrail StopLogging)
+    description: "Deactivation or stoppage of a cloud service (ex: AWS Cloudtrail StopLogging)"
     relationships:
       - source_data_element: user
         relationship: disabled
         target_data_element: cloud service
   - name: Cloud Service Enumeration
     type: activity
-    description: An extracted list of cloud services (ex: AWS ECS ListServices)
+    description: "An extracted list of cloud services (ex: AWS ECS ListServices)"
     relationships:
       - source_data_element: user
         relationship: listed
         target_data_element: cloud service
   - name: Cloud Service Modification
     type: activity
-    description: Changes made to a cloud service, including its settings and/or data (ex: AWS CloudTrail DeleteTrail or DeleteConfigRule)
+    description: "Changes made to a cloud service, including its settings and/or data (ex: AWS CloudTrail DeleteTrail or DeleteConfigRule)"
     relationships:
       - source_data_element: user
         relationship: modified

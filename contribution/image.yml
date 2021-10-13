@@ -10,28 +10,28 @@ contributors:
 data_components:
   - name: Image Creation
     type: activity
-    description: Initial construction of a virtual machine image (ex: Azure Compute Service Images PUT)
+    description: "Initial construction of a virtual machine image (ex: Azure Compute Service Images PUT)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: image
   - name: Image Modification
     type: activity
-    description: Changes made to a virtual machine image, including setting and/or control data (ex: Azure Compute Service Images PATCH)
+    description: "Changes made to a virtual machine image, including setting and/or control data (ex: Azure Compute Service Images PATCH)"
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: image
   - name: Image Deletion
     type: activity
-    description: Removal of a virtual machine image (ex: Azure Compute Service Images DELETE)
+    description: "Removal of a virtual machine image (ex: Azure Compute Service Images DELETE)"
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: image
   - name: Image Metadata
     type: information
-    description: Contextual data about a virtual machine image such as name, resource group, state, or type
+    description: "Contextual data about a virtual machine image such as name, resource group, state, or type"
     relationships:
       - source_data_element: user
         relationship: retrieved information about

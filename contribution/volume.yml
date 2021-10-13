@@ -14,35 +14,35 @@ contributors:
 data_components:
   - name: Volume Creation
     type: activity
-    description: Initial construction of a cloud volume (ex: AWS create-volume)
+    description: "Initial construction of a cloud volume (ex: AWS create-volume)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: volume
   - name: Volume Modification
     type: activity
-    description: Changes made to a cloud volume, including its settings and control data (ex: AWS modify-volume)
+    description: "Changes made to a cloud volume, including its settings and control data (ex: AWS modify-volume)"
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: volume
   - name: Volume Deletion
     type: activity
-    description: Removal of a a cloud volume (ex: AWS delete-volume)
+    description: "Removal of a a cloud volume (ex: AWS delete-volume)"
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: volume
   - name: Volume Metadata
     type: information
-    description: Contextual data about a cloud volume and activity around it, such as id, type, state, and size
+    description: "Contextual data about a cloud volume and activity around it, such as id, type, state, and size"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: volume
   - name: Volume Enumeration
     type: activity
-    description: An extracted list of available volumes within a cloud environment (ex: AWS describe-volumes)
+    description: "An extracted list of available volumes within a cloud environment (ex: AWS describe-volumes)"
     relationships:
       - source_data_element: user
         relationship: listed

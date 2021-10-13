@@ -10,7 +10,7 @@ contributors:
 data_components:
   - name: Cluster Metadata
     type: information
-    description: Contextual data about a cluster and activity around it such as name, namespace, age, or status
+    description: "Contextual data about a cluster and activity around it such as name, namespace, age, or status"
     relationships:
       - source_data_element: user
         relationship: retrieved information about

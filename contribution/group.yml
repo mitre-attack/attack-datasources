@@ -16,35 +16,35 @@ contributors:
 data_components:
   - name: Group Metadata
     type: information
-    description: Contextual data about a group which describes group and activity around it, such as name, permissions, or user accounts within the group
+    description: "Contextual data about a group which describes group and activity around it, such as name, permissions, or user accounts within the group"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: group
   - name: Group Creation
     type: activity
-    description: Initial construction of a new group (ex: Windows EID 4727 or 4731, AWS IAM CreateGroup)
+    description: "Initial construction of a new group (ex: Windows EID 4727 or 4731, AWS IAM CreateGroup)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: group
   - name: Group Deletion
     type: activity
-    description: Removal of a group user or permissions (ex: Windows EID 4729 or 4730, AWS IAM DeleteGroup)
+    description: "Removal of a group user or permissions (ex: Windows EID 4729 or 4730, AWS IAM DeleteGroup)"
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: group
   - name: Group Enumeration
     type: activity
-    description: An extracted list of available groups and/or their associated settings (ex: AWS list-groups)
+    description: "An extracted list of available groups and/or their associated settings (ex: AWS list-groups)"
     relationships:
       - source_data_element: user
         relationship: listed
         target_data_element: group
   - name: Group Modification
     type: activity
-    description: Changes made to a group, such as membership, name, or permissions (ex: Windows EID 4728 or 4732, AWS IAM UpdateGroup)
+    description: "Changes made to a group, such as membership, name, or permissions (ex: Windows EID 4728 or 4732, AWS IAM UpdateGroup)"
     relationships:
       - source_data_element: user
         relationship: modified

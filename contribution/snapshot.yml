@@ -10,35 +10,35 @@ contributors:
 data_components:
   - name: Snapshot Creation
     type: activity
-    description: Initial construction of a new snapshot (ex: AWS create-snapshot)
+    description: "Initial construction of a new snapshot (ex: AWS create-snapshot)"
     relationships:
       - source_data_element: user
         relationship: created
         target_data_element: snapshot
   - name: Snapshot Modification
     type: activity
-    description: Changes made to a snapshop, such as metadata and control data (ex: AWS modify-snapshot-attribute)
+    description: "Changes made to a snapshop, such as metadata and control data (ex: AWS modify-snapshot-attribute)"
     relationships:
       - source_data_element: user
         relationship: modified
         target_data_element: snapshot
   - name: Snapshot Deletion
     type: activity
-    description: Removal of a snapshot (ex: AWS delete-snapshot)
+    description: "Removal of a snapshot (ex: AWS delete-snapshot)
     relationships:
       - source_data_element: user
         relationship: deleted
         target_data_element: snapshot
   - name: Snapshot Metadata
     type: information
-    description: Contextual data about a snapshot, which may include information such as ID, type, and status
+    description: "Contextual data about a snapshot, which may include information such as ID, type, and status"
     relationships:
       - source_data_element: user
         relationship: retrieved information about
         target_data_element: snapshot
   - name: Snapshot Enumeration
     type: activity
-    description: An extracted list of snapshops within a cloud environment (ex: AWS describe-snapshots)
+    description: "An extracted list of snapshops within a cloud environment (ex: AWS describe-snapshots)"
     relationships:
       - source_data_element: user
         relationship: listed
