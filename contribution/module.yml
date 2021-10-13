@@ -1,7 +1,7 @@
 name: Module
 definition: Executable files consisting of one or more shared classes and interfaces, such as portable executable (PE) format binaries/dynamic link libraries (DLL), executable and linkable format (ELF) binaries/shared libraries, and Mach-O format binaries/shared libraries
 collection_layers:
-  - host
+  - Host
 platforms:
   - Windows
   - Linux

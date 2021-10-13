@@ -1,9 +1,9 @@
 name: User Account
 definition: A profile representing a user, device, service, or application used to authenticate and access resources
 collection_layers:
-  - host
-  - cloud
-  - container
+  - Host
+  - Cloud Control Plane
+  - Container
 platforms:
   - Windows
   - Linux

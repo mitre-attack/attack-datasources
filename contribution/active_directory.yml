@@ -1,8 +1,8 @@
 name: Active Directory
 definition: A database and set of services that allows administrators to manage permissions, access to network resources, and stored data objects (user, group, application, or devices)
 collection_layers:
-  - host
-  - cloud
+  - Host
+  - Cloud Control Plane
 platforms:
   - Windows
   - Azure AD

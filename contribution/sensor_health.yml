@@ -1,7 +1,7 @@
 name: Sensor Health
 definition: Information from host telemetry providing insights about system status, errors, or other notable functional activity
 collection_layers:
-  - host
+  - Host
 platforms:
   - Windows
   - Linux
