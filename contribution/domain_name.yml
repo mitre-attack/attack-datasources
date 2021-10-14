@@ -9,8 +9,8 @@ contributors:
 data_components:
   - name: Passive DNS
     type: information
-    description: "Logged domain name system (DNS) data highlighting timelines of domain to IP address resolutions"
+    description: "Logged domain name system (DNS) data highlighting timelines of domain to IP address resolutions (ex: passive DNS)"
   - name: Active DNS
     type: information
-    description: "Queried domain name system (DNS) registry data highlighting current domain to IP address resolutions"
+    description: "Queried domain name system (DNS) registry data highlighting current domain to IP address resolutions (ex: WHOIS or manual dig/nslookup queries)"
 references:
