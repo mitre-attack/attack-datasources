@@ -35,7 +35,7 @@ data_components:
         target_data_element: service
   - name: Service Modification
     type: activity
-    description: "Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or or /var/log daemon logs)"
+    description: "Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or /var/log daemon logs)"
     relationships:
       - source_data_element: user
         relationship: modified
