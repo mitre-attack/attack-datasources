@@ -1,0 +1,13 @@
+name: Persona
+definition: "A malicious online profile representing a user commonly used by adversaries to social engineer or otherwise target victims"
+collection_layers:
+  - OSINT
+platforms:
+  - PRE
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Social Media
+    type: information
+    description: "Established, compromised, or otherwise acquired social media personas"
+references:

@@ -1,0 +1,16 @@
+name: Internet Scan
+definition: Information obtained (commonly via active network traffic probes or web crawling) regarding various types of resources and servers connected to the public Internet
+collection_layers:
+  - OSINT
+platforms:
+  - PRE
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Response Metadata
+    type: information
+    description: "Contextual data about an Internet-facing resource gathered from a scan, such as running services or ports"
+  - name: Response Content
+    type: information
+    description: "Logged network traffic in response to a scan showing both protocol header and body values"
+references:

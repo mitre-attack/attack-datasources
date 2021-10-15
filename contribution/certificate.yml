@@ -1,0 +1,13 @@
+name: Certificate
+definition: "A digital document, which highlights information such as the owner's identity, used to instill trust in public keys used while encrypting network communications"
+collection_layers:
+  - OSINT
+platforms:
+  - PRE
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Certificate Registration
+    type: information
+    description: "Queried or logged information highlighting current and expired digital certificates (ex: Certificate transparency)"
+references:
