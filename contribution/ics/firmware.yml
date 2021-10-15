@@ -1,0 +1,23 @@
+name: Firmware
+definition: Computer software that provides low-level control for the hardware and device(s) of a host, such as BIOS or UEFI/EFI
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Firmware Modification
+    type: activity
+    description: Changes made to firmware, including its settings and/or data, such as MBR (Master Boot Record) and VBR (Volume Boot Record)
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: firmware
+      - source_data_element: process
+        relationship: modified
+        target_data_element: firmware
+references:

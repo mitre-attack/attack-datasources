@@ -1,0 +1,21 @@
+name: Assets
+definition: Data sources with information about the set of devices found within the network, along with their current software and configurations. 
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Asset Inventory
+    type: information
+    description: This includes sources of current and expected devices on the network, including the manufacturer, model, and necessary identifiers (e.g. IP, HW addresses).
+data_components:
+  - name: Software/Firmware
+    type: information
+    description: This includes sources of current and expected software, firmware, or application programs deployed to a device, along with information on the version and patch level for vendor products, full source code for any application programs, and unique identifiers (e.g., hashes, signatures).
+data_components:
+  - name: Device Configurations/Parameters
+    type: information
+    description: This includes sources of both current and expected device configurations, parameters, or settings, including PLC tags. 

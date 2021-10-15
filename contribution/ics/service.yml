@@ -1,0 +1,48 @@
+name: Service
+definition: A computer process that is configured to execute continuously in the background and perform system tasks, in some cases before any user has logged in
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Service Metadata
+    type: information
+    description: "Contextual data about a service/daemon, which may include information such as name, service executable, start type, etc."
+    relationships:
+      - source_data_element: service
+        relationship: started
+        target_data_element: 
+      - source_data_element: service
+        relationship: stopped
+        target_data_element: 
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: service
+      - source_data_element: process
+        relationship: retrieved information about
+        target_data_element: service
+  - name: Service Creation
+    type: activity
+    description: "Initial construction of a new service/daemon (ex: Windows EID 4697 or /var/log daemon logs)"
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: service
+  - name: Service Modification
+    type: activity
+    description: "Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or or /var/log daemon logs)"
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: service
+      - source_data_element: process
+        relationship: modified
+        target_data_element: service
+references:
+  - https://docs.microsoft.com/en-us/dotnet/framework/windows-services/introduction-to-windows-service-applications
+  - https://www.linux.com/news/introduction-services-runlevels-and-rcd-scripts/

@@ -1,0 +1,24 @@
+name: Script
+definition: A file or stream containing a list of commands, allowing them to be launched in sequence
+collection_layers:
+  - host
+platforms:
+  - Windows
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Script Execution
+    type: activity
+    description: "Launching a list of commands through a script file (ex: Windows EID 4104)"
+    relationships:
+      - source_data_element: command
+        relationship: executed
+        target_data_element: script
+      - source_data_element: process
+        relationship: executed
+        target_data_element: script
+references:
+  - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7
+  - https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
+  - https://docs.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal

@@ -1,0 +1,21 @@
+name: Application Log
+definition: Events collected by third-party services such as mail servers, web applications, or other appliances (not by the native OS or platform)
+collection_layers:
+  - host
+  - cloud
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+data_components:
+  - name: Application Log Content
+    type: information
+    description: "Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)"
+    relationships:
+      - source_data_element: application log
+        relationship: contained
+        target_data_element: application event entries   
+references:
+  - https://confluence.atlassian.com/doc/working-with-confluence-logs-108364721.html

@@ -1,0 +1,54 @@
+name: Network Share
+definition: A storage resource (typically a folder or drive) made available from one host to others using network protocols, such as Server Message Block (SMB) or Network File System (NFS)
+collection_layers:
+  - host
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Network Share Creation
+    type: activity
+    description: "Initial construction of a new network share (ex: Windows EID 5142)"
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: network share
+      - source_data_element: process
+        relationship: created
+        target_data_element: network share
+  - name: Network Share Deletion
+    type: activity
+    description: "Removal of a network share (ex: Windows EID 5144)"
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: network share
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: network share
+  - name: Network Share Modification
+    type: activity
+    description: "Changes made to a network share, or its access permissions and attributes, typically to alter the contents of the targeted share (ex: Windows EID 5143)"
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: network share
+      - source_data_element: process
+        relationship: modified
+        target_data_element: network share
+  - name: Network Share Access
+    type: activity
+    description: "Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)"
+    relationships:
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: network share
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: network share
+references:
+  - https://docs.microsoft.com/en-us/windows-server/storage/nfs/nfs-overview
