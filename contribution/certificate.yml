@@ -1,5 +1,5 @@
 name: Certificate
-definition: A digital document, which highlights information such as the owner's identity, used to instill trust while encrypting network communications
+definition: "A digital document, which highlights information such as the owner's identity, used to instill trust in public keys used while encrypting network communications"
 collection_layers:
   - OSINT
 platforms:
