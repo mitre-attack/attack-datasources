@@ -1,5 +1,5 @@
 name: Persona
-definition: A profile representing a user used to access and utilize Internet resources
+definition: "A malicious online profile representing a user commonly used by adversaries to social engineer or otherwise target victims"
 collection_layers:
   - OSINT
 platforms:
@@ -9,8 +9,5 @@ contributors:
 data_components:
   - name: Social Media
     type: information
-    description: "Established, compromised, or otherwise acquired social media personas (ex: profiles used by adversaries to social engineer or otherwise target victims)"
-  - name: Email Accounts
-    type: information
-    description: "Established, compromised, or otherwise acquired email personas (ex: email addresses used by adversaries to phish or otherwise target victims)"
+    description: "Established, compromised, or otherwise acquired social media personas"
 references:
