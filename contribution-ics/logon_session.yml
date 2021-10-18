@@ -1,0 +1,58 @@
+name: Logon Session
+definition: Logon occurring on a system or resource (local, domain, or cloud) to which a user/device is gaining access after successful authentication and authorization 
+collection_layers:
+  - host
+  - network
+  - cloud
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Logon Session Metadata
+    type: information
+    description: "Contextual data about a logon session, such as username, logon type, access tokens (security context, user SIDs, logon identifiers, and logon SID), and any activity associated within it"
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: logon session
+  - name: Logon Session Creation
+    type: activity
+    description: "Initial construction of a new user logon session (ex: Windows EID 4624, /var/log/utmp, or /var/log/wmtp)"
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: logon session
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: created logon session from
+        target_data_element: port
+  - name: Logon Session Termination
+    type: activity
+    description: "Exit of a user logon session (ex: Windows EID 4634)"
+    relationships:
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: computer
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: application
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: logged off from
+        target_data_element: port
+      - source_data_element: user
+        relationship: terminated
+        target_data_element: logon session
+references:
+  - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-logon-events

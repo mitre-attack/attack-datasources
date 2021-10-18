@@ -1,0 +1,64 @@
+name: Scheduled Job
+definition: "Automated tasks that can be executed at a specific time or on a recurring schedule running in the background (ex: Cron daemon, task scheduler, BITS)"
+collection_layers:
+  - host
+  - container
+platforms:
+  - Windows
+  - Linux
+  - macOS
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Scheduled Job Metadata
+    type: information
+    description: "Contextual data about a scheduled job, which may include information such as name, timing, command(s), etc."
+    relationships:
+      - source_data_element: host
+        relationship: retrieved information about
+        target_data_element: scheduled job
+  - name: Scheduled Job Creation
+    type: activity
+    description: "Initial construction of a new scheduled job (ex: Windows EID 4698 or /var/log cron logs)"
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: created
+        target_data_element: scheduled job
+  - name: Scheduled Job Deletion
+    type: activity
+    description: "Removal of a scheduled job from a computer system (ex: Windows EID 4699 or /var/log cron logs)"
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: scheduled job
+  - name: Scheduled Job Modification
+    type: activity
+    description: "Changes made to a scheduled job, such as modifications to the execution launch (ex: Windows EID 4702 or /var/log cron logs)"
+    relationships:
+      - source_data_element: user
+        relationship: modified
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: modified
+        target_data_element: scheduled job
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: enabled
+        target_data_element: scheduled job
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: scheduled job
+      - source_data_element: process
+        relationship: disabled
+        target_data_element: scheduled job
+references:
+  - https://docs.microsoft.com/en-us/windows/win32/taskschd/tasks
