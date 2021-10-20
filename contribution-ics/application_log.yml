@@ -3,10 +3,7 @@ definition: Events collected by third-party services such as mail servers, web a
 collection_layers:
   - host
   - cloud
-platforms:
-  - Windows
-  - Linux
-  - macOS
+# platforms: TBD
 contributors: 
   - ATT&CK
 data_components:

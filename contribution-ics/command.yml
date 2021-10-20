@@ -3,11 +3,7 @@ definition: A directive given to a computer program, acting as an interpreter of
 collection_layers:
   - host
   - container
-platforms:
-  - Windows
-  - Linux
-  - macOS
-  - Network
+# platforms: TBD
 contributors: 
   - Austin Clark
   - ATT&CK

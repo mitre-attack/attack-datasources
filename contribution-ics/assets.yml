@@ -2,9 +2,7 @@ name: Assets
 definition: Data sources with information about the set of devices found within the network, along with their current software and configurations. 
 collection_layers:
   - host
-platforms:
-  - Windows
-  - Linux
+# platforms: TBD
 contributors: 
   - ATT&CK
 data_components:

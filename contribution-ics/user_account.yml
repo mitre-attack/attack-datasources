@@ -4,10 +4,7 @@ collection_layers:
   - host
   - cloud
   - container
-platforms:
-  - Windows
-  - Linux
-  - macOS
+# platforms: TBD
 contributors: 
   - ATT&CK
   - CTID

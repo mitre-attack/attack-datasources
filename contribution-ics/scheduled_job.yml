@@ -3,10 +3,7 @@ definition: "Automated tasks that can be executed at a specific time or on a rec
 collection_layers:
   - host
   - container
-platforms:
-  - Windows
-  - Linux
-  - macOS
+# platforms: TBD
 contributors: 
   - ATT&CK
   - CTID

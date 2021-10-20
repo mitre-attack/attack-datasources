@@ -1,7 +1,6 @@
 name: Windows Registry
 definition: A Windows OS hierarchical database that stores much of the information and settings for software programs, hardware devices, user preferences, and operating-system configurations
-platforms:
-  - Windows
+# platforms: TBD
 collection_layers:
   - host
 contributors:

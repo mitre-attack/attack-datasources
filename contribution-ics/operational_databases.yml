@@ -2,9 +2,7 @@ name: Operational Databases
 definition: Operational databases contain information about the status of the operational process and associated devices, including any measurements, events, history, or alarms that have occurred.  
 collection_layers:
   - host
-platforms:
-  - Windows
-  - Linux	
+# platforms: TBD
 contributors: 
   - ATT&CK
 data_components:
