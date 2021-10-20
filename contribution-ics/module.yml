@@ -1,0 +1,19 @@
+name: Module
+definition: Executable files consisting of one or more shared classes and interfaces, such as portable executable (PE) format binaries/dynamic link libraries (DLL), executable and linkable format (ELF) binaries/shared libraries, and Mach-O format binaries/shared libraries
+collection_layers:
+  - host
+# platforms: TBD
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Module Load
+    type: activity
+    description: "Attaching a module into the memory of a process/program, typically to access shared resources/features provided by the module (ex: Sysmon EID 7)"
+    relationships:
+      - source_data_element: process
+        relationship: loaded
+        target_data_element: module
+references:
+  - https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+  - https://docs.microsoft.com/en-us/dotnet/api/system.reflection.module

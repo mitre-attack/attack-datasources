@@ -1,0 +1,89 @@
+name: User Account
+definition: A profile representing a user, device, service, or application used to authenticate and access resources
+collection_layers:
+  - host
+  - cloud
+  - container
+# platforms: TBD
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: User Account Metadata
+    type: information
+    description: "Contextual data about an account, which may include a username, user ID, environmental data, etc."
+    relationships:
+      - source_data_element: user
+        relationship: retrieved information about
+        target_data_element: user
+  - name: User Account Creation
+    type: activity
+    description: "Initial construction of a new account (ex: Windows EID 4720 or /etc/passwd logs)"
+    relationships:
+      - source_data_element: user
+        relationship: created
+        target_data_element: user
+  - name: User Account Deletion
+    type: activity
+    description: "Removal of an account (ex: Windows EID 4726 or /var/log access/authentication logs)"
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: user
+  - name: User Account Modification
+    type: activity
+    description: "Changes made to an account, such as permissions and/or membership in specific groups (ex: Windows EID 4738 or /var/log access/authentication logs)"
+    relationships:
+      - source_data_element: user
+        relationship: requested modification of
+        target_data_element: user
+      - source_data_element: user
+        relationship: modified
+        target_data_element: user
+      - source_data_element: user
+        relationship: modified
+        target_data_element: service principal
+      - source_data_element: user
+        relationship: enabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: disabled
+        target_data_element: user
+      - source_data_element: user
+        relationship: locked
+        target_data_element: user
+      - source_data_element: user
+        relationship: unlocked
+        target_data_element: user
+      - source_data_element: user
+        relationship: granted access to
+        target_data_element: user
+      - source_data_element: user
+        relationship: removed access from
+        target_data_element: user
+  - name: User Account Authentication
+    type: activity
+    description: "An attempt by a user to gain access to a network or computing resource, often by providing credentials (ex: Windows EID 4625 or /var/log/auth.log)"
+    relationships:
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: computer
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: application
+      - source_data_element: user
+        relationship: attempted to authenticate to
+        target_data_element: cloud service
+      - source_data_element: user
+        relationship: attempted to authenticate from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: attempted to authenticate from
+        target_data_element: port
+      - source_data_element: application
+        relationship: attempted to authenticate
+        target_data_element: user
+      - source_data_element: cloud service
+        relationship: attempted to authenticate
+        target_data_element: user
+references:

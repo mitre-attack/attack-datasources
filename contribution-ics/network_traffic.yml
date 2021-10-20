@@ -1,0 +1,184 @@
+name: Network Traffic
+definition: "Data transmitted across a network (ex: Web, DNS, Mail, File, etc.), that is either summarized (ex: Netflow) and/or captured as raw data in an analyzable format (ex: PCAP)"
+collection_layers:
+  - host
+  - network
+  - cloud
+# platforms: TBD
+contributors: 
+  - ATT&CK
+  - CTID
+  - ExtraHop
+data_components:
+  - name: Network Traffic Flow
+    type: information
+    description: "Summarized network packet data, with metrics, such as protocol headers and volume (ex: Netflow or Zeek http.log)"
+    relationships:
+      - source_data_element: network traffic flow
+        relationship: originated from
+        target_data_element: ip
+      - source_data_element: network traffic flow
+        relationship: responded from
+        target_data_element: ip
+      - source_data_element: network traffic flow
+        relationship: originated from
+        target_data_element: port
+      - source_data_element: network traffic flow
+        relationship: responded from
+        target_data_element: port
+      - source_data_element: network traffic flow
+        relationship: identified
+        target_data_element: transport layer protocol
+      - source_data_element: network traffic flow
+        relationship: identified
+        target_data_element: application layer protocol
+      - source_data_element: network traffic flow
+        relationship: identified
+        target_data_element: network traffic volume
+  - name: Network Traffic Content
+    type: information
+    description: "Logged network traffic data showing both protocol header and body values (ex: PCAP)"
+    relationships:
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: administration traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: dns traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: encrypted traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: mail traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: file transfer traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: web traffic
+      - source_data_element: network traffic
+        relationship: contained
+        target_data_element: remote code execution traffic
+  - name: Network Connection Creation
+    type: activity
+    description: "Initial construction of a network connection, such as capturing socket information with a source/destination IP and port(s) (ex: Windows EID 5156, Sysmon EID 3, or Zeek conn.log)"
+    relationships:
+      - source_data_element: process
+        relationship: attempted connection to
+        target_data_element: ip
+      - source_data_element: process
+        relationship: attempted connection to
+        target_data_element: port
+      - source_data_element: process
+        relationship: attempted connection to
+        target_data_element: host
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: ip
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: port
+      - source_data_element: process
+        relationship: attempted connection from
+        target_data_element: host
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: ip
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: port
+      - source_data_element: process
+        relationship: connected to
+        target_data_element: host
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: ip
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: port
+      - source_data_element: process
+        relationship: connected from
+        target_data_element: host
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: ip
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: port
+      - source_data_element: user
+        relationship: connected to
+        target_data_element: host
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: ip
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: port
+      - source_data_element: user
+        relationship: connected from
+        target_data_element: host
+      - source_data_element: process
+        relationship: attempted to bind on
+        target_data_element: port
+      - source_data_element: process
+        relationship: bound to
+        target_data_element: port
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: port
+      - source_data_element: host
+        relationship: permitted listener on
+        target_data_element: process
+      - source_data_element: process
+        relationship: attempted to listen on
+        target_data_element: port
+      - source_data_element: process
+        relationship: listened on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked port bind on
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked connection from
+        target_data_element: process
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked connection to
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: ip
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: port
+      - source_data_element: host
+        relationship: blocked listener on
+        target_data_element: process
+references:

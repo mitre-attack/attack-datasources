@@ -1,0 +1,39 @@
+name: Drive
+definition: A non-volatile data storage device (hard drive, floppy disk, USB flash drive) with at least one formatted partition, typically mounted to the file system and/or assigned a drive letter
+collection_layers:
+  - host
+# platforms: TBD
+contributors: 
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Drive Creation
+    type: activity
+    description: Initial construction of a drive letter or mount point to a data storage device
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: drive
+  - name: Drive Deletion
+    type: activity
+    description: Removal of a drive letter or mount point from a data storage device
+    relationships:
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: drive
+  - name: Drive Modification
+    type: activity
+    description: Changes made to a drive letter or mount point of a data storage device 
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: drive
+  - name: Drive Access
+    type: activity
+    description: Opening of a data storage device with an assigned drive letter or mount point
+    relationships:
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: drive
+references:
+  - https://docs.microsoft.com/sysinternals/downloads/sysmon#event-id-9-rawaccessread

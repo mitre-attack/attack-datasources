@@ -1,0 +1,65 @@
+name: Windows Registry
+definition: A Windows OS hierarchical database that stores much of the information and settings for software programs, hardware devices, user preferences, and operating-system configurations
+# platforms: TBD
+collection_layers:
+  - host
+contributors:
+  - ATT&CK
+data_components:
+  - name: Windows Registry Key Creation
+    type: activity
+    description: "Initial construction of a new Registry Key (ex: Windows EID 4656 or Sysmon EID 12)"
+    relationships:
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: created
+        target_data_element: windows registry key value
+  - name: Windows Registry Key Deletion
+    type: activity
+    description: "Removal of a Registry Key (ex: Windows EID 4658 or Sysmon EID 12)"
+    relationships:
+      - source_data_element: user
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: deleted
+        target_data_element: windows registry key value
+  - name: Windows Registry Key Modification
+    type: activity
+    description: "Changes made to a Registry Key and/or Key value (ex: Windows EID 4657 or Sysmon EID 13|14)"
+    relationships:
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: modified
+        target_data_element: windows registry key value
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: modified
+        target_data_element: windows registry key value
+  - name: Windows Registry Key Access
+    type: activity
+    description: "Opening a Registry Key, typically to read the associated value (ex: Windows EID 4656)"
+    relationships:
+      - source_data_element: process
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: accessed
+        target_data_element: windows registry key
+      - source_data_element: process
+        relationship: requested access to
+        target_data_element: windows registry key
+      - source_data_element: user
+        relationship: requested access to
+        target_data_element: windows registry key
+references:
+- https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry

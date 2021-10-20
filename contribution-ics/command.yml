@@ -1,0 +1,24 @@
+name: Command
+definition: A directive given to a computer program, acting as an interpreter of some kind, in order to perform a specific task
+collection_layers:
+  - host
+  - container
+# platforms: TBD
+contributors: 
+  - Austin Clark
+  - ATT&CK
+  - CTID
+data_components:
+  - name: Command Execution
+    type: activity
+    description: "Invoking a computer program directive to perform a specific task (ex: Windows EID 4688 of cmd.exe showing command-line parameters, ~/.bash_history, or ~/.zsh_history)"
+    relationships:
+      - source_data_element: user
+        relationship: executed
+        target_data_element: command
+      - source_data_element: process
+        relationship: executed
+        target_data_element: command
+references:
+  - https://confluence.atlassian.com/confkb/how-to-enable-command-line-audit-logging-in-linux-956166545.html
+  - https://www.scip.ch/en/?labs.20150108
