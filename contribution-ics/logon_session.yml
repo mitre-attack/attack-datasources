@@ -7,7 +7,7 @@ collection_layers:
 # platforms: TBD
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Logon Session Metadata
     type: information
