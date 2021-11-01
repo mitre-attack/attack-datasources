@@ -7,7 +7,7 @@ collection_layers:
 contributors: 
   - Austin Clark
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Command Execution
     type: activity
