@@ -6,7 +6,7 @@ platforms:
   - Containers
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Cluster Metadata
     type: information

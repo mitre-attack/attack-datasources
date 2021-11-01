@@ -11,7 +11,7 @@ platforms:
   - IaaS
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
   - ExtraHop
 data_components:
   - name: Network Traffic Flow

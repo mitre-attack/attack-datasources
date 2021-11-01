@@ -8,7 +8,7 @@ platforms:
   - macOS
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Module Load
     type: activity

@@ -16,7 +16,7 @@ platforms:
   - Google Workspace
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: User Account Metadata
     type: information
