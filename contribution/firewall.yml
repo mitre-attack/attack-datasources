@@ -14,7 +14,7 @@ platforms:
   - Google Workspace
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Firewall Metadata
     type: information

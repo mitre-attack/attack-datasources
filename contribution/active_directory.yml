@@ -8,7 +8,7 @@ platforms:
   - Azure AD
 contributors: 
   - ATT&CK
-  - CTID
+  - Center for Threat-Informed Defense (CTID)
 data_components:
   - name: Active Directory Object Creation
     description: "Initial construction of a new active directory object (ex: Windows EID 5137)"
