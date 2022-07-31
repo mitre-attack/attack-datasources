@@ -52,7 +52,7 @@ def get_attack_dataframe (matrix = 'enterprise'):
         # Generating a dataframe with information collected
         attck = json_normalize(attck)
         # Selecting columns
-        attck = attck[['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_sources']]
+        attck = attck[['technique_id','is_subtechnique','technique','tactic','platform','data_sources']]
         # Splitting data_sources field
         attck = attck.explode('data_sources').reset_index(drop=True)
         attck[['data_source','data_component']] = attck.data_sources.str.split(pat = ": ", expand = True)
