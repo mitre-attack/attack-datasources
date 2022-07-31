@@ -39,11 +39,9 @@ print("[+] Getting ATT&CK - Enterprise form TAXII Server..")
 lift = attack_client()
 # Getting techniques for windows platform - enterprise matrix
 attck = lift.get_enterprise_techniques(stix_format = False)
-# Removing revoked techniques
-attck = lift.remove_revoked(attck)
 # Creating Dataframe
 attck = json_normalize(attck)
-attck = attck[['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_sources']]
+attck = attck[['technique_id','is_subtechnique','technique','tactic','platform','data_sources']]
 attck = attck.explode('data_sources').reset_index(drop = True)
 attck[['data_source','data_component']] = attck.data_sources.str.split(pat = ": ", expand = True)
 attck = attck.drop(columns = ['data_sources'])
@@ -74,7 +72,7 @@ attck_mapping = attck_mapping.drop(['name','data_component_name'], axis = 1)
 
 print("[+] Merging (Sub)Technqiues to Relationships mapping DATAFRAME..")
 technique_to_relationships = pd.merge(attck, attck_mapping, how = 'left', on = ['data_source','data_component'])
-technique_to_relationships = technique_to_relationships.reindex(columns = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references'])
+technique_to_relationships = technique_to_relationships.reindex(columns = ['technique_id','is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references'])
 
 technique_to_relationships_dict = technique_to_relationships.reset_index().to_dict(orient = 'records')
 for x in technique_to_relationships_dict:
@@ -95,13 +93,13 @@ with open("../techniques_to_components_mapping.yaml", 'w') as yamlfile:
 ###### Creating CSV file with (Sub)Techniques to Components/Relationships Mapping
 print("[+] Creating ATT&CK techniques to relationships mapping CSV file..")
 
-header_fields = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references']
+header_fields = ['technique_id','is_subtechnique','technique','tactic','platform','data_source','definition','collection_layers','data_source_platform','contributors','data_component','type','description','source_data_element','relationship','target_data_element','references']
 with open('../techniques_to_relationships_mapping.csv', 'w', newline='')  as output_file:
     dict_writer = csv.DictWriter(output_file, header_fields)
     dict_writer.writeheader()
     dict_writer.writerows(technique_to_relationships_dict)
 
-header_fields = ['technique_id','x_mitre_is_subtechnique','technique','tactic','platform','data_source','data_component']
+header_fields = ['technique_id','is_subtechnique','technique','tactic','platform','data_source','data_component']
 with open('../techniques_to_components_mapping.csv', 'w', newline='')  as output_file:
     dict_writer = csv.DictWriter(output_file, header_fields)
     dict_writer.writeheader()
