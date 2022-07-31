@@ -36,8 +36,6 @@ def get_attck_from_stix(matrix = 'enterprise'):
         lift = attack_client()
         # Getting techniques for windows platform - enterprise matrix
         attck = lift.get_enterprise_techniques(stix_format = False)
-        # Removing revoked techniques
-        attck = lift.remove_revoked(attck)
         return attck
     else:
         sys.exit('ERROR: Only Enterprise available!!')
