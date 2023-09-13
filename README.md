@@ -1,3 +1,5 @@
+> :warning: **This repository is no longer necessary as we have finalized the way that Data Sources are included in ATT&CK. If you are looking for Python scripts to interact with ATT&CK STIX data please see our [mitreattack-python](https://github.com/mitre-attack/mitreattack-python) python library.**
+
 # ATT&CK Data Sources
 As part of the [**ATT&CK 2021 Roadmap**](https://medium.com/mitre-attack/att-ck-2021-roadmap-68bab3886fa2), we have defined a methodology that will help improve how ATT&CK maps adversary behaviors to detection data sources. The idea behind this methodology is to improve quality and consistency of ATT&CK data sources as well as to provide additional information to help users make better use of these values.
 
